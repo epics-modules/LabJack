@@ -1,0 +1,62 @@
+#------------------------------------------------------------------------------
+# VxWorks startup file
+#------------------------------------------------------------------------------
+
+## vxWorks startup script
+sysVmeMapShow
+
+cd ""
+< ../nfsCommands
+< cdCommands
+
+## How to set and get the clock rate
+#sysClkRateSet(100)
+#sysClkRateGet()
+
+##
+cd topbin
+
+# If the VxWorks kernel was built using the project facility, the following must
+# be added before any C++ code is loaded (see SPR #28980).
+sysCplusEnable=1
+
+## Load synApps EPICS software
+ld < LabJackApp.munch
+
+cd startup
+
+#------------------------------------------------------------------------------
+# Register all support components
+dbLoadDatabase("../../dbd/LabJackApp.dbd")
+LabJackAppVxWorks_registerRecordDeviceDriver(pdbbase)
+
+#------------------------------------------------------------------------------
+#
+###  LabJack support  ###
+#
+# Load one LabJack_T7_n.cmd file for each LabJack module this ioc will support
+#
+< LabJack_T7_1.cmd
+#< LabJack_T7_2.cmd
+#< LabJack_T7_3.cmd
+
+
+#------------------------------------------------------------------------------
+# Configure auto save/restore
+< save_restore.cmd
+
+#------------------------------------------------------------------------------
+# Start IOC
+iocInit()
+
+#------------------------------------------------------------------------------
+# Start autosave
+
+# Monitor every five seconds
+#create_monitor_set("auto_positions.req",5,"P=xyz:")
+
+# Monitor every ten seconds
+create_monitor_set("auto_settings.req",10,"P=xyz:")
+
+#
+#------------------------------------------------------------------------------

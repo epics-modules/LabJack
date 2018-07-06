@@ -1,0 +1,11 @@
+record(bo, "$(P)seDiff") {
+  field(DESC, "SE or Diff choice")
+  field(ZNAM, "Single-Ended")
+  field(ONAM, "Differential")
+  field(OUT, "$(P)seDiff_calc.A PP NMS")
+}
+record(calcout, "$(P)seDiff_calc") {
+  field(PREC, "0")
+  field(CALC, "A?1:199")
+  field(OUT, "$(P)AIdiff PP")
+}
