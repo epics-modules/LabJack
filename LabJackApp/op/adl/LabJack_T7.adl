@@ -324,42 +324,42 @@ rectangle {
 	}
 	display[0] {
 		label="Input 0"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI0"
 	}
 	display[1] {
 		label="Input 1"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI1"
 	}
 	display[2] {
 		label="Input 2"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI2"
 	}
 	display[3] {
 		label="Input 3"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI3"
 	}
 	display[4] {
 		label="Input 4"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI4"
 	}
 	display[5] {
 		label="Input 5"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI5"
 	}
 	display[6] {
 		label="Input 6"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI6"
 	}
 	display[7] {
 		label="Input 7"
-		name="LabJackAIStripChart.adl"
+		name="LabJack_T7_AIStripChart.adl"
 		args="AI=$(P)LJT7:$(N):AI7"
 	}
 	clr=14
