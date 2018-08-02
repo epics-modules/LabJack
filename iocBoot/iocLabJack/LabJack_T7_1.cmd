@@ -23,7 +23,7 @@ epicsEnvSet P xyz:
 #                       int noProcessEos);
 #
 # 3.) LabJack unit (N) IP address
-drvAsynIPPortConfigure("LJT7_$(N)","164.54.53.16:502",0,0,1)
+drvAsynIPPortConfigure("LJT7_$(N)","192.168.100.30:502",0,0,1)
 
 #modbusInterposeConfig(const char *portName,
 #                      modbusLinkType linkType,
