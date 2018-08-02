@@ -2811,7 +2811,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -2828,7 +2828,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
@@ -2845,7 +2845,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -2862,7 +2862,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
@@ -2879,7 +2879,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -2896,7 +2896,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
@@ -2913,7 +2913,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -2930,7 +2930,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
@@ -2947,7 +2947,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -2964,7 +2964,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
@@ -2981,7 +2981,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -2998,7 +2998,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
@@ -3015,7 +3015,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="+"
 	align="horiz. centered"
@@ -3032,7 +3032,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="xyz:LJT7:1:seDiff"
+		chan="$(P)LJT7:$(N):seDiff"
 	}
 	textix="-"
 	align="horiz. centered"
