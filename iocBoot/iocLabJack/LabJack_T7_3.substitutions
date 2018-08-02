@@ -1,0 +1,73 @@
+#
+# LabJack_T7_1.substitutions
+#
+# Prefix must match LabJack_T7_1.cmd
+# Unit number "LJT7_N", N must match LabJack_T7_1.cmd
+#
+
+
+# The LabJack T7 has 4 banks of digital I/O, set as either intputs or 
+# outputs at boot time.
+# FIO = DIO0 - 7,   initially set to inputs,  EPICS channels BI0 - BI7 
+# EIO = DIO8 - 15,  initially set to outputs, EPICS channels BO0 - BO7
+# CIO = DIO16 - 19, initially set to inputs,  EPICS channels BI8 - BI11
+# MIO = DIO20 - 23, initially set to outputs, EPICS channels BO8 - BO10
+# 
+# Note, you may change this configuration but "LabJack_T7.cmd" will need to be modified 
+#       accordingly, and possibly the displays.
+# 
+# Digital inputs done with word access.  FIO is the first 8 digital inputs, CIO is the next 4 inputs.
+file "$(TOP)/depo2App/Db/LabJack_T7_longinInt32.template" { pattern
+{P,           R,                PORT,     OFFSET,   DATA_TYPE,      SCAN}
+{xyz:, LJT7:3:FIO, LJT7_3_FIO_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT7:3:CIO, LJT7_3_CIO_In_Word, 0, UINT16, "I/O Intr"}
+}
+
+# Digital outputs.  EIO is the second 8 digital channels, used as Outputs.
+file "$(TOP)/depo2App/Db/LabJack_T7_bo_bit.template" { pattern
+{P,        R,             PORT,       OFFSET,   ZNAM,   ONAM, DESC}
+{xyz:, LJT7:3:DO0, LJT7_3_EIO0_Out_Word, 0, Low, High, "Ch 0 Dig Out"}
+{xyz:, LJT7:3:DO1, LJT7_3_EIO1_Out_Word, 0, Low, High, "Ch 1 Dig Out"}
+{xyz:, LJT7:3:DO2, LJT7_3_EIO2_Out_Word, 0, Low, High, "Ch 2 Dig Out"}
+{xyz:, LJT7:3:DO3, LJT7_3_EIO3_Out_Word, 0, Low, High, "Ch 3 Dig Out"}
+{xyz:, LJT7:3:DO4, LJT7_3_EIO4_Out_Word, 0, Low, High, "Ch 4 Dig Out"}
+{xyz:, LJT7:3:DO5, LJT7_3_EIO5_Out_Word, 0, Low, High, "Ch 5 Dig Out"}
+{xyz:, LJT7:3:DO6, LJT7_3_EIO6_Out_Word, 0, Low, High, "Ch 6 Dig Out"}
+{xyz:, LJT7:3:DO7, LJT7_3_EIO7_Out_Word, 0, Low, High, "Ch 7 Dig Out"}
+# MIO channels
+{xyz:, LJT7:3:DO8,  LJT7_3_MIO0_Out_Word, 0, Low, High, "Ch 8 Dig Out"}
+{xyz:, LJT7:3:DO9,  LJT7_3_MIO1_Out_Word, 0, Low, High, "Ch 9 Dig Out"}
+{xyz:, LJT7:3:DO10, LJT7_3_MIO2_Out_Word, 0, Low, High, "Ch 10 Dig Out"}
+}
+
+# Set all AI channels to either Single-Ended (199, default) or Differential (1).
+file "$(TOP)/depo2App/Db/LabJack_T7_longout.template" { pattern
+{P,           R,                PORT,     OFFSET}
+{xyz:, LJT7:3:AIdiff, LJT7_3_AIdiff_Out_Word, 0}
+}
+
+# Analog Inputs done with word access.
+file "$(TOP)/depo2App/Db/LabJack_T7_ai.template" { pattern
+{P,        R,      PORT,     OFFSET,   DATA_TYPE,   SCAN,  PREC, DESC}
+{xyz:, LJT7:3:AI0,  LJT7_3_AI_In, 0,  FLOAT32_BE, ".1 second", 4, "Ch 0 Ana In"}
+{xyz:, LJT7:3:AI1,  LJT7_3_AI_In, 2,  FLOAT32_BE, ".1 second", 4, "Ch 1 Ana In"}
+{xyz:, LJT7:3:AI2,  LJT7_3_AI_In, 4,  FLOAT32_BE, ".1 second", 4, "Ch 2 Ana In"}
+{xyz:, LJT7:3:AI3,  LJT7_3_AI_In, 6,  FLOAT32_BE, ".1 second", 4, "Ch 3 Ana In"}
+{xyz:, LJT7:3:AI4,  LJT7_3_AI_In, 8,  FLOAT32_BE, ".1 second", 4, "Ch 4 Ana In"}
+{xyz:, LJT7:3:AI5,  LJT7_3_AI_In, 10, FLOAT32_BE, ".1 second", 4, "Ch 5 Ana In"}
+{xyz:, LJT7:3:AI6,  LJT7_3_AI_In, 12, FLOAT32_BE, ".1 second", 4, "Ch 6 Ana In"}
+{xyz:, LJT7:3:AI7,  LJT7_3_AI_In, 14, FLOAT32_BE, ".1 second", 4, "Ch 7 Ana In"}
+{xyz:, LJT7:3:AI8,  LJT7_3_AI_In, 16, FLOAT32_BE, ".1 second", 4, "Ch 8 Ana In"}
+{xyz:, LJT7:3:AI9,  LJT7_3_AI_In, 18, FLOAT32_BE, ".1 second", 4, "Ch 9 Ana In"}
+{xyz:, LJT7:3:AI10, LJT7_3_AI_In, 20, FLOAT32_BE, ".1 second", 4, "Ch 10 Ana In"}
+{xyz:, LJT7:3:AI11, LJT7_3_AI_In, 22, FLOAT32_BE, ".1 second", 4, "Ch 11 Ana In"}
+{xyz:, LJT7:3:AI12, LJT7_3_AI_In, 24, FLOAT32_BE, ".1 second", 4, "Ch 12 Ana In"}
+{xyz:, LJT7:3:AI13, LJT7_3_AI_In, 26, FLOAT32_BE, ".1 second", 4, "Ch 13 Ana In"}
+}
+
+# Analog outputs done with word access.
+file "$(TOP)/depo2App/Db/LabJack_T7_ao.template" { pattern
+{P,        R,      PORT,     OFFSET,   DATA_TYPE,  PREC, DESC}
+{xyz:, LJT7:3:AO0,  LJT7_3_AO_0, 0,  FLOAT32_BE,    4, "Ch 0 Ana Out"}
+{xyz:, LJT7:3:AO1,  LJT7_3_AO_1, 0,  FLOAT32_BE,    4, "Ch 1 Ana Out"}
+}
