@@ -89,8 +89,8 @@ drvModbusAsynConfigure("LJT7_$(N)_AO_1", "LJT7_$(N)", 0, 16, 1002,  2, 8, 1, "LJ
 dbLoadTemplate("LabJack_T7_$(N).substitutions")
 
 # Digital Inputs
-dbLoadRecords("$(TOP)/xyzApp/Db/LabJack_T7_di.db", "P=$(P)LJT7:$(N):")
+dbLoadRecords("$(TOP)/LabJackApp/Db/LabJack_T7_di.db", "P=$(P)LJT7:$(N):")
 
 # Analog Inputs SE/Diff select
-dbLoadRecords("$(TOP)/xyzApp/Db/LabJack_T7_seDiff.db", "P=$(P)LJT7:$(N):")
+dbLoadRecords("$(TOP)/LabJackApp/Db/LabJack_T7_seDiff.db", "P=$(P)LJT7:$(N):")
 
