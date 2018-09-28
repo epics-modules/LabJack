@@ -13,7 +13,7 @@ epicsEnvSet N 2
 
 # 2.) Prefix
 # epicsEnvSet P prefix:
-epicsEnvSet P depo2:
+epicsEnvSet P xyz:
 
 # Use the following commands for TCP/IP
 #drvAsynIPPortConfigure(const char *portName,
