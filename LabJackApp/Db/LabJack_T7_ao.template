@@ -4,11 +4,11 @@ record(ao,"$(P)$(R)") {
     field(DTYP,"asynFloat64")
     field(OUT,"@asyn($(PORT) $(OFFSET))$(DATA_TYPE)")
 	field(PREC, "$(PREC)")
-	# The LabJack T7 DAC is set to 0-5V.
-	field(HOPR, "5")
-	field(LOPR, "0")
-	field(DRVH, "5")
-	field(DRVL, "0")
+	# The LabJack T7 DAC is set to 0-5V.  Tick-DAC is set to +/-10V
+	field(HOPR, "$(HOPR)")
+	field(LOPR, "$(LOPR)")
+	field(DRVH, "$(DRVH)")
+	field(DRVL, "$(DRVL)")
 }
 
 record(ao,"$(P)$(R)TweakVal") {
