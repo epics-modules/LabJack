@@ -17,14 +17,14 @@
 #       accordingly, and possibly the displays.
 # 
 # Digital inputs done with word access.  FIO is the first 8 digital inputs, CIO is the next 4 inputs.
-file "$(TOP)/depo2App/Db/LabJack_T7_longinInt32.template" { pattern
+file "$(TOP)/LabJackApp/Db/LabJack_T7_longinInt32.template" { pattern
 {P,           R,                PORT,     OFFSET,   DATA_TYPE,      SCAN}
 {xyz:, LJT7:3:FIO, LJT7_3_FIO_In_Word, 0, UINT16, "I/O Intr"}
 {xyz:, LJT7:3:CIO, LJT7_3_CIO_In_Word, 0, UINT16, "I/O Intr"}
 }
 
 # Digital outputs.  EIO is the second 8 digital channels, used as Outputs.
-file "$(TOP)/depo2App/Db/LabJack_T7_bo_bit.template" { pattern
+file "$(TOP)/LabJackApp/Db/LabJack_T7_bo_bit.template" { pattern
 {P,        R,             PORT,       OFFSET,   ZNAM,   ONAM, DESC}
 {xyz:, LJT7:3:DO0, LJT7_3_EIO0_Out_Word, 0, Low, High, "Ch 0 Dig Out"}
 {xyz:, LJT7:3:DO1, LJT7_3_EIO1_Out_Word, 0, Low, High, "Ch 1 Dig Out"}
@@ -41,13 +41,13 @@ file "$(TOP)/depo2App/Db/LabJack_T7_bo_bit.template" { pattern
 }
 
 # Set all AI channels to either Single-Ended (199, default) or Differential (1).
-file "$(TOP)/depo2App/Db/LabJack_T7_longout.template" { pattern
+file "$(TOP)/LabJackApp/Db/LabJack_T7_longout.template" { pattern
 {P,           R,                PORT,     OFFSET}
 {xyz:, LJT7:3:AIdiff, LJT7_3_AIdiff_Out_Word, 0}
 }
 
 # Analog Inputs done with word access.
-file "$(TOP)/depo2App/Db/LabJack_T7_ai.template" { pattern
+file "$(TOP)/LabJackApp/Db/LabJack_T7_ai.template" { pattern
 {P,        R,      PORT,     OFFSET,   DATA_TYPE,   SCAN,  PREC, DESC}
 {xyz:, LJT7:3:AI0,  LJT7_3_AI_In, 0,  FLOAT32_BE, ".1 second", 4, "Ch 0 Ana In"}
 {xyz:, LJT7:3:AI1,  LJT7_3_AI_In, 2,  FLOAT32_BE, ".1 second", 4, "Ch 1 Ana In"}
@@ -66,7 +66,7 @@ file "$(TOP)/depo2App/Db/LabJack_T7_ai.template" { pattern
 }
 
 # Analog outputs done with word access.
-file "$(TOP)/depo2App/Db/LabJack_T7_ao.template" { pattern
+file "$(TOP)/LabJackApp/Db/LabJack_T7_ao.template" { pattern
 {P,        R,      PORT,     OFFSET,   DATA_TYPE,  PREC, DESC}
 {xyz:, LJT7:3:AO0,  LJT7_3_AO_0, 0,  FLOAT32_BE,    4, "Ch 0 Ana Out"}
 {xyz:, LJT7:3:AO1,  LJT7_3_AO_1, 0,  FLOAT32_BE,    4, "Ch 1 Ana Out"}
