@@ -61,7 +61,15 @@ file "$(LABJACK)/LabJackApp/Db/LabJack_T7_ai.template" { pattern
 
 # Analog outputs done with word access.
 file "$(LABJACK)/LabJackApp/Db/LabJack_T7_ao.template" { pattern
-{P,        R,      PORT,     OFFSET,   DATA_TYPE,  PREC, DESC}
-{xyz:, LJT7:1:AO0,  LJT7_1_AO_0, 0,  FLOAT32_BE,    4, "Ch 0 Ana Out"}
-{xyz:, LJT7:1:AO1,  LJT7_1_AO_1, 0,  FLOAT32_BE,    4, "Ch 1 Ana Out"}
+{P,        R,      PORT,     OFFSET,   DATA_TYPE,  PREC, LOPR, HOPR, DRVL, DRVH, DESC}
+{xyz:, LJT7:1:AO0,  LJT7_1_AO_0, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 0 Ana Out"}
+{xyz:, LJT7:1:AO1,  LJT7_1_AO_1, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 1 Ana Out"}
+
+# These are for the LJTick-DAC modules
+{xyz:, LJT7:1:AO2,  LJT7_1_AO_2, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 2 Ana Out"}
+{xyz:, LJT7:1:AO3,  LJT7_1_AO_3, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 3 Ana Out"}
+#{xyz:, LJT7:1:AO4,  LJT7_1_AO_4, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 4 Ana Out"}
+#{xyz:, LJT7:1:AO5,  LJT7_1_AO_5, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 5 Ana Out"}
+#{xyz:, LJT7:1:AO6,  LJT7_1_AO_6, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 6 Ana Out"}
+#{xyz:, LJT7:1:AO7,  LJT7_1_AO_7, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 7 Ana Out"}
 }
