@@ -85,6 +85,22 @@ drvModbusAsynConfigure("LJT7_$(N)_AIdiff_Out_Word", "LJT7_$(N)", 0, 6, 43902, 1,
 drvModbusAsynConfigure("LJT7_$(N)_AO_0", "LJT7_$(N)", 0, 16, 1000,  2, 8, 1, "LJT7_module")
 drvModbusAsynConfigure("LJT7_$(N)_AO_1", "LJT7_$(N)", 0, 16, 1002,  2, 8, 1, "LJT7_module")
 
+# 2 additional analog outputs, setup to access LJTick-DAC occupying FIO0/FIO1
+#drvModbusAsynConfigure("LJT7_$(N)_AO_2", "LJT7_$(N)", 0, 16, 30000,  2, 8, 1, "LJT7_module")
+#drvModbusAsynConfigure("LJT7_$(N)_AO_3", "LJT7_$(N)", 0, 16, 30002,  2, 8, 1, "LJT7_module")
+# LJTick-DAC occupying EIO4/EIO5
+drvModbusAsynConfigure("LJT7_$(N)_AO_2", "LJT7_$(N)", 0, 16, 30024,  2, 8, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AO_3", "LJT7_$(N)", 0, 16, 30026,  2, 8, 1, "LJT7_module")
+# LJTick-DAC occupying EIO6/EIO7
+#drvModbusAsynConfigure("LJT7_$(N)_AO_2", "LJT7_$(N)", 0, 16, 30028,  2, 8, 1, "LJT7_module")
+#drvModbusAsynConfigure("LJT7_$(N)_AO_3", "LJT7_$(N)", 0, 16, 30030,  2, 8, 1, "LJT7_module")
+# LJTick-DAC occupying CIO0/CIO1
+#drvModbusAsynConfigure("LJT7_$(N)_AO_4", "LJT7_$(N)", 0, 16, 30032,  2, 8, 1, "LJT7_module")
+#drvModbusAsynConfigure("LJT7_$(N)_AO_5", "LJT7_$(N)", 0, 16, 30034,  2, 8, 1, "LJT7_module")
+# LJTick-DAC occupying CIO2/CIO3
+#drvModbusAsynConfigure("LJT7_$(N)_AO_6", "LJT7_$(N)", 0, 16, 30036,  2, 8, 1, "LJT7_module")
+#drvModbusAsynConfigure("LJT7_$(N)_AO_7", "LJT7_$(N)", 0, 16, 30038,  2, 8, 1, "LJT7_module")
+
 # Prefixes in this file must match $(P) set above
 dbLoadTemplate("LabJack_T7_$(N).substitutions")
 
