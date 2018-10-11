@@ -78,8 +78,14 @@ drvModbusAsynConfigure("LJT7_$(N)_MIO0_Out_Word", "LJT7_$(N)", 0, 6, 2020, 1, 0,
 drvModbusAsynConfigure("LJT7_$(N)_MIO1_Out_Word", "LJT7_$(N)", 0, 6, 2021, 1, 0, 1, "LJT7_module")
 drvModbusAsynConfigure("LJT7_$(N)_MIO2_Out_Word", "LJT7_$(N)", 0, 6, 2022, 1, 0, 1, "LJT7_module")
 #
-# Write to register to set all AI channels Single-Ended or Differential
-drvModbusAsynConfigure("LJT7_$(N)_AIdiff_Out_Word", "LJT7_$(N)", 0, 6, 43902, 1, 0, 1, "LJT7_module")
+# Write to register to set each even no. AI channel Single-Ended or Differential
+drvModbusAsynConfigure("LJT7_$(N)_AI0diff_Out_Word", "LJT7_$(N)", 0, 6, 41000, 1, 0, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AI2diff_Out_Word", "LJT7_$(N)", 0, 6, 41002, 1, 0, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AI4diff_Out_Word", "LJT7_$(N)", 0, 6, 41004, 1, 0, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AI6diff_Out_Word", "LJT7_$(N)", 0, 6, 41006, 1, 0, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AI8diff_Out_Word", "LJT7_$(N)", 0, 6, 41008, 1, 0, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AI10diff_Out_Word", "LJT7_$(N)", 0, 6, 41010, 1, 0, 1, "LJT7_module")
+drvModbusAsynConfigure("LJT7_$(N)_AI12diff_Out_Word", "LJT7_$(N)", 0, 6, 41012, 1, 0, 1, "LJT7_module")
 
 # Set 2 analog outputs.
 drvModbusAsynConfigure("LJT7_$(N)_AO_0", "LJT7_$(N)", 0, 16, 1000,  2, 8, 1, "LJT7_module")

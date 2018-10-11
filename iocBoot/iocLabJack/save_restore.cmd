@@ -19,6 +19,17 @@ save_restoreSet_SeqPeriodInSeconds(300)
 # Specify directories to search for save files
 set_savefile_path(".","autosave")
 
+###
+# specify what save files should be restored.  Note these files must be
+# in the directory specified in set_savefile_path(), or, if that function
+# has not been called, from the directory current when iocInit is invoked
+#set_pass0_restoreFile("auto_positions.sav")
+# Note doAfterIocInit() supplied by std module.
+#doAfterIocInit("create_monitor_set('auto_positions.req',5,'P=kag:')")
+
+set_pass0_restoreFile("auto_settings.sav")
+set_pass1_restoreFile("auto_settings.sav")
+
 # Specify directories to search for request files
 set_requestfile_path(".",  "")
 set_requestfile_path(".",  "autosave")

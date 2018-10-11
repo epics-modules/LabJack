@@ -67,6 +67,15 @@ $(P)LJT7:$(N):AI12.SCAN
 $(P)LJT7:$(N):AI13.DESC
 $(P)LJT7:$(N):AI13.SCAN
 
+# AI Diff / S.E. selection
+$(P)LJT7:$(N):seDiff_Ch0
+$(P)LJT7:$(N):seDiff_Ch2
+$(P)LJT7:$(N):seDiff_Ch4
+$(P)LJT7:$(N):seDiff_Ch6
+$(P)LJT7:$(N):seDiff_Ch8
+$(P)LJT7:$(N):seDiff_Ch10
+$(P)LJT7:$(N):seDiff_Ch12
+
 # Analog Outputs
 $(P)LJT7:$(N):AO0.DESC
 $(P)LJT7:$(N):AO0

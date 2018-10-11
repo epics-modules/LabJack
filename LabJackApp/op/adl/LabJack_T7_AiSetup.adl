@@ -1,14 +1,14 @@
 
 file {
-	name="/home/oxygen18/GOETZE/epics/synApps_5_8/support/LabJack/LabJackApp/op/adl/LabJack_T7_AiSetup.adl"
+	name="/home/oxygen/GOETZE/epics/synApps_5_8/support/LabJack/LabJackApp/op/adl/LabJack_T7_AiSetup.adl"
 	version=030111
 }
 display {
 	object {
-		x=140
-		y=117
+		x=294
+		y=93
 		width=365
-		height=180
+		height=555
 	}
 	clr=14
 	bclr=4
@@ -105,10 +105,10 @@ text {
 		x=31
 		y=71
 		width=300
-		height=25
+		height=23
 	}
 	control {
-		chan="$(P)LJT7:$(N):seDiff"
+		chan="$(P)LJT7:$(N):seDiff_Ch0"
 		clr=14
 		bclr=4
 	}
@@ -116,21 +116,21 @@ text {
 }
 text {
 	object {
-		x=108
+		x=155
 		y=50
-		width=123
-		height=15
+		width=55
+		height=20
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="All Channels:"
-	align="horiz. right"
+	textix="Ch.0"
+	align="horiz. centered"
 }
 text {
 	object {
-		x=14
-		y=130
+		x=18
+		y=508
 		width=335
 		height=15
 	}
@@ -141,8 +141,8 @@ text {
 }
 text {
 	object {
-		x=14
-		y=148
+		x=18
+		y=526
 		width=335
 		height=15
 	}
@@ -166,4 +166,166 @@ polyline {
 		(39,31)
 		(323,31)
 	}
+}
+"choice button" {
+	object {
+		x=30
+		y=134
+		width=300
+		height=23
+	}
+	control {
+		chan="$(P)LJT7:$(N):seDiff_Ch2"
+		clr=14
+		bclr=4
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=155
+		y=113
+		width=55
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Ch.2"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=30
+		y=194
+		width=300
+		height=23
+	}
+	control {
+		chan="$(P)LJT7:$(N):seDiff_Ch4"
+		clr=14
+		bclr=4
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=154
+		y=173
+		width=55
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Ch.4"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=30
+		y=257
+		width=300
+		height=23
+	}
+	control {
+		chan="$(P)LJT7:$(N):seDiff_Ch6"
+		clr=14
+		bclr=4
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=155
+		y=236
+		width=55
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Ch.6"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=30
+		y=318
+		width=300
+		height=23
+	}
+	control {
+		chan="$(P)LJT7:$(N):seDiff_Ch8"
+		clr=14
+		bclr=4
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=155
+		y=297
+		width=55
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Ch.8"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=30
+		y=378
+		width=300
+		height=23
+	}
+	control {
+		chan="$(P)LJT7:$(N):seDiff_Ch10"
+		clr=14
+		bclr=4
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=154
+		y=357
+		width=55
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Ch.10"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=30
+		y=441
+		width=300
+		height=23
+	}
+	control {
+		chan="$(P)LJT7:$(N):seDiff_Ch12"
+		clr=14
+		bclr=4
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=155
+		y=420
+		width=55
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Ch.12"
+	align="horiz. centered"
 }

@@ -34,10 +34,17 @@ file "$(LABJACK)/LabJackApp/Db/LabJack_T7_bo_bit.template" { pattern
 {xyz:, LJT7:1:DO10, LJT7_1_MIO2_Out_Word, 0, Low, High, "Ch 10 Dig Out"}
 }
 
-# Set all AI channels to either Single-Ended (199, default) or Differential (1).
+# Set S.E. / Diff for each even number channel individually
+# Single-Ended (199, default) or Differential (1)
 file "$(LABJACK)/LabJackApp/Db/LabJack_T7_longout.template" { pattern
 {P,           R,                PORT,     OFFSET}
-{xyz:, LJT7:1:AIdiff, LJT7_1_AIdiff_Out_Word, 0}
+{xyz:, LJT7:1:AI0diff, LJT7_1_AI0diff_Out_Word, 0}
+{xyz:, LJT7:1:AI2diff, LJT7_1_AI2diff_Out_Word, 0}
+{xyz:, LJT7:1:AI4diff, LJT7_1_AI4diff_Out_Word, 0}
+{xyz:, LJT7:1:AI6diff, LJT7_1_AI6diff_Out_Word, 0}
+{xyz:, LJT7:1:AI8diff, LJT7_1_AI8diff_Out_Word, 0}
+{xyz:, LJT7:1:AI10diff, LJT7_1_AI10diff_Out_Word, 0}
+{xyz:, LJT7:1:AI12diff, LJT7_1_AI12diff_Out_Word, 0}
 }
 
 # Analog Inputs done with word access.
