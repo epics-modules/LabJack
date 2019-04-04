@@ -18,11 +18,11 @@ LabJackApp_registerRecordDeviceDriver(pdbbase)
 #
 # Load one LabJack_Tx_n.cmd file for each LabJack module this ioc will support
 #
-#< LabJack_T7_1.cmd
+< LabJack_T7_1.cmd
 #< LabJack_T7_2.cmd
 #< LabJack_T7_3.cmd
 #
-< LabJack_T4_1.cmd
+#< LabJack_T4_1.cmd
 #< LabJack_T4_2.cmd
 #< LabJack_T4_3.cmd
 
