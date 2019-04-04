@@ -1751,7 +1751,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="$(P)LJT7:$(N):AI0"
+		chan="$(P)LJT7:$(N):AI1"
 		clr=54
 		bclr=4
 	}
