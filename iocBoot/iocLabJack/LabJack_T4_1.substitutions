@@ -1,0 +1,88 @@
+
+
+# The LabJack T4 has 4 banks of digital I/O, set as either intputs or 
+# outputs at boot time.
+# FIO = DIO0 - 7,   initially set to inputs,  EPICS channels BI0 - BI7 
+# EIO = DIO8 - 15,  initially set to outputs, EPICS channels BO0 - BO7
+# CIO = DIO16 - 19, initially set to inputs,  EPICS channels BI8 - BI11
+# MIO = DIO20 - 23, initially set to outputs, EPICS channels BO8 - BO10
+# 
+# Note, you may change this configuration but "LabJack_T4.cmd" will need to be modified 
+#       accordingly, and possibly the displays.
+# 
+# Digital inputs done with word access.  Use with "LabJack_T4_di.db".
+file "$(LABJACK)/LabJackApp/Db/LabJack_T4_longinInt32.template" { pattern
+{P,           R,                PORT,     OFFSET,   DATA_TYPE,      SCAN}
+#{xyz:, LJT4:1:FIO4, LJT4_1_FIO4_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:FIO5, LJT4_1_FIO5_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:FIO6, LJT4_1_FIO6_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:FIO7, LJT4_1_FIO7_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO0, LJT4_1_EIO0_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO1, LJT4_1_EIO1_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO2, LJT4_1_EIO2_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO3, LJT4_1_EIO3_In_Word, 0, UINT16, "I/O Intr"}
+#
+{xyz:, LJT4:1:EIO4, LJT4_1_EIO4_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO5, LJT4_1_EIO5_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO6, LJT4_1_EIO6_In_Word, 0, UINT16, "I/O Intr"}
+{xyz:, LJT4:1:EIO7, LJT4_1_EIO7_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:CIO0, LJT4_1_CIO0_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:CIO1, LJT4_1_CIO1_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:CIO2, LJT4_1_CIO2_In_Word, 0, UINT16, "I/O Intr"}
+#{xyz:, LJT4:1:CIO3, LJT4_1_CIO3_In_Word, 0, UINT16, "I/O Intr"}
+}
+
+# Digital outputs.  EIO is the second 8 digital channels, used as Outputs.
+file "$(LABJACK)/LabJackApp/Db/LabJack_T4_bo_bit.template" { pattern
+{P,        R,             PORT,       OFFSET,   ZNAM,   ONAM, DESC}
+#{xyz:, LJT4:1:DO0, LJT4_1_FIO4_Out_Word, 0, Low, High, "Ch 0 Dig Out"}
+#{xyz:, LJT4:1:DO1, LJT4_1_FIO5_Out_Word, 0, Low, High, "Ch 1 Dig Out"}
+#{xyz:, LJT4:1:DO2, LJT4_1_FIO6_Out_Word, 0, Low, High, "Ch 2 Dig Out"}
+#{xyz:, LJT4:1:DO3, LJT4_1_FIO7_Out_Word, 0, Low, High, "Ch 3 Dig Out"}
+#{xyz:, LJT4:1:DO4, LJT4_1_EIO0_Out_Word, 0, Low, High, "Ch 4 Dig Out"}
+#{xyz:, LJT4:1:DO5, LJT4_1_EIO1_Out_Word, 0, Low, High, "Ch 5 Dig Out"}
+#{xyz:, LJT4:1:DO6, LJT4_1_EIO2_Out_Word, 0, Low, High, "Ch 6 Dig Out"}
+#{xyz:, LJT4:1:DO7, LJT4_1_EIO3_Out_Word, 0, Low, High, "Ch 7 Dig Out"}
+#
+#{xyz:, LJT4:1:DO8, LJT4_1_EIO4_Out_Word, 0, Low, High, "Ch 0 Dig Out"}
+#{xyz:, LJT4:1:DO9, LJT4_1_EIO5_Out_Word, 0, Low, High, "Ch 1 Dig Out"}
+#{xyz:, LJT4:1:DO10, LJT4_1_EIO6_Out_Word, 0, Low, High, "Ch 2 Dig Out"}
+#{xyz:, LJT4:1:DO11, LJT4_1_EIO7_Out_Word, 0, Low, High, "Ch 3 Dig Out"}
+{xyz:, LJT4:1:DO0, LJT4_1_CIO0_Out_Word, 0, Low, High, "Ch 4 Dig Out"}
+{xyz:, LJT4:1:DO1, LJT4_1_CIO1_Out_Word, 0, Low, High, "Ch 5 Dig Out"}
+{xyz:, LJT4:1:DO2, LJT4_1_CIO2_Out_Word, 0, Low, High, "Ch 6 Dig Out"}
+{xyz:, LJT4:1:DO3, LJT4_1_CIO3_Out_Word, 0, Low, High, "Ch 7 Dig Out"}
+}
+
+# Analog Inputs done with word access.
+file "$(LABJACK)/LabJackApp/Db/LabJack_T4_ai.template" { pattern
+{P,        R,      PORT,     OFFSET,   DATA_TYPE,   SCAN,  PREC, DESC}
+{xyz:, LJT4:1:AI0,  LJT4_1_AI_3In, 0,  FLOAT32_BE, ".1 second", 4, "Ch 0 Ana In"}
+{xyz:, LJT4:1:AI1,  LJT4_1_AI_3In, 2,  FLOAT32_BE, ".1 second", 4, "Ch 1 Ana In"}
+{xyz:, LJT4:1:AI2,  LJT4_1_AI_3In, 4,  FLOAT32_BE, ".1 second", 4, "Ch 2 Ana In"}
+{xyz:, LJT4:1:AI3,  LJT4_1_AI_3In, 6,  FLOAT32_BE, ".1 second", 4, "Ch 3 Ana In"}
+#
+{xyz:, LJT4:1:AI4,  LJT4_1_AI_4In, 0,  FLOAT32_BE, ".1 second", 4, "Ch 4 Ana In"}
+{xyz:, LJT4:1:AI5,  LJT4_1_AI_5In, 0, FLOAT32_BE, ".1 second", 4, "Ch 5 Ana In"}
+{xyz:, LJT4:1:AI6,  LJT4_1_AI_6In, 0, FLOAT32_BE, ".1 second", 4, "Ch 6 Ana In"}
+{xyz:, LJT4:1:AI7,  LJT4_1_AI_7In, 0, FLOAT32_BE, ".1 second", 4, "Ch 7 Ana In"}
+#{xyz:, LJT4:1:AI8,  LJT4_1_AI_8In, 0, FLOAT32_BE, ".1 second", 4, "Ch 8 Ana In"}
+#{xyz:, LJT4:1:AI9,  LJT4_1_AI_9In, 0, FLOAT32_BE, ".1 second", 4, "Ch 9 Ana In"}
+#{xyz:, LJT4:1:AI10, LJT4_1_AI_10In, 0, FLOAT32_BE, ".1 second", 4, "Ch 10 Ana In"}
+#{xyz:, LJT4:1:AI11, LJT4_1_AI_11In, 0, FLOAT32_BE, ".1 second", 4, "Ch 11 Ana In"}
+}
+
+# Analog outputs done with word access.
+file "$(LABJACK)/LabJackApp/Db/LabJack_T4_ao.template" { pattern
+{P,        R,      PORT,     OFFSET,   DATA_TYPE,  PREC, LOPR, HOPR, DRVL, DRVH, DESC}
+{xyz:, LJT4:1:AO0,  LJT4_1_AO_0, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 0 Ana Out"}
+{xyz:, LJT4:1:AO1,  LJT4_1_AO_1, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 1 Ana Out"}
+
+# These are for the LJTick-DAC modules
+{xyz:, LJT4:1:AO2,  LJT4_1_AO_2, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 2 Ana Out"}
+{xyz:, LJT4:1:AO3,  LJT4_1_AO_3, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 3 Ana Out"}
+#{xyz:, LJT4:1:AO4,  LJT4_1_AO_4, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 4 Ana Out"}
+#{xyz:, LJT4:1:AO5,  LJT4_1_AO_5, 0,  FLOAT32_BE,   4, 0, 10, 0, 10, "Ch 5 Ana Out"}
+#{xyz:, LJT4:1:AO6,  LJT4_1_AO_6, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 6 Ana Out"}
+#{xyz:, LJT4:1:AO7,  LJT4_1_AO_7, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 7 Ana Out"}
+}

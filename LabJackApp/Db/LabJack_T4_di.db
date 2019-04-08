@@ -1,0 +1,87 @@
+record(calcout, "$(P)DI0_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO0 CP NMS")
+  field(OUT, "$(P)DI0 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI0") {
+  field(DESC, "Ch 0 Dig In")
+}
+
+record(calcout, "$(P)DI1_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO1 CP NMS")
+  field(OUT, "$(P)DI1 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI1") {
+  field(DESC, "Ch 1 Dig In")
+}
+
+record(calcout, "$(P)DI2_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO2 CP NMS")
+  field(OUT, "$(P)DI2 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI2") {
+  field(DESC, "Ch 2 Dig In")
+}
+
+record(calcout, "$(P)DI3_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO3 CP NMS")
+  field(OUT, "$(P)DI3 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI3") {
+  field(DESC, "Ch 3 Dig In")
+}
+
+record(calcout, "$(P)DI4_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO4 CP NMS")
+  field(OUT, "$(P)DI4 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI4") {
+  field(DESC, "Ch 4 Dig In")
+}
+
+record(calcout, "$(P)DI5_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO5 CP NMS")
+  field(OUT, "$(P)DI5 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI5") {
+  field(DESC, "Ch 5 Dig In")
+}
+
+record(calcout, "$(P)DI6_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO6 CP NMS")
+  field(OUT, "$(P)DI6 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI6") {
+  field(DESC, "Ch 6 Dig In")
+}
+
+record(calcout, "$(P)DI7_calc") {
+  field(PINI, "YES")
+  field(CALC, "(A >> 0) & 1")
+  field(INPA, "$(P)EIO7 CP NMS")
+  field(OUT, "$(P)DI7 PP")
+  field(PREC, "0")
+}
+record(bi, "$(P)DI7") {
+  field(DESC, "Ch 7 Dig In")
+}

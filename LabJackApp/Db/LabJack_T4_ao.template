@@ -1,0 +1,32 @@
+# ao record template for FLOAT outputs
+record(ao,"$(P)$(R)") {
+    field(DESC, "$(DESC)")
+    field(DTYP,"asynFloat64")
+    field(OUT,"@asyn($(PORT) $(OFFSET))$(DATA_TYPE)")
+	field(PREC, "$(PREC)")
+	# The LabJack T7 DAC is set to 0-5V.  Tick-DAC is set to +/-10V
+	field(HOPR, "$(HOPR)")
+	field(LOPR, "$(LOPR)")
+	field(DRVH, "$(DRVH)")
+	field(DRVL, "$(DRVL)")
+}
+
+record(ao,"$(P)$(R)TweakVal") {
+    field(PREC, "$(PREC)")
+}
+
+record(calcout,"$(P)$(R)TweakUp") {
+    field(CALC, "A+B")
+    field(INPA, "$(P)$(R).VAL  NPP MS")
+    field(INPB, "$(P)$(R)TweakVal.VAL  NPP MS")
+    field(OUT,  "$(P)$(R).VAL  PP MS")
+    field(PREC, "$(PREC)")
+}
+
+record(calcout,"$(P)$(R)TweakDown") {
+    field(CALC, "A-B")
+    field(INPA, "$(P)$(R).VAL  NPP MS")
+    field(INPB, "$(P)$(R)TweakVal.VAL  NPP MS")
+    field(OUT,  "$(P)$(R).VAL  PP MS")
+    field(PREC, "$(PREC)")
+}
