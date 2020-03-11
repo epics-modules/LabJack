@@ -1,11 +1,5 @@
-
-
-# The LabJack T4 has 4 banks of digital I/O, set as either intputs or 
-# outputs at boot time.
-# FIO = DIO0 - 7,   initially set to inputs,  EPICS channels BI0 - BI7 
-# EIO = DIO8 - 15,  initially set to outputs, EPICS channels BO0 - BO7
-# CIO = DIO16 - 19, initially set to inputs,  EPICS channels BI8 - BI11
-# MIO = DIO20 - 23, initially set to outputs, EPICS channels BO8 - BO10
+# See LabJack_T4_1.cmd for notes about T4 channel configuration
+# 
 # 
 # Note, you may change this configuration but "LabJack_T4.cmd" will need to be modified 
 #       accordingly, and possibly the displays.
