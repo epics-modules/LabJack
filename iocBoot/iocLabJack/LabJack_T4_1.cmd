@@ -147,11 +147,11 @@ drvModbusAsynConfigure("LJT4_$(N)_AO_1", "LJT4_$(N)", 0, 16, 1002,  2, 8, 1, "LJ
 ###
 #
 # 2 additional analog outputs, setup to access LJTick-DAC occupying FIO4/FIO5
-#drvModbusAsynConfigure("LJT4_$(N)_AO_2", "LJT4_$(N)", 0, 16, 30000,  2, 8, 1, "LJT4_module")
-#drvModbusAsynConfigure("LJT4_$(N)_AO_3", "LJT4_$(N)", 0, 16, 30002,  2, 8, 1, "LJT4_module")
+#drvModbusAsynConfigure("LJT4_$(N)_AO_2", "LJT4_$(N)", 0, 16, 30000,  2, 8, 0, "LJT4_module")
+#drvModbusAsynConfigure("LJT4_$(N)_AO_3", "LJT4_$(N)", 0, 16, 30002,  2, 8, 0, "LJT4_module")
 # 2 additional analog outputs, setup to access LJTick-DAC occupying FIO6/FIO7
-#drvModbusAsynConfigure("LJT4_$(N)_AO_4", "LJT4_$(N)", 0, 16, 30004,  2, 8, 1, "LJT4_module")
-#drvModbusAsynConfigure("LJT4_$(N)_AO_5", "LJT4_$(N)", 0, 16, 30006,  2, 8, 1, "LJT4_module")
+#drvModbusAsynConfigure("LJT4_$(N)_AO_4", "LJT4_$(N)", 0, 16, 30004,  2, 8, 0, "LJT4_module")
+#drvModbusAsynConfigure("LJT4_$(N)_AO_5", "LJT4_$(N)", 0, 16, 30006,  2, 8, 0, "LJT4_module")
 
 ###
 ### EPICS DATABASES, must correspond to AI, DI and DO channels set above.
