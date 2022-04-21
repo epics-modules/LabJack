@@ -107,8 +107,8 @@ drvModbusAsynConfigure("LJT7_$(N)_AO_3", "LJT7_$(N)", 0, 16, 30026,  2, 8, 0, "L
 #drvModbusAsynConfigure("LJT7_$(N)_AO_6", "LJT7_$(N)", 0, 16, 30036,  2, 8, 0, "LJT7_module")
 #drvModbusAsynConfigure("LJT7_$(N)_AO_7", "LJT7_$(N)", 0, 16, 30038,  2, 8, 0, "LJT7_module")
 
-# Prefixes in this file must match $(P) set above
-dbLoadTemplate("LabJack_T7_$(N).substitutions")
+
+dbLoadTemplate("LabJack_T7_$(N).substitutions", "P=$(P)")
 
 # Digital Inputs
 dbLoadRecords("$(LABJACK)/LabJackApp/Db/LabJack_T7_di.db", "P=$(P)LJT7:$(N):")

@@ -157,8 +157,7 @@ drvModbusAsynConfigure("LJT4_$(N)_AO_1", "LJT4_$(N)", 0, 16, 1002,  2, 8, 1, "LJ
 ### EPICS DATABASES, must correspond to AI, DI and DO channels set above.
 ###
 #
-# Prefixes in this file must match $(P) set above
-dbLoadTemplate("LabJack_T4_$(N).substitutions")
+dbLoadTemplate("LabJack_T4_$(N).substitutions", "P=$(P)")
 
 # Digital Inputs
 dbLoadRecords("$(LABJACK)/LabJackApp/Db/LabJack_T4_di.db", "P=$(P)LJT4:$(N):")
