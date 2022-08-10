@@ -1,3 +1,5 @@
+[![Labjack](https://github.com/epics-modules/LabJack/actions/workflows/ci-scripts-build.yml/badge.svg)](https://github.com/epics-modules/LabJack/actions/workflows/ci-scripts-build.yml)
+
 This repository contains EPICS support for the LabJack I/O modules, 
 
 Current support (in development) for LabJack modules:
