@@ -1,0 +1,7 @@
+BASE="R7.0.4.1"
+
+MODULES="autosave asyn modbus"
+
+AUTOSAVE="R5-10-2"
+ASYN="R4-42"
+MODBUS="R3-2"

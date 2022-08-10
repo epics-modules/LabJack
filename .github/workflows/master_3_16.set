@@ -1,0 +1,7 @@
+BASE="3.16"
+
+MODULES="autosave asyn modbus"
+
+AUTOSAVE="master"
+ASYN="master"
+MODBUS="master"
