@@ -1,9 +1,3 @@
-#
-# LabJack_T7_1.substitutions
-#
-# Prefix must match LabJack_T7_1.cmd
-# Unit number "LJT7_N", N must match LabJack_T7_1.cmd
-#
 
 
 # The LabJack T7 has 4 banks of digital I/O, set as either intputs or 
@@ -17,45 +11,32 @@
 #       accordingly, and possibly the displays.
 # 
 # Digital inputs done with word access.  FIO is the first 8 digital inputs, CIO is the next 4 inputs.
-file "$(TOP)/LabJackApp/Db/LabJack_T7_longinInt32.template" { pattern
+file "$(LABJACK)/db/LabJack_T7_longinInt32.template" { pattern
 {R,                PORT,     OFFSET,   DATA_TYPE,      SCAN}
 {LJT7:2:FIO, LJT7_2_FIO_In_Word, 0, UINT16, "I/O Intr"}
 {LJT7:2:CIO, LJT7_2_CIO_In_Word, 0, UINT16, "I/O Intr"}
 }
 
 # Digital outputs.  EIO is the second 8 digital channels, used as Outputs.
-file "$(TOP)/LabJackApp/Db/LabJack_T7_bo_bit.template" { pattern
-{R,             PORT,       OFFSET,   ZNAM,   ONAM, DESC}
-{LJT7:2:DO0, LJT7_2_EIO0_Out_Word, 0, Low, High, "Ch 0 Dig Out"}
-{LJT7:2:DO1, LJT7_2_EIO1_Out_Word, 0, Low, High, "Ch 1 Dig Out"}
-{LJT7:2:DO2, LJT7_2_EIO2_Out_Word, 0, Low, High, "Ch 2 Dig Out"}
-{LJT7:2:DO3, LJT7_2_EIO3_Out_Word, 0, Low, High, "Ch 3 Dig Out"}
-{LJT7:2:DO4, LJT7_2_EIO4_Out_Word, 0, Low, High, "Ch 4 Dig Out"}
-{LJT7:2:DO5, LJT7_2_EIO5_Out_Word, 0, Low, High, "Ch 5 Dig Out"}
-{LJT7:2:DO6, LJT7_2_EIO6_Out_Word, 0, Low, High, "Ch 6 Dig Out"}
-{LJT7:2:DO7, LJT7_2_EIO7_Out_Word, 0, Low, High, "Ch 7 Dig Out"}
+file "$(LABJACK)/db/LabJack_T7_bo_bit.template" { pattern
+{R,                PORT,       OFFSET,  ZNAM, ONAM,      DESC}
+{LJT7:2:DO0, LJT7_2_EIO_Out_Word,   0,  Low,  High, "Ch 0 Dig Out"}
+{LJT7:2:DO1, LJT7_2_EIO_Out_Word,   1,  Low,  High, "Ch 1 Dig Out"}
+{LJT7:2:DO2, LJT7_2_EIO_Out_Word,   2,  Low,  High, "Ch 2 Dig Out"}
+{LJT7:2:DO3, LJT7_2_EIO_Out_Word,   3,  Low,  High, "Ch 3 Dig Out"}
+{LJT7:2:DO4, LJT7_2_EIO_Out_Word,   4,  Low,  High, "Ch 4 Dig Out"}
+{LJT7:2:DO5, LJT7_2_EIO_Out_Word,   5,  Low,  High, "Ch 5 Dig Out"}
+{LJT7:2:DO6, LJT7_2_EIO_Out_Word,   6,  Low,  High, "Ch 6 Dig Out"}
+{LJT7:2:DO7, LJT7_2_EIO_Out_Word,   7,  Low,  High, "Ch 7 Dig Out"}
 # MIO channels
-{LJT7:2:DO8,  LJT7_2_MIO0_Out_Word, 0, Low, High, "Ch 8 Dig Out"}
-{LJT7:2:DO9,  LJT7_2_MIO1_Out_Word, 0, Low, High, "Ch 9 Dig Out"}
-{LJT7:2:DO10, LJT7_2_MIO2_Out_Word, 0, Low, High, "Ch 10 Dig Out"}
-}
-
-# Set S.E. / Diff for each even number channel individually
-# Single-Ended (199, default) or Differential (1)
-file "$(LABJACK)/LabJackApp/Db/LabJack_T7_longout.template" { pattern
-{R,                PORT,     OFFSET}
-{LJT7:2:AI0diff, LJT7_2_AI0diff_Out_Word, 0}
-{LJT7:2:AI2diff, LJT7_2_AI2diff_Out_Word, 0}
-{LJT7:2:AI4diff, LJT7_2_AI4diff_Out_Word, 0}
-{LJT7:2:AI6diff, LJT7_2_AI6diff_Out_Word, 0}
-{LJT7:2:AI8diff, LJT7_2_AI8diff_Out_Word, 0}
-{LJT7:2:AI10diff, LJT7_2_AI10diff_Out_Word, 0}
-{LJT7:2:AI12diff, LJT7_2_AI12diff_Out_Word, 0}
+{LJT7:2:DO8,  LJT7_2_MIO_Out_Word,  0,  Low,  High, "Ch 8 Dig Out"}
+{LJT7:2:DO9,  LJT7_2_MIO_Out_Word,  1,  Low,  High, "Ch 9 Dig Out"}
+{LJT7:2:DO10, LJT7_2_MIO_Out_Word,  2,  Low,  High, "Ch 10 Dig Out"}
 }
 
 # Analog Inputs done with word access.
-file "$(TOP)/LabJackApp/Db/LabJack_T7_ai.template" { pattern
-{R,      PORT,     OFFSET,   DATA_TYPE,   SCAN,  PREC, DESC}
+file "$(LABJACK)/db/LabJack_T7_ai.template" { pattern
+{R,             PORT,     OFFSET,   DATA_TYPE,   SCAN,  PREC, DESC}
 {LJT7:2:AI0,  LJT7_2_AI_In, 0,  FLOAT32_BE, ".1 second", 4, "Ch 0 Ana In"}
 {LJT7:2:AI1,  LJT7_2_AI_In, 2,  FLOAT32_BE, ".1 second", 4, "Ch 1 Ana In"}
 {LJT7:2:AI2,  LJT7_2_AI_In, 4,  FLOAT32_BE, ".1 second", 4, "Ch 2 Ana In"}
@@ -72,9 +53,73 @@ file "$(TOP)/LabJackApp/Db/LabJack_T7_ai.template" { pattern
 {LJT7:2:AI13, LJT7_2_AI_In, 26, FLOAT32_BE, ".1 second", 4, "Ch 13 Ana In"}
 }
 
-# Analog outputs done with word access.
-file "$(TOP)/LabJackApp/Db/LabJack_T7_ao.template" { pattern
-{R,      PORT,     OFFSET,   DATA_TYPE,  PREC, DESC}
-{LJT7:2:AO0,  LJT7_2_AO_0, 0,  FLOAT32_BE,    4, "Ch 0 Ana Out"}
-{LJT7:2:AO1,  LJT7_2_AO_1, 0,  FLOAT32_BE,    4, "Ch 1 Ana Out"}
+file "$(LABJACK)/db/LabJack_T7_aiRange.template" { pattern
+{R,                    PORT,         OFFSET}
+{LJT7:2:AIRange0,   LJT7_2_AIRange,       0}
+{LJT7:2:AIRange1,   LJT7_2_AIRange,       2}
+{LJT7:2:AIRange2,   LJT7_2_AIRange,       4}
+{LJT7:2:AIRange3,   LJT7_2_AIRange,       6}
+{LJT7:2:AIRange4,   LJT7_2_AIRange,       8}
+{LJT7:2:AIRange5,   LJT7_2_AIRange,      10}
+{LJT7:2:AIRange6,   LJT7_2_AIRange,      12}
+{LJT7:2:AIRange7,   LJT7_2_AIRange,      14}
+{LJT7:2:AIRange8,   LJT7_2_AIRange,      16}
+{LJT7:2:AIRange9,   LJT7_2_AIRange,      18}
+{LJT7:2:AIRange10,  LJT7_2_AIRange,      20}
+{LJT7:2:AIRange11,  LJT7_2_AIRange,      22}
+{LJT7:2:AIRange12,  LJT7_2_AIRange,      24}
+{LJT7:2:AIRange13,  LJT7_2_AIRange,      26}
 }
+
+file "$(LABJACK)/db/LabJack_T7_aiResolution.template" { pattern
+{R,                              PORT,         OFFSET}
+{LJT7:2:AIResolution0,   LJT7_2_AIResolution,       0}
+{LJT7:2:AIResolution1,   LJT7_2_AIResolution,       2}
+{LJT7:2:AIResolution2,   LJT7_2_AIResolution,       4}
+{LJT7:2:AIResolution3,   LJT7_2_AIResolution,       6}
+{LJT7:2:AIResolution4,   LJT7_2_AIResolution,       8}
+{LJT7:2:AIResolution5,   LJT7_2_AIResolution,      10}
+{LJT7:2:AIResolution6,   LJT7_2_AIResolution,      12}
+{LJT7:2:AIResolution7,   LJT7_2_AIResolution,      14}
+{LJT7:2:AIResolution8,   LJT7_2_AIResolution,      16}
+{LJT7:2:AIResolution9,   LJT7_2_AIResolution,      18}
+{LJT7:2:AIResolution10,  LJT7_2_AIResolution,      20}
+{LJT7:2:AIResolution11,  LJT7_2_AIResolution,      22}
+{LJT7:2:AIResolution12,  LJT7_2_AIResolution,      24}
+{LJT7:2:AIResolution13,  LJT7_2_AIResolution,      26}
+}
+
+# Set S.E. / Diff for each even number channel individually
+# Single-Ended (199, default) or Differential (1)
+file "$(LABJACK)/db/LabJack_T7_seDiff.template" { pattern
+{R,                           PORT,             ONVL, OFFSET}
+{LJT7:2:seDiff_Ch0,   LJT7_2_AIdiff_Out_Word,    1,       0}
+{LJT7:2:seDiff_Ch2,   LJT7_2_AIdiff_Out_Word,    3,       2}
+{LJT7:2:seDiff_Ch4,   LJT7_2_AIdiff_Out_Word,    5,       4}
+{LJT7:2:seDiff_Ch6,   LJT7_2_AIdiff_Out_Word,    7,       6}
+{LJT7:2:seDiff_Ch8,   LJT7_2_AIdiff_Out_Word,    9,       8}
+{LJT7:2:seDiff_Ch10,  LJT7_2_AIdiff_Out_Word,   11,      10}
+{LJT7:2:seDiff_Ch12,  LJT7_2_AIdiff_Out_Word,   13,      12}
+}
+
+# Analog outputs done with word access.
+file "$(LABJACK)/db/LabJack_T7_ao.template" { pattern
+{R,      PORT,     OFFSET,   DATA_TYPE,  PREC, LOPR, HOPR, DRVL, DRVH, DESC}
+{LJT7:2:AO0,  LJT7_2_AO_0, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 0 Ana Out"}
+{LJT7:2:AO1,  LJT7_2_AO_1, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 1 Ana Out"}
+
+# These are for the LJTick-DAC modules
+{LJT7:2:AO2,  LJT7_2_AO_2, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 2 Ana Out"}
+{LJT7:2:AO3,  LJT7_2_AO_3, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 3 Ana Out"}
+#{LJT7:2:AO4,  LJT7_2_AO_4, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 4 Ana Out"}
+#{LJT7:2:AO5,  LJT7_2_AO_5, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 5 Ana Out"}
+#{LJT7:2:AO6,  LJT7_2_AO_6, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 6 Ana Out"}
+#{LJT7:2:AO7,  LJT7_2_AO_7, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 7 Ana Out"}
+}
+
+# Digital Inputs
+file "$(LABJACK)/db/LabJack_T7_di.template" { pattern
+{R}
+{LJT7:2:}
+}
+
