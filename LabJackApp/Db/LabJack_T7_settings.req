@@ -37,7 +37,6 @@ $(P)LJT7:$(N):DO10.DESC
 $(P)LJT7:$(N):DO10
 
 # Analog Inputs
-$(P)LJT7:$(N):seDiff
 $(P)LJT7:$(N):AI0.DESC
 $(P)LJT7:$(N):AI0.SCAN
 $(P)LJT7:$(N):AI1.DESC
@@ -67,7 +66,7 @@ $(P)LJT7:$(N):AI12.SCAN
 $(P)LJT7:$(N):AI13.DESC
 $(P)LJT7:$(N):AI13.SCAN
 
-# AI Diff / S.E. selection
+# AI Configuration
 $(P)LJT7:$(N):seDiff_Ch0
 $(P)LJT7:$(N):seDiff_Ch2
 $(P)LJT7:$(N):seDiff_Ch4
@@ -75,6 +74,34 @@ $(P)LJT7:$(N):seDiff_Ch6
 $(P)LJT7:$(N):seDiff_Ch8
 $(P)LJT7:$(N):seDiff_Ch10
 $(P)LJT7:$(N):seDiff_Ch12
+$(P)LJT7:$(N):AIRange0
+$(P)LJT7:$(N):AIRange1
+$(P)LJT7:$(N):AIRange2
+$(P)LJT7:$(N):AIRange3
+$(P)LJT7:$(N):AIRange4
+$(P)LJT7:$(N):AIRange5
+$(P)LJT7:$(N):AIRange6
+$(P)LJT7:$(N):AIRange7
+$(P)LJT7:$(N):AIRange8
+$(P)LJT7:$(N):AIRange9
+$(P)LJT7:$(N):AIRange10
+$(P)LJT7:$(N):AIRange11
+$(P)LJT7:$(N):AIRange12
+$(P)LJT7:$(N):AIRange13
+$(P)LJT7:$(N):AIResolution0
+$(P)LJT7:$(N):AIResolution1
+$(P)LJT7:$(N):AIResolution2
+$(P)LJT7:$(N):AIResolution3
+$(P)LJT7:$(N):AIResolution4
+$(P)LJT7:$(N):AIResolution5
+$(P)LJT7:$(N):AIResolution6
+$(P)LJT7:$(N):AIResolution7
+$(P)LJT7:$(N):AIResolution8
+$(P)LJT7:$(N):AIResolution9
+$(P)LJT7:$(N):AIResolution10
+$(P)LJT7:$(N):AIResolution11
+$(P)LJT7:$(N):AIResolution12
+$(P)LJT7:$(N):AIResolution13
 
 # Analog Outputs
 $(P)LJT7:$(N):AO0.DESC
