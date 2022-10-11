@@ -1,15 +1,15 @@
 
 
-# The LabJack T7 has 4 banks of digital I/O, set as either intputs or 
+# The LabJack T7 has 4 banks of digital I/O, set as either intputs or
 # outputs at boot time.
-# FIO = DIO0 - 7,   initially set to inputs,  EPICS channels BI0 - BI7 
+# FIO = DIO0 - 7,   initially set to inputs,  EPICS channels BI0 - BI7
 # EIO = DIO8 - 15,  initially set to outputs, EPICS channels BO0 - BO7
 # CIO = DIO16 - 19, initially set to inputs,  EPICS channels BI8 - BI11
 # MIO = DIO20 - 23, initially set to outputs, EPICS channels BO8 - BO10
-# 
-# Note, you may change this configuration but "LabJack_T7.cmd" will need to be modified 
+#
+# Note, you may change this configuration but "LabJack_T7.cmd" will need to be modified
 #       accordingly, and possibly the displays.
-# 
+#
 # Digital inputs done with word access.  FIO is the first 8 digital inputs, CIO is the next 4 inputs.
 file "$(LABJACK)/db/LabJack_T7_longinInt32.template" { pattern
 {R,                PORT,     OFFSET,   DATA_TYPE,      SCAN}
@@ -36,21 +36,21 @@ file "$(LABJACK)/db/LabJack_T7_bo_bit.template" { pattern
 
 # Analog Inputs done with word access.
 file "$(LABJACK)/db/LabJack_T7_ai.template" { pattern
-{R,             PORT,     OFFSET,   DATA_TYPE,   SCAN,  PREC, DESC}
-{LJT7:3:AI0,  LJT7_4_AI_In, 0,  FLOAT32_BE, ".1 second", 4, "Ch 0 Ana In"}
-{LJT7:3:AI1,  LJT7_4_AI_In, 2,  FLOAT32_BE, ".1 second", 4, "Ch 1 Ana In"}
-{LJT7:3:AI2,  LJT7_4_AI_In, 4,  FLOAT32_BE, ".1 second", 4, "Ch 2 Ana In"}
-{LJT7:3:AI3,  LJT7_4_AI_In, 6,  FLOAT32_BE, ".1 second", 4, "Ch 3 Ana In"}
-{LJT7:3:AI4,  LJT7_4_AI_In, 8,  FLOAT32_BE, ".1 second", 4, "Ch 4 Ana In"}
-{LJT7:3:AI5,  LJT7_4_AI_In, 10, FLOAT32_BE, ".1 second", 4, "Ch 5 Ana In"}
-{LJT7:3:AI6,  LJT7_4_AI_In, 12, FLOAT32_BE, ".1 second", 4, "Ch 6 Ana In"}
-{LJT7:3:AI7,  LJT7_4_AI_In, 14, FLOAT32_BE, ".1 second", 4, "Ch 7 Ana In"}
-{LJT7:3:AI8,  LJT7_4_AI_In, 16, FLOAT32_BE, ".1 second", 4, "Ch 8 Ana In"}
-{LJT7:3:AI9,  LJT7_4_AI_In, 18, FLOAT32_BE, ".1 second", 4, "Ch 9 Ana In"}
-{LJT7:3:AI10, LJT7_4_AI_In, 20, FLOAT32_BE, ".1 second", 4, "Ch 10 Ana In"}
-{LJT7:3:AI11, LJT7_4_AI_In, 22, FLOAT32_BE, ".1 second", 4, "Ch 11 Ana In"}
-{LJT7:3:AI12, LJT7_4_AI_In, 24, FLOAT32_BE, ".1 second", 4, "Ch 12 Ana In"}
-{LJT7:3:AI13, LJT7_4_AI_In, 26, FLOAT32_BE, ".1 second", 4, "Ch 13 Ana In"}
+{R,              PORT,     OFFSET,   SCAN,  PREC,     DESC}
+{LJT7:3:AI0,  LJT7_4_AI_In,  0,  ".1 second", 4, "Ch 0 Ana In"}
+{LJT7:3:AI1,  LJT7_4_AI_In,  2,  ".1 second", 4, "Ch 1 Ana In"}
+{LJT7:3:AI2,  LJT7_4_AI_In,  4,  ".1 second", 4, "Ch 2 Ana In"}
+{LJT7:3:AI3,  LJT7_4_AI_In,  6,  ".1 second", 4, "Ch 3 Ana In"}
+{LJT7:3:AI4,  LJT7_4_AI_In,  8,  ".1 second", 4, "Ch 4 Ana In"}
+{LJT7:3:AI5,  LJT7_4_AI_In,  0,  ".1 second", 4, "Ch 5 Ana In"}
+{LJT7:3:AI6,  LJT7_4_AI_In,  2,  ".1 second", 4, "Ch 6 Ana In"}
+{LJT7:3:AI7,  LJT7_4_AI_In, 14,  ".1 second", 4, "Ch 7 Ana In"}
+{LJT7:3:AI8,  LJT7_4_AI_In, 16,  ".1 second", 4, "Ch 8 Ana In"}
+{LJT7:3:AI9,  LJT7_4_AI_In, 18,  ".1 second", 4, "Ch 9 Ana In"}
+{LJT7:3:AI10, LJT7_4_AI_In, 20,  ".1 second", 4, "Ch 10 Ana In"}
+{LJT7:3:AI11, LJT7_4_AI_In, 22,  ".1 second", 4, "Ch 11 Ana In"}
+{LJT7:3:AI12, LJT7_4_AI_In, 24,  ".1 second", 4, "Ch 12 Ana In"}
+{LJT7:3:AI13, LJT7_4_AI_In, 26,  ".1 second", 4, "Ch 13 Ana In"}
 }
 
 file "$(LABJACK)/db/LabJack_T7_aiRange.template" { pattern
@@ -104,17 +104,21 @@ file "$(LABJACK)/db/LabJack_T7_seDiff.template" { pattern
 
 # Analog outputs done with word access.
 file "$(LABJACK)/db/LabJack_T7_ao.template" { pattern
-{R,      PORT,     OFFSET,   DATA_TYPE,  PREC, LOPR, HOPR, DRVL, DRVH, DESC}
-{LJT7:3:AO0,  LJT7_4_AO_0, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 0 Ana Out"}
-{LJT7:3:AO1,  LJT7_4_AO_1, 0,  FLOAT32_BE,   4, 0, 5, 0, 5, "Ch 1 Ana Out"}
+{R,              PORT,  OFFSET, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
+{LJT7:3:AO0,  LJT7_4_AO,   0,    4,    0,     5,   0,     5, "Ch 0 Ana Out"}
+{LJT7:3:AO1,  LJT7_4_AO,   2,    4,    0,     5,   0,     5, "Ch 1 Ana Out"}
 
 # These are for the LJTick-DAC modules
-{LJT7:3:AO2,  LJT7_4_AO_2, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 2 Ana Out"}
-{LJT7:3:AO3,  LJT7_4_AO_3, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 3 Ana Out"}
-#{LJT7:3:AO4,  LJT7_4_AO_4, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 4 Ana Out"}
-#{LJT7:3:AO5,  LJT7_4_AO_5, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 5 Ana Out"}
-#{LJT7:3:AO6,  LJT7_4_AO_6, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 6 Ana Out"}
-#{LJT7:3:AO7,  LJT7_4_AO_7, 0,  FLOAT32_BE,   4, -10, 10, -10, 10, "Ch 7 Ana Out"}
+{LJT7:3:AO2,  LJT7_4_AO_TICK,   0,    4,  -10,    10,  -10,   10, "Ch 2 Ana Out"}
+{LJT7:3:AO3,  LJT7_4_AO_TICK,   2,    4,  -10,    10,  -10,   10, "Ch 3 Ana Out"}
+#{LJT7:3:AO4,  LJT7_4_AO_TICK,  24,    4,  -10,    10,  -10,   10, "Ch 4 Ana Out"}
+#{LJT7:3:AO5,  LJT7_4_AO_TICK,  26,    4,  -10,    10,  -10,   10, "Ch 5 Ana Out"}
+#{LJT7:3:AO6,  LJT7_4_AO_TICK,  28,    4,  -10,    10,  -10,   10, "Ch 6 Ana Out"}
+#{LJT7:3:AO7,  LJT7_4_AO_TICK,  30,    4,  -10,    10,  -10,   10, "Ch 7 Ana Out"}
+#{LJT7:3:AO8,  LJT7_4_AO_TICK,  32,    4,  -10,    10,  -10,   10, "Ch 8 Ana Out"}
+#{LJT7:3:AO9,  LJT7_4_AO_TICK,  34,    4,  -10,    10,  -10,   10, "Ch 9 Ana Out"}
+#{LJT7:3:AO8,  LJT7_4_AO_TICK,  36,    4,  -10,    10,  -10,   10, "Ch 10 Ana Out"}
+#{LJT7:3:AO9,  LJT7_4_AO_TICK,  38,    4,  -10,    10,  -10,   10, "Ch 11 Ana Out"}
 }
 
 # Digital Inputs
