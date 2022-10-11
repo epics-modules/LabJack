@@ -1,7 +1,7 @@
 
 file {
-	name="/home/oxygen18/GOETZE/epics/synApps_5_8/support/LabJack/LabJackApp/op/adl/LabJack_T7.adl"
-	version=030111
+	name="/home/epics/devel/labjack/LabJackApp/op/adl/LabJack_T7.adl"
+	version=030117
 }
 display {
 	object {
@@ -375,7 +375,7 @@ rectangle {
 	}
 	display[0] {
 		label="AI setup"
-		name="LabJack_T7_AiSetup.adl"
+		name="LabJack_T7_AiConfig.adl"
 		args="P=$(P),N=$(N)"
 	}
 	clr=14
