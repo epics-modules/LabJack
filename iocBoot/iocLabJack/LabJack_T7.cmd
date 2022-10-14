@@ -51,7 +51,7 @@ drvModbusAsynConfigure("LJT7_$(N)_AIResolution", "LJT7_$(N)",   0,     6,    415
 # Set 2 primary analog outputs.
 drvModbusAsynConfigure("LJT7_$(N)_AO",           "LJT7_$(N)",   0,    16,     1000,    4,    FLOAT32_BE,    1, "LJT7_module")
 
-# Addition analog outputs using LJTick-DAC occupying FIO, EIO, CIO
+# Additional analog outputs using LJTick-DAC occupying FIO, EIO, CIO
 drvModbusAsynConfigure("LJT7_$(N)_AO_TICK",      "LJT7_$(N)",   0,    16,    30000,   40,     FLOAT32_BE,   0, "LJT7_module")
 
 dbLoadTemplate("LabJack_T7_$(N).substitutions", "P=$(P)")
