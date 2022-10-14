@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LabJack</name>
+  <x>218</x>
+  <y>157</y>
+  <width>396</width>
+  <height>273</height>
+  <background_color>
+    <color red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="label" version="2.0.0">
+    <name>text #6</name>
+    <text>LabJack</text>
+    <x>106</x>
+    <y>36</y>
+    <width>175</width>
+    <height>36</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="30.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="160" green="18" blue="7">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #9</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T4.opi</file>
+        <macros>
+          <N>1</N>
+          <P>xyz:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T4 unit 1</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T4.opi</file>
+        <macros>
+          <N>2</N>
+          <P>xyz:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T4 unit 2</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T4.opi</file>
+        <macros>
+          <N>3</N>
+          <P>xyz:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T4 unit 3</description>
+      </action>
+    </actions>
+    <text>    T4</text>
+    <x>143</x>
+    <y>113</y>
+    <width>93</width>
+    <height>36</height>
+    <foreground_color>
+      <color red="235" green="241" blue="181">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="160" green="18" blue="7">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #14</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <N>1</N>
+          <P>xyz:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T7 unit 1</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <N>2</N>
+          <P>xyz:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T7 unit 2</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <N>3</N>
+          <P>xyz:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T7 unit 3</description>
+      </action>
+    </actions>
+    <text>    T7</text>
+    <x>143</x>
+    <y>167</y>
+    <width>93</width>
+    <height>36</height>
+    <foreground_color>
+      <color red="235" green="241" blue="181">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="160" green="18" blue="7">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #19</name>
+    <text>xyz:</text>
+    <x>152</x>
+    <y>76</y>
+    <width>77</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+</display>
