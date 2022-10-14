@@ -1,6 +1,6 @@
 
 
-# The LabJack T7 has 4 banks of digital I/O, set as either intputs or
+# The LabJack T7 has 4 banks of digital I/O, set as either inputs or
 # outputs at boot time.
 # FIO = DIO0 - 7,   initially set to inputs,  EPICS channels BI0 - BI7
 # EIO = DIO8 - 15,  initially set to outputs, EPICS channels BO0 - BO7
@@ -8,7 +8,7 @@
 # MIO = DIO20 - 23, initially set to outputs, EPICS channels BO8 - BO10
 #
 # Note, you may change this configuration but "LabJack_T7.cmd" will need to be modified
-#       accordingly, and possibly the displays.
+# accordingly, and possibly the displays.
 #
 # Digital inputs as bits
 file "$(LABJACK)/db/LabJack_bi.template" { pattern
@@ -41,20 +41,20 @@ file "$(LABJACK)/db/LabJack_longin.template" { pattern
 
 # Digital outputs.  
 file "$(LABJACK)/db/LabJack_bo.template" { pattern
-{R,                PORT,       OFFSET,  ZNAM, ONAM,      DESC}
+{R,                PORT,    OFFSET,  ZNAM, ONAM,      DESC}
 # EIO channels
-{LJT7:1:DO0, LJT7_1_DIO_Out,   8,  Low,  High, "Ch 0 Dig Out"}
-{LJT7:1:DO1, LJT7_1_DIO_Out,   9,  Low,  High, "Ch 1 Dig Out"}
-{LJT7:1:DO2, LJT7_1_DIO_Out,  10,  Low,  High, "Ch 2 Dig Out"}
-{LJT7:1:DO3, LJT7_1_DIO_Out,  11,  Low,  High, "Ch 3 Dig Out"}
-{LJT7:1:DO4, LJT7_1_DIO_Out,  12,  Low,  High, "Ch 4 Dig Out"}
-{LJT7:1:DO5, LJT7_1_DIO_Out,  13,  Low,  High, "Ch 5 Dig Out"}
-{LJT7:1:DO6, LJT7_1_DIO_Out,  14,  Low,  High, "Ch 6 Dig Out"}
-{LJT7:1:DO7, LJT7_1_DIO_Out,  15,  Low,  High, "Ch 7 Dig Out"}
+{LJT7:1:DO0, LJT7_1_DIO_Out,   8,    Low,  High, "Ch 0 Dig Out"}
+{LJT7:1:DO1, LJT7_1_DIO_Out,   9,    Low,  High, "Ch 1 Dig Out"}
+{LJT7:1:DO2, LJT7_1_DIO_Out,  10,    Low,  High, "Ch 2 Dig Out"}
+{LJT7:1:DO3, LJT7_1_DIO_Out,  11,    Low,  High, "Ch 3 Dig Out"}
+{LJT7:1:DO4, LJT7_1_DIO_Out,  12,    Low,  High, "Ch 4 Dig Out"}
+{LJT7:1:DO5, LJT7_1_DIO_Out,  13,    Low,  High, "Ch 5 Dig Out"}
+{LJT7:1:DO6, LJT7_1_DIO_Out,  14,    Low,  High, "Ch 6 Dig Out"}
+{LJT7:1:DO7, LJT7_1_DIO_Out,  15,    Low,  High, "Ch 7 Dig Out"}
 # MIO channels
-{LJT7:1:DO8,  LJT7_1_DIO_Out, 20,  Low,  High, "Ch 8 Dig Out"}
-{LJT7:1:DO9,  LJT7_1_DIO_Out, 21,  Low,  High, "Ch 9 Dig Out"}
-{LJT7:1:DO10, LJT7_1_DIO_Out, 22,  Low,  High, "Ch 10 Dig Out"}
+{LJT7:1:DO8,  LJT7_1_DIO_Out, 20,    Low,  High, "Ch 8 Dig Out"}
+{LJT7:1:DO9,  LJT7_1_DIO_Out, 21,    Low,  High, "Ch 9 Dig Out"}
+{LJT7:1:DO10, LJT7_1_DIO_Out, 22,    Low,  High, "Ch 10 Dig Out"}
 }
 
 # Analog Inputs done with word access.
@@ -127,10 +127,9 @@ file "$(LABJACK)/db/LabJack_aiDiff.template" { pattern
 
 # Analog outputs done with word access.
 file "$(LABJACK)/db/LabJack_ao.template" { pattern
-{R,              PORT,  OFFSET, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
-{LJT7:1:AO0,  LJT7_1_AO,   0,    4,    0,     5,   0,     5, "Ch 0 Ana Out"}
-{LJT7:1:AO1,  LJT7_1_AO,   2,    4,    0,     5,   0,     5, "Ch 1 Ana Out"}
-
+{R,              PORT,        OFFSET, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
+{LJT7:1:AO0,  LJT7_1_AO,        0,    4,    0,     5,   0,     5, "Ch 0 Ana Out"}
+{LJT7:1:AO1,  LJT7_1_AO,        2,    4,    0,     5,   0,     5, "Ch 1 Ana Out"}
 # These are for the LJTick-DAC modules
 {LJT7:1:AO2,  LJT7_1_AO_TICK,   0,    4,  -10,    10,  -10,   10, "Ch 2 Ana Out"}
 {LJT7:1:AO3,  LJT7_1_AO_TICK,   2,    4,  -10,    10,  -10,   10, "Ch 3 Ana Out"}
