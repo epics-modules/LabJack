@@ -70,6 +70,15 @@ $(P)LJT4:$(N):AI7.SCAN
 #$(P)LJT4:$(N):AI13.DESC
 #$(P)LJT4:$(N):AI13.SCAN
 
+$(P)LJT4:$(N):AIResolution0
+$(P)LJT4:$(N):AIResolution1
+$(P)LJT4:$(N):AIResolution2
+$(P)LJT4:$(N):AIResolution3
+$(P)LJT4:$(N):AIResolution4
+$(P)LJT4:$(N):AIResolution5
+$(P)LJT4:$(N):AIResolution6
+$(P)LJT4:$(N):AIResolution7
+
 # Analog Outputs
 $(P)LJT4:$(N):AO0.DESC
 $(P)LJT4:$(N):AO0
