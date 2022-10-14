@@ -2,5 +2,5 @@
 record(longin, "$(P)$(R)") {
     field(DTYP, "asynInt32")
     field(INP,  "@asyn($(PORT) $(OFFSET))")
-    field(SCAN, "$(SCAN)")
+    field(SCAN, "I/O Intr")
 }
