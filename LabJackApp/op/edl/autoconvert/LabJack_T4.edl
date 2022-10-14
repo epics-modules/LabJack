@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1014
-y 219
+x 651
+y 85
 w 850
-h 750
+h 635
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -38,306 +38,6 @@ lineColor rgb 44544 44544 44544
 fill
 fillColor rgb 44544 44544 44544
 lineWidth 0
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 98
-y 503
-w 156
-h 25
-font "helvetica-medium-r-18.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Analog output"
-}
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 5
-y 492
-w 379
-h 244
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 5
-y 589
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "1"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 32
-y 589
-w 65
-h 20
-controlPv "$(P)LJT4:$(N):AO1"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 104
-y 589
-w 80
-h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT4:$(N):AO1"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 207
-y 589
-w 45
-h 20
-controlPv "$(P)LJT4:$(N):AO1TweakVal"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 5
-y 550
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "0"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 32
-y 550
-w 65
-h 20
-controlPv "$(P)LJT4:$(N):AO0"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 104
-y 550
-w 80
-h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT4:$(N):AO0"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 207
-y 550
-w 45
-h 20
-controlPv "$(P)LJT4:$(N):AO0TweakVal"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 391
-y 87
-w 444
-h 649
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 171
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI0"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 406
-y 213
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "1"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 538
-y 99
-w 144
-h 25
-font "helvetica-medium-r-18.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "Analog Input"
-}
 endObjectProperties
 
 # (Static Text)
@@ -1312,553 +1012,9 @@ release 0
 x 5
 y 87
 w 379
-h 399
+h 539
 lineColor rgb 0 0 0
 fillColor rgb 0 0 0
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 412
-y 172
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "0"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 171
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI0.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 212
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI1.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 250
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI2"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 405
-y 292
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "3"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 411
-y 251
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "2"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 250
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI2.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 291
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI3"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 291
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI3.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 332
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI4"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 407
-y 373
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "5"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 411
-y 333
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "4"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 332
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI4.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 372
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI5"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 372
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI5.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 411
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI6"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 406
-y 453
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "7"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 412
-y 412
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "6"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 411
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI6.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 452
-w 90
-h 20
-controlPv "$(P)LJT4:$(N):AI7"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 452
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AI7.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 276
-y 549
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AO0.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 276
-y 589
-w 100
-h 20
-controlPv "$(P)LJT4:$(N):AO1.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 # (Lines)
@@ -2025,14 +1181,301 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 423
+y 382
+w 380
+h 245
+
+beginGroup
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 5
-y 703
+x 516
+y 393
+w 156
+h 25
+font "helvetica-medium-r-18.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Analog output"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 423
+y 382
+w 379
+h 244
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 423
+y 479
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "1"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 479
+w 65
+h 20
+controlPv "$(P)LJT4:$(N):AO1"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 522
+y 479
+w 80
+h 20
+fgColor rgb 19968 42240 63744
+bgColor rgb 29440 57088 65280
+2ndBgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)LJT4:$(N):AO1"
+controlLabelType "pvName"
+font "helvetica-bold-r-12.0"
+limitsFromDb
+increment 1
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 625
+y 479
+w 45
+h 20
+controlPv "$(P)LJT4:$(N):AO1TweakVal"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 423
+y 440
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "0"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 440
+w 65
+h 20
+controlPv "$(P)LJT4:$(N):AO0"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 522
+y 440
+w 80
+h 20
+fgColor rgb 19968 42240 63744
+bgColor rgb 29440 57088 65280
+2ndBgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)LJT4:$(N):AO0"
+controlLabelType "pvName"
+font "helvetica-bold-r-12.0"
+limitsFromDb
+increment 1
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 625
+y 440
+w 45
+h 20
+controlPv "$(P)LJT4:$(N):AO0TweakVal"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 694
+y 439
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AO0.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 694
+y 479
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AO1.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 423
+y 593
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -2051,8 +1494,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 32
-y 703
+x 450
+y 593
 w 65
 h 20
 controlPv "$(P)LJT4:$(N):AO3"
@@ -2077,8 +1520,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 104
-y 703
+x 522
+y 593
 w 80
 h 20
 fgColor rgb 19968 42240 63744
@@ -2099,8 +1542,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 207
-y 703
+x 625
+y 593
 w 45
 h 20
 controlPv "$(P)LJT4:$(N):AO3TweakVal"
@@ -2125,8 +1568,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 5
-y 664
+x 423
+y 554
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -2145,8 +1588,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 32
-y 664
+x 450
+y 554
 w 65
 h 20
 controlPv "$(P)LJT4:$(N):AO2"
@@ -2171,8 +1614,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 104
-y 664
+x 522
+y 554
 w 80
 h 20
 fgColor rgb 19968 42240 63744
@@ -2193,8 +1636,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 207
-y 664
+x 625
+y 554
 w 45
 h 20
 controlPv "$(P)LJT4:$(N):AO2TweakVal"
@@ -2219,8 +1662,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 276
-y 663
+x 694
+y 553
 w 100
 h 20
 controlPv "$(P)LJT4:$(N):AO2.DESC"
@@ -2245,8 +1688,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 276
-y 703
+x 694
+y 593
 w 100
 h 20
 controlPv "$(P)LJT4:$(N):AO3.DESC"
@@ -2271,8 +1714,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 87
-y 631
+x 505
+y 521
 w 175
 h 20
 font "helvetica-medium-r-14.0"
@@ -2291,8 +1734,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 87
-y 652
+x 505
+y 542
 w 175
 h 0
 lineColor rgb 0 0 0
@@ -2300,13 +1743,212 @@ fillColor rgb 0 0 0
 lineWidth 0
 numPoints 2 {
 xPoints  {
-0 87
-1 262
+0 505
+1 680
 }
 yPoints  {
-0 652
-1 652
+0 542
+1 542
 }
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 391
+y 87
+w 445
+h 290
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 391
+y 87
+w 444
+h 289
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 538
+y 99
+w 144
+h 25
+font "helvetica-medium-r-18.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Analog Input"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 417
+y 187
+w 403
+h 20
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 439
+y 187
+w 90
+h 20
+controlPv "$(P)LJT4:$(N):AI2"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 411
+y 187
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "2"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 187
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI2.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 162
+w 402
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 406
+y 162
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "1"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 162
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI1.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 # (Text Monitor)
@@ -2316,7 +1958,7 @@ major 4
 minor 7
 release 0
 x 439
-y 211
+y 162
 w 90
 h 20
 controlPv "$(P)LJT4:$(N):AI1"
@@ -2333,211 +1975,755 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 256
-y 589
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO1TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
+endGroup
+
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 189
-y 589
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO1TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 256
-y 550
-w 15
+x 418
+y 137
+w 402
 h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO0TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 189
-y 550
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO0TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 507
-y 497
-w 113
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-12.0"
-icon
-buttonLabel "Strip charts"
-numPvs 16
-numDsps 8
-displayFileName {
-  0 "LabJack_T7_AIStripChart.edl"
-  1 "LabJack_T7_AIStripChart.edl"
-  2 "LabJack_T7_AIStripChart.edl"
-  3 "LabJack_T7_AIStripChart.edl"
-  4 "LabJack_T7_AIStripChart.edl"
-  5 "LabJack_T7_AIStripChart.edl"
-  6 "LabJack_T7_AIStripChart.edl"
-  7 "LabJack_T7_AIStripChart.edl"
-}
-menuLabel {
-  0 "Input 0"
-  1 "Input 1"
-  2 "Input 2"
-  3 "Input 3"
-  4 "Input 4"
-  5 "Input 5"
-  6 "Input 6"
-  7 "Input 7"
-}
-symbols {
-  0 "AI=$(P)LJT4:$(N):AI0"
-  1 "AI=$(P)LJT4:$(N):AI1"
-  2 "AI=$(P)LJT4:$(N):AI2"
-  3 "AI=$(P)LJT4:$(N):AI3"
-  4 "AI=$(P)LJT4:$(N):AI4"
-  5 "AI=$(P)LJT4:$(N):AI5"
-  6 "AI=$(P)LJT4:$(N):AI6"
-  7 "AI=$(P)LJT4:$(N):AI7"
-}
-replaceSymbols {
-  0 1
-  1 1
-  2 1
-  3 1
-  4 1
-  5 1
-  6 1
-  7 1
-}
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 171
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AI0.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 172
+x 439
+y 137
 w 90
-h 18
+h 20
+controlPv "$(P)LJT4:$(N):AI0"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 412
+y 137
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "0"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 137
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI0.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 417
+y 212
+w 403
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 405
+y 212
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "3"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 439
+y 212
+w 90
+h 20
+controlPv "$(P)LJT4:$(N):AI3"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 212
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI3.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 417
+y 237
+w 403
+h 20
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 439
+y 237
+w 90
+h 20
+controlPv "$(P)LJT4:$(N):AI4"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 411
+y 237
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "4"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 237
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI4.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 419
+y 262
+w 401
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 407
+y 262
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "5"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 439
+y 262
+w 90
+h 20
+controlPv "$(P)LJT4:$(N):AI5"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 262
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI5.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 287
+w 402
+h 20
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 439
+y 287
+w 90
+h 20
+controlPv "$(P)LJT4:$(N):AI6"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 412
+y 287
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "6"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 287
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI6.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 312
+w 402
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 406
+y 312
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "7"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 439
+y 312
+w 90
+h 20
+controlPv "$(P)LJT4:$(N):AI7"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 720
+y 312
+w 100
+h 20
+controlPv "$(P)LJT4:$(N):AI7.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 503
+y 348
+w 217
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 124
+y 498
+w 143
+h 95
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 124
+y 498
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "FIO In"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 124
+y 523
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "CIO In"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 124
+y 548
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "EIO In"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 124
+y 573
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "MIO In"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 187
+y 498
+w 80
+h 20
+controlPv "$(P)LJT7:$(N):FIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
 fgColor rgb 0 0 0
 bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT4:$(N):AI0.SCAN"
-indicatorPv "$(P)LJT4:$(N):AI0.SCAN"
-font "helvetica-medium-r-10.0"
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 187
+y 523
+w 80
+h 20
+controlPv "$(P)LJT7:$(N):CIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 187
+y 548
+w 80
+h 20
+controlPv "$(P)LJT7:$(N):EIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 187
+y 573
+w 80
+h 20
+controlPv "$(P)LJT7:$(N):MIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Choice Button)
 object activeChoiceButtonClass
@@ -2618,6 +2804,18 @@ botShadowColor rgb 0 0 0
 controlPv "$(P)LJT4:$(N):DO3"
 font "helvetica-medium-r-10.0"
 endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 423
+y 382
+w 380
+h 245
+
+beginGroup
 
 # (Message Button)
 object activeMessageButtonClass
@@ -2625,43 +2823,23 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 212
-w 65
+x 674
+y 479
+w 15
 h 20
 fgColor rgb 0 0 0
 onColor rgb 29440 57088 65280
 offColor rgb 29440 57088 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AI1.PROC"
+controlPv "$(P)LJT4:$(N):AO1TweakUp.PROC"
 pressValue "1"
 releaseValue 
-onLabel "Read"
-offLabel "Read"
+onLabel ">"
+offLabel ">"
 3d
 useEnumNumeric
 font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 213
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT4:$(N):AI1.SCAN"
-indicatorPv "$(P)LJT4:$(N):AI1.SCAN"
-font "helvetica-medium-r-10.0"
 endObjectProperties
 
 # (Message Button)
@@ -2670,8 +2848,212 @@ beginObjectProperties
 major 4
 minor 0
 release 0
+x 607
+y 479
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO1TweakDown.PROC"
+pressValue "1"
+releaseValue 
+onLabel "<"
+offLabel "<"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 674
+y 440
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO0TweakUp.PROC"
+pressValue "1"
+releaseValue 
+onLabel ">"
+offLabel ">"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 607
+y 440
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO0TweakDown.PROC"
+pressValue "1"
+releaseValue 
+onLabel "<"
+offLabel "<"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 674
+y 593
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO3TweakUp.PROC"
+pressValue "1"
+releaseValue 
+onLabel ">"
+offLabel ">"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 607
+y 593
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO3TweakDown.PROC"
+pressValue "1"
+releaseValue 
+onLabel "<"
+offLabel "<"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 674
+y 554
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO2TweakUp.PROC"
+pressValue "1"
+releaseValue 
+onLabel ">"
+offLabel ">"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 607
+y 554
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AO2TweakDown.PROC"
+pressValue "1"
+releaseValue 
+onLabel "<"
+offLabel "<"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 391
+y 87
+w 445
+h 290
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 417
+y 187
+w 403
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
 x 644
-y 250
+y 187
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -2696,7 +3078,7 @@ major 4
 minor 0
 release 0
 x 545
-y 251
+y 188
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -2709,6 +3091,23 @@ indicatorPv "$(P)LJT4:$(N):AI2.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 162
+w 402
+h 20
+
+beginGroup
+
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
@@ -2716,7 +3115,131 @@ major 4
 minor 0
 release 0
 x 644
-y 291
+y 162
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AI1.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 545
+y 163
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)LJT4:$(N):AI1.SCAN"
+indicatorPv "$(P)LJT4:$(N):AI1.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 137
+w 402
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 644
+y 137
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)LJT4:$(N):AI0.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 545
+y 138
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)LJT4:$(N):AI0.SCAN"
+indicatorPv "$(P)LJT4:$(N):AI0.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 417
+y 212
+w 403
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 644
+y 212
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -2741,7 +3264,7 @@ major 4
 minor 0
 release 0
 x 545
-y 292
+y 213
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -2754,6 +3277,23 @@ indicatorPv "$(P)LJT4:$(N):AI3.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 417
+y 237
+w 403
+h 20
+
+beginGroup
+
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
@@ -2761,7 +3301,7 @@ major 4
 minor 0
 release 0
 x 644
-y 332
+y 237
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -2786,7 +3326,7 @@ major 4
 minor 0
 release 0
 x 545
-y 333
+y 238
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -2799,6 +3339,23 @@ indicatorPv "$(P)LJT4:$(N):AI4.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 419
+y 262
+w 401
+h 20
+
+beginGroup
+
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
@@ -2806,7 +3363,7 @@ major 4
 minor 0
 release 0
 x 644
-y 372
+y 262
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -2831,7 +3388,7 @@ major 4
 minor 0
 release 0
 x 545
-y 373
+y 263
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -2844,6 +3401,23 @@ indicatorPv "$(P)LJT4:$(N):AI5.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 287
+w 402
+h 20
+
+beginGroup
+
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
@@ -2851,7 +3425,7 @@ major 4
 minor 0
 release 0
 x 644
-y 411
+y 287
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -2876,7 +3450,7 @@ major 4
 minor 0
 release 0
 x 545
-y 412
+y 288
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -2889,6 +3463,23 @@ indicatorPv "$(P)LJT4:$(N):AI6.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 418
+y 312
+w 402
+h 20
+
+beginGroup
+
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
@@ -2896,7 +3487,7 @@ major 4
 minor 0
 release 0
 x 644
-y 452
+y 312
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -2921,7 +3512,7 @@ major 4
 minor 0
 release 0
 x 545
-y 453
+y 313
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -2934,104 +3525,82 @@ indicatorPv "$(P)LJT4:$(N):AI7.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 256
-y 703
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO3TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
+endGroup
+
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 189
-y 703
-w 15
+x 503
+y 348
+w 217
 h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO3TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 256
-y 664
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO2TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
+beginGroup
 
-# (Message Button)
-object activeMessageButtonClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 189
-y 664
-w 15
+x 503
+y 348
+w 113
 h 20
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT4:$(N):AO2TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-12.0"
+icon
+buttonLabel "Strip charts"
+numPvs 16
+numDsps 8
+displayFileName {
+  0 "LabJack_T7_AIStripChart.edl"
+  1 "LabJack_T7_AIStripChart.edl"
+  2 "LabJack_T7_AIStripChart.edl"
+  3 "LabJack_T7_AIStripChart.edl"
+  4 "LabJack_T7_AIStripChart.edl"
+  5 "LabJack_T7_AIStripChart.edl"
+  6 "LabJack_T7_AIStripChart.edl"
+  7 "LabJack_T7_AIStripChart.edl"
+}
+menuLabel {
+  0 "Input 0"
+  1 "Input 1"
+  2 "Input 2"
+  3 "Input 3"
+  4 "Input 4"
+  5 "Input 5"
+  6 "Input 6"
+  7 "Input 7"
+}
+symbols {
+  0 "AI=$(P)LJT4:$(N):AI0"
+  1 "AI=$(P)LJT4:$(N):AI1"
+  2 "AI=$(P)LJT4:$(N):AI2"
+  3 "AI=$(P)LJT4:$(N):AI3"
+  4 "AI=$(P)LJT4:$(N):AI4"
+  5 "AI=$(P)LJT4:$(N):AI5"
+  6 "AI=$(P)LJT4:$(N):AI6"
+  7 "AI=$(P)LJT4:$(N):AI7"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+  7 1
+}
 endObjectProperties
 
 # (Related Display)
@@ -3040,8 +3609,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 631
-y 497
+x 627
+y 348
 w 93
 h 20
 fgColor rgb 0 0 0
@@ -3066,4 +3635,31 @@ replaceSymbols {
   0 1
 }
 endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 124
+y 498
+w 143
+h 95
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
 

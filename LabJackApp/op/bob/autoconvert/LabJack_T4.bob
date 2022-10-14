@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LabJack_T4</name>
-  <x>1014</x>
-  <y>219</y>
+  <x>651</x>
+  <y>85</y>
   <width>850</width>
-  <height>750</height>
+  <height>635</height>
   <background_color>
     <color red="187" green="187" blue="187">
     </color>
@@ -28,404 +28,6 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>text #9</name>
-    <text>Analog output</text>
-    <x>98</x>
-    <y>503</y>
-    <width>156</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>rectangle #12</name>
-    <x>5</x>
-    <y>492</y>
-    <width>380</width>
-    <height>245</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #15</name>
-    <text>1</text>
-    <x>17</x>
-    <y>589</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #18</name>
-    <pv_name>$(P)LJT4:$(N):AO1</pv_name>
-    <x>32</x>
-    <y>589</y>
-    <width>65</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>valuator #22</name>
-    <pv_name>$(P)LJT4:$(N):AO1</pv_name>
-    <x>104</x>
-    <y>589</y>
-    <width>80</width>
-    <bar_length>1.0</bar_length>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #26</name>
-    <pv_name>$(P)LJT4:$(N):AO1TweakVal</pv_name>
-    <x>207</x>
-    <y>589</y>
-    <width>45</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #30</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO1TweakUp.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO1TweakUp.PROC</pv_name>
-    <text>&gt;</text>
-    <x>256</x>
-    <y>589</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #33</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO1TweakDown.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO1TweakDown.PROC</pv_name>
-    <text>&lt;</text>
-    <x>189</x>
-    <y>589</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #36</name>
-    <text>0</text>
-    <x>17</x>
-    <y>550</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #39</name>
-    <pv_name>$(P)LJT4:$(N):AO0</pv_name>
-    <x>32</x>
-    <y>550</y>
-    <width>65</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>valuator #43</name>
-    <pv_name>$(P)LJT4:$(N):AO0</pv_name>
-    <x>104</x>
-    <y>550</y>
-    <width>80</width>
-    <bar_length>1.0</bar_length>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #47</name>
-    <pv_name>$(P)LJT4:$(N):AO0TweakVal</pv_name>
-    <x>207</x>
-    <y>550</y>
-    <width>45</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #51</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO0TweakUp.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO0TweakUp.PROC</pv_name>
-    <text>&gt;</text>
-    <x>256</x>
-    <y>550</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #54</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO0TweakDown.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO0TweakDown.PROC</pv_name>
-    <text>&lt;</text>
-    <x>189</x>
-    <y>550</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>rectangle #57</name>
-    <x>391</x>
-    <y>87</y>
-    <width>445</width>
-    <height>650</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>related display #60</name>
-    <actions>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI0</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 0</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI1</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 1</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI2</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 2</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI3</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 3</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI4</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 4</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI5</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 5</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI6</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 6</description>
-      </action>
-      <action type="open_display">
-        <file>LabJack_T7_AIStripChart.opi</file>
-        <macros>
-          <AI>$(P)LJT4:$(N):AI7</AI>
-        </macros>
-        <target>tab</target>
-        <description>Input 7</description>
-      </action>
-    </actions>
-    <text>Strip charts</text>
-    <x>507</x>
-    <y>497</y>
-    <width>113</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #70</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI0.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI0.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>171</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #73</name>
-    <pv_name>$(P)LJT4:$(N):AI0.SCAN</pv_name>
-    <x>545</x>
-    <y>172</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #76</name>
-    <pv_name>$(P)LJT4:$(N):AI0</pv_name>
-    <x>439</x>
-    <y>171</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #80</name>
-    <text>1</text>
-    <x>418</x>
-    <y>213</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #83</name>
-    <text>Analog Input</text>
-    <x>538</x>
-    <y>99</y>
-    <width>144</width>
-    <height>25</height>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #86</name>
     <text>Outputs</text>
     <x>259</x>
     <y>134</y>
@@ -437,7 +39,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="choice" version="2.0.0">
-    <name>choice button #89</name>
+    <name>choice button #12</name>
     <pv_name>$(P)LJT4:$(N):DO0</pv_name>
     <x>226</x>
     <y>167</y>
@@ -455,7 +57,7 @@
     </items>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #92</name>
+    <name>text #15</name>
     <text>Inputs</text>
     <x>70</x>
     <y>134</y>
@@ -467,7 +69,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #95</name>
+    <name>text #18</name>
     <text>1</text>
     <x>23</x>
     <y>213</y>
@@ -479,7 +81,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #98</name>
+    <name>text #21</name>
     <text>2</text>
     <x>23</x>
     <y>251</y>
@@ -491,7 +93,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #101</name>
+    <name>text #24</name>
     <text>3</text>
     <x>23</x>
     <y>292</y>
@@ -503,7 +105,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #104</name>
+    <name>text #27</name>
     <text>4</text>
     <x>23</x>
     <y>333</y>
@@ -515,7 +117,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #107</name>
+    <name>text #30</name>
     <text>5</text>
     <x>23</x>
     <y>373</y>
@@ -527,7 +129,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #110</name>
+    <name>text #33</name>
     <text>6</text>
     <x>23</x>
     <y>412</y>
@@ -539,7 +141,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #113</name>
+    <name>text #36</name>
     <text>7</text>
     <x>23</x>
     <y>453</y>
@@ -551,7 +153,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #116</name>
+    <name>text #39</name>
     <text>0</text>
     <x>23</x>
     <y>172</y>
@@ -563,7 +165,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #119</name>
+    <name>text #42</name>
     <text>Digital I/O</text>
     <x>122</x>
     <y>97</y>
@@ -576,7 +178,7 @@
     <auto_size>true</auto_size>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #122</name>
+    <name>oval #45</name>
     <x>55</x>
     <y>175</y>
     <width>13</width>
@@ -599,7 +201,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #126</name>
+    <name>oval #49</name>
     <x>55</x>
     <y>175</y>
     <width>13</width>
@@ -622,7 +224,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #130</name>
+    <name>oval #53</name>
     <x>55</x>
     <y>215</y>
     <width>13</width>
@@ -645,7 +247,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #134</name>
+    <name>oval #57</name>
     <x>55</x>
     <y>215</y>
     <width>13</width>
@@ -668,7 +270,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #138</name>
+    <name>oval #61</name>
     <x>53</x>
     <y>213</y>
     <width>17</width>
@@ -685,7 +287,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #141</name>
+    <name>oval #64</name>
     <x>55</x>
     <y>255</y>
     <width>13</width>
@@ -708,7 +310,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #145</name>
+    <name>oval #68</name>
     <x>55</x>
     <y>255</y>
     <width>13</width>
@@ -731,7 +333,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #149</name>
+    <name>oval #72</name>
     <x>53</x>
     <y>253</y>
     <width>17</width>
@@ -748,7 +350,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #152</name>
+    <name>oval #75</name>
     <x>55</x>
     <y>295</y>
     <width>13</width>
@@ -771,7 +373,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #156</name>
+    <name>oval #79</name>
     <x>55</x>
     <y>295</y>
     <width>13</width>
@@ -794,7 +396,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #160</name>
+    <name>oval #83</name>
     <x>53</x>
     <y>293</y>
     <width>17</width>
@@ -811,7 +413,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #163</name>
+    <name>oval #86</name>
     <x>55</x>
     <y>335</y>
     <width>13</width>
@@ -834,7 +436,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #167</name>
+    <name>oval #90</name>
     <x>55</x>
     <y>335</y>
     <width>13</width>
@@ -857,7 +459,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #171</name>
+    <name>oval #94</name>
     <x>53</x>
     <y>333</y>
     <width>17</width>
@@ -874,7 +476,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #174</name>
+    <name>oval #97</name>
     <x>55</x>
     <y>375</y>
     <width>13</width>
@@ -897,7 +499,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #178</name>
+    <name>oval #101</name>
     <x>55</x>
     <y>375</y>
     <width>13</width>
@@ -920,7 +522,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #182</name>
+    <name>oval #105</name>
     <x>53</x>
     <y>373</y>
     <width>17</width>
@@ -937,7 +539,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #185</name>
+    <name>oval #108</name>
     <x>55</x>
     <y>415</y>
     <width>13</width>
@@ -960,7 +562,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #189</name>
+    <name>oval #112</name>
     <x>55</x>
     <y>415</y>
     <width>13</width>
@@ -983,7 +585,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #193</name>
+    <name>oval #116</name>
     <x>53</x>
     <y>413</y>
     <width>17</width>
@@ -1000,7 +602,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #196</name>
+    <name>oval #119</name>
     <x>55</x>
     <y>455</y>
     <width>13</width>
@@ -1023,7 +625,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #200</name>
+    <name>oval #123</name>
     <x>55</x>
     <y>455</y>
     <width>13</width>
@@ -1046,7 +648,7 @@
     </rules>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #204</name>
+    <name>oval #127</name>
     <x>53</x>
     <y>453</y>
     <width>17</width>
@@ -1063,7 +665,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #207</name>
+    <name>oval #130</name>
     <x>53</x>
     <y>173</y>
     <width>17</width>
@@ -1080,7 +682,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #210</name>
+    <name>text entry #133</name>
     <pv_name>$(P)LJT4:$(N):DI0.DESC</pv_name>
     <x>86</x>
     <y>172</y>
@@ -1097,7 +699,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #214</name>
+    <name>text entry #137</name>
     <pv_name>$(P)LJT4:$(N):DI1.DESC</pv_name>
     <x>86</x>
     <y>212</y>
@@ -1114,7 +716,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #218</name>
+    <name>text entry #141</name>
     <pv_name>$(P)LJT4:$(N):DI2.DESC</pv_name>
     <x>86</x>
     <y>250</y>
@@ -1131,7 +733,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #222</name>
+    <name>text entry #145</name>
     <pv_name>$(P)LJT4:$(N):DI3.DESC</pv_name>
     <x>86</x>
     <y>291</y>
@@ -1148,7 +750,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #226</name>
+    <name>text entry #149</name>
     <pv_name>$(P)LJT4:$(N):DI4.DESC</pv_name>
     <x>86</x>
     <y>333</y>
@@ -1165,7 +767,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #230</name>
+    <name>text entry #153</name>
     <pv_name>$(P)LJT4:$(N):DI5.DESC</pv_name>
     <x>86</x>
     <y>372</y>
@@ -1182,7 +784,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #234</name>
+    <name>text entry #157</name>
     <pv_name>$(P)LJT4:$(N):DI6.DESC</pv_name>
     <x>86</x>
     <y>411</y>
@@ -1199,7 +801,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #238</name>
+    <name>text entry #161</name>
     <pv_name>$(P)LJT4:$(N):DI7.DESC</pv_name>
     <x>86</x>
     <y>452</y>
@@ -1216,7 +818,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="choice" version="2.0.0">
-    <name>choice button #242</name>
+    <name>choice button #165</name>
     <pv_name>$(P)LJT4:$(N):DO1</pv_name>
     <x>226</x>
     <y>205</y>
@@ -1234,7 +836,7 @@
     </items>
   </widget>
   <widget type="choice" version="2.0.0">
-    <name>choice button #245</name>
+    <name>choice button #168</name>
     <pv_name>$(P)LJT4:$(N):DO2</pv_name>
     <x>226</x>
     <y>244</y>
@@ -1252,7 +854,7 @@
     </items>
   </widget>
   <widget type="choice" version="2.0.0">
-    <name>choice button #248</name>
+    <name>choice button #171</name>
     <pv_name>$(P)LJT4:$(N):DO3</pv_name>
     <x>226</x>
     <y>284</y>
@@ -1270,7 +872,7 @@
     </items>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #251</name>
+    <name>text entry #174</name>
     <pv_name>$(P)LJT4:$(N):DO0.DESC</pv_name>
     <x>273</x>
     <y>172</y>
@@ -1287,7 +889,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #255</name>
+    <name>text entry #178</name>
     <pv_name>$(P)LJT4:$(N):DO1.DESC</pv_name>
     <x>273</x>
     <y>212</y>
@@ -1304,7 +906,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #259</name>
+    <name>text entry #182</name>
     <pv_name>$(P)LJT4:$(N):DO2.DESC</pv_name>
     <x>273</x>
     <y>250</y>
@@ -1321,7 +923,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #263</name>
+    <name>text entry #186</name>
     <pv_name>$(P)LJT4:$(N):DO3.DESC</pv_name>
     <x>273</x>
     <y>291</y>
@@ -1338,11 +940,11 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>rectangle #267</name>
+    <name>rectangle #190</name>
     <x>5</x>
     <y>87</y>
     <width>380</width>
-    <height>400</height>
+    <height>540</height>
     <line_width>1</line_width>
     <line_color>
       <color red="0" green="0" blue="0">
@@ -1354,631 +956,8 @@
     </background_color>
     <transparent>true</transparent>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #270</name>
-    <text>0</text>
-    <x>418</x>
-    <y>172</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #273</name>
-    <pv_name>$(P)LJT4:$(N):AI0.DESC</pv_name>
-    <x>720</x>
-    <y>171</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #277</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI1.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI1.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>212</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #280</name>
-    <pv_name>$(P)LJT4:$(N):AI1.SCAN</pv_name>
-    <x>545</x>
-    <y>213</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #283</name>
-    <pv_name>$(P)LJT4:$(N):AI1.DESC</pv_name>
-    <x>720</x>
-    <y>212</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #287</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI2.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI2.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>250</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #290</name>
-    <pv_name>$(P)LJT4:$(N):AI2.SCAN</pv_name>
-    <x>545</x>
-    <y>251</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #293</name>
-    <pv_name>$(P)LJT4:$(N):AI2</pv_name>
-    <x>439</x>
-    <y>250</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #297</name>
-    <text>3</text>
-    <x>417</x>
-    <y>292</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #300</name>
-    <text>2</text>
-    <x>417</x>
-    <y>251</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #303</name>
-    <pv_name>$(P)LJT4:$(N):AI2.DESC</pv_name>
-    <x>720</x>
-    <y>250</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #307</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI3.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI3.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>291</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #310</name>
-    <pv_name>$(P)LJT4:$(N):AI3.SCAN</pv_name>
-    <x>545</x>
-    <y>292</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #313</name>
-    <pv_name>$(P)LJT4:$(N):AI3</pv_name>
-    <x>439</x>
-    <y>291</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #317</name>
-    <pv_name>$(P)LJT4:$(N):AI3.DESC</pv_name>
-    <x>720</x>
-    <y>291</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #321</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI4.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI4.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>332</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #324</name>
-    <pv_name>$(P)LJT4:$(N):AI4.SCAN</pv_name>
-    <x>545</x>
-    <y>333</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #327</name>
-    <pv_name>$(P)LJT4:$(N):AI4</pv_name>
-    <x>439</x>
-    <y>332</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #331</name>
-    <text>5</text>
-    <x>419</x>
-    <y>373</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #334</name>
-    <text>4</text>
-    <x>417</x>
-    <y>333</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #337</name>
-    <pv_name>$(P)LJT4:$(N):AI4.DESC</pv_name>
-    <x>720</x>
-    <y>332</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #341</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI5.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI5.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>372</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #344</name>
-    <pv_name>$(P)LJT4:$(N):AI5.SCAN</pv_name>
-    <x>545</x>
-    <y>373</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #347</name>
-    <pv_name>$(P)LJT4:$(N):AI5</pv_name>
-    <x>439</x>
-    <y>372</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #351</name>
-    <pv_name>$(P)LJT4:$(N):AI5.DESC</pv_name>
-    <x>720</x>
-    <y>372</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #355</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI6.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI6.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>411</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #358</name>
-    <pv_name>$(P)LJT4:$(N):AI6.SCAN</pv_name>
-    <x>545</x>
-    <y>412</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #361</name>
-    <pv_name>$(P)LJT4:$(N):AI6</pv_name>
-    <x>439</x>
-    <y>411</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #365</name>
-    <text>7</text>
-    <x>418</x>
-    <y>453</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #368</name>
-    <text>6</text>
-    <x>418</x>
-    <y>412</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #371</name>
-    <pv_name>$(P)LJT4:$(N):AI6.DESC</pv_name>
-    <x>720</x>
-    <y>411</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #375</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AI7.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AI7.PROC</pv_name>
-    <text>Read</text>
-    <x>644</x>
-    <y>452</y>
-    <width>65</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #378</name>
-    <pv_name>$(P)LJT4:$(N):AI7.SCAN</pv_name>
-    <x>545</x>
-    <y>453</y>
-    <width>90</width>
-    <height>18</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #381</name>
-    <pv_name>$(P)LJT4:$(N):AI7</pv_name>
-    <x>439</x>
-    <y>452</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #385</name>
-    <pv_name>$(P)LJT4:$(N):AI7.DESC</pv_name>
-    <x>720</x>
-    <y>452</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #389</name>
-    <pv_name>$(P)LJT4:$(N):AO0.DESC</pv_name>
-    <x>276</x>
-    <y>549</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #393</name>
-    <pv_name>$(P)LJT4:$(N):AO1.DESC</pv_name>
-    <x>276</x>
-    <y>589</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
   <widget type="polyline" version="2.0.0">
-    <name>polyline #397</name>
+    <name>polyline #193</name>
     <x>27</x>
     <y>156</y>
     <width>160</width>
@@ -1996,7 +975,7 @@
     </points>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>polyline #401</name>
+    <name>polyline #197</name>
     <x>227</x>
     <y>156</y>
     <width>145</width>
@@ -2014,7 +993,7 @@
     </points>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #405</name>
+    <name>oval #201</name>
     <x>579</x>
     <y>13</y>
     <width>46</width>
@@ -2029,7 +1008,7 @@
     </background_color>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #408</name>
+    <name>oval #204</name>
     <x>578</x>
     <y>13</y>
     <width>46</width>
@@ -2045,7 +1024,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>oval #411</name>
+    <name>oval #207</name>
     <x>219</x>
     <y>12</y>
     <width>46</width>
@@ -2061,7 +1040,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>rectangle #414</name>
+    <name>rectangle #210</name>
     <x>242</x>
     <y>12</y>
     <width>360</width>
@@ -2077,7 +1056,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>rectangle #417</name>
+    <name>rectangle #213</name>
     <x>243</x>
     <y>16</y>
     <width>360</width>
@@ -2092,7 +1071,7 @@
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #420</name>
+    <name>text #216</name>
     <text>LabJack T4</text>
     <x>266</x>
     <y>24</y>
@@ -2109,7 +1088,7 @@
     <auto_size>true</auto_size>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #423</name>
+    <name>text #219</name>
     <text>$(P)$(N)</text>
     <x>448</x>
     <y>24</y>
@@ -2125,302 +1104,1502 @@
     </foreground_color>
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #426</name>
-    <text>3</text>
-    <x>17</x>
-    <y>703</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+  <widget type="group" version="2.0.0">
+    <name>composite #222</name>
+    <x>423</x>
+    <y>382</y>
+    <width>380</width>
+    <height>245</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #225</name>
+      <text>Analog output</text>
+      <x>93</x>
+      <y>11</y>
+      <width>156</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #429</name>
-    <pv_name>$(P)LJT4:$(N):AO3</pv_name>
-    <x>32</x>
-    <y>703</y>
-    <width>65</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>rectangle #228</name>
+      <width>380</width>
+      <height>245</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #231</name>
+      <text>1</text>
+      <x>12</x>
+      <y>97</y>
+      <width>10</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>valuator #433</name>
-    <pv_name>$(P)LJT4:$(N):AO3</pv_name>
-    <x>104</x>
-    <y>703</y>
-    <width>80</width>
-    <bar_length>1.0</bar_length>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #437</name>
-    <pv_name>$(P)LJT4:$(N):AO3TweakVal</pv_name>
-    <x>207</x>
-    <y>703</y>
-    <width>45</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #234</name>
+      <pv_name>$(P)LJT4:$(N):AO1</pv_name>
+      <x>27</x>
+      <y>97</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #441</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO3TweakUp.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO3TweakUp.PROC</pv_name>
-    <text>&gt;</text>
-    <x>256</x>
-    <y>703</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #444</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO3TweakDown.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO3TweakDown.PROC</pv_name>
-    <text>&lt;</text>
-    <x>189</x>
-    <y>703</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #447</name>
-    <text>2</text>
-    <x>17</x>
-    <y>664</y>
-    <width>10</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>valuator #238</name>
+      <pv_name>$(P)LJT4:$(N):AO1</pv_name>
+      <x>99</x>
+      <y>97</y>
+      <width>80</width>
+      <bar_length>1.0</bar_length>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #242</name>
+      <pv_name>$(P)LJT4:$(N):AO1TweakVal</pv_name>
+      <x>202</x>
+      <y>97</y>
+      <width>45</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #450</name>
-    <pv_name>$(P)LJT4:$(N):AO2</pv_name>
-    <x>32</x>
-    <y>664</y>
-    <width>65</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #246</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO1TweakUp.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO1TweakUp.PROC</pv_name>
+      <text>&gt;</text>
+      <x>251</x>
+      <y>97</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #249</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO1TweakDown.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO1TweakDown.PROC</pv_name>
+      <text>&lt;</text>
+      <x>184</x>
+      <y>97</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #252</name>
+      <text>0</text>
+      <x>12</x>
+      <y>58</y>
+      <width>10</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>valuator #454</name>
-    <pv_name>$(P)LJT4:$(N):AO2</pv_name>
-    <x>104</x>
-    <y>664</y>
-    <width>80</width>
-    <bar_length>1.0</bar_length>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #458</name>
-    <pv_name>$(P)LJT4:$(N):AO2TweakVal</pv_name>
-    <x>207</x>
-    <y>664</y>
-    <width>45</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #255</name>
+      <pv_name>$(P)LJT4:$(N):AO0</pv_name>
+      <x>27</x>
+      <y>58</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #462</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO2TweakUp.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO2TweakUp.PROC</pv_name>
-    <text>&gt;</text>
-    <x>256</x>
-    <y>664</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #465</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)LJT4:$(N):AO2TweakDown.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)LJT4:$(N):AO2TweakDown.PROC</pv_name>
-    <text>&lt;</text>
-    <x>189</x>
-    <y>664</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #468</name>
-    <pv_name>$(P)LJT4:$(N):AO2.DESC</pv_name>
-    <x>276</x>
-    <y>663</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>valuator #259</name>
+      <pv_name>$(P)LJT4:$(N):AO0</pv_name>
+      <x>99</x>
+      <y>58</y>
+      <width>80</width>
+      <bar_length>1.0</bar_length>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #263</name>
+      <pv_name>$(P)LJT4:$(N):AO0TweakVal</pv_name>
+      <x>202</x>
+      <y>58</y>
+      <width>45</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #472</name>
-    <pv_name>$(P)LJT4:$(N):AO3.DESC</pv_name>
-    <x>276</x>
-    <y>703</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #267</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO0TweakUp.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO0TweakUp.PROC</pv_name>
+      <text>&gt;</text>
+      <x>251</x>
+      <y>58</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #270</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO0TweakDown.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO0TweakDown.PROC</pv_name>
+      <text>&lt;</text>
+      <x>184</x>
+      <y>58</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #273</name>
+      <pv_name>$(P)LJT4:$(N):AO0.DESC</pv_name>
+      <x>271</x>
+      <y>57</y>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>text #476</name>
-    <text>LJTick-DAC Module</text>
-    <x>87</x>
-    <y>631</y>
-    <width>175</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #277</name>
+      <pv_name>$(P)LJT4:$(N):AO1.DESC</pv_name>
+      <x>271</x>
+      <y>97</y>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <horizontal_alignment>2</horizontal_alignment>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>polyline #479</name>
-    <x>87</x>
-    <y>652</y>
-    <width>175</width>
-    <height>0</height>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-      <point x="175.0" y="0.0">
-      </point>
-    </points>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>text update #483</name>
-    <pv_name>$(P)LJT4:$(N):AI1</pv_name>
-    <x>439</x>
-    <y>211</y>
-    <width>90</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #281</name>
+      <text>3</text>
+      <x>12</x>
+      <y>211</y>
+      <width>10</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
       </font>
-    </font>
-    <foreground_color>
-      <color red="10" green="0" blue="184">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="187" green="187" blue="187">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <horizontal_alignment>2</horizontal_alignment>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #284</name>
+      <pv_name>$(P)LJT4:$(N):AO3</pv_name>
+      <x>27</x>
+      <y>211</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>valuator #288</name>
+      <pv_name>$(P)LJT4:$(N):AO3</pv_name>
+      <x>99</x>
+      <y>211</y>
+      <width>80</width>
+      <bar_length>1.0</bar_length>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #292</name>
+      <pv_name>$(P)LJT4:$(N):AO3TweakVal</pv_name>
+      <x>202</x>
+      <y>211</y>
+      <width>45</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #296</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO3TweakUp.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO3TweakUp.PROC</pv_name>
+      <text>&gt;</text>
+      <x>251</x>
+      <y>211</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #299</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO3TweakDown.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO3TweakDown.PROC</pv_name>
+      <text>&lt;</text>
+      <x>184</x>
+      <y>211</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #302</name>
+      <text>2</text>
+      <x>12</x>
+      <y>172</y>
+      <width>10</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #305</name>
+      <pv_name>$(P)LJT4:$(N):AO2</pv_name>
+      <x>27</x>
+      <y>172</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="scrollbar" version="2.0.0">
+      <name>valuator #309</name>
+      <pv_name>$(P)LJT4:$(N):AO2</pv_name>
+      <x>99</x>
+      <y>172</y>
+      <width>80</width>
+      <bar_length>1.0</bar_length>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #313</name>
+      <pv_name>$(P)LJT4:$(N):AO2TweakVal</pv_name>
+      <x>202</x>
+      <y>172</y>
+      <width>45</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #317</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO2TweakUp.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO2TweakUp.PROC</pv_name>
+      <text>&gt;</text>
+      <x>251</x>
+      <y>172</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #320</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)LJT4:$(N):AO2TweakDown.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)LJT4:$(N):AO2TweakDown.PROC</pv_name>
+      <text>&lt;</text>
+      <x>184</x>
+      <y>172</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #323</name>
+      <pv_name>$(P)LJT4:$(N):AO2.DESC</pv_name>
+      <x>271</x>
+      <y>171</y>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #327</name>
+      <pv_name>$(P)LJT4:$(N):AO3.DESC</pv_name>
+      <x>271</x>
+      <y>211</y>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #331</name>
+      <text>LJTick-DAC Module</text>
+      <x>82</x>
+      <y>139</y>
+      <width>175</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #334</name>
+      <x>82</x>
+      <y>160</y>
+      <width>175</width>
+      <height>0</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="175.0" y="0.0">
+        </point>
+      </points>
+    </widget>
   </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>related display #487</name>
-    <actions>
-      <action type="open_display">
-        <file>LabJack_T4_AiSetup.opi</file>
-        <target>tab</target>
-        <description>AI setup</description>
-      </action>
-    </actions>
-    <text>Configure</text>
-    <x>631</x>
-    <y>497</y>
-    <width>93</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
+  <widget type="group" version="2.0.0">
+    <name>composite #338</name>
+    <x>391</x>
+    <y>87</y>
+    <width>445</width>
+    <height>290</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>rectangle #341</name>
+      <width>445</width>
+      <height>290</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #344</name>
+      <text>Analog Input</text>
+      <x>147</x>
+      <y>12</y>
+      <width>144</width>
+      <height>25</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #347</name>
+      <x>26</x>
+      <y>100</y>
+      <width>403</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #350</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI2.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI2.PROC</pv_name>
+        <text>Read</text>
+        <x>227</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #353</name>
+        <pv_name>$(P)LJT4:$(N):AI2.SCAN</pv_name>
+        <x>128</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #356</name>
+        <pv_name>$(P)LJT4:$(N):AI2</pv_name>
+        <x>22</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #360</name>
+        <text>2</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #363</name>
+        <pv_name>$(P)LJT4:$(N):AI2.DESC</pv_name>
+        <x>303</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #367</name>
+      <x>27</x>
+      <y>75</y>
+      <width>402</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>text #370</name>
+        <text>1</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #373</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI1.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI1.PROC</pv_name>
+        <text>Read</text>
+        <x>226</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #376</name>
+        <pv_name>$(P)LJT4:$(N):AI1.SCAN</pv_name>
+        <x>127</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #379</name>
+        <pv_name>$(P)LJT4:$(N):AI1.DESC</pv_name>
+        <x>302</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #383</name>
+        <pv_name>$(P)LJT4:$(N):AI1</pv_name>
+        <x>21</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #387</name>
+      <x>27</x>
+      <y>50</y>
+      <width>402</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #390</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI0.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI0.PROC</pv_name>
+        <text>Read</text>
+        <x>226</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #393</name>
+        <pv_name>$(P)LJT4:$(N):AI0.SCAN</pv_name>
+        <x>127</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #396</name>
+        <pv_name>$(P)LJT4:$(N):AI0</pv_name>
+        <x>21</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #400</name>
+        <text>0</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #403</name>
+        <pv_name>$(P)LJT4:$(N):AI0.DESC</pv_name>
+        <x>302</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #407</name>
+      <x>26</x>
+      <y>125</y>
+      <width>403</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>text #410</name>
+        <text>3</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #413</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI3.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI3.PROC</pv_name>
+        <text>Read</text>
+        <x>227</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #416</name>
+        <pv_name>$(P)LJT4:$(N):AI3.SCAN</pv_name>
+        <x>128</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #419</name>
+        <pv_name>$(P)LJT4:$(N):AI3</pv_name>
+        <x>22</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #423</name>
+        <pv_name>$(P)LJT4:$(N):AI3.DESC</pv_name>
+        <x>303</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #427</name>
+      <x>26</x>
+      <y>150</y>
+      <width>403</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #430</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI4.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI4.PROC</pv_name>
+        <text>Read</text>
+        <x>227</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #433</name>
+        <pv_name>$(P)LJT4:$(N):AI4.SCAN</pv_name>
+        <x>128</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #436</name>
+        <pv_name>$(P)LJT4:$(N):AI4</pv_name>
+        <x>22</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #440</name>
+        <text>4</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #443</name>
+        <pv_name>$(P)LJT4:$(N):AI4.DESC</pv_name>
+        <x>303</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #447</name>
+      <x>28</x>
+      <y>175</y>
+      <width>401</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>text #450</name>
+        <text>5</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #453</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI5.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI5.PROC</pv_name>
+        <text>Read</text>
+        <x>225</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #456</name>
+        <pv_name>$(P)LJT4:$(N):AI5.SCAN</pv_name>
+        <x>126</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #459</name>
+        <pv_name>$(P)LJT4:$(N):AI5</pv_name>
+        <x>20</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #463</name>
+        <pv_name>$(P)LJT4:$(N):AI5.DESC</pv_name>
+        <x>301</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #467</name>
+      <x>27</x>
+      <y>200</y>
+      <width>402</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #470</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI6.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI6.PROC</pv_name>
+        <text>Read</text>
+        <x>226</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #473</name>
+        <pv_name>$(P)LJT4:$(N):AI6.SCAN</pv_name>
+        <x>127</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #476</name>
+        <pv_name>$(P)LJT4:$(N):AI6</pv_name>
+        <x>21</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #480</name>
+        <text>6</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #483</name>
+        <pv_name>$(P)LJT4:$(N):AI6.DESC</pv_name>
+        <x>302</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #487</name>
+      <x>27</x>
+      <y>225</y>
+      <width>402</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>text #490</name>
+        <text>7</text>
+        <width>10</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>message button #493</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(P)LJT4:$(N):AI7.PROC</pv_name>
+            <value>1</value>
+            <description>Write</description>
+          </action>
+        </actions>
+        <pv_name>$(P)LJT4:$(N):AI7.PROC</pv_name>
+        <text>Read</text>
+        <x>226</x>
+        <width>65</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>menu #496</name>
+        <pv_name>$(P)LJT4:$(N):AI7.SCAN</pv_name>
+        <x>127</x>
+        <y>1</y>
+        <width>90</width>
+        <height>18</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #499</name>
+        <pv_name>$(P)LJT4:$(N):AI7</pv_name>
+        <x>21</x>
+        <width>90</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="187" green="187" blue="187">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>2</horizontal_alignment>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>text entry #503</name>
+        <pv_name>$(P)LJT4:$(N):AI7.DESC</pv_name>
+        <x>302</x>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>4</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #507</name>
+      <x>112</x>
+      <y>261</y>
+      <width>217</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="action_button" version="3.0.0">
+        <name>related display #510</name>
+        <actions>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI0</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 0</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI1</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 1</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI2</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 2</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI3</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 3</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI4</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 4</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI5</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 5</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI6</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 6</description>
+          </action>
+          <action type="open_display">
+            <file>LabJack_T7_AIStripChart.opi</file>
+            <macros>
+              <AI>$(P)LJT4:$(N):AI7</AI>
+            </macros>
+            <target>tab</target>
+            <description>Input 7</description>
+          </action>
+        </actions>
+        <text>Strip charts</text>
+        <width>113</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>related display #520</name>
+        <actions>
+          <action type="open_display">
+            <file>LabJack_T4_AiSetup.opi</file>
+            <target>tab</target>
+            <description>AI setup</description>
+          </action>
+        </actions>
+        <text>Configure</text>
+        <x>124</x>
+        <width>93</width>
+        <height>20</height>
+        <background_color>
+          <color red="115" green="223" blue="255">
+          </color>
+        </background_color>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #523</name>
+    <x>124</x>
+    <y>498</y>
+    <width>143</width>
+    <height>95</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #526</name>
+      <text>FIO In</text>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #529</name>
+      <text>CIO In</text>
+      <y>25</y>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #532</name>
+      <text>EIO In</text>
+      <y>50</y>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #535</name>
+      <text>MIO In</text>
+      <y>75</y>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #538</name>
+      <pv_name>$(P)LJT7:$(N):FIOIn</pv_name>
+      <x>63</x>
+      <width>80</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #542</name>
+      <pv_name>$(P)LJT7:$(N):CIOIn</pv_name>
+      <x>63</x>
+      <y>25</y>
+      <width>80</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #546</name>
+      <pv_name>$(P)LJT7:$(N):EIOIn</pv_name>
+      <x>63</x>
+      <y>50</y>
+      <width>80</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #550</name>
+      <pv_name>$(P)LJT7:$(N):MIOIn</pv_name>
+      <x>63</x>
+      <y>75</y>
+      <width>80</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
   </widget>
 </display>
