@@ -1,0 +1,8 @@
+# ai record template for FLOAT inputs
+record(ai,"$(P)$(R)") {
+    field(DESC, "$(DESC)")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT) $(OFFSET))")
+    field(SCAN, "$(SCAN)")
+    field(PREC, "$(PREC)")
+}

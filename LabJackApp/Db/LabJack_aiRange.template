@@ -1,0 +1,23 @@
+# mbbo record template for analog input range
+record(mbbo, "$(P)$(R)") {
+    field(ZRST, "+-10 V")
+    field(ZRVL, "0")
+    field(ONST, "+-1 V")
+    field(ONVL, "1")
+    field(TWST, "+-0.1 V")
+    field(TWVL, "2")
+    field(THST, "+-0.01 V")
+    field(THVL, "3")
+    field(FLNK, "$(P)$(R)calc")
+}
+
+record(calcout, "$(P)$(R)calc") {
+  field(INPA, "$(P)$(R) NPP")
+  field(CALC, "10/(10**A)")
+  field(OUT,  "$(P)$(R)out PP")
+}
+
+record(ao, "$(P)$(R)out") {
+    field(DTYP,"asynFloat64")
+    field(OUT,"@asyn($(PORT) $(OFFSET))")
+}

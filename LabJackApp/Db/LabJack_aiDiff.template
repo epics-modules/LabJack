@@ -1,0 +1,9 @@
+# mbbo record template for Single-Ended/Differential
+record(mbbo, "$(P)$(R)") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asyn($(PORT) $(OFFSET))")
+    field(ZRST, "Single-Ended")
+    field(ZRVL, "199")
+    field(ONST, "Differential")
+    field(ONVL, "$(ONVL)")
+}
