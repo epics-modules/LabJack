@@ -1,12 +1,12 @@
 
 file {
-	name="/home/oxygen/GOETZE/epics/synApps_5_8/support/LabJack/LabJackApp/op/adl/LabJack_T4.adl"
-	version=030111
+	name="/home/epics/devel/labjack/LabJackApp/op/adl/LabJack_T4.adl"
+	version=030117
 }
 display {
 	object {
-		x=296
-		y=721
+		x=1014
+		y=219
 		width=850
 		height=750
 	}
@@ -317,7 +317,7 @@ rectangle {
 }
 "related display" {
 	object {
-		x=563
+		x=507
 		y=497
 		width=113
 		height=20
@@ -2091,4 +2091,20 @@ polyline {
 	align="horiz. right"
 	limits {
 	}
+}
+"related display" {
+	object {
+		x=631
+		y=497
+		width=93
+		height=20
+	}
+	display[0] {
+		label="AI setup"
+		name="LabJack_T4_AiSetup.adl"
+		args="P=$(P),N=$(N)"
+	}
+	clr=14
+	bclr=51
+	label="Configure"
 }

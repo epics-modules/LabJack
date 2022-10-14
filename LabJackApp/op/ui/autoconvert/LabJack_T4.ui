@@ -4,8 +4,8 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>296</x>
-            <y>721</y>
+            <x>1014</x>
+            <y>219</y>
             <width>850</width>
             <height>750</height>
         </rect>
@@ -810,7 +810,7 @@ border-radius: 2px;
         <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
             <property name="geometry">
                 <rect>
-                    <x>563</x>
+                    <x>507</x>
                     <y>497</y>
                     <width>113</width>
                     <height>20</height>
@@ -5826,6 +5826,48 @@ border-radius: 2px;
                 <enum>caLineEdit::Static</enum>
             </property>
         </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
+            <property name="geometry">
+                <rect>
+                    <x>631</x>
+                    <y>497</y>
+                    <width>93</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>Configure</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>AI setup</string>
+            </property>
+            <property name="files">
+                <string>LabJack_T4_AiSetup.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),N=$(N)</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
         <zorder>caGraphics_0</zorder>
         <zorder>caLabel_0</zorder>
         <zorder>caRectangle_0</zorder>
@@ -5963,6 +6005,7 @@ border-radius: 2px;
         <zorder>caTextEntry_30</zorder>
         <zorder>caTextEntry_31</zorder>
         <zorder>caLineEdit_7</zorder>
+        <zorder>caRelatedDisplay_1</zorder>
     </widget>
 </widget>
 </ui>

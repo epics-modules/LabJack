@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=195
-		y=84
+		x=205
+		y=192
 		width=850
-		height=785
+		height=784
 	}
 	clr=7
 	bclr=4
@@ -1817,83 +1817,72 @@ composite {
 		}
 	}
 }
-composite {
+"related display" {
 	object {
 		x=522
 		y=494
-		width=216
+		width=113
 		height=20
 	}
-	"composite name"=""
-	children {
-		"related display" {
-			object {
-				x=522
-				y=494
-				width=113
-				height=20
-			}
-			display[0] {
-				label="Input 0"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI0"
-			}
-			display[1] {
-				label="Input 1"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI1"
-			}
-			display[2] {
-				label="Input 2"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI2"
-			}
-			display[3] {
-				label="Input 3"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI3"
-			}
-			display[4] {
-				label="Input 4"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI4"
-			}
-			display[5] {
-				label="Input 5"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI5"
-			}
-			display[6] {
-				label="Input 6"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI6"
-			}
-			display[7] {
-				label="Input 7"
-				name="LabJack_T7_AIStripChart.adl"
-				args="AI=$(P)LJT7:$(N):AI7"
-			}
-			clr=14
-			bclr=51
-			label="Strip charts"
-		}
-		"related display" {
-			object {
-				x=645
-				y=494
-				width=93
-				height=20
-			}
-			display[0] {
-				label="AI setup"
-				name="LabJack_T7_AiConfig.adl"
-				args="P=$(P),N=$(N)"
-			}
-			clr=14
-			bclr=51
-			label="Configure"
-		}
+	display[0] {
+		label="Input 0"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI0"
 	}
+	display[1] {
+		label="Input 1"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI1"
+	}
+	display[2] {
+		label="Input 2"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI2"
+	}
+	display[3] {
+		label="Input 3"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI3"
+	}
+	display[4] {
+		label="Input 4"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI4"
+	}
+	display[5] {
+		label="Input 5"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI5"
+	}
+	display[6] {
+		label="Input 6"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI6"
+	}
+	display[7] {
+		label="Input 7"
+		name="LabJack_T7_AIStripChart.adl"
+		args="AI=$(P)LJT7:$(N):AI7"
+	}
+	clr=14
+	bclr=51
+	label="Strip charts"
+}
+"related display" {
+	object {
+		x=645
+		y=494
+		width=93
+		height=20
+	}
+	display[0] {
+		label="AI setup"
+		name="LabJack_T7_AiSetup.adl"
+		args="P=$(P),N=$(N)"
+	}
+	clr=14
+	bclr=51
+	label="Configure"
 }
 text {
 	object {

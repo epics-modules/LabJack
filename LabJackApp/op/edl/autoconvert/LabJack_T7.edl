@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 195
-y 84
+x 205
+y 192
 w 850
-h 785
+h 784
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -2006,24 +2006,6 @@ visInvert
 visMin 0
 visMax 1
 endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 522
-y 494
-w 216
-h 20
-
-beginGroup
 
 endGroup
 
@@ -5351,18 +5333,6 @@ endGroup
 
 endObjectProperties
 
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 522
-y 494
-w 216
-h 20
-
-beginGroup
 
 # (Related Display)
 object relatedDisplayClass
@@ -5445,7 +5415,7 @@ buttonLabel "Configure"
 numPvs 2
 numDsps 1
 displayFileName {
-  0 "LabJack_T7_AiConfig.edl"
+  0 "LabJack_T7_AiSetup.edl"
 }
 menuLabel {
   0 "AI setup"
@@ -5457,11 +5427,6 @@ replaceSymbols {
   0 1
 }
 endObjectProperties
-
-endGroup
-
-endObjectProperties
-
 
 # (Message Button)
 object activeMessageButtonClass

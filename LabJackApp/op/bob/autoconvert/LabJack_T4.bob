@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LabJack_T4</name>
-  <x>296</x>
-  <y>721</y>
+  <x>1014</x>
+  <y>219</y>
   <width>850</width>
   <height>750</height>
   <background_color>
@@ -334,7 +334,7 @@
       </action>
     </actions>
     <text>Strip charts</text>
-    <x>563</x>
+    <x>507</x>
     <y>497</y>
     <width>113</width>
     <height>20</height>
@@ -2403,5 +2403,24 @@
     <show_units>false</show_units>
     <horizontal_alignment>2</horizontal_alignment>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #487</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T4_AiSetup.opi</file>
+        <target>tab</target>
+        <description>AI setup</description>
+      </action>
+    </actions>
+    <text>Configure</text>
+    <x>631</x>
+    <y>497</y>
+    <width>93</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
   </widget>
 </display>

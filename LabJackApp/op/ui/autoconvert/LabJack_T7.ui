@@ -4,10 +4,10 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>195</x>
-            <y>84</y>
+            <x>205</x>
+            <y>192</y>
             <width>850</width>
-            <height>785</height>
+            <height>784</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -4649,99 +4649,89 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_14">
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
             <property name="geometry">
                 <rect>
                     <x>522</x>
                     <y>494</y>
-                    <width>218</width>
-                    <height>22</height>
+                    <width>113</width>
+                    <height>20</height>
                 </rect>
             </property>
-            <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>113</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>115</red>
-                        <green>223</green>
-                        <blue>255</blue>
-                    </color>
-                </property>
-                <property name="label">
-                    <string>Strip charts</string>
-                </property>
-                <property name="stackingMode">
-                    <enum>Menu</enum>
-                </property>
-                <property name="labels">
-                    <string>Input 0;Input 1;Input 2;Input 3;Input 4;Input 5;Input 6;Input 7</string>
-                </property>
-                <property name="files">
-                    <string>LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl</string>
-                </property>
-                <property name="args">
-                    <string>AI=$(P)LJT7:$(N):AI0;AI=$(P)LJT7:$(N):AI1;AI=$(P)LJT7:$(N):AI2;AI=$(P)LJT7:$(N):AI3;AI=$(P)LJT7:$(N):AI4;AI=$(P)LJT7:$(N):AI5;AI=$(P)LJT7:$(N):AI6;AI=$(P)LJT7:$(N):AI7</string>
-                </property>
-                <property name="removeParent">
-                    <string>false;false;false;false;false;false;false;false</string>
-                </property>
-            </widget>
-            <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
-                <property name="geometry">
-                    <rect>
-                        <x>123</x>
-                        <y>0</y>
-                        <width>93</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>115</red>
-                        <green>223</green>
-                        <blue>255</blue>
-                    </color>
-                </property>
-                <property name="label">
-                    <string>Configure</string>
-                </property>
-                <property name="stackingMode">
-                    <enum>Menu</enum>
-                </property>
-                <property name="labels">
-                    <string>AI setup</string>
-                </property>
-                <property name="files">
-                    <string>LabJack_T7_AiConfig.adl</string>
-                </property>
-                <property name="args">
-                    <string>P=$(P),N=$(N)</string>
-                </property>
-                <property name="removeParent">
-                    <string>false</string>
-                </property>
-            </widget>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>Strip charts</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Input 0;Input 1;Input 2;Input 3;Input 4;Input 5;Input 6;Input 7</string>
+            </property>
+            <property name="files">
+                <string>LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl;LabJack_T7_AIStripChart.adl</string>
+            </property>
+            <property name="args">
+                <string>AI=$(P)LJT7:$(N):AI0;AI=$(P)LJT7:$(N):AI1;AI=$(P)LJT7:$(N):AI2;AI=$(P)LJT7:$(N):AI3;AI=$(P)LJT7:$(N):AI4;AI=$(P)LJT7:$(N):AI5;AI=$(P)LJT7:$(N):AI6;AI=$(P)LJT7:$(N):AI7</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
+            <property name="geometry">
+                <rect>
+                    <x>645</x>
+                    <y>494</y>
+                    <width>93</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>Configure</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>AI setup</string>
+            </property>
+            <property name="files">
+                <string>LabJack_T7_AiSetup.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),N=$(N)</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
         </widget>
         <widget class="caLabel" name="caLabel_34">
             <property name="frameShape">
@@ -6196,7 +6186,7 @@ border-radius: 2px;
                 <string>175,0;</string>
             </property>
         </widget>
-        <widget class="caFrame" name="caFrame_15">
+        <widget class="caFrame" name="caFrame_14">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -6492,7 +6482,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_16">
+        <widget class="caFrame" name="caFrame_15">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -6788,7 +6778,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_17">
+        <widget class="caFrame" name="caFrame_16">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -7084,7 +7074,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_18">
+        <widget class="caFrame" name="caFrame_17">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -7380,7 +7370,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_19">
+        <widget class="caFrame" name="caFrame_18">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -7676,7 +7666,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_20">
+        <widget class="caFrame" name="caFrame_19">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -7972,7 +7962,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_21">
+        <widget class="caFrame" name="caFrame_20">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -8268,7 +8258,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_22">
+        <widget class="caFrame" name="caFrame_21">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -8564,7 +8554,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_23">
+        <widget class="caFrame" name="caFrame_22">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -8860,7 +8850,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_24">
+        <widget class="caFrame" name="caFrame_23">
             <property name="geometry">
                 <rect>
                     <x>23</x>
@@ -9156,7 +9146,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_25">
+        <widget class="caFrame" name="caFrame_24">
             <property name="geometry">
                 <rect>
                     <x>21</x>
@@ -9452,7 +9442,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_26">
+        <widget class="caFrame" name="caFrame_25">
             <property name="geometry">
                 <rect>
                     <x>21</x>
@@ -9667,7 +9657,7 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
-        <widget class="caFrame" name="caFrame_27">
+        <widget class="caFrame" name="caFrame_26">
             <property name="geometry">
                 <rect>
                     <x>125</x>
@@ -10102,7 +10092,6 @@ border-radius: 2px;
         <zorder>caLabel_33</zorder>
         <zorder>caRectangle_10</zorder>
         <zorder>caFrame_13</zorder>
-        <zorder>caFrame_14</zorder>
         <zorder>caLabel_34</zorder>
         <zorder>caRectangle_11</zorder>
         <zorder>caLabel_35</zorder>
@@ -10115,67 +10104,67 @@ border-radius: 2px;
         <zorder>caGraphics_4</zorder>
         <zorder>caGraphics_5</zorder>
         <zorder>caGraphics_6</zorder>
-        <zorder>caFrame_15</zorder>
+        <zorder>caFrame_14</zorder>
         <zorder>caLabel_41</zorder>
         <zorder>caGraphics_7</zorder>
         <zorder>caGraphics_8</zorder>
         <zorder>caGraphics_9</zorder>
-        <zorder>caFrame_16</zorder>
+        <zorder>caFrame_15</zorder>
         <zorder>caLabel_42</zorder>
         <zorder>caGraphics_10</zorder>
         <zorder>caGraphics_11</zorder>
         <zorder>caGraphics_12</zorder>
-        <zorder>caFrame_17</zorder>
+        <zorder>caFrame_16</zorder>
         <zorder>caLabel_43</zorder>
         <zorder>caGraphics_13</zorder>
         <zorder>caGraphics_14</zorder>
         <zorder>caGraphics_15</zorder>
-        <zorder>caFrame_18</zorder>
+        <zorder>caFrame_17</zorder>
         <zorder>caLabel_44</zorder>
         <zorder>caGraphics_16</zorder>
         <zorder>caGraphics_17</zorder>
         <zorder>caGraphics_18</zorder>
-        <zorder>caFrame_19</zorder>
+        <zorder>caFrame_18</zorder>
         <zorder>caLabel_45</zorder>
         <zorder>caGraphics_19</zorder>
         <zorder>caGraphics_20</zorder>
         <zorder>caGraphics_21</zorder>
-        <zorder>caFrame_20</zorder>
+        <zorder>caFrame_19</zorder>
         <zorder>caLabel_46</zorder>
         <zorder>caGraphics_22</zorder>
         <zorder>caGraphics_23</zorder>
         <zorder>caGraphics_24</zorder>
-        <zorder>caFrame_21</zorder>
+        <zorder>caFrame_20</zorder>
         <zorder>caLabel_47</zorder>
         <zorder>caGraphics_25</zorder>
         <zorder>caGraphics_26</zorder>
         <zorder>caGraphics_27</zorder>
-        <zorder>caFrame_22</zorder>
+        <zorder>caFrame_21</zorder>
         <zorder>caLabel_48</zorder>
         <zorder>caGraphics_28</zorder>
         <zorder>caGraphics_29</zorder>
         <zorder>caGraphics_30</zorder>
-        <zorder>caFrame_23</zorder>
+        <zorder>caFrame_22</zorder>
         <zorder>caLabel_49</zorder>
         <zorder>caGraphics_31</zorder>
         <zorder>caGraphics_32</zorder>
         <zorder>caGraphics_33</zorder>
-        <zorder>caFrame_24</zorder>
+        <zorder>caFrame_23</zorder>
         <zorder>caLabel_50</zorder>
         <zorder>caGraphics_34</zorder>
         <zorder>caGraphics_35</zorder>
         <zorder>caGraphics_36</zorder>
-        <zorder>caFrame_25</zorder>
+        <zorder>caFrame_24</zorder>
         <zorder>caLabel_51</zorder>
         <zorder>caGraphics_37</zorder>
         <zorder>caGraphics_38</zorder>
         <zorder>caGraphics_39</zorder>
-        <zorder>caFrame_26</zorder>
+        <zorder>caFrame_25</zorder>
         <zorder>caLabel_52</zorder>
         <zorder>caLabel_53</zorder>
         <zorder>caLabel_54</zorder>
         <zorder>caLabel_55</zorder>
-        <zorder>caFrame_27</zorder>
+        <zorder>caFrame_26</zorder>
         <zorder>caMessageButton_0</zorder>
         <zorder>caMenu_0</zorder>
         <zorder>caLineEdit_0</zorder>

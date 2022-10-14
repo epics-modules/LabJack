@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 296
-y 721
+x 1014
+y 219
 w 850
 h 750
 font "helvetica-medium-r-18.0"
@@ -2439,7 +2439,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 563
+x 507
 y 497
 w 113
 h 20
@@ -3032,5 +3032,38 @@ offLabel "<"
 3d
 useEnumNumeric
 font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 631
+y 497
+w 93
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+icon
+buttonLabel "Configure"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "LabJack_T4_AiSetup.edl"
+}
+menuLabel {
+  0 "AI setup"
+}
+symbols {
+  0 "P=$(P),N=$(N)"
+}
+replaceSymbols {
+  0 1
+}
 endObjectProperties
 

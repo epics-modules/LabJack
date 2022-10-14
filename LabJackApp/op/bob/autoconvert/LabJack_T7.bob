@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LabJack_T7</name>
-  <x>195</x>
-  <y>84</y>
+  <x>205</x>
+  <y>192</y>
   <width>850</width>
-  <height>785</height>
+  <height>784</height>
   <background_color>
     <color red="187" green="187" blue="187">
     </color>
@@ -1917,111 +1917,105 @@
       </rules>
     </widget>
   </widget>
-  <widget type="group" version="2.0.0">
-    <name>composite #420</name>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #420</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI0</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 0</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI1</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 1</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI2</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 2</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI3</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 3</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI4</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 4</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI5</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 5</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI6</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 6</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AIStripChart.opi</file>
+        <macros>
+          <AI>$(P)LJT7:$(N):AI7</AI>
+        </macros>
+        <target>tab</target>
+        <description>Input 7</description>
+      </action>
+    </actions>
+    <text>Strip charts</text>
     <x>522</x>
     <y>494</y>
-    <width>216</width>
+    <width>113</width>
     <height>20</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="action_button" version="3.0.0">
-      <name>related display #423</name>
-      <actions>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI0</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 0</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI1</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 1</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI2</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 2</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI3</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 3</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI4</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 4</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI5</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 5</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI6</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 6</description>
-        </action>
-        <action type="open_display">
-          <file>LabJack_T7_AIStripChart.opi</file>
-          <macros>
-            <AI>$(P)LJT7:$(N):AI7</AI>
-          </macros>
-          <target>tab</target>
-          <description>Input 7</description>
-        </action>
-      </actions>
-      <text>Strip charts</text>
-      <width>113</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>related display #433</name>
-      <actions>
-        <action type="open_display">
-          <file>LabJack_T7_AiConfig.opi</file>
-          <target>tab</target>
-          <description>AI setup</description>
-        </action>
-      </actions>
-      <text>Configure</text>
-      <x>123</x>
-      <width>93</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-    </widget>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #430</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T7_AiSetup.opi</file>
+        <target>tab</target>
+        <description>AI setup</description>
+      </action>
+    </actions>
+    <text>Configure</text>
+    <x>645</x>
+    <y>494</y>
+    <width>93</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #436</name>
+    <name>text #433</name>
     <text>Analog output</text>
     <x>516</x>
     <y>543</y>
@@ -2034,7 +2028,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>rectangle #439</name>
+    <name>rectangle #436</name>
     <x>423</x>
     <y>532</y>
     <width>380</width>
@@ -2051,7 +2045,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #442</name>
+    <name>text #439</name>
     <text>1</text>
     <x>435</x>
     <y>629</y>
@@ -2063,7 +2057,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #445</name>
+    <name>text entry #442</name>
     <pv_name>$(P)LJT7:$(N):AO1</pv_name>
     <x>450</x>
     <y>629</y>
@@ -2081,7 +2075,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="scrollbar" version="2.0.0">
-    <name>valuator #449</name>
+    <name>valuator #446</name>
     <pv_name>$(P)LJT7:$(N):AO1</pv_name>
     <x>522</x>
     <y>629</y>
@@ -2089,7 +2083,7 @@
     <bar_length>1.0</bar_length>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #453</name>
+    <name>text entry #450</name>
     <pv_name>$(P)LJT7:$(N):AO1TweakVal</pv_name>
     <x>625</x>
     <y>629</y>
@@ -2107,7 +2101,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #457</name>
+    <name>message button #454</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO1TweakUp.PROC</pv_name>
@@ -2127,7 +2121,7 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #460</name>
+    <name>message button #457</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO1TweakDown.PROC</pv_name>
@@ -2147,7 +2141,7 @@
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #463</name>
+    <name>text #460</name>
     <text>0</text>
     <x>435</x>
     <y>590</y>
@@ -2159,7 +2153,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #466</name>
+    <name>text entry #463</name>
     <pv_name>$(P)LJT7:$(N):AO0</pv_name>
     <x>450</x>
     <y>590</y>
@@ -2177,7 +2171,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="scrollbar" version="2.0.0">
-    <name>valuator #470</name>
+    <name>valuator #467</name>
     <pv_name>$(P)LJT7:$(N):AO0</pv_name>
     <x>522</x>
     <y>590</y>
@@ -2185,7 +2179,7 @@
     <bar_length>1.0</bar_length>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #474</name>
+    <name>text entry #471</name>
     <pv_name>$(P)LJT7:$(N):AO0TweakVal</pv_name>
     <x>625</x>
     <y>590</y>
@@ -2203,7 +2197,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #478</name>
+    <name>message button #475</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO0TweakUp.PROC</pv_name>
@@ -2223,7 +2217,7 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #481</name>
+    <name>message button #478</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO0TweakDown.PROC</pv_name>
@@ -2243,7 +2237,7 @@
     </background_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #484</name>
+    <name>text entry #481</name>
     <pv_name>$(P)LJT7:$(N):AO0.DESC</pv_name>
     <x>694</x>
     <y>589</y>
@@ -2260,7 +2254,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #488</name>
+    <name>text entry #485</name>
     <pv_name>$(P)LJT7:$(N):AO1.DESC</pv_name>
     <x>694</x>
     <y>629</y>
@@ -2277,7 +2271,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #492</name>
+    <name>text #489</name>
     <text>3</text>
     <x>435</x>
     <y>743</y>
@@ -2289,7 +2283,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #495</name>
+    <name>text entry #492</name>
     <pv_name>$(P)LJT7:$(N):AO3</pv_name>
     <x>450</x>
     <y>743</y>
@@ -2307,7 +2301,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="scrollbar" version="2.0.0">
-    <name>valuator #499</name>
+    <name>valuator #496</name>
     <pv_name>$(P)LJT7:$(N):AO3</pv_name>
     <x>522</x>
     <y>743</y>
@@ -2315,7 +2309,7 @@
     <bar_length>1.0</bar_length>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #503</name>
+    <name>text entry #500</name>
     <pv_name>$(P)LJT7:$(N):AO3TweakVal</pv_name>
     <x>625</x>
     <y>743</y>
@@ -2333,7 +2327,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #507</name>
+    <name>message button #504</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO3TweakUp.PROC</pv_name>
@@ -2353,7 +2347,7 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #510</name>
+    <name>message button #507</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO3TweakDown.PROC</pv_name>
@@ -2373,7 +2367,7 @@
     </background_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #513</name>
+    <name>text #510</name>
     <text>2</text>
     <x>435</x>
     <y>704</y>
@@ -2385,7 +2379,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #516</name>
+    <name>text entry #513</name>
     <pv_name>$(P)LJT7:$(N):AO2</pv_name>
     <x>450</x>
     <y>704</y>
@@ -2403,7 +2397,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="scrollbar" version="2.0.0">
-    <name>valuator #520</name>
+    <name>valuator #517</name>
     <pv_name>$(P)LJT7:$(N):AO2</pv_name>
     <x>522</x>
     <y>704</y>
@@ -2411,7 +2405,7 @@
     <bar_length>1.0</bar_length>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #524</name>
+    <name>text entry #521</name>
     <pv_name>$(P)LJT7:$(N):AO2TweakVal</pv_name>
     <x>625</x>
     <y>704</y>
@@ -2429,7 +2423,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #528</name>
+    <name>message button #525</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO2TweakUp.PROC</pv_name>
@@ -2449,7 +2443,7 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #531</name>
+    <name>message button #528</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)LJT7:$(N):AO2TweakDown.PROC</pv_name>
@@ -2469,7 +2463,7 @@
     </background_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #534</name>
+    <name>text entry #531</name>
     <pv_name>$(P)LJT7:$(N):AO2.DESC</pv_name>
     <x>694</x>
     <y>703</y>
@@ -2486,7 +2480,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #538</name>
+    <name>text entry #535</name>
     <pv_name>$(P)LJT7:$(N):AO3.DESC</pv_name>
     <x>694</x>
     <y>743</y>
@@ -2503,7 +2497,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #542</name>
+    <name>text #539</name>
     <text>LJTick-DAC Module</text>
     <x>505</x>
     <y>671</y>
@@ -2515,7 +2509,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>polyline #545</name>
+    <name>polyline #542</name>
     <x>505</x>
     <y>692</y>
     <width>175</width>
@@ -2533,7 +2527,7 @@
     </points>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #549</name>
+    <name>composite #546</name>
     <x>23</x>
     <y>202</y>
     <width>350</width>
@@ -2541,7 +2535,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #552</name>
+      <name>text #549</name>
       <text>1</text>
       <y>5</y>
       <width>20</width>
@@ -2552,7 +2546,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #555</name>
+      <name>oval #552</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2575,7 +2569,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #559</name>
+      <name>oval #556</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2598,7 +2592,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #563</name>
+      <name>oval #560</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -2615,7 +2609,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #566</name>
+      <name>text entry #563</name>
       <pv_name>$(P)LJT7:$(N):DI1.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -2632,7 +2626,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #570</name>
+      <name>choice button #567</name>
       <pv_name>$(P)LJT7:$(N):DO1</pv_name>
       <x>203</x>
       <width>35</width>
@@ -2649,7 +2643,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #573</name>
+      <name>text entry #570</name>
       <pv_name>$(P)LJT7:$(N):DO1.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -2667,7 +2661,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #577</name>
+    <name>composite #574</name>
     <x>23</x>
     <y>167</y>
     <width>350</width>
@@ -2675,7 +2669,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="choice" version="2.0.0">
-      <name>choice button #580</name>
+      <name>choice button #577</name>
       <pv_name>$(P)LJT7:$(N):DO0</pv_name>
       <x>203</x>
       <width>35</width>
@@ -2692,7 +2686,7 @@
       </items>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #583</name>
+      <name>text #580</name>
       <text>0</text>
       <y>5</y>
       <width>20</width>
@@ -2703,7 +2697,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #586</name>
+      <name>oval #583</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2726,7 +2720,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #590</name>
+      <name>oval #587</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2749,7 +2743,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #594</name>
+      <name>oval #591</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -2766,7 +2760,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #597</name>
+      <name>text entry #594</name>
       <pv_name>$(P)LJT7:$(N):DI0.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -2783,7 +2777,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #601</name>
+      <name>text entry #598</name>
       <pv_name>$(P)LJT7:$(N):DO0.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -2801,7 +2795,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #605</name>
+    <name>composite #602</name>
     <x>23</x>
     <y>237</y>
     <width>350</width>
@@ -2809,7 +2803,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #608</name>
+      <name>text #605</name>
       <text>2</text>
       <y>5</y>
       <width>20</width>
@@ -2820,7 +2814,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #611</name>
+      <name>oval #608</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2843,7 +2837,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #615</name>
+      <name>oval #612</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2866,7 +2860,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #619</name>
+      <name>oval #616</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -2883,7 +2877,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #622</name>
+      <name>text entry #619</name>
       <pv_name>$(P)LJT7:$(N):DI2.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -2900,7 +2894,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #626</name>
+      <name>choice button #623</name>
       <pv_name>$(P)LJT7:$(N):DO2</pv_name>
       <x>203</x>
       <width>35</width>
@@ -2917,7 +2911,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #629</name>
+      <name>text entry #626</name>
       <pv_name>$(P)LJT7:$(N):DO2.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -2935,7 +2929,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #633</name>
+    <name>composite #630</name>
     <x>23</x>
     <y>272</y>
     <width>350</width>
@@ -2943,7 +2937,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #636</name>
+      <name>text #633</name>
       <text>3</text>
       <y>5</y>
       <width>20</width>
@@ -2954,7 +2948,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #639</name>
+      <name>oval #636</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -2977,7 +2971,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #643</name>
+      <name>oval #640</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3000,7 +2994,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #647</name>
+      <name>oval #644</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3017,7 +3011,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #650</name>
+      <name>text entry #647</name>
       <pv_name>$(P)LJT7:$(N):DI3.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3034,7 +3028,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #654</name>
+      <name>choice button #651</name>
       <pv_name>$(P)LJT7:$(N):DO3</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3051,7 +3045,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #657</name>
+      <name>text entry #654</name>
       <pv_name>$(P)LJT7:$(N):DO3.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3069,7 +3063,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #661</name>
+    <name>composite #658</name>
     <x>23</x>
     <y>307</y>
     <width>350</width>
@@ -3077,7 +3071,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #664</name>
+      <name>text #661</name>
       <text>4</text>
       <y>5</y>
       <width>20</width>
@@ -3088,7 +3082,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #667</name>
+      <name>oval #664</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3111,7 +3105,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #671</name>
+      <name>oval #668</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3134,7 +3128,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #675</name>
+      <name>oval #672</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3151,7 +3145,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #678</name>
+      <name>text entry #675</name>
       <pv_name>$(P)LJT7:$(N):DI4.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3168,7 +3162,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #682</name>
+      <name>choice button #679</name>
       <pv_name>$(P)LJT7:$(N):DO4</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3185,7 +3179,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #685</name>
+      <name>text entry #682</name>
       <pv_name>$(P)LJT7:$(N):DO4.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3203,7 +3197,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #689</name>
+    <name>composite #686</name>
     <x>23</x>
     <y>342</y>
     <width>350</width>
@@ -3211,7 +3205,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #692</name>
+      <name>text #689</name>
       <text>5</text>
       <y>5</y>
       <width>20</width>
@@ -3222,7 +3216,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #695</name>
+      <name>oval #692</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3245,7 +3239,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #699</name>
+      <name>oval #696</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3268,7 +3262,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #703</name>
+      <name>oval #700</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3285,7 +3279,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #706</name>
+      <name>text entry #703</name>
       <pv_name>$(P)LJT7:$(N):DI5.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3302,7 +3296,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #710</name>
+      <name>choice button #707</name>
       <pv_name>$(P)LJT7:$(N):DO5</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3319,7 +3313,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #713</name>
+      <name>text entry #710</name>
       <pv_name>$(P)LJT7:$(N):DO5.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3337,7 +3331,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #717</name>
+    <name>composite #714</name>
     <x>23</x>
     <y>377</y>
     <width>350</width>
@@ -3345,7 +3339,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #720</name>
+      <name>text #717</name>
       <text>6</text>
       <y>5</y>
       <width>20</width>
@@ -3356,7 +3350,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #723</name>
+      <name>oval #720</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3379,7 +3373,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #727</name>
+      <name>oval #724</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3402,7 +3396,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #731</name>
+      <name>oval #728</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3419,7 +3413,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #734</name>
+      <name>text entry #731</name>
       <pv_name>$(P)LJT7:$(N):DI6.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3436,7 +3430,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #738</name>
+      <name>choice button #735</name>
       <pv_name>$(P)LJT7:$(N):DO6</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3453,7 +3447,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #741</name>
+      <name>text entry #738</name>
       <pv_name>$(P)LJT7:$(N):DO6.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3471,7 +3465,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #745</name>
+    <name>composite #742</name>
     <x>23</x>
     <y>412</y>
     <width>350</width>
@@ -3479,7 +3473,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #748</name>
+      <name>text #745</name>
       <text>7</text>
       <y>5</y>
       <width>20</width>
@@ -3490,7 +3484,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #751</name>
+      <name>oval #748</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3513,7 +3507,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #755</name>
+      <name>oval #752</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3536,7 +3530,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #759</name>
+      <name>oval #756</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3553,7 +3547,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #762</name>
+      <name>text entry #759</name>
       <pv_name>$(P)LJT7:$(N):DI7.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3570,7 +3564,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #766</name>
+      <name>choice button #763</name>
       <pv_name>$(P)LJT7:$(N):DO7</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3587,7 +3581,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #769</name>
+      <name>text entry #766</name>
       <pv_name>$(P)LJT7:$(N):DO7.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3605,7 +3599,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #773</name>
+    <name>composite #770</name>
     <x>23</x>
     <y>447</y>
     <width>350</width>
@@ -3613,7 +3607,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #776</name>
+      <name>text #773</name>
       <text>8</text>
       <y>5</y>
       <width>20</width>
@@ -3624,7 +3618,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #779</name>
+      <name>oval #776</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3647,7 +3641,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #783</name>
+      <name>oval #780</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3670,7 +3664,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #787</name>
+      <name>oval #784</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3687,7 +3681,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #790</name>
+      <name>text entry #787</name>
       <pv_name>$(P)LJT7:$(N):DI8.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3704,7 +3698,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #794</name>
+      <name>choice button #791</name>
       <pv_name>$(P)LJT7:$(N):DO8</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3721,7 +3715,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #797</name>
+      <name>text entry #794</name>
       <pv_name>$(P)LJT7:$(N):DO8.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3739,7 +3733,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #801</name>
+    <name>composite #798</name>
     <x>23</x>
     <y>482</y>
     <width>350</width>
@@ -3747,7 +3741,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #804</name>
+      <name>text #801</name>
       <text>9</text>
       <y>5</y>
       <width>20</width>
@@ -3758,7 +3752,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #807</name>
+      <name>oval #804</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3781,7 +3775,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #811</name>
+      <name>oval #808</name>
       <x>32</x>
       <y>9</y>
       <width>13</width>
@@ -3804,7 +3798,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #815</name>
+      <name>oval #812</name>
       <x>30</x>
       <y>7</y>
       <width>17</width>
@@ -3821,7 +3815,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #818</name>
+      <name>text entry #815</name>
       <pv_name>$(P)LJT7:$(N):DI9.DESC</pv_name>
       <x>63</x>
       <y>5</y>
@@ -3838,7 +3832,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #822</name>
+      <name>choice button #819</name>
       <pv_name>$(P)LJT7:$(N):DO9</pv_name>
       <x>203</x>
       <width>35</width>
@@ -3855,7 +3849,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #825</name>
+      <name>text entry #822</name>
       <pv_name>$(P)LJT7:$(N):DO9.DESC</pv_name>
       <x>250</x>
       <y>5</y>
@@ -3873,7 +3867,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #829</name>
+    <name>composite #826</name>
     <x>21</x>
     <y>517</y>
     <width>352</width>
@@ -3881,7 +3875,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #832</name>
+      <name>text #829</name>
       <text>10</text>
       <y>5</y>
       <width>20</width>
@@ -3892,7 +3886,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #835</name>
+      <name>oval #832</name>
       <x>34</x>
       <y>9</y>
       <width>13</width>
@@ -3915,7 +3909,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #839</name>
+      <name>oval #836</name>
       <x>34</x>
       <y>9</y>
       <width>13</width>
@@ -3938,7 +3932,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #843</name>
+      <name>oval #840</name>
       <x>32</x>
       <y>7</y>
       <width>17</width>
@@ -3955,7 +3949,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #846</name>
+      <name>text entry #843</name>
       <pv_name>$(P)LJT7:$(N):DI10.DESC</pv_name>
       <x>65</x>
       <y>5</y>
@@ -3972,7 +3966,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="choice" version="2.0.0">
-      <name>choice button #850</name>
+      <name>choice button #847</name>
       <pv_name>$(P)LJT7:$(N):DO10</pv_name>
       <x>205</x>
       <width>35</width>
@@ -3989,7 +3983,7 @@
       </items>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #853</name>
+      <name>text entry #850</name>
       <pv_name>$(P)LJT7:$(N):DO10.DESC</pv_name>
       <x>252</x>
       <y>5</y>
@@ -4007,7 +4001,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #857</name>
+    <name>composite #854</name>
     <x>21</x>
     <y>552</y>
     <width>165</width>
@@ -4015,7 +4009,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #860</name>
+      <name>text #857</name>
       <text>11</text>
       <width>20</width>
       <font>
@@ -4025,7 +4019,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #863</name>
+      <name>oval #860</name>
       <x>34</x>
       <y>4</y>
       <width>13</width>
@@ -4048,7 +4042,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #867</name>
+      <name>oval #864</name>
       <x>34</x>
       <y>4</y>
       <width>13</width>
@@ -4071,7 +4065,7 @@
       </rules>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>oval #871</name>
+      <name>oval #868</name>
       <x>32</x>
       <y>2</y>
       <width>17</width>
@@ -4088,7 +4082,7 @@
       <transparent>true</transparent>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #874</name>
+      <name>text entry #871</name>
       <pv_name>$(P)LJT7:$(N):DI11.DESC</pv_name>
       <x>65</x>
       <font>
@@ -4105,7 +4099,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #878</name>
+    <name>composite #875</name>
     <x>125</x>
     <y>589</y>
     <width>143</width>
@@ -4113,7 +4107,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #881</name>
+      <name>text #878</name>
       <text>FIO In</text>
       <width>60</width>
       <font>
@@ -4123,7 +4117,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #884</name>
+      <name>text #881</name>
       <text>CIO In</text>
       <y>25</y>
       <width>60</width>
@@ -4134,7 +4128,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #887</name>
+      <name>text #884</name>
       <text>EIO In</text>
       <y>50</y>
       <width>60</width>
@@ -4145,7 +4139,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #890</name>
+      <name>text #887</name>
       <text>MIO In</text>
       <y>75</y>
       <width>60</width>
@@ -4156,7 +4150,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #893</name>
+      <name>text update #890</name>
       <pv_name>$(P)LJT7:$(N):FIOIn</pv_name>
       <x>63</x>
       <width>80</width>
@@ -4174,7 +4168,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #897</name>
+      <name>text update #894</name>
       <pv_name>$(P)LJT7:$(N):CIOIn</pv_name>
       <x>63</x>
       <y>25</y>
@@ -4193,7 +4187,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #901</name>
+      <name>text update #898</name>
       <pv_name>$(P)LJT7:$(N):EIOIn</pv_name>
       <x>63</x>
       <y>50</y>
@@ -4212,7 +4206,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #905</name>
+      <name>text update #902</name>
       <pv_name>$(P)LJT7:$(N):MIOIn</pv_name>
       <x>63</x>
       <y>75</y>
