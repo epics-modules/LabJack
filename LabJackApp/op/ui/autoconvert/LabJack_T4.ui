@@ -14,7 +14,94 @@
         <string>
 
 QWidget#centralWidget {background: rgba(187, 187, 187, 255);}
-QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+caTable {
+       font: 10pt;
+       background: cornsilk;
+       alternate-background-color: wheat;
+}
+
+caLineEdit {
+     border-radius: 1px;
+     background: lightyellow;
+     color: black;
+ }
+
+caTextEntry {
+    color: rgb(127, 0, 63);
+    background-color: cornsilk;
+    selection-color: #0a214c;
+    selection-background-color: wheat;
+    border: 1px groove black;
+    border-radius: 1px;
+    padding: 1px;
+}
+
+caTextEntry:focus {
+    padding: 0px;
+    border: 2px groove darkred;
+    border-radius: 1px;
+}
+
+QPushButton {
+      border-color: #00b;
+      border-radius: 2px;
+      padding: 3px;
+      border-width: 1px;
+
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+						   stop:0   rgba(224, 239, 255, 255),
+						   stop:0.5 rgba(199, 215, 230, 255),
+						   stop:1   rgba(184, 214, 236, 255));
+}
+QPushButton:hover {
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+						stop:0   rgba(201, 226, 255, 255),
+						stop:0.5 rgba(177, 204, 230, 255),
+						stop:1   rgba(163, 205, 236, 255));
+}
+QPushButton:pressed {
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+						stop:0   rgba(174, 219, 255, 255),
+						stop:0.5 rgba(165, 199, 230, 255),
+						stop:1   rgba(134, 188, 236, 255));
+}
+
+QPushButton:disabled {
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+						stop:0   rgba(174, 219, 255, 255),
+						stop:0.5 rgba(165, 199, 230, 255),
+						stop:1   rgba(134, 188, 236, 255));
+}
+
+caChoice {
+      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                  stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+caChoice &gt; QPushButton {
+      text-align: left;
+      padding: 1px;
+}
+
+caSlider::groove:horizontal {
+border: 1px solid #bbb;
+background: lightgrey;
+height: 20px;
+border-radius: 4px;
+}
+
+caSlider::handle:horizontal {
+background: red;
+border: 1px solid #777;
+width: 13px;
+margin-top: -2px;
+margin-bottom: -2px;
+border-radius: 2px;
+}
+
+
 
 </string>
     </property>
@@ -244,10 +331,13 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="incrementValue">
                 <double>1.000000</double>
             </property>
-            <property name="limitsMode">
+            <property name="lowLimitMode">
                 <enum>caSlider::Channel</enum>
             </property>
-            <property name="limitsMode">
+            <property name="highLimitMode">
+                <enum>caSlider::Channel</enum>
+            </property>
+            <property name="precisionMode">
                 <enum>caSlider::Channel</enum>
             </property>
             <property name="minValue">
@@ -261,6 +351,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="scalePosition">
                 <enum>NoScale</enum>
+            </property>
+            <property name="scaleValueEnabled">
+                <bool>false</bool>
+            </property>
+            <property name="autoFocus">
+                <bool>true</bool>
             </property>
             <property name="colorMode">
                 <enum>caSlider::Static</enum>
@@ -511,10 +607,13 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="incrementValue">
                 <double>1.000000</double>
             </property>
-            <property name="limitsMode">
+            <property name="lowLimitMode">
                 <enum>caSlider::Channel</enum>
             </property>
-            <property name="limitsMode">
+            <property name="highLimitMode">
+                <enum>caSlider::Channel</enum>
+            </property>
+            <property name="precisionMode">
                 <enum>caSlider::Channel</enum>
             </property>
             <property name="minValue">
@@ -528,6 +627,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="scalePosition">
                 <enum>NoScale</enum>
+            </property>
+            <property name="scaleValueEnabled">
+                <bool>false</bool>
+            </property>
+            <property name="autoFocus">
+                <bool>true</bool>
             </property>
             <property name="colorMode">
                 <enum>caSlider::Static</enum>
@@ -4650,7 +4755,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>0,0;160,0;</string>
+                <string>160,0;</string>
             </property>
         </widget>
         <widget class="caPolyLine" name="caPolyLine_1">
@@ -4683,7 +4788,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>0,0;145,0;</string>
+                <string>145,0;</string>
             </property>
         </widget>
         <widget class="caGraphics" name="caGraphics_25">
@@ -5060,10 +5165,13 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="incrementValue">
                 <double>1.000000</double>
             </property>
-            <property name="limitsMode">
+            <property name="lowLimitMode">
                 <enum>caSlider::Channel</enum>
             </property>
-            <property name="limitsMode">
+            <property name="highLimitMode">
+                <enum>caSlider::Channel</enum>
+            </property>
+            <property name="precisionMode">
                 <enum>caSlider::Channel</enum>
             </property>
             <property name="minValue">
@@ -5077,6 +5185,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="scalePosition">
                 <enum>NoScale</enum>
+            </property>
+            <property name="scaleValueEnabled">
+                <bool>false</bool>
+            </property>
+            <property name="autoFocus">
+                <bool>true</bool>
             </property>
             <property name="colorMode">
                 <enum>caSlider::Static</enum>
@@ -5327,10 +5441,13 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="incrementValue">
                 <double>1.000000</double>
             </property>
-            <property name="limitsMode">
+            <property name="lowLimitMode">
                 <enum>caSlider::Channel</enum>
             </property>
-            <property name="limitsMode">
+            <property name="highLimitMode">
+                <enum>caSlider::Channel</enum>
+            </property>
+            <property name="precisionMode">
                 <enum>caSlider::Channel</enum>
             </property>
             <property name="minValue">
@@ -5344,6 +5461,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="scalePosition">
                 <enum>NoScale</enum>
+            </property>
+            <property name="scaleValueEnabled">
+                <bool>false</bool>
+            </property>
+            <property name="autoFocus">
+                <bool>true</bool>
             </property>
             <property name="colorMode">
                 <enum>caSlider::Static</enum>
@@ -5646,7 +5769,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>0,0;175,0;</string>
+                <string>175,0;</string>
             </property>
         </widget>
         <widget class="caLineEdit" name="caLineEdit_7">
