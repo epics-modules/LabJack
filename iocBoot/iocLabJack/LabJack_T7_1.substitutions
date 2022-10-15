@@ -97,19 +97,19 @@ file "$(LABJACK)/db/LabJack_aiRange.template" { pattern
 file "$(LABJACK)/db/LabJack_aiResolution.template" { pattern
 {R,                              PORT,         OFFSET}
 {LJT7:1:AIResolution0,   LJT7_1_AIResolution,       0}
-{LJT7:1:AIResolution1,   LJT7_1_AIResolution,       2}
-{LJT7:1:AIResolution2,   LJT7_1_AIResolution,       4}
-{LJT7:1:AIResolution3,   LJT7_1_AIResolution,       6}
-{LJT7:1:AIResolution4,   LJT7_1_AIResolution,       8}
-{LJT7:1:AIResolution5,   LJT7_1_AIResolution,      10}
-{LJT7:1:AIResolution6,   LJT7_1_AIResolution,      12}
-{LJT7:1:AIResolution7,   LJT7_1_AIResolution,      14}
-{LJT7:1:AIResolution8,   LJT7_1_AIResolution,      16}
-{LJT7:1:AIResolution9,   LJT7_1_AIResolution,      18}
-{LJT7:1:AIResolution10,  LJT7_1_AIResolution,      20}
-{LJT7:1:AIResolution11,  LJT7_1_AIResolution,      22}
-{LJT7:1:AIResolution12,  LJT7_1_AIResolution,      24}
-{LJT7:1:AIResolution13,  LJT7_1_AIResolution,      26}
+{LJT7:1:AIResolution1,   LJT7_1_AIResolution,       1}
+{LJT7:1:AIResolution2,   LJT7_1_AIResolution,       2}
+{LJT7:1:AIResolution3,   LJT7_1_AIResolution,       3}
+{LJT7:1:AIResolution4,   LJT7_1_AIResolution,       4}
+{LJT7:1:AIResolution5,   LJT7_1_AIResolution,       5}
+{LJT7:1:AIResolution6,   LJT7_1_AIResolution,       6}
+{LJT7:1:AIResolution7,   LJT7_1_AIResolution,       7}
+{LJT7:1:AIResolution8,   LJT7_1_AIResolution,       8}
+{LJT7:1:AIResolution9,   LJT7_1_AIResolution,       9}
+{LJT7:1:AIResolution10,  LJT7_1_AIResolution,      10}
+{LJT7:1:AIResolution11,  LJT7_1_AIResolution,      11}
+{LJT7:1:AIResolution12,  LJT7_1_AIResolution,      12}
+{LJT7:1:AIResolution13,  LJT7_1_AIResolution,      13}
 }
 
 # Set S.E. / Diff for each even number channel individually
