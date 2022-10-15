@@ -21,16 +21,10 @@ LabJackApp_registerRecordDeviceDriver(pdbbase)
 # Must set N and IP_ADDRESS differently for each one.
 
 
-epicsEnvSet("N", "1")
-epicsEnvSet("IP_ADDRESS", "gse-labjack1")
-< LabJack_T7.cmd
-epicsEnvSet("N", "2")
-epicsEnvSet("IP_ADDRESS", "gse-labjack2")
-< LabJack_T7.cmd
-#epicsEnvSet("N", "3")
-#epicsEnvSet("IP_ADDRESS", "gse-labjack3")
-#< LabJack_T7.cmd
-
+iocshLoad("LabJack_T7.cmd", "N=1, IP_ADDRESS=gse-labjack1")
+iocshLoad("LabJack_T7.cmd", "N=2, IP_ADDRESS=gse-labjack2")
+#iocshLoad("LabJack_T7.cmd", "N=2, IP_ADDRESS=gse-labjack3")
+#iocshLoad("LabJack_T4.cmd", "N=1, IP_ADDRESS=gse-labjack4")
 
 #------------------------------------------------------------------------------
 # Configure auto save/restore
