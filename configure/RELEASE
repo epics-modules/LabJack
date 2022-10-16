@@ -24,19 +24,19 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
-SUPPORT=/APSshare/epics/synApps_5_8/support
+SUPPORT=/corvette/home/epics/devel
 -include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
 
 # External modules required for building this module
-ASYN=$(SUPPORT)/asyn-4-26
-MODBUS=$(SUPPORT)/modbus-2-7
-LABJACK=/home/oxygen/GOETZE/epics/synApps_5_8/support/LabJack
+ASYN=$(SUPPORT)/asyn-4-43
+MODBUS=$(SUPPORT)/modbus-3-2
+LABJACK=$(SUPPORT)/labjack
 
 # Modules required for building module ioc application
-AUTOSAVE=$(SUPPORT)/autosave-5-6-1
+AUTOSAVE=$(SUPPORT)/autosave-5-10-2
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/APSshare/epics/base-3.14.12.5
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.7
 
 
 # These lines allow developers to override these RELEASE settings

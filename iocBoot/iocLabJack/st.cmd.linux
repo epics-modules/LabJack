@@ -5,7 +5,8 @@
 #------------------------------------------------------------------------------
 # Define environment variables
 < envPaths
-#epicsEnvSet(STARTUP,".")
+
+epicsEnvSet("P", "xyz:")
 
 #------------------------------------------------------------------------------
 # Register all support components
@@ -16,16 +17,14 @@ LabJackApp_registerRecordDeviceDriver(pdbbase)
 #
 ###  LabJack support  ###
 #
-# Load one LabJack_Tx_n.cmd file for each LabJack module this ioc will support
-#
-< LabJack_T4_1.cmd
-#< LabJack_T4_2.cmd
-#< LabJack_T4_3.cmd
-#
-#< LabJack_T7_1.cmd
-#< LabJack_T7_2.cmd
-#< LabJack_T7_3.cmd
+# Load one LabJack_T7.cmd file for each LabJack module this ioc will support
+# Must set N and IP_ADDRESS differently for each one.
 
+
+iocshLoad("LabJack_T7.cmd", "N=1, IP_ADDRESS=gse-labjack1")
+iocshLoad("LabJack_T7.cmd", "N=2, IP_ADDRESS=gse-labjack2")
+#iocshLoad("LabJack_T7.cmd", "N=2, IP_ADDRESS=gse-labjack3")
+#iocshLoad("LabJack_T4.cmd", "N=1, IP_ADDRESS=gse-labjack4")
 
 #------------------------------------------------------------------------------
 # Configure auto save/restore
