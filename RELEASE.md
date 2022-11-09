@@ -1,6 +1,6 @@
 # labjack Release Notes
 
-## R2-0 (October XXX, 2022)
+## R2-0 (November 9, 2022)
 Many changes to simplify and add new features.
 - Added support for the analog input Range feature to select the voltage range.
 - Added support for the analog input Resolution feature to control resolution, allowing decreased noise at the expense of speed.
