@@ -1,112 +1,64 @@
-# Digital Inputs
-$(P)LJT7:$(N):DI0.DESC
-$(P)LJT7:$(N):DI1.DESC
-$(P)LJT7:$(N):DI2.DESC
-$(P)LJT7:$(N):DI3.DESC
-$(P)LJT7:$(N):DI4.DESC
-$(P)LJT7:$(N):DI5.DESC
-$(P)LJT7:$(N):DI6.DESC
-$(P)LJT7:$(N):DI7.DESC
-$(P)LJT7:$(N):DI8.DESC
-$(P)LJT7:$(N):DI9.DESC
-$(P)LJT7:$(N):DI10.DESC
-$(P)LJT7:$(N):DI11.DESC
+# Device-wide settings
+file "LabJack_device_settings.req", P=$(P)
 
-# Digital Outputs
-$(P)LJT7:$(N):DO0.DESC
-$(P)LJT7:$(N):DO0
-$(P)LJT7:$(N):DO1.DESC
-$(P)LJT7:$(N):DO1
-$(P)LJT7:$(N):DO2.DESC
-$(P)LJT7:$(N):DO2
-$(P)LJT7:$(N):DO3.DESC
-$(P)LJT7:$(N):DO3
-$(P)LJT7:$(N):DO4.DESC
-$(P)LJT7:$(N):DO4
-$(P)LJT7:$(N):DO5.DESC
-$(P)LJT7:$(N):DO5
-$(P)LJT7:$(N):DO6.DESC
-$(P)LJT7:$(N):DO6
-$(P)LJT7:$(N):DO7.DESC
-$(P)LJT7:$(N):DO7
-$(P)LJT7:$(N):DO8.DESC
-$(P)LJT7:$(N):DO8
-$(P)LJT7:$(N):DO9.DESC
-$(P)LJT7:$(N):DO9
-$(P)LJT7:$(N):DO10.DESC
-$(P)LJT7:$(N):DO10
+# Digital input, output direction
+file "LabJack_binary_settings.req", P=$(P), N=0
+file "LabJack_binary_settings.req", P=$(P), N=1
+file "LabJack_binary_settings.req", P=$(P), N=2
+file "LabJack_binary_settings.req", P=$(P), N=3
+file "LabJack_binary_settings.req", P=$(P), N=4
+file "LabJack_binary_settings.req", P=$(P), N=5
+file "LabJack_binary_settings.req", P=$(P), N=6
+file "LabJack_binary_settings.req", P=$(P), N=7
+file "LabJack_binary_settings.req", P=$(P), N=8
+file "LabJack_binary_settings.req", P=$(P), N=9
+file "LabJack_binary_settings.req", P=$(P), N=10
+file "LabJack_binary_settings.req", P=$(P), N=11
+file "LabJack_binary_settings.req", P=$(P), N=12
+file "LabJack_binary_settings.req", P=$(P), N=13
+file "LabJack_binary_settings.req", P=$(P), N=14
+file "LabJack_binary_settings.req", P=$(P), N=15
+file "LabJack_binary_settings.req", P=$(P), N=16
+file "LabJack_binary_settings.req", P=$(P), N=17
+file "LabJack_binary_settings.req", P=$(P), N=18
+file "LabJack_binary_settings.req", P=$(P), N=19
+file "LabJack_binary_settings.req", P=$(P), N=20
+file "LabJack_binary_settings.req", P=$(P), N=21
+file "LabJack_binary_settings.req", P=$(P), N=22
 
 # Analog Inputs
-$(P)LJT7:$(N):AI0.DESC
-$(P)LJT7:$(N):AI0.SCAN
-$(P)LJT7:$(N):AI1.DESC
-$(P)LJT7:$(N):AI1.SCAN
-$(P)LJT7:$(N):AI2.DESC
-$(P)LJT7:$(N):AI2.SCAN
-$(P)LJT7:$(N):AI3.DESC
-$(P)LJT7:$(N):AI3.SCAN
-$(P)LJT7:$(N):AI4.DESC
-$(P)LJT7:$(N):AI4.SCAN
-$(P)LJT7:$(N):AI5.DESC
-$(P)LJT7:$(N):AI5.SCAN
-$(P)LJT7:$(N):AI6.DESC
-$(P)LJT7:$(N):AI6.SCAN
-$(P)LJT7:$(N):AI7.DESC
-$(P)LJT7:$(N):AI7.SCAN
-$(P)LJT7:$(N):AI8.DESC
-$(P)LJT7:$(N):AI8.SCAN
-$(P)LJT7:$(N):AI9.DESC
-$(P)LJT7:$(N):AI9.SCAN
-$(P)LJT7:$(N):AI10.DESC
-$(P)LJT7:$(N):AI10.SCAN
-$(P)LJT7:$(N):AI11.DESC
-$(P)LJT7:$(N):AI11.SCAN
-$(P)LJT7:$(N):AI12.DESC
-$(P)LJT7:$(N):AI12.SCAN
-$(P)LJT7:$(N):AI13.DESC
-$(P)LJT7:$(N):AI13.SCAN
+file "LabJack_ai_settings.req", P=$(P), N=0
+file "LabJack_ai_settings.req", P=$(P), N=1
+file "LabJack_ai_settings.req", P=$(P), N=2
+file "LabJack_ai_settings.req", P=$(P), N=3
+file "LabJack_ai_settings.req", P=$(P), N=4
+file "LabJack_ai_settings.req", P=$(P), N=5
+file "LabJack_ai_settings.req", P=$(P), N=6
+file "LabJack_ai_settings.req", P=$(P), N=7
+file "LabJack_ai_settings.req", P=$(P), N=8
+file "LabJack_ai_settings.req", P=$(P), N=9
+file "LabJack_ai_settings.req", P=$(P), N=10
+file "LabJack_ai_settings.req", P=$(P), N=11
+file "LabJack_ai_settings.req", P=$(P), N=12
+file "LabJack_ai_settings.req", P=$(P), N=13
 
-# AI Configuration
-$(P)LJT7:$(N):seDiff_Ch0
-$(P)LJT7:$(N):seDiff_Ch2
-$(P)LJT7:$(N):seDiff_Ch4
-$(P)LJT7:$(N):seDiff_Ch6
-$(P)LJT7:$(N):seDiff_Ch8
-$(P)LJT7:$(N):seDiff_Ch10
-$(P)LJT7:$(N):seDiff_Ch12
-$(P)LJT7:$(N):AIRange0
-$(P)LJT7:$(N):AIRange1
-$(P)LJT7:$(N):AIRange2
-$(P)LJT7:$(N):AIRange3
-$(P)LJT7:$(N):AIRange4
-$(P)LJT7:$(N):AIRange5
-$(P)LJT7:$(N):AIRange6
-$(P)LJT7:$(N):AIRange7
-$(P)LJT7:$(N):AIRange8
-$(P)LJT7:$(N):AIRange9
-$(P)LJT7:$(N):AIRange10
-$(P)LJT7:$(N):AIRange11
-$(P)LJT7:$(N):AIRange12
-$(P)LJT7:$(N):AIRange13
-$(P)LJT7:$(N):AIResolution0
-$(P)LJT7:$(N):AIResolution1
-$(P)LJT7:$(N):AIResolution2
-$(P)LJT7:$(N):AIResolution3
-$(P)LJT7:$(N):AIResolution4
-$(P)LJT7:$(N):AIResolution5
-$(P)LJT7:$(N):AIResolution6
-$(P)LJT7:$(N):AIResolution7
-$(P)LJT7:$(N):AIResolution8
-$(P)LJT7:$(N):AIResolution9
-$(P)LJT7:$(N):AIResolution10
-$(P)LJT7:$(N):AIResolution11
-$(P)LJT7:$(N):AIResolution12
-$(P)LJT7:$(N):AIResolution13
+# Ai Configuration
+$(P)AiDiff0
+$(P)AiDiff2
+$(P)AiDiff4
+$(P)AiDiff6
+$(P)AiDiff8
+$(P)AiDiff10
+$(P)AiDiff12
 
 # Analog Outputs
-$(P)LJT7:$(N):AO0.DESC
-$(P)LJT7:$(N):AO0
-$(P)LJT7:$(N):AO0TweakVal
-$(P)LJT7:$(N):AO1.DESC
-$(P)LJT7:$(N):AO1
-$(P)LJT7:$(N):AO1TweakVal
+file "LabJack_ao_settings.req", P=$(P), N=0
+file "LabJack_ao_settings.req", P=$(P), N=1
+
+# Waveform digitizer
+file "LabJackWaveformDig_settings.req", P=$(P)
+
+# Waveform generator
+file "LabJackWaveformGen_settings.req", P=$(P)
+file "LabJackWaveformGenN_settings.req", P=$(P), N=0
+file "LabJackWaveformGenN_settings.req", P=$(P), N=1

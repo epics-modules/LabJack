@@ -2,9 +2,8 @@
 # EPICS startup script for caQtDM
 #
 # Put the autoconvert directory last in the path
-setenv CAQTDM_DISPLAY_PATH LabJackApp/op/ui
-setenv CAQTDM_DISPLAY_PATH ${CAQTDM_DISPLAY_PATH}:${CAQTDM_DISPLAY_PATH}/autoconvert
+setenv CAQTDM_DISPLAY_PATH LabJackApp/op/ui/autoconvert
 
 # Launch caQtDM
-caQtDM -noMsg LabJack.ui&
+caQtDM -noMsg LabJackTop.ui &
 

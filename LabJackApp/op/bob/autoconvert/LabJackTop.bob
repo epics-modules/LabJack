@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LabJackTop</name>
+  <x>232</x>
+  <y>70</y>
+  <width>396</width>
+  <height>150</height>
+  <background_color>
+    <color red="187" green="187" blue="187">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="label" version="2.0.0">
+    <name>text #6</name>
+    <text>LabJack</text>
+    <x>106</x>
+    <y>36</y>
+    <width>175</width>
+    <height>36</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="30.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="160" green="18" blue="7">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #9</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <P>LabJackT4_1:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T4</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <P>LabJackT7_1:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T7</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <P>LabJackT7Pro_1:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T7-Pro</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7.opi</file>
+        <macros>
+          <P>LabJackT8_1:</P>
+        </macros>
+        <target>tab</target>
+        <description>LabJack T8</description>
+      </action>
+    </actions>
+    <text>Device</text>
+    <x>134</x>
+    <y>88</y>
+    <width>120</width>
+    <height>36</height>
+    <foreground_color>
+      <color red="235" green="241" blue="181">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="160" green="18" blue="7">
+      </color>
+    </background_color>
+  </widget>
+</display>

@@ -1,0 +1,83 @@
+# Device settings
+record(mbbi,"$(P)ModelName") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(ZRVL, "0")
+    field(ZRST, "T4")
+    field(ONVL, "1")
+    field(ONST, "T7")
+    field(TWVL, "2")
+    field(TWST, "T7-Pro")
+    field(THVL, "3")
+    field(THST, "T8")
+    field(INP,  "@asyn($(PORT) 0)MODEL_NAME")
+}
+
+record(stringin,"$(P)FirmwareVersion") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)FIRMWARE_VERSION")
+}
+
+record(stringin,"$(P)SerialNumber") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)SERIAL_NUMBER")
+}
+
+record(ai,"$(P)DeviceTemperature") {
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT) 0)DEVICE_TEMPERATURE")
+    field(PREC, "3")
+    field(SCAN, "5 second")
+}
+
+record(stringin,"$(P)LJMVersion") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)LJM_VERSION")
+}
+
+record(stringin,"$(P)DriverVersion") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)DRIVER_VERSION")
+}
+
+record(ai,"$(P)PollTimeMS") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT) 0)POLL_TIME_MS")
+    field(PREC, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao,"$(P)PollSleepMS") {
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT) 0)POLL_SLEEP_MS")
+    field(PREC, "1")
+}
+
+record(ao,"$(P)AiAllSettlingUS") {
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT) 0)ANALOG_IN_SETTLING_TIME")
+    field(PREC, "1")
+}
+
+record(bo,"$(P)DeviceReset") {
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT) 0)DEVICE_RESET")
+    field(ZNAM, "Done")
+    field(ONAM, "Reset")
+    field(ONAM, "Reset")
+}
+
+record(waveform, "$(P)LastErrorMessage") {
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)LAST_ERROR_MESSAGE")
+    field(NELM, "256")
+    field(FTVL, "CHAR")
+    field(SCAN, "I/O Intr")
+}

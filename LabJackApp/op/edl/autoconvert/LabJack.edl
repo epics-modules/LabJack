@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 218
-y 157
+x 227
+y 50
 w 396
 h 273
 font "helvetica-medium-r-18.0"
@@ -133,9 +133,9 @@ menuLabel {
   2 "LabJack T7 unit 3"
 }
 symbols {
-  0 "P=xyz:,N=1"
-  1 "P=xyz:,N=2"
-  2 "P=xyz:,N=3"
+  0 "P=xyz:LJT7:1:"
+  1 "P=xyz:LJT7:2:"
+  2 "P=xyz:LJT7:3:"
 }
 replaceSymbols {
   0 1

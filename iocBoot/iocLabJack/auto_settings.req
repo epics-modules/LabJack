@@ -1,8 +1,0 @@
-#file "LabJack_T4_settings.req", P=$(P), N=1
-#file "LabJack_T4_settings.req", P=$(P), N=2
-#file "LabJack_T4_settings.req", P=$(P), N=3
-
-file "LabJack_T7_settings.req", P=$(P), N=1
-file "LabJack_T7_settings.req", P=$(P), N=2
-#file "LabJack_T7_settings.req", P=$(P), N=3
-

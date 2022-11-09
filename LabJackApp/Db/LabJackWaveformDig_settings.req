@@ -1,0 +1,10 @@
+$(P)WaveDigNumPoints
+$(P)WaveDigFirstChan
+$(P)WaveDigNumChans
+$(P)WaveDigDwell
+$(P)WaveDigExtTrigger
+$(P)WaveDigExtClock
+$(P)WaveDigAutoRestart
+$(P)WaveDigSettlingTime
+$(P)WaveDigResolution
+$(P)WaveDigReadWF.SCAN

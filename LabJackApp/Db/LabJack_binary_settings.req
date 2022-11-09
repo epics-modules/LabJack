@@ -1,0 +1,8 @@
+# Digital input
+$(P)Bi$(N).DESC
+
+# Digital output
+$(P)Bo$(N).DESC
+
+# Digital direction
+$(P)Bd$(N).VAL

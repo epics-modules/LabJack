@@ -1,0 +1,268 @@
+# Database for Measurement Computing waveform generator
+# Mark Rivers
+# November 6, 2011
+
+###################################################################
+#  Number of points to use                                        # 
+###################################################################
+record(longout, "$(P)WaveDigNumPoints")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_NUM_POINTS")
+    field(DRVL, "1")
+    field(DRVH, "$(WDIG_POINTS)")
+}
+
+###################################################################
+#  First channel to digitize                                      # 
+###################################################################
+record(mbbo, "$(P)WaveDigFirstChan")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_FIRST_CHAN")
+    field(ZRVL, "0")
+    field(ZRST, "0")
+    field(ONVL, "1")
+    field(ONST, "1")
+    field(TWVL, "2")
+    field(TWST, "2")
+    field(THVL, "3")
+    field(THST, "3")
+    field(FRVL, "4")
+    field(FRST, "4")
+    field(FVVL, "5")
+    field(FVST, "5")
+    field(SXVL, "6")
+    field(SXST, "6")
+    field(SVVL, "7")
+    field(SVST, "7")
+    field(EIVL, "8")
+    field(EIST, "8")
+    field(NIVL, "9")
+    field(NIST, "9")
+    field(TEVL, "10")
+    field(TEST, "10")
+    field(ELVL, "11")
+    field(ELST, "11")
+    field(TVVL, "12")
+    field(TVST, "12")
+    field(TTVL, "13")
+    field(TTST, "13")
+}
+
+###################################################################
+#  Number of channels to digitize                                 # 
+###################################################################
+record(mbbo, "$(P)WaveDigNumChans")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_NUM_CHANS")
+    field(ZRVL, "1")
+    field(ZRST, "1")
+    field(ONVL, "2")
+    field(ONST, "2")
+    field(TWVL, "3")
+    field(TWST, "3")
+    field(THVL, "4")
+    field(THST, "4")
+    field(FRVL, "5")
+    field(FRST, "5")
+    field(FVVL, "6")
+    field(FVST, "6")
+    field(SXVL, "7")
+    field(SXST, "7")
+    field(SVVL, "8")
+    field(SVST, "8")
+    field(EIVL, "9")
+    field(EIST, "9")
+    field(NIVL, "10")
+    field(NIST, "10")
+    field(TEVL, "11")
+    field(TEST, "11")
+    field(ELVL, "12")
+    field(ELST, "12")
+    field(TVVL, "13")
+    field(TVST, "13")
+    field(TTVL, "14")
+    field(TTST, "14")
+}
+###################################################################
+#  Timebase waveform record                                       #
+###################################################################
+record(waveform, "$(P)WaveDigTimeWF")
+{
+    field(FTVL, "DOUBLE")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(INP,  "@asyn($(PORT),0)WAVEDIG_TIME_WF")
+    field(NELM, "$(WDIG_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Absolute timebase waveform record                              #
+###################################################################
+record(waveform, "$(P)WaveDigAbsTimeWF")
+{
+    field(FTVL, "DOUBLE")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(INP,  "@asyn($(PORT),0)WAVEDIG_ABS_TIME_WF")
+    field(NELM, "$(WDIG_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Current point                                                  # 
+###################################################################
+record(longin, "$(P)WaveDigCurrentPoint")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),0)WAVEDIG_CURRENT_POINT")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Time per point                                                 # 
+###################################################################
+record(ao, "$(P)WaveDigDwell")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_DWELL")
+    field(VAL,  "0.001")
+    field(PREC, "$(PREC)")
+}
+record(ai, "$(P)WaveDigDwellActual")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),0)WAVEDIG_DWELL_ACTUAL")
+    field(SCAN, "I/O Intr")
+    field(PREC, "$(PREC)")
+}
+
+###################################################################
+#  Total time                                                     # 
+###################################################################
+record(ai, "$(P)WaveDigTotalTime")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),0)WAVEDIG_TOTAL_TIME")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Resolution                                                     # 
+###################################################################
+
+record(mbbo, "$(P)WaveDigResolution") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asyn($(PORT) 0)WAVEDIG_RESOLUTION")
+    field(ZRST, "Default")
+    field(ZRVL, "0")
+    field(ONST, "1")
+    field(ONVL, "1")
+    field(TWST, "2")
+    field(TWVL, "2")
+    field(THST, "3")
+    field(THVL, "3")
+    field(FRST, "4")
+    field(FRVL, "4")
+    field(FVST, "5")
+    field(FVVL, "5")
+    field(SXST, "6")
+    field(SXVL, "6")
+    field(SVST, "7")
+    field(SVVL, "7")
+    field(EIST, "8")
+    field(EIVL, "8")
+    field(NIST, "9")
+    field(NIVL, "9")
+    field(TEST, "10")
+    field(TEVL, "10")
+    field(ELST, "11")
+    field(ELVL, "11")
+    field(TVST, "12")
+    field(TVVL, "12")
+}
+
+###################################################################
+#  Settling time (us)                                             # 
+###################################################################
+record(ao, "$(P)WaveDigSettlingTime")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(DESC, "Stream settling time (us)")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_SETTLING_TIME")
+    field(PREC,  "1")
+}
+
+###################################################################
+#  External trigger                                               # 
+###################################################################
+record(bo, "$(P)WaveDigExtTrigger")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_EXT_TRIGGER")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+
+###################################################################
+#  External clock                                                 # 
+###################################################################
+record(bo, "$(P)WaveDigExtClock")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_EXT_CLOCK")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+###################################################################
+###################################################################
+#  Auto restart                                                   # 
+###################################################################
+record(bo, "$(P)WaveDigAutoRestart")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_AUTO_RESTART")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+###################################################################
+#  Run                                                            # 
+###################################################################
+record(busy, "$(P)WaveDigRun")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT), 0)WAVEDIG_RUN")
+    field(ZNAM, "Stop")
+    field(ONAM, "Run")
+}
+
+###################################################################
+#  Read waveforms                                                 # 
+###################################################################
+# This tells the driver to read, which then does callbacks to the
+# input waveform records which are I/O Intr scanned
+# The driver always reads the waveforms when acquisition completes,
+# so this record can be passive for fast scans
+record(busy, "$(P)WaveDigReadWF")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)WAVEDIG_READ_WF")
+    field(ZNAM, "Done")
+    field(ONAM, "Read")
+    field(SCAN, "1 second")
+    field(SDIS, "$(P)WaveDigRun")
+    field(DISV, "0")
+}
+
+

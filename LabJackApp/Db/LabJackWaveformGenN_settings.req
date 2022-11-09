@@ -1,0 +1,5 @@
+$(P)WaveGenEnable$(N)
+$(P)WaveGenType$(N)
+$(P)WaveGenPulseWidth$(N)
+$(P)WaveGenAmplitude$(N)
+$(P)WaveGenOffset$(N)

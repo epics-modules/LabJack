@@ -28,8 +28,8 @@
   <snap_to_geometry>false</snap_to_geometry>
   <widget_type>Display</widget_type>
   <width>396</width>
-  <x>218</x>
-  <y>157</y>
+  <x>227</x>
+  <y>50</y>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <actions hook="false" hook_all="false" />
     <auto_size>false</auto_size>
@@ -151,8 +151,7 @@ $(pv_value)</tooltip>
         <path>LabJack_T7.opi</path>
         <macros>
           <include_parent_macros>true</include_parent_macros>
-          <P>xyz:</P>
-          <N>1</N>
+          <P>xyz:LJT7:1:</P>
         </macros>
         <mode>1</mode>
         <description>LabJack T7 unit 1</description>
@@ -161,8 +160,7 @@ $(pv_value)</tooltip>
         <path>LabJack_T7.opi</path>
         <macros>
           <include_parent_macros>true</include_parent_macros>
-          <P>xyz:</P>
-          <N>2</N>
+          <P>xyz:LJT7:2:</P>
         </macros>
         <mode>1</mode>
         <description>LabJack T7 unit 2</description>
@@ -171,8 +169,7 @@ $(pv_value)</tooltip>
         <path>LabJack_T7.opi</path>
         <macros>
           <include_parent_macros>true</include_parent_macros>
-          <P>xyz:</P>
-          <N>3</N>
+          <P>xyz:LJT7:3:</P>
         </macros>
         <mode>1</mode>
         <description>LabJack T7 unit 3</description>

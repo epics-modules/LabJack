@@ -1,0 +1,10 @@
+$(P)Ai$(N).PREC
+$(P)Ai$(N).SCAN
+$(P)Ai$(N).DESC
+$(P)AiLOPR$(N)
+$(P)AiHOPR$(N)
+$(P)AiEnable$(N)
+$(P)AiMode$(N)
+$(P)AiRange$(N)
+$(P)AiResolution$(N)
+$(P)AiTempUnits$(N)

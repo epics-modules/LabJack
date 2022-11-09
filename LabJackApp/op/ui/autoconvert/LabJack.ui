@@ -4,8 +4,8 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>218</x>
-            <y>157</y>
+            <x>227</x>
+            <y>50</y>
             <width>396</width>
             <height>273</height>
         </rect>
@@ -220,7 +220,7 @@ border-radius: 2px;
                 <string>LabJack_T7.adl;LabJack_T7.adl;LabJack_T7.adl</string>
             </property>
             <property name="args">
-                <string>P=xyz:,N=1;P=xyz:,N=2;P=xyz:,N=3</string>
+                <string>P=xyz:LJT7:1:;P=xyz:LJT7:2:;P=xyz:LJT7:3:</string>
             </property>
             <property name="removeParent">
                 <string>false;false;false</string>

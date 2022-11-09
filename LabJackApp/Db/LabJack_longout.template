@@ -1,5 +1,5 @@
 # longout record template for register outputs
 record(longout, "$(P)$(R)") {
     field(DTYP ,"asynInt32")
-    field(OUT,  "@asynMask($(PORT) $(OFFSET))")
+    field(OUT,  "@asynMask($(PORT) $(ADDR) 0XFFFF)DIGITAL_OUTPUT")
 }

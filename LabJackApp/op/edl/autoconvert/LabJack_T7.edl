@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 205
-y 192
-w 850
-h 784
+x 201
+y 176
+w 980
+h 805
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -24,34 +24,19 @@ snapToGrid
 gridSize 4
 endScreenProperties
 
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 221
-y 14
-w 44
-h 43
-lineColor rgb 44544 44544 44544
-fill
-fillColor rgb 44544 44544 44544
-lineWidth 0
-endObjectProperties
-
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 391
-y 87
-w 444
-h 439
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
+x 1
+y 2
+w 977
+h 43
+lineColor rgb 40960 4608 1792
+fillColor rgb 40960 4608 1792
+lineWidth 3
 endObjectProperties
 
 # (Static Text)
@@ -60,17 +45,17 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 538
-y 99
-w 144
+x 0
+y 12
+w 980
 h 25
 font "helvetica-medium-r-18.0"
-fontAlign "right"
-fgColor rgb 0 0 0
+fontAlign "center"
+fgColor rgb 40960 4608 1792
 bgColor index 3
 useDisplayBg
 value {
-  "Analog Input"
+  "LabJack  $(P)"
 }
 endObjectProperties
 
@@ -80,17 +65,17 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 259
-y 134
-w 70
+x 50
+y 65
+w 100
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "right"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "Outputs"
+  "Model name"
 }
 endObjectProperties
 
@@ -100,18 +85,66 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 70
-y 134
-w 60
+x 265
+y 65
+w 160
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "right"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "Inputs"
+  "Firmware version"
 }
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 430
+y 65
+w 80
+h 20
+controlPv "$(P)FirmwareVersion"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 155
+y 65
+w 80
+h 20
+controlPv "$(P)ModelName"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 # (Static Text)
@@ -120,8 +153,299 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 122
-y 97
+x 20
+y 90
+w 130
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Serial number"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 155
+y 90
+w 100
+h 20
+controlPv "$(P)SerialNumber"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 275
+y 90
+w 150
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Temperature (K)"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 430
+y 90
+w 80
+h 20
+controlPv "$(P)DeviceTemperature"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 275
+y 115
+w 235
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 275
+y 115
+w 150
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Driver version"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 430
+y 115
+w 80
+h 20
+controlPv "$(P)DriverVersion"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 610
+y 65
+w 285
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 610
+y 65
+w 200
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Poll sleep time (ms)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 815
+y 65
+w 80
+h 20
+controlPv "$(P)PollSleepMS"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 610
+y 90
+w 200
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Poll cycle time (ms)"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 815
+y 90
+w 80
+h 20
+controlPv "$(P)PollTimeMS"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 610
+y 115
+w 200
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Reset device on exit"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 175
+w 520
+h 625
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 199
+y 185
 w 132
 h 25
 font "helvetica-medium-r-18.0"
@@ -140,175 +464,11 @@ major 4
 minor 0
 release 0
 x 5
-y 87
-w 379
-h 689
+y 175
+w 519
+h 624
 lineColor rgb 0 0 0
 fillColor rgb 0 0 0
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 27
-y 156
-w 160
-h 0
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 0
-numPoints 2 {
-xPoints  {
-0 27
-1 187
-}
-yPoints  {
-0 156
-1 156
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 227
-y 156
-w 145
-h 0
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 0
-numPoints 2 {
-xPoints  {
-0 227
-1 372
-}
-yPoints  {
-0 156
-1 156
-}
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 580
-y 14
-w 44
-h 43
-lineColor rgb 44544 44544 44544
-fill
-fillColor rgb 44544 44544 44544
-lineWidth 0
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 579
-y 14
-w 43
-h 42
-lineColor rgb 40960 4608 1792
-fillColor rgb 40960 4608 1792
-lineWidth 3
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 220
-y 13
-w 43
-h 42
-lineColor rgb 40960 4608 1792
-fillColor rgb 40960 4608 1792
-lineWidth 3
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 243
-y 13
-w 357
-h 43
-lineColor rgb 40960 4608 1792
-fillColor rgb 40960 4608 1792
-lineWidth 3
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 243
-y 16
-w 359
-h 38
-lineColor rgb 44544 44544 44544
-fill
-fillColor rgb 44544 44544 44544
-lineWidth 0
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 266
-y 24
-w 130
-h 25
-font "helvetica-medium-r-18.0"
-fgColor rgb 40960 4608 1792
-bgColor index 3
-useDisplayBg
-value {
-  "LabJack T7"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 448
-y 24
-w 130
-h 25
-font "helvetica-medium-r-18.0"
-fontAlign "right"
-fgColor rgb 40960 4608 1792
-bgColor index 3
-useDisplayBg
-value {
-  "$(P)$(N)"
-}
 endObjectProperties
 
 # (Group)
@@ -317,12 +477,32 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 139
-w 417
+x 360
+y 188
+w 143
 h 20
 
 beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 360
+y 188
+w 60
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "DIO In"
+}
+endObjectProperties
 
 # (Text Monitor)
 object activeXTextDspClass:noedit
@@ -330,16 +510,16 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 439
-y 139
-w 90
+x 423
+y 188
+w 80
 h 20
-controlPv "$(P)LJT7:$(N):AI0"
-format "decimal"
+controlPv "$(P)DIOIn"
+format "hex"
 font "helvetica-medium-r-14.0"
 fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
 limitsFromDb
 nullColor rgb 60928 46592 11008
 smartRefresh
@@ -348,17 +528,173 @@ newPos
 objType "controls"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 215
+w 510
+h 190
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 215
+w 509
+h 189
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 250
+w 490
+h 148
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 273
+w 50
+h 125
+
+beginGroup
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 412
-y 139
-w 22
+x 30
+y 347
+w 40
 h 20
 font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Dir."
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 33
+y 308
+w 37
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Out"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 43
+y 273
+w 27
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "In"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 19
+y 378
+w 51
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Desc."
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 90
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
@@ -368,19 +704,76 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 90
+y 272
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 91
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi0.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 91
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi0.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 139
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI0.DESC"
+x 75
+y 380
+w 50
+h 18
+controlPv "$(P)Bi0.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -394,30 +787,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 397
-y 139
-w 23
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "+"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch0)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -429,10 +798,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 164
-w 417
-h 20
+x 130
+y 250
+w 50
+h 148
 
 beginGroup
 
@@ -442,12 +811,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 406
-y 164
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
+x 145
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -456,29 +825,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 164
-w 90
+x 145
+y 272
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI1"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 146
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi1.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 146
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi1.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -486,13 +888,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 164
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI1.DESC"
+x 130
+y 380
+w 50
+h 18
+controlPv "$(P)Bi1.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -506,49 +908,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 399
-y 164
-w 19
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "-"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch0)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 433
-y 164
-w 101
-h 18
-lineColor rgb 47872 47872 47872
-fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch0)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -560,10 +919,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 402
-y 214
-w 418
-h 20
+x 185
+y 250
+w 50
+h 148
 
 beginGroup
 
@@ -573,166 +932,11 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 405
-y 214
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "3"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 214
-w 90
-h 20
-controlPv "$(P)LJT7:$(N):AI3"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 720
-y 214
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI3.DESC"
-format "hex"
+x 200
+y 250
+w 21
+h 15
 font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 398
-y 214
-w 19
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "-"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch2)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 432
-y 214
-w 101
-h 18
-lineColor rgb 47872 47872 47872
-fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch2)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 402
-y 189
-w 418
-h 20
-
-beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 189
-w 90
-h 20
-controlPv "$(P)LJT7:$(N):AI2"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 411
-y 189
-w 22
-h 20
-font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
@@ -742,19 +946,76 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 272
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi2.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi2.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 189
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI2.DESC"
+x 185
+y 380
+w 50
+h 18
+controlPv "$(P)Bi2.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -768,28 +1029,125 @@ newPos
 objType "controls"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 250
+w 50
+h 148
+
+beginGroup
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 396
-y 189
-w 23
-h 20
-font "helvetica-medium-r-14.0"
+x 255
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "+"
+  "3"
 }
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch2)"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 272
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi3.VAL)"
 visInvert
 visMin 0
 visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi3.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 240
+y 380
+w 50
+h 18
+controlPv "$(P)Bi3.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 endGroup
@@ -803,36 +1161,12 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 402
-y 239
-w 418
-h 20
+x 295
+y 250
+w 50
+h 148
 
 beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 239
-w 90
-h 20
-controlPv "$(P)LJT7:$(N):AI4"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -840,11 +1174,11 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 411
-y 239
-w 22
-h 20
-font "helvetica-medium-r-14.0"
+x 310
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
@@ -854,19 +1188,76 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 310
+y 272
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 311
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi4.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 311
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi4.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 239
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI4.DESC"
+x 295
+y 380
+w 50
+h 18
+controlPv "$(P)Bi4.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -880,30 +1271,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 396
-y 239
-w 23
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "+"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch4)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -915,10 +1282,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 402
-y 264
-w 418
-h 20
+x 350
+y 250
+w 50
+h 148
 
 beginGroup
 
@@ -928,12 +1295,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 407
-y 264
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
+x 365
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -942,29 +1309,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 264
-w 90
+x 365
+y 272
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI5"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 366
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi5.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 366
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi5.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -972,13 +1372,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 264
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI5.DESC"
+x 350
+y 380
+w 50
+h 18
+controlPv "$(P)Bi5.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -992,49 +1392,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 398
-y 264
-w 19
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "-"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch4)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 433
-y 264
-w 101
-h 18
-lineColor rgb 47872 47872 47872
-fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch4)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -1046,36 +1403,12 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 289
-w 417
-h 20
+x 405
+y 250
+w 50
+h 148
 
 beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 289
-w 90
-h 20
-controlPv "$(P)LJT7:$(N):AI6"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -1083,11 +1416,11 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 412
-y 289
-w 22
-h 20
-font "helvetica-medium-r-14.0"
+x 420
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
@@ -1097,19 +1430,76 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 272
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 421
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi6.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 421
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi6.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 289
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI6.DESC"
+x 405
+y 380
+w 50
+h 18
+controlPv "$(P)Bi6.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1123,30 +1513,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 397
-y 289
-w 23
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "+"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch6)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -1158,10 +1524,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 314
-w 417
-h 20
+x 460
+y 250
+w 50
+h 148
 
 beginGroup
 
@@ -1171,12 +1537,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 406
-y 314
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
+x 475
+y 250
+w 21
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -1185,29 +1551,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 314
-w 90
+x 475
+y 272
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI7"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 476
+y 273
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi7.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 476
+y 273
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi7.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -1215,13 +1614,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 314
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI7.DESC"
+x 460
+y 380
+w 50
+h 18
+controlPv "$(P)Bi7.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1235,47 +1634,58 @@ newPos
 objType "controls"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 399
-y 314
-w 19
+x 230
+y 222
+w 70
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "center"
+fontAlign "right"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "-"
+  "FIO 0-7"
 }
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch6)"
-visInvert
-visMin 0
-visMax 1
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 434
-y 314
-w 101
-h 18
-lineColor rgb 47872 47872 47872
-fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch6)"
-visInvert
-visMin 0
-visMax 1
+x 305
+y 222
+w 80
+h 20
+controlPv "$(P)FIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 endGroup
@@ -1289,10 +1699,37 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 339
-w 417
-h 20
+x 10
+y 411
+w 510
+h 190
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 411
+w 509
+h 189
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 469
+w 50
+h 125
 
 beginGroup
 
@@ -1302,12 +1739,110 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 408
-y 339
-w 22
+x 30
+y 543
+w 40
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Dir."
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 33
+y 504
+w 37
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Out"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 43
+y 469
+w 27
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "In"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 19
+y 574
+w 51
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Desc."
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 90
+y 446
+w 21
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -1316,29 +1851,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 339
-w 90
+x 90
+y 468
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI8"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 91
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi8.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 91
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi8.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -1346,13 +1914,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 339
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI8.DESC"
+x 75
+y 576
+w 50
+h 18
+controlPv "$(P)Bi8.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1366,30 +1934,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 397
-y 339
-w 23
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "+"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch8)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -1401,36 +1945,12 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 364
-w 417
-h 20
+x 130
+y 446
+w 50
+h 148
 
 beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 364
-w 90
-h 20
-controlPv "$(P)LJT7:$(N):AI9"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -1438,11 +1958,11 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 416
-y 364
-w 22
-h 20
-font "helvetica-medium-r-14.0"
+x 145
+y 446
+w 21
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
@@ -1452,19 +1972,76 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 468
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 146
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi9.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 146
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi9.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 364
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI9.DESC"
+x 130
+y 576
+w 50
+h 18
+controlPv "$(P)Bi9.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1478,49 +2055,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 399
-y 364
-w 19
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "-"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch8)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 435
-y 364
-w 101
-h 18
-lineColor rgb 47872 47872 47872
-fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch8)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -1532,10 +2066,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 389
-w 419
-h 20
+x 185
+y 446
+w 50
+h 148
 
 beginGroup
 
@@ -1545,12 +2079,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 404
-y 389
-w 30
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
+x 196
+y 446
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -1559,29 +2093,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 389
-w 90
+x 200
+y 468
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI10"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi10.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi10.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -1589,13 +2156,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 389
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI10.DESC"
+x 185
+y 576
+w 50
+h 18
+controlPv "$(P)Bi10.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1609,30 +2176,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 395
-y 389
-w 23
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "+"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch10)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -1644,36 +2187,12 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 414
-w 419
-h 20
+x 240
+y 446
+w 50
+h 148
 
 beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 439
-y 414
-w 90
-h 20
-controlPv "$(P)LJT7:$(N):AI11"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -1681,11 +2200,11 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 409
-y 414
-w 30
-h 20
-font "helvetica-medium-r-14.0"
+x 251
+y 446
+w 28
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
@@ -1695,19 +2214,76 @@ value {
 }
 endObjectProperties
 
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 468
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi11.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi11.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 414
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI11.DESC"
+x 240
+y 576
+w 50
+h 18
+controlPv "$(P)Bi11.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1721,49 +2297,6 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 397
-y 414
-w 19
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "-"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch10)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 435
-y 414
-w 101
-h 18
-lineColor rgb 47872 47872 47872
-fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch10)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
 endGroup
 
 endObjectProperties
@@ -1775,10 +2308,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 439
-w 419
-h 20
+x 295
+y 446
+w 50
+h 148
 
 beginGroup
 
@@ -1788,12 +2321,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 404
-y 439
-w 30
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
+x 306
+y 446
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -1802,29 +2335,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 439
-w 90
+x 310
+y 468
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI12"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 311
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi12.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 311
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi12.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -1832,13 +2398,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 439
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI12.DESC"
+x 295
+y 576
+w 50
+h 18
+controlPv "$(P)Bi12.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1850,30 +2416,6 @@ smartRefresh
 fastUpdate
 newPos
 objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 395
-y 439
-w 23
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "+"
-}
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch12)"
-visInvert
-visMin 0
-visMax 1
 endObjectProperties
 
 endGroup
@@ -1887,10 +2429,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 464
-w 419
-h 20
+x 350
+y 446
+w 50
+h 148
 
 beginGroup
 
@@ -1900,12 +2442,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 404
-y 464
-w 30
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
+x 361
+y 446
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -1914,29 +2456,62 @@ value {
 }
 endObjectProperties
 
-# (Text Monitor)
-object activeXTextDspClass:noedit
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
-minor 7
+minor 0
 release 0
-x 439
-y 464
-w 90
+x 365
+y 468
+w 20
 h 20
-controlPv "$(P)LJT7:$(N):AI13"
-format "decimal"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 2560 0 47104
-bgColor rgb 47872 47872 47872
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 366
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi13.VAL)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 366
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi13.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
 
 # (Text Control)
 object activeXTextDspClass
@@ -1944,13 +2519,13 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 720
-y 464
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AI13.DESC"
+x 350
+y 576
+w 50
+h 18
+controlPv "$(P)Bi13.DESC"
 format "hex"
-font "helvetica-medium-r-12.0"
+font "helvetica-medium-r-10.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 55808 55808 55808
@@ -1964,47 +2539,246 @@ newPos
 objType "controls"
 endObjectProperties
 
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 446
+w 50
+h 148
+
+beginGroup
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 397
-y 464
-w 19
-h 20
-font "helvetica-medium-r-14.0"
+x 416
+y 446
+w 28
+h 15
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "-"
+  "14"
 }
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch12)"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 468
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 421
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi14.VAL)"
 visInvert
 visMin 0
 visMax 1
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
+# (Circle)
+object activeCircleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 436
-y 464
-w 101
+x 421
+y 469
+w 18
 h 18
-lineColor rgb 47872 47872 47872
+lineColor rgb 0 55296 0
 fill
-fillColor rgb 47872 47872 47872
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):seDiff_Ch12)"
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi14.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 405
+y 576
+w 50
+h 18
+controlPv "$(P)Bi14.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 471
+y 446
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "15"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 475
+y 468
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 476
+y 469
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi15.VAL)"
 visInvert
 visMin 0
 visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 476
+y 469
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi15.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 460
+y 576
+w 50
+h 18
+controlPv "$(P)Bi15.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
 endGroup
@@ -2018,8 +2792,1163 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 516
-y 543
+x 230
+y 418
+w 70
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "EIO 0-7"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 305
+y 418
+w 80
+h 20
+controlPv "$(P)EIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 605
+w 510
+h 190
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 605
+w 509
+h 189
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 663
+w 50
+h 125
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 737
+w 40
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Dir."
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 33
+y 698
+w 37
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Out"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 43
+y 663
+w 27
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "In"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 19
+y 768
+w 51
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Desc."
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 87
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "16"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 90
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 91
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi16.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 91
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi16.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 75
+y 770
+w 50
+h 18
+controlPv "$(P)Bi16.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 141
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "17"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 146
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi17.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 146
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi17.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 130
+y 770
+w 50
+h 18
+controlPv "$(P)Bi17.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 196
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "18"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi18.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi18.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 185
+y 770
+w 50
+h 18
+controlPv "$(P)Bi18.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 251
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "19"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi19.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi19.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 240
+y 770
+w 50
+h 18
+controlPv "$(P)Bi19.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 306
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "20"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 310
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 311
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi20.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 311
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi20.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 295
+y 770
+w 50
+h 18
+controlPv "$(P)Bi20.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 361
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "21"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 365
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 366
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi21.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 366
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi21.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 350
+y 770
+w 50
+h 18
+controlPv "$(P)Bi21.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 416
+y 640
+w 28
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "22"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 662
+w 20
+h 20
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 421
+y 663
+w 18
+h 18
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi22.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 421
+y 663
+w 18
+h 18
+lineColor rgb 0 55296 0
+fill
+fillColor rgb 0 55296 0
+lineWidth 0
+visPv "CALC\\\{(A)\}($(P)Bi22.VAL)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 405
+y 770
+w 50
+h 18
+controlPv "$(P)Bi22.DESC"
+format "hex"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 107
+y 612
+w 155
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 107
+y 612
+w 70
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "CIO 0-3"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 182
+y 612
+w 80
+h 20
+controlPv "$(P)CIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 297
+y 612
+w 155
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 297
+y 612
+w 70
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "MIO 0-2"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 372
+y 612
+w 80
+h 20
+controlPv "$(P)MIOIn"
+format "hex"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 655
+y 631
 w 156
 h 25
 font "helvetica-medium-r-18.0"
@@ -2038,13 +3967,174 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 423
-y 532
-w 379
-h 244
+x 530
+y 620
+w 444
+h 154
 lineColor rgb 0 0 0
 fillColor rgb 0 0 0
 endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 625
+y 717
+w 120
+h 20
+fgColor rgb 19968 42240 63744
+bgColor rgb 29440 57088 65280
+2ndBgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ao1"
+controlLabelType "pvName"
+font "helvetica-bold-r-12.0"
+limitsFromDb
+increment 1
+endObjectProperties
+
+# (Motif Slider)
+object activeMotifSliderClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 625
+y 678
+w 120
+h 20
+fgColor rgb 19968 42240 63744
+bgColor rgb 29440 57088 65280
+2ndBgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ao0"
+controlLabelType "pvName"
+font "helvetica-bold-r-12.0"
+limitsFromDb
+increment 1
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 770
+y 678
+w 60
+h 20
+controlPv "$(P)Ao0TweakVal"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 855
+y 677
+w 100
+h 20
+controlPv "$(P)Ao0.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 770
+y 717
+w 60
+h 20
+controlPv "$(P)Ao1TweakVal"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 855
+y 717
+w 100
+h 20
+controlPv "$(P)Ao1.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 540
+y 678
+w 80
+h 59
+
+beginGroup
 
 # (Static Text)
 object activeXTextClass
@@ -2052,8 +4142,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 423
-y 629
+x 528
+y 717
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -2072,59 +4162,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 450
-y 629
+x 555
+y 717
 w 65
 h 20
-controlPv "$(P)LJT7:$(N):AO1"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 522
-y 629
-w 80
-h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AO1"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 625
-y 629
-w 45
-h 20
-controlPv "$(P)LJT7:$(N):AO1TweakVal"
+controlPv "$(P)Ao1"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -2146,8 +4188,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 423
-y 590
+x 528
+y 678
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -2166,539 +4208,16 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 450
-y 590
+x 555
+y 678
 w 65
 h 20
-controlPv "$(P)LJT7:$(N):AO0"
+controlPv "$(P)Ao0"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
 fgColor rgb 0 0 0
 bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 522
-y 590
-w 80
-h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AO0"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 625
-y 590
-w 45
-h 20
-controlPv "$(P)LJT7:$(N):AO0TweakVal"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 694
-y 589
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AO0.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 694
-y 629
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AO1.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 423
-y 743
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "3"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 450
-y 743
-w 65
-h 20
-controlPv "$(P)LJT7:$(N):AO3"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 522
-y 743
-w 80
-h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AO3"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 625
-y 743
-w 45
-h 20
-controlPv "$(P)LJT7:$(N):AO3TweakVal"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 423
-y 704
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "2"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 450
-y 704
-w 65
-h 20
-controlPv "$(P)LJT7:$(N):AO2"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 522
-y 704
-w 80
-h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AO2"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 625
-y 704
-w 45
-h 20
-controlPv "$(P)LJT7:$(N):AO2TweakVal"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 694
-y 703
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AO2.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 694
-y 743
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):AO3.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 505
-y 671
-w 175
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "LJTick-DAC Module"
-}
-endObjectProperties
-
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 505
-y 692
-w 175
-h 0
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 0
-numPoints 2 {
-xPoints  {
-0 505
-1 680
-}
-yPoints  {
-0 692
-1 692
-}
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 202
-w 350
-h 30
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 22
-y 207
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "1"
-}
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 212
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI1.VAL)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 212
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI1.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 210
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 207
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI1.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 207
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO1.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
 editable
 motifWidget
 limitsFromDb
@@ -2714,91 +4233,82 @@ endGroup
 endObjectProperties
 
 
-# (Group)
-object activeGroupClass
+# (Rectangle)
+object activeRectangleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 167
-w 350
-h 30
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 22
-y 172
-w 22
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "center"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "0"
-}
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 177
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI0.VAL)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 177
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI0.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
+x 530
 y 175
-w 15
-h 15
+w 444
+h 439
 lineColor rgb 0 0 0
 fillColor rgb 0 0 0
-lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 677
+y 187
+w 144
+h 25
+font "helvetica-medium-r-18.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Analog Input"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 227
+w 90
+h 20
+controlPv "$(P)Ai0"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 551
+y 227
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "0"
+}
 endObjectProperties
 
 # (Text Control)
@@ -2807,11 +4317,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 86
-y 172
+x 859
+y 227
 w 100
 h 20
-controlPv "$(P)LJT7:$(N):DI0.DESC"
+controlPv "$(P)Ai0.DESC"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -2827,17 +4337,61 @@ newPos
 objType "controls"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 545
+y 252
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "1"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 252
+w 90
+h 20
+controlPv "$(P)Ai1"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 273
-y 172
+x 859
+y 252
 w 100
 h 20
-controlPv "$(P)LJT7:$(N):DO0.DESC"
+controlPv "$(P)Ai1.DESC"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -2851,6 +4405,151 @@ smartRefresh
 fastUpdate
 newPos
 objType "controls"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 572
+y 252
+w 101
+h 18
+lineColor rgb 47872 47872 47872
+fill
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff0)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 541
+y 302
+w 418
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 544
+y 302
+w 22
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "3"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 302
+w 90
+h 20
+controlPv "$(P)Ai3"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 302
+w 100
+h 20
+controlPv "$(P)Ai3.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 537
+y 302
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff2)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 571
+y 302
+w 101
+h 18
+lineColor rgb 47872 47872 47872
+fill
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff2)"
+visInvert
+visMin 0
+visMax 1
 endObjectProperties
 
 endGroup
@@ -2864,12 +4563,36 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 237
-w 350
-h 30
+x 541
+y 277
+w 418
+h 20
 
 beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 277
+w 90
+h 20
+controlPv "$(P)Ai2"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -2877,8 +4600,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 242
+x 550
+y 277
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -2891,71 +4614,17 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 247
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI2.VAL)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 247
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI2.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 245
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 86
-y 242
+x 859
+y 277
 w 100
 h 20
-controlPv "$(P)LJT7:$(N):DI2.DESC"
+controlPv "$(P)Ai2.DESC"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -2970,50 +4639,6 @@ fastUpdate
 newPos
 objType "controls"
 endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 242
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO2.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 272
-w 350
-h 30
-
-beginGroup
 
 # (Static Text)
 object activeXTextClass
@@ -3021,9 +4646,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
+x 535
 y 277
-w 22
+w 23
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "center"
@@ -3031,114 +4656,12 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "3"
+  "+"
 }
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 282
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI3.VAL)"
+visPv "CALC\\\{(A)\}($(P)AiDiff2)"
 visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 282
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI3.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 280
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 277
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI3.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 277
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO3.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -3152,12 +4675,36 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 307
-w 350
-h 30
+x 541
+y 327
+w 418
+h 20
 
 beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 327
+w 90
+h 20
+controlPv "$(P)Ai4"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -3165,8 +4712,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 312
+x 550
+y 327
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -3179,110 +4726,54 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
-y 317
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI4.VAL)"
+x 859
+y 327
+w 100
+h 20
+controlPv "$(P)Ai4.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 535
+y 327
+w 23
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "+"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff4)"
 visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 317
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI4.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 315
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 312
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI4.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 312
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO4.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -3296,10 +4787,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 342
-w 350
-h 30
+x 541
+y 352
+w 418
+h 20
 
 beginGroup
 
@@ -3309,12 +4800,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 347
+x 546
+y 352
 w 22
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "center"
+fontAlign "right"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -3323,110 +4814,97 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
+x 578
 y 352
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI5.VAL)"
+w 90
+h 20
+controlPv "$(P)Ai5"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 352
+w 100
+h 20
+controlPv "$(P)Ai5.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 537
+y 352
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff4)"
 visInvert
 visMin 0
 visMax 1
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Rectangle)
+object activeRectangleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 56
+x 572
 y 352
-w 11
-h 11
-lineColor rgb 30720 30720 30720
+w 101
+h 18
+lineColor rgb 47872 47872 47872
 fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI5.VAL)"
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff4)"
+visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 350
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 347
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI5.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 347
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO5.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -3440,12 +4918,36 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
+x 542
 y 377
-w 350
-h 30
+w 417
+h 20
 
 beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 377
+w 90
+h 20
+controlPv "$(P)Ai6"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -3453,8 +4955,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 382
+x 551
+y 377
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -3467,110 +4969,54 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
-y 387
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI6.VAL)"
+x 859
+y 377
+w 100
+h 20
+controlPv "$(P)Ai6.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 536
+y 377
+w 23
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "+"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff6)"
 visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 387
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI6.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 385
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 382
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI6.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 382
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO6.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -3584,10 +5030,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 412
-w 350
-h 30
+x 542
+y 402
+w 417
+h 20
 
 beginGroup
 
@@ -3597,12 +5043,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 417
+x 545
+y 402
 w 22
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "center"
+fontAlign "right"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -3611,110 +5057,97 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
-y 422
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI7.VAL)"
+x 578
+y 402
+w 90
+h 20
+controlPv "$(P)Ai7"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 402
+w 100
+h 20
+controlPv "$(P)Ai7.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 538
+y 402
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff6)"
 visInvert
 visMin 0
 visMax 1
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Rectangle)
+object activeRectangleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 56
-y 422
-w 11
-h 11
-lineColor rgb 30720 30720 30720
+x 573
+y 402
+w 101
+h 18
+lineColor rgb 47872 47872 47872
 fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI7.VAL)"
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff6)"
+visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 420
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 417
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI7.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 417
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO7.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -3728,10 +5161,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 447
-w 350
-h 30
+x 542
+y 427
+w 417
+h 20
 
 beginGroup
 
@@ -3741,12 +5174,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 452
+x 547
+y 427
 w 22
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "center"
+fontAlign "right"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -3755,110 +5188,78 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
-y 457
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI8.VAL)"
+x 578
+y 427
+w 90
+h 20
+controlPv "$(P)Ai8"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 427
+w 100
+h 20
+controlPv "$(P)Ai8.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 536
+y 427
+w 23
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "+"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff8)"
 visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 457
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI8.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 455
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 452
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI8.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 452
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO8.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -3872,12 +5273,36 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 23
-y 482
-w 350
-h 30
+x 542
+y 452
+w 417
+h 20
 
 beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 452
+w 90
+h 20
+controlPv "$(P)Ai9"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -3885,8 +5310,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 22
-y 487
+x 555
+y 452
 w 22
 h 20
 font "helvetica-medium-r-14.0"
@@ -3899,110 +5324,73 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
-y 492
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI9.VAL)"
+x 859
+y 452
+w 100
+h 20
+controlPv "$(P)Ai9.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 538
+y 452
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff8)"
 visInvert
 visMin 0
 visMax 1
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Rectangle)
+object activeRectangleClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 56
-y 492
-w 11
-h 11
-lineColor rgb 30720 30720 30720
+x 574
+y 452
+w 101
+h 18
+lineColor rgb 47872 47872 47872
 fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI9.VAL)"
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff8)"
+visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 490
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 487
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI9.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 487
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO9.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -4016,10 +5404,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 21
-y 517
-w 352
-h 30
+x 540
+y 477
+w 419
+h 20
 
 beginGroup
 
@@ -4029,12 +5417,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 16
-y 522
+x 543
+y 477
 w 30
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "center"
+fontAlign "right"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -4043,110 +5431,78 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
+# (Text Monitor)
+object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 56
-y 527
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI10.VAL)"
+x 578
+y 477
+w 90
+h 20
+controlPv "$(P)Ai10"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 477
+w 100
+h 20
+controlPv "$(P)Ai10.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 534
+y 477
+w 23
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "+"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff10)"
 visInvert
 visMin 0
 visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 527
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI10.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 525
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 86
-y 522
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DI10.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 273
-y 522
-w 100
-h 20
-controlPv "$(P)LJT7:$(N):DO10.DESC"
-format "hex"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
 endObjectProperties
 
 endGroup
@@ -4160,12 +5516,36 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 21
-y 552
-w 165
+x 540
+y 502
+w 419
 h 20
 
 beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 502
+w 90
+h 20
+controlPv "$(P)Ai11"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
 
 # (Static Text)
 object activeXTextClass
@@ -4173,8 +5553,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 16
-y 552
+x 548
+y 502
 w 30
 h 20
 font "helvetica-medium-r-14.0"
@@ -4187,71 +5567,17 @@ value {
 }
 endObjectProperties
 
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 557
-w 11
-h 11
-lineColor rgb 64768 0 0
-fill
-fillColor rgb 64768 0 0
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI11.VAL)"
-visInvert
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 56
-y 557
-w 11
-h 11
-lineColor rgb 30720 30720 30720
-fill
-fillColor rgb 30720 30720 30720
-lineWidth 0
-visPv "CALC\\\{(A)\}($(P)LJT7:$(N):DI11.VAL)"
-visMin 0
-visMax 1
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 54
-y 555
-w 15
-h 15
-lineColor rgb 0 0 0
-fillColor rgb 0 0 0
-lineWidth 2
-endObjectProperties
-
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 86
-y 552
+x 859
+y 502
 w 100
 h 20
-controlPv "$(P)LJT7:$(N):DI11.DESC"
+controlPv "$(P)Ai11.DESC"
 format "hex"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -4267,6 +5593,49 @@ newPos
 objType "controls"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 536
+y 502
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff10)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 574
+y 502
+w 101
+h 18
+lineColor rgb 47872 47872 47872
+fill
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff10)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
 endGroup
 
 endObjectProperties
@@ -4278,250 +5647,426 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 125
-y 589
-w 143
-h 95
-
-beginGroup
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 125
-y 589
-w 60
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "FIO In"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 125
-y 614
-w 60
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "CIO In"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 125
-y 639
-w 60
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "EIO In"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 125
-y 664
-w 60
-h 20
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor index 3
-useDisplayBg
-value {
-  "MIO In"
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 188
-y 589
-w 80
-h 20
-controlPv "$(P)LJT7:$(N):FIOIn"
-format "hex"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 188
-y 614
-w 80
-h 20
-controlPv "$(P)LJT7:$(N):CIOIn"
-format "hex"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 188
-y 639
-w 80
-h 20
-controlPv "$(P)LJT7:$(N):EIOIn"
-format "hex"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 188
-y 664
-w 80
-h 20
-controlPv "$(P)LJT7:$(N):MIOIn"
-format "hex"
-font "helvetica-medium-r-14.0"
-fontAlign "right"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 403
-y 139
-w 417
+x 540
+y 527
+w 419
 h 20
 
 beginGroup
 
-# (Message Button)
-object activeMessageButtonClass
+# (Static Text)
+object activeXTextClass
 beginObjectProperties
 major 4
-minor 0
-release 0
-x 644
-y 139
-w 65
+minor 1
+release 1
+x 543
+y 527
+w 30
 h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI0.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
+bgColor index 3
+useDisplayBg
+value {
+  "12"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 527
+w 90
+h 20
+controlPv "$(P)Ai12"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 527
+w 100
+h 20
+controlPv "$(P)Ai12.DESC"
+format "hex"
 font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
-# (Menu Button)
-object activeMenuButtonClass
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 534
+y 527
+w 23
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "+"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff12)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
+x 540
+y 552
+w 419
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 543
+y 552
+w 30
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "13"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 578
+y 552
+w 90
+h 20
+controlPv "$(P)Ai13"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 859
+y 552
+w 100
+h 20
+controlPv "$(P)Ai13.DESC"
+format "hex"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 536
+y 552
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff12)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 575
+y 552
+w 101
+h 18
+lineColor rgb 47872 47872 47872
+fill
+fillColor rgb 47872 47872 47872
+visPv "CALC\\\{(A)\}($(P)AiDiff12)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 536
+y 227
+w 23
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "+"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff0)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 538
+y 252
+w 19
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "-"
+}
+visPv "CALC\\\{(A)\}($(P)AiDiff0)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 594
+y 747
+w 317
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 115
+w 215
+h 20
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 40
+y 115
+w 110
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "LJM version"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 155
+y 115
+w 100
+h 20
+controlPv "$(P)LJMVersion"
+format "string"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 15
 y 140
-w 90
-h 18
+w 100
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
 fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI0.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI0.SCAN"
-font "helvetica-medium-r-10.0"
+bgColor index 3
+useDisplayBg
+value {
+  "Last error"
+}
 endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 120
+y 147
+w 850
+h 12
+controlPv "$(P)LastErrorMessage"
+format "string"
+font "helvetica-medium-r-10.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 275
+y 115
+w 235
+h 20
+
+beginGroup
 
 endGroup
 
@@ -4533,12 +6078,17 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 164
-w 417
+x 610
+y 65
+w 285
 h 20
 
 beginGroup
+
+endGroup
+
+endObjectProperties
+
 
 # (Message Button)
 object activeMessageButtonClass
@@ -4546,44 +6096,48 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 164
-w 65
+x 815
+y 115
+w 80
 h 20
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
+onColor rgb 64768 0 0
+offColor rgb 64768 0 0
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI1.PROC"
+controlPv "$(P)DeviceReset"
 pressValue "1"
 releaseValue 
-onLabel "Read"
-offLabel "Read"
+onLabel "Reset!"
+offLabel "Reset!"
 3d
 useEnumNumeric
 font "helvetica-medium-r-12.0"
 endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
-y 165
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI1.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI1.SCAN"
-font "helvetica-medium-r-10.0"
-endObjectProperties
+x 5
+y 175
+w 520
+h 625
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 360
+y 188
+w 143
+h 20
+
+beginGroup
 
 endGroup
 
@@ -4595,57 +6149,36 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 402
-y 214
-w 418
-h 20
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 214
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI3.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
+x 10
 y 215
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI3.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI3.SCAN"
-font "helvetica-medium-r-10.0"
-endObjectProperties
+w 510
+h 190
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 250
+w 490
+h 148
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 273
+w 50
+h 125
+
+beginGroup
 
 endGroup
 
@@ -4657,356 +6190,1970 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 402
-y 189
-w 418
-h 20
+x 75
+y 250
+w 50
+h 148
 
 beginGroup
 
-# (Message Button)
-object activeMessageButtonClass
+# (Choice Button)
+object activeChoiceButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 189
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI2.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 190
-w 90
-h 18
+x 75
+y 299
+w 50
+h 36
 fgColor rgb 0 0 0
 bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI2.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI2.SCAN"
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo0"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
+# (Choice Button)
+object activeChoiceButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 402
-y 239
-w 418
-h 20
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 239
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI4.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 240
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI4.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI4.SCAN"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 402
-y 264
-w 418
-h 20
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 264
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI5.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 265
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI5.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI5.SCAN"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 403
-y 289
-w 417
-h 20
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 289
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI6.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 290
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI6.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI6.SCAN"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 403
-y 314
-w 417
-h 20
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 314
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI7.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
-y 315
-w 90
-h 18
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-inconsistentColor rgb 17920 17920 17920
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI7.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI7.SCAN"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 403
-y 339
-w 417
-h 20
-
-beginGroup
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 644
-y 339
-w 65
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI8.PROC"
-pressValue "1"
-releaseValue 
-onLabel "Read"
-offLabel "Read"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 545
+x 75
 y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd0"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 90
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo1"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd1"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo2"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd2"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo3"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd3"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo4"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd4"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 310
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo5"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd5"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 365
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo6"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd6"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 250
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 299
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo7"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 340
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd7"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 475
+y 272
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 411
+w 510
+h 190
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 469
+w 50
+h 125
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo8"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd8"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 90
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo9"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd9"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo10"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd10"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo11"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd11"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo12"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd12"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 310
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo13"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd13"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 365
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo14"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd14"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 446
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 495
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo15"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 460
+y 536
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd15"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 475
+y 468
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 605
+w 510
+h 190
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 663
+w 50
+h 125
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo16"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 75
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd16"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 90
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo17"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd17"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 145
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo18"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 185
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd18"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo19"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 240
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd19"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo20"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 295
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd20"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 310
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo21"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 350
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd21"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 365
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 640
+w 50
+h 148
+
+beginGroup
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 689
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bo22"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 405
+y 730
+w 50
+h 36
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+selectColor rgb 29440 57088 65280
+inconsistentColor rgb 0 0 0
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Bd22"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 420
+y 662
+w 20
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 107
+y 612
+w 155
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 297
+y 612
+w 155
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 835
+y 678
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ao0TweakUp.PROC"
+pressValue "1"
+releaseValue 
+onLabel ">"
+offLabel ">"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 750
+y 678
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ao0TweakDown.PROC"
+pressValue "1"
+releaseValue 
+onLabel "<"
+offLabel "<"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 835
+y 717
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ao1TweakUp.PROC"
+pressValue "1"
+releaseValue 
+onLabel ">"
+offLabel ">"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 750
+y 717
+w 15
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ao1TweakDown.PROC"
+pressValue "1"
+releaseValue 
+onLabel "<"
+offLabel "<"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 540
+y 678
+w 80
+h 59
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 227
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai0.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 228
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -5014,8 +8161,110 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI8.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI8.SCAN"
+controlPv "$(P)Ai0.SCAN"
+indicatorPv "$(P)Ai0.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 252
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai1.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 253
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai1.SCAN"
+indicatorPv "$(P)Ai1.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 541
+y 302
+w 418
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 302
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai3.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 303
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai3.SCAN"
+indicatorPv "$(P)Ai3.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
@@ -5029,8 +8278,194 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 403
-y 364
+x 541
+y 277
+w 418
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 277
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai2.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 278
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai2.SCAN"
+indicatorPv "$(P)Ai2.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 541
+y 327
+w 418
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 327
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai4.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 328
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai4.SCAN"
+indicatorPv "$(P)Ai4.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 541
+y 352
+w 418
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 352
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai5.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 353
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai5.SCAN"
+indicatorPv "$(P)Ai5.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 542
+y 377
 w 417
 h 20
 
@@ -5042,8 +8477,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 364
+x 783
+y 377
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -5051,7 +8486,7 @@ onColor rgb 29440 57088 65280
 offColor rgb 29440 57088 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI9.PROC"
+controlPv "$(P)Ai6.PROC"
 pressValue "1"
 releaseValue 
 onLabel "Read"
@@ -5067,8 +8502,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
-y 365
+x 684
+y 378
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -5076,8 +8511,8 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI9.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI9.SCAN"
+controlPv "$(P)Ai6.SCAN"
+indicatorPv "$(P)Ai6.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
@@ -5091,9 +8526,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 389
-w 419
+x 542
+y 402
+w 417
 h 20
 
 beginGroup
@@ -5104,8 +8539,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 389
+x 783
+y 402
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -5113,7 +8548,7 @@ onColor rgb 29440 57088 65280
 offColor rgb 29440 57088 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI10.PROC"
+controlPv "$(P)Ai7.PROC"
 pressValue "1"
 releaseValue 
 onLabel "Read"
@@ -5129,8 +8564,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
-y 390
+x 684
+y 403
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -5138,8 +8573,8 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI10.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI10.SCAN"
+controlPv "$(P)Ai7.SCAN"
+indicatorPv "$(P)Ai7.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
@@ -5153,9 +8588,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 414
-w 419
+x 542
+y 427
+w 417
 h 20
 
 beginGroup
@@ -5166,8 +8601,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 414
+x 783
+y 427
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -5175,7 +8610,7 @@ onColor rgb 29440 57088 65280
 offColor rgb 29440 57088 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI11.PROC"
+controlPv "$(P)Ai8.PROC"
 pressValue "1"
 releaseValue 
 onLabel "Read"
@@ -5191,8 +8626,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
-y 415
+x 684
+y 428
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -5200,8 +8635,8 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI11.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI11.SCAN"
+controlPv "$(P)Ai8.SCAN"
+indicatorPv "$(P)Ai8.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
@@ -5215,9 +8650,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 439
-w 419
+x 542
+y 452
+w 417
 h 20
 
 beginGroup
@@ -5228,8 +8663,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 644
-y 439
+x 783
+y 452
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -5237,7 +8672,7 @@ onColor rgb 29440 57088 65280
 offColor rgb 29440 57088 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI12.PROC"
+controlPv "$(P)Ai9.PROC"
 pressValue "1"
 releaseValue 
 onLabel "Read"
@@ -5253,8 +8688,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
-y 440
+x 684
+y 453
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -5262,8 +8697,8 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI12.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI12.SCAN"
+controlPv "$(P)Ai9.SCAN"
+indicatorPv "$(P)Ai9.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
@@ -5277,8 +8712,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 401
-y 464
+x 540
+y 477
 w 419
 h 20
 
@@ -5290,8 +8725,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 645
-y 464
+x 783
+y 477
 w 65
 h 20
 fgColor rgb 0 0 0
@@ -5299,7 +8734,7 @@ onColor rgb 29440 57088 65280
 offColor rgb 29440 57088 65280
 topShadowColor rgb 65280 65280 65280
 botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AI13.PROC"
+controlPv "$(P)Ai10.PROC"
 pressValue "1"
 releaseValue 
 onLabel "Read"
@@ -5315,8 +8750,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 545
-y 465
+x 684
+y 478
 w 90
 h 18
 fgColor rgb 0 0 0
@@ -5324,8 +8759,194 @@ bgColor rgb 29440 57088 65280
 inconsistentColor rgb 17920 17920 17920
 topShadowColor rgb 55808 55808 55808
 botShadowColor rgb 17920 17920 17920
-controlPv "$(P)LJT7:$(N):AI13.SCAN"
-indicatorPv "$(P)LJT7:$(N):AI13.SCAN"
+controlPv "$(P)Ai10.SCAN"
+indicatorPv "$(P)Ai10.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 540
+y 502
+w 419
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 502
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai11.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 503
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai11.SCAN"
+indicatorPv "$(P)Ai11.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 540
+y 527
+w 419
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 783
+y 527
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai12.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 528
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai12.SCAN"
+indicatorPv "$(P)Ai12.SCAN"
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 540
+y 552
+w 419
+h 20
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 784
+y 552
+w 65
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)Ai13.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Read"
+offLabel "Read"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 684
+y 553
+w 90
+h 18
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+inconsistentColor rgb 17920 17920 17920
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+controlPv "$(P)Ai13.SCAN"
+indicatorPv "$(P)Ai13.SCAN"
 font "helvetica-medium-r-10.0"
 endObjectProperties
 
@@ -5340,8 +8961,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 522
-y 494
+x 575
+y 582
 w 113
 h 20
 fgColor rgb 0 0 0
@@ -5351,8 +8972,8 @@ botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-12.0"
 icon
 buttonLabel "Strip charts"
-numPvs 16
-numDsps 8
+numPvs 28
+numDsps 14
 displayFileName {
   0 "LabJack_T7_AIStripChart.edl"
   1 "LabJack_T7_AIStripChart.edl"
@@ -5362,6 +8983,12 @@ displayFileName {
   5 "LabJack_T7_AIStripChart.edl"
   6 "LabJack_T7_AIStripChart.edl"
   7 "LabJack_T7_AIStripChart.edl"
+  8 "LabJack_T7_AIStripChart.edl"
+  9 "LabJack_T7_AIStripChart.edl"
+  10 "LabJack_T7_AIStripChart.edl"
+  11 "LabJack_T7_AIStripChart.edl"
+  12 "LabJack_T7_AIStripChart.edl"
+  13 "LabJack_T7_AIStripChart.edl"
 }
 menuLabel {
   0 "Input 0"
@@ -5372,16 +8999,28 @@ menuLabel {
   5 "Input 5"
   6 "Input 6"
   7 "Input 7"
+  8 "Input 8"
+  9 "Input 9"
+  10 "Input 10"
+  11 "Input 11"
+  12 "Input 12"
+  13 "Input 13"
 }
 symbols {
-  0 "AI=$(P)LJT7:$(N):AI0"
-  1 "AI=$(P)LJT7:$(N):AI1"
-  2 "AI=$(P)LJT7:$(N):AI2"
-  3 "AI=$(P)LJT7:$(N):AI3"
-  4 "AI=$(P)LJT7:$(N):AI4"
-  5 "AI=$(P)LJT7:$(N):AI5"
-  6 "AI=$(P)LJT7:$(N):AI6"
-  7 "AI=$(P)LJT7:$(N):AI7"
+  0 "AI=$(P)Ai0"
+  1 "AI=$(P)Ai1"
+  2 "AI=$(P)Ai2"
+  3 "AI=$(P)Ai3"
+  4 "AI=$(P)Ai4"
+  5 "AI=$(P)Ai5"
+  6 "AI=$(P)Ai6"
+  7 "AI=$(P)Ai7"
+  8 "AI=$(P)Ai8"
+  9 "AI=$(P)Ai9"
+  10 "AI=$(P)Ai10"
+  11 "AI=$(P)Ai11"
+  12 "AI=$(P)Ai12"
+  13 "AI=$(P)Ai13"
 }
 replaceSymbols {
   0 1
@@ -5392,6 +9031,12 @@ replaceSymbols {
   5 1
   6 1
   7 1
+  8 1
+  9 1
+  10 1
+  11 1
+  12 1
+  13 1
 }
 endObjectProperties
 
@@ -5401,8 +9046,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 645
-y 494
+x 693
+y 582
 w 93
 h 20
 fgColor rgb 0 0 0
@@ -5421,646 +9066,138 @@ menuLabel {
   0 "AI setup"
 }
 symbols {
-  0 "P=$(P),N=$(N)"
+  0 "P=$(P)"
 }
 replaceSymbols {
   0 1
 }
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 674
-y 629
-w 15
+x 791
+y 582
+w 150
 h 20
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO1TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-12.0"
+icon
+buttonLabel "Waveform digitizer"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "LabJackWaveDig.edl"
+}
+menuLabel {
+  0 "Waveform digitizer"
+}
+symbols {
+  0 "P=$(P)"
+}
+replaceSymbols {
+  0 1
+}
 endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 607
-y 629
-w 15
+x 594
+y 747
+w 317
+h 20
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 761
+y 747
+w 150
 h 20
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO1TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-12.0"
+icon
+buttonLabel "LJTick-DACs"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "LabJack_LJTick_DAC2.edl"
+}
+menuLabel {
+  0 "LJTick-DACs"
+}
+symbols {
+  0 "P=$(P)"
+}
+replaceSymbols {
+  0 1
+}
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 674
-y 590
-w 15
+x 594
+y 747
+w 150
 h 20
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO0TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
 font "helvetica-medium-r-12.0"
+icon
+buttonLabel "Waveform generator"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "LabJackWaveGen2.edl"
+}
+menuLabel {
+  0 "Waveform digitizer"
+}
+symbols {
+  0 "P=$(P)"
+}
+replaceSymbols {
+  0 1
+}
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 607
-y 590
-w 15
+x 40
+y 115
+w 215
 h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO0TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 674
-y 743
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO3TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 607
-y 743
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO3TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 674
-y 704
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO2TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 607
-y 704
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):AO2TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 202
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 202
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO1"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 167
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 167
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO0"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 237
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 237
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO2"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 272
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 272
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO3"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 307
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 307
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO4"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 342
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 342
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO5"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 377
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 377
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO6"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 412
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 412
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO7"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 447
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 447
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO8"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 23
-y 482
-w 350
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 482
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO9"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 21
-y 517
-w 352
-h 30
-
-beginGroup
-
-# (Choice Button)
-object activeChoiceButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 226
-y 517
-w 35
-h 30
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-selectColor rgb 29440 57088 65280
-inconsistentColor rgb 0 0 0
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)LJT7:$(N):DO10"
-font "helvetica-medium-r-10.0"
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 21
-y 552
-w 165
-h 20
-
-beginGroup
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 125
-y 589
-w 143
-h 95
 
 beginGroup
 

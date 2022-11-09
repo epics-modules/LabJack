@@ -1,0 +1,8 @@
+#!/bin/tcsh
+# EPICS startup script for MEDM (shell application)
+#
+
+setenv EPICS_DISPLAY_PATH LabJackApp/op/adl
+
+# Launch MEDM screen
+medm -x -noMsg LabJackTop.adl &

@@ -1,0 +1,194 @@
+# Device information
+file "$(LABJACK)/db/LabJack_device.template" { pattern
+{}
+{}
+}
+
+# The LabJack T7 has 4 banks of digital I/O.
+# Each biy is set as either input or output at run time.
+# FIO = DIO0 - 7,   EPICS channels BI0 - BI7   BO0-BO7
+# EIO = DIO8 - 15,  EPICS channels BI8 - BI15  BO8-BO15
+# CIO = DIO16 - 19, EPICS channels BI16 -BI19  BO16-BO19
+# MIO = DIO20 - 22, EPICS channels BI20 -BI22  BO20-BO22
+#
+
+# Digital inputs as bits
+file "$(LABJACK)/db/LabJack_biBit.template" { pattern
+{R,         MASK,  ZNAM,  ONAM,    DESC}
+{Bi0,        0x1,   Low,   High, "Ch 0 Dig In"}
+{Bi1,        0x2,   Low,   High, "Ch 1 Dig In"}
+{Bi2,        0x4,   Low,   High, "Ch 2 Dig In"}
+{Bi3,        0x8,   Low,   High, "Ch 3 Dig In"}
+{Bi4,       0x10,   Low,   High, "Ch 4 Dig In"}
+{Bi5,       0x20,   Low,   High, "Ch 5 Dig In"}
+{Bi6,       0x40,   Low,   High, "Ch 6 Dig In"}
+{Bi7,       0x80,   Low,   High, "Ch 7 Dig In"}
+{Bi8,      0x100,   Low,   High, "Ch 8 Dig In"}
+{Bi9,      0x200,   Low,   High, "Ch 9 Dig In"}
+{Bi10,     0x400,   Low,   High, "Ch 10 Dig In"}
+{Bi11,     0x800,   Low,   High, "Ch 11 Dig In"}
+{Bi12,    0x1000,   Low,   High, "Ch 12 Dig In"}
+{Bi13,    0x2000,   Low,   High, "Ch 13 Dig In"}
+{Bi14,    0x4000,   Low,   High, "Ch 14 Dig In"}
+{Bi15,    0x8000,   Low,   High, "Ch 15 Dig In"}
+{Bi16,   0x10000,   Low,   High, "Ch 16 Dig In"}
+{Bi17,   0x20000,   Low,   High, "Ch 17 Dig In"}
+{Bi18,   0x40000,   Low,   High, "Ch 18 Dig In"}
+{Bi19,   0x80000,   Low,   High, "Ch 19 Dig In"}
+{Bi20, 0x1000000,   Low,   High, "Ch 20 Dig In"}
+{Bi21, 0x2000000,   Low,   High, "Ch 21 Dig In"}
+{Bi22, 0x4000000,   Low,   High, "Ch 22 Dig In"}
+}
+
+# Digital direction as bits
+file "$(LABJACK)/db/LabJack_binaryDirection.template" { pattern
+{R,          MASK,  ZNAM,  ONAM, VAL   DESC}
+{Bd0,        0x1,   Low,   High,  0, "Ch 0 Dig Dir"}
+{Bd1,        0x2,   Low,   High,  0, "Ch 1 Dig Dir"}
+{Bd2,        0x4,   Low,   High,  0, "Ch 2 Dig Dir"}
+{Bd3,        0x8,   Low,   High,  0, "Ch 3 Dig Dir"}
+{Bd4,       0x10,   Low,   High,  0, "Ch 4 Dig Dir"}
+{Bd5,       0x20,   Low,   High,  0, "Ch 5 Dig Dir"}
+{Bd6,       0x40,   Low,   High,  0, "Ch 6 Dig Dir"}
+{Bd7,       0x80,   Low,   High,  0, "Ch 7 Dig Dir"}
+{Bd8,      0x100,   Low,   High,  1, "Ch 8 Dig Dir"}
+{Bd9,      0x200,   Low,   High,  1, "Ch 9 Dig Dir"}
+{Bd10,     0x400,   Low,   High,  1, "Ch 10 Dig Dir"}
+{Bd11,     0x800,   Low,   High,  1, "Ch 11 Dig Dir"}
+{Bd12,    0x1000,   Low,   High,  1, "Ch 12 Dig Dir"}
+{Bd13,    0x2000,   Low,   High,  1, "Ch 13 Dig Dir"}
+{Bd14,    0x4000,   Low,   High,  1, "Ch 14 Dig Dir"}
+{Bd15,    0x8000,   Low,   High,  1, "Ch 15 Dig Dir"}
+{Bd16,   0x10000,   Low,   High,  0, "Ch 16 Dig Dir"}
+{Bd17,   0x20000,   Low,   High,  0, "Ch 17 Dig Dir"}
+{Bd18,   0x40000,   Low,   High,  0, "Ch 18 Dig Dir"}
+{Bd19,   0x80000,   Low,   High,  0, "Ch 19 Dig Dir"}
+{Bd20, 0x1000000,   Low,   High,  1, "Ch 20 Dig Dir"}
+{Bd21, 0x2000000,   Low,   High,  1, "Ch 21 Dig Dir"}
+{Bd22, 0x4000000,   Low,   High,  1, "Ch 22 Dig Dir"}
+}
+
+# Digital inputs as words
+file "$(LABJACK)/db/LabJack_biWord.template" { pattern
+{R,       ADDR}
+{DIOIn,      0}
+{FIOIn,      1}
+{EIOIn,      2}
+{CIOIn,      3}
+{MIOIn,      4}
+}
+
+# Digital outputs.  
+file "$(LABJACK)/db/LabJack_bo.template" { pattern
+{R,    ADDR,  ZNAM, ONAM,      DESC}
+{Bo0,    0,    Low,  High, "Ch 0 Dig Out"}
+{Bo1,    1,    Low,  High, "Ch 1 Dig Out"}
+{Bo2,    2,    Low,  High, "Ch 2 Dig Out"}
+{Bo3,    3,    Low,  High, "Ch 3 Dig Out"}
+{Bo4,    4,    Low,  High, "Ch 4 Dig Out"}
+{Bo5,    5,    Low,  High, "Ch 5 Dig Out"}
+{Bo6,    6,    Low,  High, "Ch 6 Dig Out"}
+{Bo7,    7,    Low,  High, "Ch 7 Dig Out"}
+{Bo8,    8,    Low,  High, "Ch 8 Dig Out"}
+{Bo9,    9,    Low,  High, "Ch 9 Dig Out"}
+{Bo10,  10,    Low,  High, "Ch 10 Dig Out"}
+{Bo11,  11,    Low,  High, "Ch 11 Dig Out"}
+{Bo12,  12,    Low,  High, "Ch 12 Dig Out"}
+{Bo13,  13,    Low,  High, "Ch 13 Dig Out"}
+{Bo14,  14,    Low,  High, "Ch 14 Dig Out"}
+{Bo15,  15,    Low,  High, "Ch 15 Dig Out"}
+{Bo16,  16,    Low,  High, "Ch 16 Dig Out"}
+{Bo17,  17,    Low,  High, "Ch 17 Dig Out"}
+{Bo18,  18,    Low,  High, "Ch 18 Dig Out"}
+{Bo19,  19,    Low,  High, "Ch 19 Dig Out"}
+{Bo20,  20,    Low,  High, "Ch 20 Dig Out"}
+{Bo21,  21,    Low,  High, "Ch 21 Dig Out"}
+{Bo22,  22,    Low,  High, "Ch 22 Dig Out"}
+}
+
+# Analog Inputs done with word access.
+file "$(LABJACK)/db/LabJack_ai.template" { pattern
+{ADDR,      SCAN,  PREC,     DESC}
+{0,  ".1 second", 4, "Ch 0 Ana In"}
+{1,  ".1 second", 4, "Ch 1 Ana In"}
+{2,  ".1 second", 4, "Ch 2 Ana In"}
+{3,  ".1 second", 4, "Ch 3 Ana In"}
+{4,  ".1 second", 4, "Ch 4 Ana In"}
+{5,  ".1 second", 4, "Ch 5 Ana In"}
+{6,  ".1 second", 4, "Ch 6 Ana In"}
+{7,  ".1 second", 4, "Ch 7 Ana In"}
+{8,  ".1 second", 4, "Ch 8 Ana In"}
+{9,  ".1 second", 4, "Ch 9 Ana In"}
+{10,  ".1 second", 4, "Ch 10 Ana In"}
+{11,  ".1 second", 4, "Ch 11 Ana In"}
+{12,  ".1 second", 4, "Ch 12 Ana In"}
+{13,  ".1 second", 4, "Ch 13 Ana In"}
+}
+
+# Analog outputs done with word access.
+file "$(LABJACK)/db/LabJack_ao.template" { pattern
+{R,    ADDR, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
+{Ao0,   0,    4,    0,     5,   0,     5, "Ch 0 Ana Out"}
+{Ao1,   1,    4,    0,     5,   0,     5, "Ch 1 Ana Out"}
+}
+
+# Analog output to LJTick module
+file "$(LABJACK)/db/LabJack_aoTick.template" { pattern
+{R,   ADDR, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
+{Ao2,   0,    4,  -10,    10,  -10,   10, "Ch 2 Ana Out"}
+{Ao3,   1,    4,  -10,    10,  -10,   10, "Ch 3 Ana Out"}
+#{Ao4,  2,    4,  -10,    10,  -10,   10, "Ch 4 Ana Out"}
+#{Ao5,  3,    4,  -10,    10,  -10,   10, "Ch 5 Ana Out"}
+#{Ao6,  4,    4,  -10,    10,  -10,   10, "Ch 6 Ana Out"}
+#{Ao7,  5,    4,  -10,    10,  -10,   10, "Ch 7 Ana Out"}
+#{Ao8,  6,    4,  -10,    10,  -10,   10, "Ch 8 Ana Out"}
+#{Ao9,  7,    4,  -10,    10,  -10,   10, "Ch 9 Ana Out"}
+#{Ao8,  8,    4,  -10,    10,  -10,   10, "Ch 10 Ana Out"}
+#{Ao9,  9,    4,  -10,    10,  -10,   10, "Ch 11 Ana Out"}
+}
+
+# Waveform digitzer
+file "$(LABJACK)/db/LabJackWaveformDig.template"
+{
+pattern
+{PREC}
+{4}
+}
+
+file "$(LABJACK)/db/LabJackWaveformDigN.template"
+{
+pattern
+{ADDR,  PREC}
+{0,      4}
+{1,      4}
+{2,      4}
+{3,      4}
+{4,      4}
+{5,      4}
+{6,      4}
+{7,      4}
+{8,      4}
+{9,      4}
+{10,     4}
+{11,     4}
+{12,     4}
+{13,     4}
+}
+
+# Waveform generator
+file "$(LABJACK)/db/LabJackWaveformGen.template"
+{
+pattern
+{PREC}
+{4}
+}
+
+file "$(LABJACK)/db/LabJackWaveformGenN.template"
+{
+pattern
+{ADDR,  PREC}
+{0,      4}
+{1,      4}
+}
+
+

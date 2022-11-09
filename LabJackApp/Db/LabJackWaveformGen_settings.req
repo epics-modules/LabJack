@@ -1,0 +1,7 @@
+$(P)WaveGenUserNumPoints
+$(P)WaveGenIntNumPoints
+$(P)WaveGenUserFrequency
+$(P)WaveGenIntFrequency
+$(P)WaveGenExtTrigger
+$(P)WaveGenExtClock
+$(P)WaveGenContinuous

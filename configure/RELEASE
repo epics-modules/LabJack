@@ -29,7 +29,7 @@ SUPPORT=/corvette/home/epics/devel
 
 # External modules required for building this module
 ASYN=$(SUPPORT)/asyn-4-43
-MODBUS=$(SUPPORT)/modbus-3-2
+BUSY=$(SUPPORT)/busy-1-7-3
 LABJACK=$(SUPPORT)/labjack
 
 # Modules required for building module ioc application

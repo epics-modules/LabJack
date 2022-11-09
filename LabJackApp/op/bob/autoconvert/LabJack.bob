@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LabJack</name>
-  <x>218</x>
-  <y>157</y>
+  <x>227</x>
+  <y>50</y>
   <width>396</width>
   <height>273</height>
   <background_color>
@@ -79,8 +79,7 @@
       <action type="open_display">
         <file>LabJack_T7.opi</file>
         <macros>
-          <N>1</N>
-          <P>xyz:</P>
+          <P>xyz:LJT7:1:</P>
         </macros>
         <target>tab</target>
         <description>LabJack T7 unit 1</description>
@@ -88,8 +87,7 @@
       <action type="open_display">
         <file>LabJack_T7.opi</file>
         <macros>
-          <N>2</N>
-          <P>xyz:</P>
+          <P>xyz:LJT7:2:</P>
         </macros>
         <target>tab</target>
         <description>LabJack T7 unit 2</description>
@@ -97,8 +95,7 @@
       <action type="open_display">
         <file>LabJack_T7.opi</file>
         <macros>
-          <N>3</N>
-          <P>xyz:</P>
+          <P>xyz:LJT7:3:</P>
         </macros>
         <target>tab</target>
         <description>LabJack T7 unit 3</description>

@@ -1,0 +1,91 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 232
+y 70
+w 396
+h 150
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 47872 47872 47872
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 106
+y 36
+w 175
+h 36
+font "utopia-medium-r-24.0"
+fontAlign "center"
+fgColor rgb 40960 4608 1792
+bgColor index 3
+useDisplayBg
+value {
+  "LabJack"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 134
+y 88
+w 120
+h 36
+fgColor rgb 60160 61696 46336
+bgColor rgb 40960 4608 1792
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-18.0"
+icon
+buttonLabel "Device"
+numPvs 8
+numDsps 4
+displayFileName {
+  0 "LabJack_T7.edl"
+  1 "LabJack_T7.edl"
+  2 "LabJack_T7.edl"
+  3 "LabJack_T7.edl"
+}
+menuLabel {
+  0 "LabJack T4"
+  1 "LabJack T7"
+  2 "LabJack T7-Pro"
+  3 "LabJack T8"
+}
+symbols {
+  0 "P=LabJackT4_1:"
+  1 "P=LabJackT7_1:"
+  2 "P=LabJackT7Pro_1:"
+  3 "P=LabJackT8_1:"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+}
+endObjectProperties
+
