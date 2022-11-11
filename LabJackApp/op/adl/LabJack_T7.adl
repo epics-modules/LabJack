@@ -5207,49 +5207,6 @@ text {
 }
 composite {
 	object {
-		x=594
-		y=747
-		width=317
-		height=20
-	}
-	"composite name"=""
-	children {
-		"related display" {
-			object {
-				x=761
-				y=747
-				width=150
-				height=20
-			}
-			display[0] {
-				label="LJTick-DACs"
-				name="LabJack_LJTick_DAC2.adl"
-				args="P=$(P)"
-			}
-			clr=14
-			bclr=51
-			label="LJTick-DACs"
-		}
-		"related display" {
-			object {
-				x=594
-				y=747
-				width=150
-				height=20
-			}
-			display[0] {
-				label="Waveform digitizer"
-				name="LabJackWaveGen2.adl"
-				args="P=$(P)"
-			}
-			clr=14
-			bclr=51
-			label="Waveform generator"
-		}
-	}
-}
-composite {
-	object {
 		x=40
 		y=115
 		width=215
@@ -5316,4 +5273,52 @@ text {
 	format="string"
 	limits {
 	}
+}
+"related display" {
+	object {
+		x=576
+		y=747
+		width=150
+		height=20
+	}
+	display[0] {
+		label="Waveform digitizer"
+		name="LabJackWaveGen2.adl"
+		args="P=$(P)"
+	}
+	clr=14
+	bclr=51
+	label="Waveform generator"
+}
+"related display" {
+	object {
+		x=731
+		y=747
+		width=93
+		height=20
+	}
+	display[0] {
+		label="AI setup"
+		name="LabJack_T7_AoSetup.adl"
+		args="P=$(P)"
+	}
+	clr=14
+	bclr=51
+	label="Configure"
+}
+"related display" {
+	object {
+		x=829
+		y=747
+		width=100
+		height=20
+	}
+	display[0] {
+		label="LJTick-DACs"
+		name="LabJack_LJTick_DAC2.adl"
+		args="P=$(P)"
+	}
+	clr=14
+	bclr=51
+	label="LJTick-DACs"
 }
