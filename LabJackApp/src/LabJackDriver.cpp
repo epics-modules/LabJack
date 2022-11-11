@@ -1392,7 +1392,7 @@ int LabJackDriver::startWaveGen()
     reportError(status, functionName, "LJM_eWritAddress for STREAM_OUT_ENABLE");
 
     // Write values to the stream-out buffer
-    status = LJM_eWriteAddress(LJMHandle_, LJT_STREAM_OUT_LOOP_SIZE + 2*i, LJM_UINT32, numPoints);
+    status = LJM_eWriteAddress(LJMHandle_, LJT_STREAM_OUT_LOOP_SIZE + 2*i, LJM_UINT32, numPoints-1);
     reportError(status, functionName, "LJM_eWriteAddress for STREAM_OUT_LOOP_SIZE");
     int errorAddress;
     status = LJM_eWriteAddressArray(LJMHandle_, LJT_STREAM_OUT_BUFFER_F32 + 2*i, LJM_FLOAT32, numPoints, inPtr[firstChan+i], &errorAddress);
