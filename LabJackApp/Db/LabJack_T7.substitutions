@@ -79,7 +79,7 @@ file "$(LABJACK)/db/LabJack_biWord.template" { pattern
 }
 
 # Digital outputs.  
-file "$(LABJACK)/db/LabJack_bo.template" { pattern
+file "$(LABJACK)/db/LabJack_boBit.template" { pattern
 {R,    ADDR,  ZNAM, ONAM,      DESC}
 {Bo0,    0,    Low,  High, "Ch 0 Dig Out"}
 {Bo1,    1,    Low,  High, "Ch 1 Dig Out"}
