@@ -102,15 +102,15 @@ text {
 }
 text {
 	object {
-		x=89
+		x=12
 		y=464
-		width=603
+		width=756
 		height=15
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="NOTE: In Differential mode, channels are paired 0+ 1-. 2+ 3-. etc. "
+	textix="NOTE: on T7 and T7-Pro in differential mode, channels are paired 0+ 1-. 2+ 3-. etc. "
 }
 polyline {
 	object {
