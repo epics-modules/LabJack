@@ -92,14 +92,14 @@ file "$(LABJACK)/db/LabJack_aoTick.template" { pattern
 }
 
 # Waveform digitzer
-file "$(LABJACK)/db/LabJackWaveformDig.template"
+file "$(LABJACK)/db/LabJack_waveformDig.template"
 {
 pattern
 {PREC}
 {4}
 }
 
-file "$(LABJACK)/db/LabJackWaveformDigN.template"
+file "$(LABJACK)/db/LabJack_waveformDigN.template"
 {
 pattern
 {ADDR,  PREC}
@@ -120,14 +120,14 @@ pattern
 }
 
 # Waveform generator
-file "$(LABJACK)/db/LabJackWaveformGen.template"
+file "$(LABJACK)/db/LabJack_waveformGen.template"
 {
 pattern
 {PREC}
 {4}
 }
 
-file "$(LABJACK)/db/LabJackWaveformGenN.template"
+file "$(LABJACK)/db/LabJack_waveformGenN.template"
 {
 pattern
 {ADDR,  PREC}
