@@ -416,72 +416,72 @@ text {
 	}
 	display[0] {
 		label="Input 0"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF0"
 	}
 	display[1] {
 		label="Input 1"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF1"
 	}
 	display[2] {
 		label="Input 2"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF2"
 	}
 	display[3] {
 		label="Input 3"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF3"
 	}
 	display[4] {
 		label="Input 4"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF4"
 	}
 	display[5] {
 		label="Input 5"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF5"
 	}
 	display[6] {
 		label="Input 6"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF6"
 	}
 	display[7] {
 		label="Input 7"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF7"
 	}
 	display[8] {
 		label="Input 8"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF8"
 	}
 	display[9] {
 		label="Input 9"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF9"
 	}
 	display[10] {
 		label="Input 10"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF10"
 	}
 	display[11] {
 		label="Input 11"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF11"
 	}
 	display[12] {
 		label="Input 12"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF12"
 	}
 	display[13] {
 		label="Input 13"
-		name="measCompWaveDigPlot.adl"
+		name="LabJackWaveDigPlot.adl"
 		args="P=$(P),TIME=$(P)WaveDigTimeWF,WAVE=$(P)WaveDigVoltWF13"
 	}
 	clr=14

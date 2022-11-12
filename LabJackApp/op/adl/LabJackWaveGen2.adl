@@ -436,22 +436,22 @@ composite {
 			}
 			display[0] {
 				label="Output 0 Internal"
-				name="measCompWaveGenPlot.adl"
+				name="LabJackWaveGenPlot.adl"
 				args="P=$(P),TIME=$(P)WaveGenIntTimeWF,WAVE=$(P)WaveGenInternalWF0"
 			}
 			display[1] {
 				label="Output 0 User"
-				name="measCompWaveGenPlot.adl"
+				name="LabJackWaveGenPlot.adl"
 				args="P=$(P),TIME=$(P)WaveGenUserTimeWF,WAVE=$(P)WaveGenUserWF0"
 			}
 			display[2] {
 				label="Output 1 Internal"
-				name="measCompWaveGenPlot.adl"
+				name="LabJackWaveGenPlot.adl"
 				args="P=$(P),TIME=$(P)WaveGenIntTimeWF,WAVE=$(P)WaveGenInternalWF1"
 			}
 			display[3] {
 				label="Outout 1 User"
-				name="measCompWaveGenPlot.adl"
+				name="LabJackWaveGenPlot.adl"
 				args="P=$(P),TIME=$(P)WaveGenUserTimeWF,WAVE=$(P)WaveGenUserWF1"
 			}
 			clr=14
