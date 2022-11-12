@@ -1,6 +1,18 @@
-# labjack Release Notes
+# LabJack Release Notes
 
-## R2-0 (October XXX, 2022)
+## R3-0 (November XXX, 2022)
+- Rewritten to be based on asynPortDriver using the vendor LJM library, rather than low-level Modbus access.
+- Added waveform digitizer support, which is called streaming input in LabJack terminology.
+- Added waveform generator support, which is called streaming output in LabJack terminology.
+- Added support for selecting the range and resolution of the analog inputs.
+- Added the ability to enable/disable each analog input channel.  
+  - Improves data quality by disabling unconnected inputs.
+  - Improves the polling speed by not reading disabled inputs.
+- Added support for thermocouple inputs.
+- Changed the binary input/output direction to be configurable for each bit.
+- Added support for the new T8 model.
+
+## R2-0 (November 9, 2022)
 Many changes to simplify and add new features.
 - Added support for the analog input Range feature to select the voltage range.
 - Added support for the analog input Resolution feature to control resolution, allowing decreased noise at the expense of speed.
