@@ -12,60 +12,32 @@ file "$(LABJACK)/db/LabJack_device.template" { pattern
 # MIO = DIO20 - 22, EPICS channels BI20 -BI22  BO20-BO22
 #
 
-# Digital inputs as bits
-file "$(LABJACK)/db/LabJack_biBit.template" { pattern
-{R,         MASK,  ZNAM,  ONAM,    DESC}
-{Bi0,        0x1,   Low,   High, "Ch 0 Dig In"}
-{Bi1,        0x2,   Low,   High, "Ch 1 Dig In"}
-{Bi2,        0x4,   Low,   High, "Ch 2 Dig In"}
-{Bi3,        0x8,   Low,   High, "Ch 3 Dig In"}
-{Bi4,       0x10,   Low,   High, "Ch 4 Dig In"}
-{Bi5,       0x20,   Low,   High, "Ch 5 Dig In"}
-{Bi6,       0x40,   Low,   High, "Ch 6 Dig In"}
-{Bi7,       0x80,   Low,   High, "Ch 7 Dig In"}
-{Bi8,      0x100,   Low,   High, "Ch 8 Dig In"}
-{Bi9,      0x200,   Low,   High, "Ch 9 Dig In"}
-{Bi10,     0x400,   Low,   High, "Ch 10 Dig In"}
-{Bi11,     0x800,   Low,   High, "Ch 11 Dig In"}
-{Bi12,    0x1000,   Low,   High, "Ch 12 Dig In"}
-{Bi13,    0x2000,   Low,   High, "Ch 13 Dig In"}
-{Bi14,    0x4000,   Low,   High, "Ch 14 Dig In"}
-{Bi15,    0x8000,   Low,   High, "Ch 15 Dig In"}
-{Bi16,   0x10000,   Low,   High, "Ch 16 Dig In"}
-{Bi17,   0x20000,   Low,   High, "Ch 17 Dig In"}
-{Bi18,   0x40000,   Low,   High, "Ch 18 Dig In"}
-{Bi19,   0x80000,   Low,   High, "Ch 19 Dig In"}
-{Bi20, 0x1000000,   Low,   High, "Ch 20 Dig In"}
-{Bi21, 0x2000000,   Low,   High, "Ch 21 Dig In"}
-{Bi22, 0x4000000,   Low,   High, "Ch 22 Dig In"}
-}
-
-# Digital direction as bits
-file "$(LABJACK)/db/LabJack_binaryDirection.template" { pattern
-{R,          MASK,  ZNAM,  ONAM, VAL   DESC}
-{Bd0,        0x1,   Low,   High,  0, "Ch 0 Dig Dir"}
-{Bd1,        0x2,   Low,   High,  0, "Ch 1 Dig Dir"}
-{Bd2,        0x4,   Low,   High,  0, "Ch 2 Dig Dir"}
-{Bd3,        0x8,   Low,   High,  0, "Ch 3 Dig Dir"}
-{Bd4,       0x10,   Low,   High,  0, "Ch 4 Dig Dir"}
-{Bd5,       0x20,   Low,   High,  0, "Ch 5 Dig Dir"}
-{Bd6,       0x40,   Low,   High,  0, "Ch 6 Dig Dir"}
-{Bd7,       0x80,   Low,   High,  0, "Ch 7 Dig Dir"}
-{Bd8,      0x100,   Low,   High,  1, "Ch 8 Dig Dir"}
-{Bd9,      0x200,   Low,   High,  1, "Ch 9 Dig Dir"}
-{Bd10,     0x400,   Low,   High,  1, "Ch 10 Dig Dir"}
-{Bd11,     0x800,   Low,   High,  1, "Ch 11 Dig Dir"}
-{Bd12,    0x1000,   Low,   High,  1, "Ch 12 Dig Dir"}
-{Bd13,    0x2000,   Low,   High,  1, "Ch 13 Dig Dir"}
-{Bd14,    0x4000,   Low,   High,  1, "Ch 14 Dig Dir"}
-{Bd15,    0x8000,   Low,   High,  1, "Ch 15 Dig Dir"}
-{Bd16,   0x10000,   Low,   High,  0, "Ch 16 Dig Dir"}
-{Bd17,   0x20000,   Low,   High,  0, "Ch 17 Dig Dir"}
-{Bd18,   0x40000,   Low,   High,  0, "Ch 18 Dig Dir"}
-{Bd19,   0x80000,   Low,   High,  0, "Ch 19 Dig Dir"}
-{Bd20, 0x1000000,   Low,   High,  1, "Ch 20 Dig Dir"}
-{Bd21, 0x2000000,   Low,   High,  1, "Ch 21 Dig Dir"}
-{Bd22, 0x4000000,   Low,   High,  1, "Ch 22 Dig Dir"}
+# Digital I/O as bits
+file "$(LABJACK)/db/LabJack_binary.template" { pattern
+{ADDR,    MASK,  ZNAM,  ONAM, DIR,   DESC}
+{0,        0x1,   Low,   High,  0, "Ch 0 binary"}
+{1,        0x2,   Low,   High,  0, "Ch 1 binary"}
+{2,        0x4,   Low,   High,  0, "Ch 2 binary"}
+{3,        0x8,   Low,   High,  0, "Ch 3 binary"}
+{4,       0x10,   Low,   High,  0, "Ch 4 binary"}
+{5,       0x20,   Low,   High,  0, "Ch 5 binary"}
+{6,       0x40,   Low,   High,  0, "Ch 6 binary"}
+{7,       0x80,   Low,   High,  0, "Ch 7 binary"}
+{8,      0x100,   Low,   High,  1, "Ch 8 binary"}
+{9,      0x200,   Low,   High,  1, "Ch 9 binary"}
+{10,     0x400,   Low,   High,  1, "Ch 10 binary"}
+{11,     0x800,   Low,   High,  1, "Ch 11 binary"}
+{12,    0x1000,   Low,   High,  1, "Ch 12 binary"}
+{13,    0x2000,   Low,   High,  1, "Ch 13 binary"}
+{14,    0x4000,   Low,   High,  1, "Ch 14 binary"}
+{15,    0x8000,   Low,   High,  1, "Ch 15 binary"}
+{16,   0x10000,   Low,   High,  0, "Ch 16 binary"}
+{17,   0x20000,   Low,   High,  0, "Ch 17 binary"}
+{18,   0x40000,   Low,   High,  0, "Ch 18 binary"}
+{19,   0x80000,   Low,   High,  0, "Ch 19 binary"}
+{20, 0x1000000,   Low,   High,  1, "Ch 20 binary"}
+{21, 0x2000000,   Low,   High,  1, "Ch 21 binary"}
+{22, 0x4000000,   Low,   High,  1, "Ch 22 binary"}
 }
 
 # Digital inputs as words
@@ -76,34 +48,6 @@ file "$(LABJACK)/db/LabJack_biWord.template" { pattern
 {EIOIn,      2}
 {CIOIn,      3}
 {MIOIn,      4}
-}
-
-# Digital outputs.  
-file "$(LABJACK)/db/LabJack_boBit.template" { pattern
-{R,    ADDR,  ZNAM, ONAM,      DESC}
-{Bo0,    0,    Low,  High, "Ch 0 Dig Out"}
-{Bo1,    1,    Low,  High, "Ch 1 Dig Out"}
-{Bo2,    2,    Low,  High, "Ch 2 Dig Out"}
-{Bo3,    3,    Low,  High, "Ch 3 Dig Out"}
-{Bo4,    4,    Low,  High, "Ch 4 Dig Out"}
-{Bo5,    5,    Low,  High, "Ch 5 Dig Out"}
-{Bo6,    6,    Low,  High, "Ch 6 Dig Out"}
-{Bo7,    7,    Low,  High, "Ch 7 Dig Out"}
-{Bo8,    8,    Low,  High, "Ch 8 Dig Out"}
-{Bo9,    9,    Low,  High, "Ch 9 Dig Out"}
-{Bo10,  10,    Low,  High, "Ch 10 Dig Out"}
-{Bo11,  11,    Low,  High, "Ch 11 Dig Out"}
-{Bo12,  12,    Low,  High, "Ch 12 Dig Out"}
-{Bo13,  13,    Low,  High, "Ch 13 Dig Out"}
-{Bo14,  14,    Low,  High, "Ch 14 Dig Out"}
-{Bo15,  15,    Low,  High, "Ch 15 Dig Out"}
-{Bo16,  16,    Low,  High, "Ch 16 Dig Out"}
-{Bo17,  17,    Low,  High, "Ch 17 Dig Out"}
-{Bo18,  18,    Low,  High, "Ch 18 Dig Out"}
-{Bo19,  19,    Low,  High, "Ch 19 Dig Out"}
-{Bo20,  20,    Low,  High, "Ch 20 Dig Out"}
-{Bo21,  21,    Low,  High, "Ch 21 Dig Out"}
-{Bo22,  22,    Low,  High, "Ch 22 Dig Out"}
 }
 
 # Analog Inputs done with word access.
