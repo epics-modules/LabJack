@@ -56,9 +56,9 @@ file "LabJack_ao_settings.req", P=$(P), N=0
 file "LabJack_ao_settings.req", P=$(P), N=1
 
 # Waveform digitizer
-file "LabJackWaveformDig_settings.req", P=$(P)
+file "LabJack_waveformDig_settings.req", P=$(P)
 
 # Waveform generator
-file "LabJackWaveformGen_settings.req", P=$(P)
-file "LabJackWaveformGenN_settings.req", P=$(P), N=0
-file "LabJackWaveformGenN_settings.req", P=$(P), N=1
+file "LabJack_waveformGen_settings.req", P=$(P)
+file "LabJack_waveformGenN_settings.req", P=$(P), N=0
+file "LabJack_waveformGenN_settings.req", P=$(P), N=1
