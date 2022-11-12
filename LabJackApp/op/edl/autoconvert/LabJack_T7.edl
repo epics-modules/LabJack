@@ -5938,24 +5938,6 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 594
-y 747
-w 317
-h 20
-
-beginGroup
-
-endGroup
-
-endObjectProperties
-
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
 x 40
 y 115
 w 215
@@ -9111,45 +9093,17 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 594
-y 747
-w 317
+x 40
+y 115
+w 215
 h 20
 
 beginGroup
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 761
-y 747
-w 150
-h 20
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-font "helvetica-medium-r-12.0"
-icon
-buttonLabel "LJTick-DACs"
-numPvs 2
-numDsps 1
-displayFileName {
-  0 "LabJack_LJTick_DAC2.edl"
-}
-menuLabel {
-  0 "LJTick-DACs"
-}
-symbols {
-  0 "P=$(P)"
-}
-replaceSymbols {
-  0 1
-}
+endGroup
+
 endObjectProperties
+
 
 # (Related Display)
 object relatedDisplayClass
@@ -9157,7 +9111,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 594
+x 576
 y 747
 w 150
 h 20
@@ -9184,25 +9138,69 @@ replaceSymbols {
 }
 endObjectProperties
 
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
+# (Related Display)
+object relatedDisplayClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 40
-y 115
-w 215
+x 731
+y 747
+w 93
 h 20
-
-beginGroup
-
-endGroup
-
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+icon
+buttonLabel "Configure"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "LabJack_T7_AoSetup.edl"
+}
+menuLabel {
+  0 "AI setup"
+}
+symbols {
+  0 "P=$(P)"
+}
+replaceSymbols {
+  0 1
+}
 endObjectProperties
 
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 829
+y 747
+w 100
+h 20
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+icon
+buttonLabel "LJTick-DACs"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 "LabJack_LJTick_DAC2.edl"
+}
+menuLabel {
+  0 "LJTick-DACs"
+}
+symbols {
+  0 "P=$(P)"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
 

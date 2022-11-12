@@ -161,16 +161,16 @@ border-radius: 2px;
                 </color>
             </property>
             <property name="text">
-                <string>NOTE: In Differential mode, channels are paired 0+ 1-. 2+ 3-. etc. </string>
+                <string>NOTE: on T7 and T7-Pro in differential mode, channels are paired 0+ 1-. 2+ 3-. etc. </string>
             </property>
             <property name="fontScaleMode">
                 <enum>ESimpleLabel::WidthAndHeight</enum>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>89</x>
+                    <x>12</x>
                     <y>464</y>
-                    <width>603</width>
+                    <width>756</width>
                     <height>15</height>
                 </rect>
             </property>

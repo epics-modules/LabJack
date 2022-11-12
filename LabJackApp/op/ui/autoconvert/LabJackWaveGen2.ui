@@ -968,7 +968,7 @@ border-radius: 2px;
                     <string>Output 0 Internal;Output 0 User;Output 1 Internal;Outout 1 User</string>
                 </property>
                 <property name="files">
-                    <string>measCompWaveGenPlot.adl;measCompWaveGenPlot.adl;measCompWaveGenPlot.adl;measCompWaveGenPlot.adl</string>
+                    <string>LabJackWaveGenPlot.adl;LabJackWaveGenPlot.adl;LabJackWaveGenPlot.adl;LabJackWaveGenPlot.adl</string>
                 </property>
                 <property name="args">
                     <string>P=$(P),TIME=$(P)WaveGenIntTimeWF,WAVE=$(P)WaveGenInternalWF0;P=$(P),TIME=$(P)WaveGenUserTimeWF,WAVE=$(P)WaveGenUserWF0;P=$(P),TIME=$(P)WaveGenIntTimeWF,WAVE=$(P)WaveGenInternalWF1;P=$(P),TIME=$(P)WaveGenUserTimeWF,WAVE=$(P)WaveGenUserWF1</string>

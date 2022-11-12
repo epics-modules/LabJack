@@ -7451,15 +7451,15 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <show_scrollbar>false</show_scrollbar>
-    <text>NOTE: In Differential mode, channels are paired 0+ 1-. 2+ 3-. etc.</text>
+    <text>NOTE: on T7 and T7-Pro in differential mode, channels are paired 0+ 1-. 2+ 3-. etc.</text>
     <tooltip></tooltip>
     <transparent>true</transparent>
     <vertical_alignment>1</vertical_alignment>
     <visible>true</visible>
     <widget_type>Label</widget_type>
-    <width>603</width>
+    <width>756</width>
     <wrap_words>false</wrap_words>
-    <x>89</x>
+    <x>12</x>
     <y>464</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">

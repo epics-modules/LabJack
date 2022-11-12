@@ -5728,50 +5728,6 @@
   </widget>
   <widget type="group" version="2.0.0">
     <name>composite #1258</name>
-    <x>594</x>
-    <y>747</y>
-    <width>317</width>
-    <height>20</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="action_button" version="3.0.0">
-      <name>related display #1261</name>
-      <actions>
-        <action type="open_display">
-          <file>LabJack_LJTick_DAC2.opi</file>
-          <target>tab</target>
-          <description>LJTick-DACs</description>
-        </action>
-      </actions>
-      <text>LJTick-DACs</text>
-      <x>167</x>
-      <width>150</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>related display #1264</name>
-      <actions>
-        <action type="open_display">
-          <file>LabJackWaveGen2.opi</file>
-          <target>tab</target>
-          <description>Waveform digitizer</description>
-        </action>
-      </actions>
-      <text>Waveform generator</text>
-      <width>150</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>composite #1267</name>
     <x>40</x>
     <y>115</y>
     <width>215</width>
@@ -5779,7 +5735,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1270</name>
+      <name>text #1261</name>
       <text>LJM version</text>
       <width>110</width>
       <font>
@@ -5789,7 +5745,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1273</name>
+      <name>text update #1264</name>
       <pv_name>$(P)LJMVersion</pv_name>
       <x>115</x>
       <font>
@@ -5810,7 +5766,7 @@
     </widget>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #1277</name>
+    <name>text #1268</name>
     <text>Last error</text>
     <x>15</x>
     <y>140</y>
@@ -5821,7 +5777,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>text update #1280</name>
+    <name>text update #1271</name>
     <pv_name>$(P)LastErrorMessage</pv_name>
     <x>120</x>
     <y>147</y>
@@ -5842,5 +5798,61 @@
     <format>6</format>
     <show_units>false</show_units>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #1275</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJackWaveGen2.opi</file>
+        <target>tab</target>
+        <description>Waveform digitizer</description>
+      </action>
+    </actions>
+    <text>Waveform generator</text>
+    <x>576</x>
+    <y>747</y>
+    <width>150</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #1278</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_T7_AoSetup.opi</file>
+        <target>tab</target>
+        <description>AI setup</description>
+      </action>
+    </actions>
+    <text>Configure</text>
+    <x>731</x>
+    <y>747</y>
+    <width>93</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #1281</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_LJTick_DAC2.opi</file>
+        <target>tab</target>
+        <description>LJTick-DACs</description>
+      </action>
+    </actions>
+    <text>LJTick-DACs</text>
+    <x>829</x>
+    <y>747</y>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
   </widget>
 </display>

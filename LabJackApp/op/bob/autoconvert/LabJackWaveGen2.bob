@@ -345,7 +345,7 @@
       <name>related display #89</name>
       <actions>
         <action type="open_display">
-          <file>measCompWaveGenPlot.opi</file>
+          <file>LabJackWaveGenPlot.opi</file>
           <macros>
             <TIME>$(P)WaveGenIntTimeWF</TIME>
             <WAVE>$(P)WaveGenInternalWF0</WAVE>
@@ -354,7 +354,7 @@
           <description>Output 0 Internal</description>
         </action>
         <action type="open_display">
-          <file>measCompWaveGenPlot.opi</file>
+          <file>LabJackWaveGenPlot.opi</file>
           <macros>
             <TIME>$(P)WaveGenUserTimeWF</TIME>
             <WAVE>$(P)WaveGenUserWF0</WAVE>
@@ -363,7 +363,7 @@
           <description>Output 0 User</description>
         </action>
         <action type="open_display">
-          <file>measCompWaveGenPlot.opi</file>
+          <file>LabJackWaveGenPlot.opi</file>
           <macros>
             <TIME>$(P)WaveGenIntTimeWF</TIME>
             <WAVE>$(P)WaveGenInternalWF1</WAVE>
@@ -372,7 +372,7 @@
           <description>Output 1 Internal</description>
         </action>
         <action type="open_display">
-          <file>measCompWaveGenPlot.opi</file>
+          <file>LabJackWaveGenPlot.opi</file>
           <macros>
             <TIME>$(P)WaveGenUserTimeWF</TIME>
             <WAVE>$(P)WaveGenUserWF1</WAVE>

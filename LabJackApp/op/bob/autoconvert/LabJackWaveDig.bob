@@ -352,7 +352,7 @@
     <name>related display #82</name>
     <actions>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF0</WAVE>
@@ -361,7 +361,7 @@
         <description>Input 0</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF1</WAVE>
@@ -370,7 +370,7 @@
         <description>Input 1</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF2</WAVE>
@@ -379,7 +379,7 @@
         <description>Input 2</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF3</WAVE>
@@ -388,7 +388,7 @@
         <description>Input 3</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF4</WAVE>
@@ -397,7 +397,7 @@
         <description>Input 4</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF5</WAVE>
@@ -406,7 +406,7 @@
         <description>Input 5</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF6</WAVE>
@@ -415,7 +415,7 @@
         <description>Input 6</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF7</WAVE>
@@ -424,7 +424,7 @@
         <description>Input 7</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF8</WAVE>
@@ -433,7 +433,7 @@
         <description>Input 8</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF9</WAVE>
@@ -442,7 +442,7 @@
         <description>Input 9</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF10</WAVE>
@@ -451,7 +451,7 @@
         <description>Input 10</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF11</WAVE>
@@ -460,7 +460,7 @@
         <description>Input 11</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF12</WAVE>
@@ -469,7 +469,7 @@
         <description>Input 12</description>
       </action>
       <action type="open_display">
-        <file>measCompWaveDigPlot.opi</file>
+        <file>LabJackWaveDigPlot.opi</file>
         <macros>
           <TIME>$(P)WaveDigTimeWF</TIME>
           <WAVE>$(P)WaveDigVoltWF13</WAVE>

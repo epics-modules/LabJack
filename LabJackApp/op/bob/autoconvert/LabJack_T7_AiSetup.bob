@@ -28,10 +28,10 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>text #9</name>
-    <text>NOTE: In Differential mode, channels are paired 0+ 1-. 2+ 3-. etc.</text>
-    <x>89</x>
+    <text>NOTE: on T7 and T7-Pro in differential mode, channels are paired 0+ 1-. 2+ 3-. etc.</text>
+    <x>12</x>
     <y>464</y>
-    <width>603</width>
+    <width>756</width>
     <height>15</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="16.0">

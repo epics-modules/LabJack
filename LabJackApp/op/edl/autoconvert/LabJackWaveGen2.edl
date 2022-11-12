@@ -1545,10 +1545,10 @@ buttonLabel "Plots"
 numPvs 8
 numDsps 4
 displayFileName {
-  0 "measCompWaveGenPlot.edl"
-  1 "measCompWaveGenPlot.edl"
-  2 "measCompWaveGenPlot.edl"
-  3 "measCompWaveGenPlot.edl"
+  0 "LabJackWaveGenPlot.edl"
+  1 "LabJackWaveGenPlot.edl"
+  2 "LabJackWaveGenPlot.edl"
+  3 "LabJackWaveGenPlot.edl"
 }
 menuLabel {
   0 "Output 0 Internal"
