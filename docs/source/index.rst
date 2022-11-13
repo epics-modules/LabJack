@@ -215,8 +215,7 @@ On the T4 analog inputs 12-13 do not apply, nor do digital I/O bits 20-22.
 Databases
 ---------
 
-The following tables list the database template files that are used with
-the multi-function modules.
+The following tables list the database template files that are used with the LabJack modules.
 
 Device Functions
 ~~~~~~~~~~~~~~~~
@@ -242,12 +241,12 @@ This database is loaded once for each LabJack device.
     - Device model name. mbbi values and strings are 0="T4", 1="T7", 2="T7-Pro", 3="T8".
   * - $(P)FirmwareVersion
     - stringin
-    - asynOctetRead
+    - asynOctet
     - FIRMWARE_VERSION
     - Device firmware version.
   * - $(P)SerialNumber
     - stringin
-    - asynOctetRead
+    - asynOctet
     - SERIAL_NUMBER
     - Device serial number.
   * - $(P)DeviceTemperature
@@ -258,17 +257,17 @@ This database is loaded once for each LabJack device.
       It has SCAN="5 second" which is fast enough for this slowly varying value.
   * - $(P)LJMVersion
     - stringin
-    - asynOctetRead
+    - asynOctet
     - LJM_VERSION
     - Version of the LabJack LJM library.
   * - $(P)DriverVersion
     - stringin
-    - asynOctetRead
+    - asynOctet
     - DRIVER_VERSION
     - Version of the EPICS driver.
   * - $(P)LastErrorMessage
     - waveform
-    - asynOctetRead
+    - asynOctet
     - LAST_ERROR_MESSAGE
     - The last error message from the driver. This includes a timestamp.
   * - $(P)PollSleepMS
@@ -279,7 +278,7 @@ This database is loaded once for each LabJack device.
   * - $(P)PollTimeMS
     - ai
     - asynFloat64
-    - POLL_SLEEP_MS
+    - POLL_TIME_MS
     - The actual number of milliseconds to execute the poll cycle, including the sleep.
   * - $(P)AiAllSettlingUS
     - ao
@@ -313,7 +312,7 @@ This database is loaded once for each analog input channel
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)ai$(ADDR)
+  * - $(P)Ai$(ADDR)
     - ai
     - asynFloat64
     - ANALOG_IN_VALUE
@@ -323,8 +322,9 @@ This database is loaded once for each analog input channel
     - bo
     - asynInt32
     - ANALOG_IN_ENABLE
-    - Enable flag for this analog input channel. Unconnected inputs should be disabled to
-      improve accuracy on active channels and to reduce the polling time.
+    - Enable flag for this analog input channel. Disabled inputs are not read by the poller.
+      Unconnected inputs should be disabled to improve accuracy on active channels and to
+      reduce the polling time.
   * - $(P)AiMode$(ADDR)
     - mbbo
     - asynInt32
@@ -357,15 +357,14 @@ This database is loaded once for each analog input channel
     - asynInt32
     - ANALOG_IN_RESOLUTION
     - Selects the input resolution for this analog input channel. 
-      High values of resolution are lower noise and longer ADC conversion time.
+      High values of resolution result in lower noise and longer ADC conversion time.
       Resolution 0 is the default resolution for that model.
       The T4 supports resolutions 1-5.
       The T7 supports resolutions 1-8.
       The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC
       The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?
 
-The following is the medm screen for controlling the analog input setup
-records.
+The following is the medm screen for controlling the analog input configuration records.
 
 .. figure:: LabJack_T7_AiSetup.png
     :align: center
@@ -373,7 +372,7 @@ records.
     **LabJack_T7_AiSetup.adl**
 
 While this screen is nominally specific to the T7 and T7-PRO, it can be used for any model. 
-On the T8 analog inputs 8-13 do not apply.  The inputs are also always in Differential mode.
+On the T8 analog inputs 8-13 do not apply and the inputs are always in Differential mode.
 On the T4 analog inputs 12-13 do not apply.  
 Thermocouples only work well with the T7-PRO in 24-bit mode (resolutions 9-12), or with the T8 with low-voltage ranges. 
 They do not work well with the T4 or T7.
@@ -391,22 +390,22 @@ This database is loaded once for each analog output channel
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)WaveGen
+  * - $(P)$(R)
     - ao
     - asynFloat64
     - ANALOG_OUT_VALUE
     - Analog output value.
-  * - $(P)WaveGenTweakVal
+  * - $(P)$(R)TweakVal
     - ao
     - N.A.
     - N.A.
     - The amount by which to tweak the out when the Tweak record is processed.
-  * - $(P)WaveGenTweakUp
+  * - $(P)$(R)TweakUp
     - calcout
     - N.A.
     - N.A.
     - Tweaks the output up by TweakVal.
-  * - $(P)WaveGenTweakDown
+  * - $(P)$(R)TweakDown
     - calcout
     - N.A.
     - N.A.
@@ -467,7 +466,7 @@ These are the records defined in LabJack_binary.template and LabJack_biWord.temp
     - DIGITAL_DIRECTION
     - Direction of this I/O line, "In" (0) or "Out" (1). The MASK parameter in the INP
       link defines which bit is used.
-  * - $(P)WaveGen
+  * - $(P)$(R)
     - longin
     - asynUInt32Digital
     - DIGITAL_INPUT
@@ -492,66 +491,66 @@ These records are defined in the following files:
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)WaveGenNumPoints
+  * - $(P)WaveDigNumPoints
     - longout
     - asynInt32
     - WAVEDIG_NUM_POINTS
     - Number of points to digitize. This cannot be more than the value of maxInputPoints
       that was specified in LabJackConfig.
-  * - $(P)WaveGenFirstChan
+  * - $(P)WaveDigFirstChan
     - mbbo
     - asynInt32
     - WAVEDIG_FIRST_CHAN
     - First channel to digitize, 0-13.
-  * - $(P)WaveGenNumChans
+  * - $(P)WaveDigNumChans
     - mbbo
     - asynInt32
     - WAVEDIG_NUM_CHANS
     - Number of channels to digitize. 1-14. The maximum valid number is
       13-FirstChan+1.
-  * - $(P)WaveGenTimeWF
+  * - $(P)WaveDigTimeWF
     - waveform
     - asynFloat32Array
     - WAVEDIG_TIME_WF
     - Timebase waveform. These values are calculated when Dwell or NumPoints are changed.
       It is typically used as the X-axis in plots.
-  * - $(P)WaveGenCurrentPoint
+  * - $(P)WaveDigCurrentPoint
     - longin
     - asynInt32
     - WAVEDIG_CURRENT_POINT
     - The current point being collected. This does not always increment by 1 because the
       device can transfer data in blocks.
-  * - $(P)WaveGenDwell
+  * - $(P)WaveDigDwell
     - ao
     - asynFloat64
     - WAVEDIG_DWELL
     - The time per point in seconds. The minimum time depends on the device type and NumChans.
-  * - $(P)WaveGenDwellActual
+  * - $(P)WaveDigDwellActual
     - ai
     - asynFloat64
     - WAVEDIG_DWELL_ACTUAL
     - The actual time per point in seconds. This may differ from the requested Dwell because of clock granularity in the device.
-  * - $(P)WaveGenTotalTime
+  * - $(P)WaveDigTotalTime
     - ai
     - asynFloat64
     - WAVEDIG_TOTAL_TIME
     - The total time to digitize NumChans*NumPoints.
-  * - $(P)WaveGenResolution
+  * - $(P)WaveDigResolution
     - mbbo
     - asynInt32
     - WAVEDIG_RESOLUTION
     - The ADC resolution to use for all channels during the scan.  The choices are model-dependent and are set by the driver.
-  * - $(P)WaveGenSettlingTime
+  * - $(P)WaveDigSettlingTime
     - ao
     - asynFloat64
     - WAVEDIG_SETTLING_TIME
     - The ADC settling time in microseconds to use for all channels during the scan.  0 selects the device default.
-  * - $(P)WaveGenExtTrigger
+  * - $(P)WaveDigExtTrigger
     - bo
     - asynInt32
     - WAVEDIG_EXT_TRIGGER
     - The trigger source, "Internal" (0) or "External" (1). NOTE: NOT YET IMPLEMENTED.
-  * - $(P)WaveGenExtClock
+  * - $(P)WaveDigExtClock
     - bo
     - asynInt32
     - WAVEDIG_EXT_CLOCK
@@ -559,19 +558,19 @@ These records are defined in the following files:
       Dwell record does not control the digitization rate, it is controlled by the external
       clock. However Dwell should be set to approximately the correct value if possible,
       because that builds the time axis for plotting. NOTE: NOT YET IMPLEMENTED.
-  * - $(P)WaveGenAutoRestart
+  * - $(P)WaveDigAutoRestart
     - bo
     - asynInt32
     - WAVEDIG_AUTO_RESTART
     - Values are "Disable" (0) and "Enable" (1). This controls whether the driver automatically
       starts another acquire when the previous one completes. 
-  * - $(P)WaveGenRun
+  * - $(P)WaveDigRun
     - busy
     - asynInt32
     - WAVEDIG_RUN
     - Values are "Stop" (0) and "Run" (1). This starts and stops the waveform digitizer.
       It will automatically stop when the requested number of samples have been acquired.
-  * - $(P)WaveGenReadWF
+  * - $(P)WaveDigReadWF
     - busy
     - asynInt32
     - WAVEDIG_READ_WF
@@ -630,13 +629,13 @@ These records are defined in the following files:
     - asynInt32
     - WAVEGEN_USER_NUM_POINTS
     - Number of points in user-defined output waveforms. This cannot be more than the
-      value of maxOutputPoints that was specified in USB1608GConfig.
+      value of maxOutputPoints that was specified in LabJackConfig.
   * - $(P)WaveGenIntNumPoints
     - longout
     - asynInt32
     - WAVEGEN_INT_NUM_POINTS
     - Number of points in internal predefined output waveforms. This cannot be more than
-      the value of maxOutputPoints that was specified in USB1608GConfig.
+      the value of maxOutputPoints that was specified in LabJackConfig.
   * - $(P)WaveGenUserTimeWF
     - waveform
     - asynFloat32Array
