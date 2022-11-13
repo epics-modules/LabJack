@@ -52,3 +52,6 @@ It supports the following 4 LabJack modules.  All modules have both Ethernet and
 - 23 digital I/O bits, each configurable as input or output.
 - $1,400
 
+## Additional information:
+* [Documentation](https://epics-labjack.readthedocs.io/en/latest)
+* [Release notes](RELEASE.md)
