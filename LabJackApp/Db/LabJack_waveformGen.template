@@ -94,7 +94,6 @@ record(ai, "$(P)WaveGenDwell")
     field(SCAN, "I/O Intr")
 }
 
-# Needed?
 record(ai, "$(P)WaveGenDwellActual")
 {
     field(DTYP, "asynFloat64")
