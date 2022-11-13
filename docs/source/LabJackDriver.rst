@@ -391,22 +391,22 @@ This database is loaded once for each analog output channel
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)$(R)
+  * - $(P)WaveGen
     - ao
     - asynFloat64
     - ANALOG_OUT_VALUE
     - Analog output value.
-  * - $(P)$(R)TweakVal
+  * - $(P)WaveGenTweakVal
     - ao
     - N.A.
     - N.A.
     - The amount by which to tweak the out when the Tweak record is processed.
-  * - $(P)$(R)TweakUp
+  * - $(P)WaveGenTweakUp
     - calcout
     - N.A.
     - N.A.
     - Tweaks the output up by TweakVal.
-  * - $(P)$(R)TweakDown
+  * - $(P)WaveGenTweakDown
     - calcout
     - N.A.
     - N.A.
@@ -467,7 +467,7 @@ These are the records defined in LabJack_binary.template and LabJack_biWord.temp
     - DIGITAL_DIRECTION
     - Direction of this I/O line, "In" (0) or "Out" (1). The MASK parameter in the INP
       link defines which bit is used.
-  * - $(P)$(R)
+  * - $(P)WaveGen
     - longin
     - asynUInt32Digital
     - DIGITAL_INPUT
@@ -492,66 +492,66 @@ These records are defined in the following files:
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)$(R)NumPoints
+  * - $(P)WaveGenNumPoints
     - longout
     - asynInt32
     - WAVEDIG_NUM_POINTS
     - Number of points to digitize. This cannot be more than the value of maxInputPoints
       that was specified in LabJackConfig.
-  * - $(P)$(R)FirstChan
+  * - $(P)WaveGenFirstChan
     - mbbo
     - asynInt32
     - WAVEDIG_FIRST_CHAN
     - First channel to digitize, 0-13.
-  * - $(P)$(R)NumChans
+  * - $(P)WaveGenNumChans
     - mbbo
     - asynInt32
     - WAVEDIG_NUM_CHANS
     - Number of channels to digitize. 1-14. The maximum valid number is
       13-FirstChan+1.
-  * - $(P)$(R)TimeWF
+  * - $(P)WaveGenTimeWF
     - waveform
     - asynFloat32Array
     - WAVEDIG_TIME_WF
     - Timebase waveform. These values are calculated when Dwell or NumPoints are changed.
       It is typically used as the X-axis in plots.
-  * - $(P)$(R)CurrentPoint
+  * - $(P)WaveGenCurrentPoint
     - longin
     - asynInt32
     - WAVEDIG_CURRENT_POINT
     - The current point being collected. This does not always increment by 1 because the
       device can transfer data in blocks.
-  * - $(P)$(R)Dwell
+  * - $(P)WaveGenDwell
     - ao
     - asynFloat64
     - WAVEDIG_DWELL
     - The time per point in seconds. The minimum time depends on the device type and NumChans.
-  * - $(P)$(R)DwellActual
+  * - $(P)WaveGenDwellActual
     - ai
     - asynFloat64
     - WAVEDIG_DWELL_ACTUAL
     - The actual time per point in seconds. This may differ from the requested Dwell because of clock granularity in the device.
-  * - $(P)$(R)TotalTime
+  * - $(P)WaveGenTotalTime
     - ai
     - asynFloat64
     - WAVEDIG_TOTAL_TIME
     - The total time to digitize NumChans*NumPoints.
-  * - $(P)$(R)Resolution
+  * - $(P)WaveGenResolution
     - mbbo
     - asynInt32
     - WAVEDIG_RESOLUTION
     - The ADC resolution to use for all channels during the scan.  The choices are model-dependent and are set by the driver.
-  * - $(P)$(R)SettlingTime
+  * - $(P)WaveGenSettlingTime
     - ao
     - asynFloat64
     - WAVEDIG_SETTLING_TIME
     - The ADC settling time in microseconds to use for all channels during the scan.  0 selects the device default.
-  * - $(P)$(R)ExtTrigger
+  * - $(P)WaveGenExtTrigger
     - bo
     - asynInt32
     - WAVEDIG_EXT_TRIGGER
     - The trigger source, "Internal" (0) or "External" (1). NOTE: NOT YET IMPLEMENTED.
-  * - $(P)$(R)ExtClock
+  * - $(P)WaveGenExtClock
     - bo
     - asynInt32
     - WAVEDIG_EXT_CLOCK
@@ -559,19 +559,19 @@ These records are defined in the following files:
       Dwell record does not control the digitization rate, it is controlled by the external
       clock. However Dwell should be set to approximately the correct value if possible,
       because that builds the time axis for plotting. NOTE: NOT YET IMPLEMENTED.
-  * - $(P)$(R)AutoRestart
+  * - $(P)WaveGenAutoRestart
     - bo
     - asynInt32
     - WAVEDIG_AUTO_RESTART
     - Values are "Disable" (0) and "Enable" (1). This controls whether the driver automatically
       starts another acquire when the previous one completes. 
-  * - $(P)$(R)Run
+  * - $(P)WaveGenRun
     - busy
     - asynInt32
     - WAVEDIG_RUN
     - Values are "Stop" (0) and "Run" (1). This starts and stops the waveform digitizer.
       It will automatically stop when the requested number of samples have been acquired.
-  * - $(P)$(R)ReadWF
+  * - $(P)WaveGenReadWF
     - busy
     - asynInt32
     - WAVEDIG_READ_WF
@@ -605,8 +605,8 @@ Waveform Generator Functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These records are defined in the following files:
-- measCompWaveformGen.template. This database is loaded once per module.
-- measCompWaveformGenN.template. This database is loaded for each waveform generator output channel.
+- LabJack_waveformGen.template. This database is loaded once per module.
+- LabJack_waveformGenN.template. This database is loaded for each waveform generator output channel.
 
 .. cssclass:: table-bordered table-striped table-hover
 .. list-table::
@@ -618,146 +618,139 @@ These records are defined in the following files:
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)$(R)NumPoints
+  * - $(P)WaveGenNumPoints
     - longin
     - asynInt32
     - WAVEGEN_NUM_POINTS
     - Number of points output waveform. The value of this record is equal to UserNumPoints
       if user-defined waveforms are selected, or IntNumPoints if internal predefined waveforms
       are selected.
-  * - $(P)$(R)UserNumPoints
+  * - $(P)WaveGenUserNumPoints
     - longout
     - asynInt32
     - WAVEGEN_USER_NUM_POINTS
     - Number of points in user-defined output waveforms. This cannot be more than the
       value of maxOutputPoints that was specified in USB1608GConfig.
-  * - $(P)$(R)IntNumPoints
+  * - $(P)WaveGenIntNumPoints
     - longout
     - asynInt32
     - WAVEGEN_INT_NUM_POINTS
     - Number of points in internal predefined output waveforms. This cannot be more than
       the value of maxOutputPoints that was specified in USB1608GConfig.
-  * - $(P)$(R)UserTimeWF
+  * - $(P)WaveGenUserTimeWF
     - waveform
     - asynFloat32Array
     - WAVEDIG_USER_TIME_WF
     - Timebase waveform for user-defined waveforms. These values are calculated when UserDwell
       or UserNumPoints are changed. It is typically used as the X-axis in plots.
-  * - $(P)$(R)IntTimeWF
+  * - $(P)WaveGenIntTimeWF
     - waveform
     - asynFloat32Array
     - WAVEGEN_INT_TIME_WF
     - Timebase waveform for internal predefined waveforms. These values are calculated
       when IntDwell or IntNumPoints are changed. It is typically used as the X-axis in
       plots.
-  * - $(P)$(R)CurrentPoint
+  * - $(P)WaveGenCurrentPoint
     - longin
     - asynInt32
     - WAVEGEN_CURRENT_POINT
     - The current point being output. This does not always increment by 1 because the
       device can transfer data in blocks.
-  * - $(P)$(R)Frequency
+  * - $(P)WaveGenFrequency
     - ai
     - asynFloat64
     - WAVEGEN_FREQUENCY
     - The output frequency (waveforms/second). The value of this record is equal to UserFrequency
       if user-defined waveforms are selected, or IntFrequency if internal predefined waveforms
       are selected.
-  * - $(P)$(R)Dwell
+  * - $(P)WaveGenDwell
     - ai
     - asynFloat64
     - WAVEGEN_DWELL
     - The output dwell time or period (seconds/sample). The value of this record is equal
       to UserDwell if user-defined waveforms are selected, or IntDwell if internal predefined
       waveforms are selected.
-  * - $(P)$(R)UserDwell
+  * - $(P)WaveGenDwellActual
+    - ai
+    - asynFloat64
+    - WAVEGEN_DWELL_ACTUAL
+    - The actual dwell time.  This can be different from the requested dwell time (WaveGenDwell) because of the granularity of the device clock.
+  * - $(P)WaveGenUserDwell
     - ao
     - asynFloat64
     - WAVEGEN_USER_DWELL
     - The output dwell time or period (seconds/sample) for user-defined waveforms. This
       record is automatically changed if UserFrequency is modified.
-  * - $(P)$(R)IntDwell
+  * - $(P)WaveGenIntDwell
     - ao
     - asynFloat64
     - WAVEGEN_INT_DWELL
     - The output dwell time or period (seconds/sample) for internal predefined waveforms.
       This record is automatically changed if IntFrequency is modified.
-  * - $(P)$(R)UserFrequency
+  * - $(P)WaveGenUserFrequency
     - ao
     - N.A.
     - N.A.
     - The output frequency (waveforms/second) for user-defined waveforms. This record
       computes UserDwell and writes to that record. This record is automatically changed
       if UserDwell is modified.
-  * - $(P)$(R)IntFrequency
+  * - $(P)WaveGenIntFrequency
     - ao
     - N.A.
     - N.A.
     - The output frequency (waveforms/second) for internal predefined waveforms. This
       record computes IntDwell and writes to that record. This record is automatically
       changed if IntDwell is modified.
-  * - $(P)$(R)TotalTime
+  * - $(P)WaveGenTotalTime
     - ai
     - asynFloat64
     - WAVEGEN_TOTAL_TIME
-    - The total time to output the waveforms. This is Dwell*NumPoints.
-  * - $(P)$(R)ExtTrigger
+    - The total time to output the waveforms. This is WaveGenDwellActual*NumPoints.
+  * - $(P)WaveGenExtTrigger
     - bo
     - asynInt32
     - WAVEGEN_EXT_TRIGGER
-    - The trigger source, "Internal" (0) or "External" (1).
-  * - $(P)$(R)ExtClock
+    - The trigger source, "Internal" (0) or "External" (1). NOTE: NOT YET IMPLEMENTED,
+  * - $(P)WaveGenExtClock
     - bo
     - asynInt32
     - WAVEGEN_EXT_CLOCK
     - The clock source, "Internal" (0) or "External" (1). If External is used then the
       Dwell record does not control the output rate, it is controlled by the external
       clock. However Dwell should be set to approximately the correct value if possible,
-      because that controls what type of data transfers the device uses.
-  * - $(P)$(R)Continuous
+      because that controls the time axis on the plots.  NOTE: NOT YET IMPLEMENTED.
+  * - $(P)WaveGenContinuous
     - bo
     - asynInt32
     - WAVEGEN_CONTINUOUS
     - Values are "One-shot" (0) or "Continuous" (1). This controls whether the device
       stops when the output waveform is complete, or immediately begins again at the start
       of the waveform.
-  * - $(P)$(R)Retrigger
-    - bo
-    - asynInt32
-    - WAVEGEN_RETRIGGER
-    - Values are "Disable" (0) and "Enable" (1). This controls whether the device rearms
-      the trigger input after a trigger is received.
-  * - $(P)$(R)TriggerCount
-    - longout
-    - asynInt32
-    - WAVEGEN_TRIGGER_COUNT
-    - This controls how many values are output on each trigger input. 0 means output NumPoints
-      samples. If TriggerCount is less than NumPoints, Retrigger=Enable and Continuous=Enable
-      then each time a trigger is received TriggerCount samples will be output.
-  * - $(P)$(R)Run
+  * - $(P)WaveGenRun
     - busy
     - asynInt32
     - WAVEGEN_RUN
     - Values are "Stop" (0) and "Run" (1). This starts and stops the waveform generator.
-  * - $(P)$(R)UserWF
+      In one-shot mode the waveform generator stops automatically when all of the samples have been output.
+  * - $(P)WaveGenUserWF$(ADDR)
     - waveform
-    - asynFloat32Array
+    - asynFloat64Array
     - WAVEGEN_USER_WF
     - This waveform record contains the user-defined waveform generator data for channel
       N. The data are in volts. These data are typically generated by an EPICS Channel
       Access client.
-  * - $(P)$(R)InternalWF
+  * - $(P)WaveGenInternalWF$(ADDR)
     - waveform
-    - asynFloat32Array
+    - asynFloat64Array
     - WAVEGEN_INT_WF
     - This waveform record contains the internal predefined waveform generator data for
       channel N. The data are in volts.
-  * - $(P)$(R)Enable
+  * - $(P)WaveGenEnable$(ADDR)
     - bo
     - asynInt32
     - WAVEGEN_ENABLE
     - Values are "Disable" and "Enable". Controls whether channel N output is enabled.
-  * - $(P)$(R)Type
+  * - $(P)WaveGenType(ADDR)
     - mbbo
     - asynInt32
     - WAVEGEN_WAVE_TYPE
@@ -765,12 +758,12 @@ These records are defined in the following files:
       "Square wave", "Sawtooth", "Pulse", or "Random". Note that if any channel is "User-defined"
       then all channels must be. Note that all internally predefined waveforms are symmetric
       about 0 volts. To output unipolar signals the Offset should be set to +-Amplitude/2.
-  * - $(P)$(R)PulseWidth
+  * - $(P)WaveGenPulseWidth(ADDR)
     - ao
     - asynFloat64
     - WAVEGEN_PULSE_WIDTH
     - Controls the pulse width in seconds if Type is "Pulse".
-  * - $(P)$(R)Amplitude
+  * - $(P)WaveGenAmplitude(ADDR)
     - ao
     - asynFloat64
     - WAVEGEN_AMPLITUDE
@@ -780,7 +773,7 @@ These records are defined in the following files:
       the user-defined waveform unchanged, 2.0 increases the amplitide by 2, etc. For
       both internal and used-defined waveforms changing the sign of the Amplitude controls
       the polarity of the signal.
-  * - $(P)$(R)Offset
+  * - $(P)WaveGenOffset(ADDR)
     - ao
     - asynFloat64
     - WAVEGEN_OFFSET
@@ -788,57 +781,20 @@ These records are defined in the following files:
       is added to the waveform, i.e. 0.0 outputs the user-defined waveform unchanged,
       1.0 adds 1 volt, etc.
 
-.. figure:: measCompWaveGenPlot_int.png
+This is the medm screen for the waveform generator.
+
+.. figure:: LabJackWaveGen2.png
+    :align: center
+
+    **LabJackWaveGen2.adl**
+
+This is a plot of an internal predefined sin wave waveform.
+
+.. figure:: LabJackWaveGenPlot.png
     :align: center
 
     **Plot of an internal predefined waveform (sin wave)**
 
-.. figure:: measCompWaveGenPlot_user.png
-    :align: center
-
-    **Plot of a user-defined waveform (sum of sin and cos waves)**
-
-Trigger Functions
-~~~~~~~~~~~~~~~~~
-
-These records are defined in measCompTrigger.template. This database is loaded once per module.
-
-.. cssclass:: table-bordered table-striped table-hover
-.. list-table::
-  :header-rows: 1
-  :widths: 10 10 10 10 60
-
-  * - EPICS record name
-    - EPICS record type
-    - asyn interface
-    - drvInfo string
-    - Description
-  * - $(P)$(R)Mode
-    - mbbo
-    - asynInt32
-    - TRIGGER_MODE
-    - The mode of the external trigger input. Choices are "Positive edge", "Negative edge",
-      "High", and "Low".
-
-Box for USB-2408-2AO
---------------------
-
-The following photos show a box we built to house the USB-2408-2AO and
-provide I/O connections.
-
-This is the top view.
-
-.. figure:: USB2408_Box_Top.jpg
-    :align: center
-
-    **Top view of USB-2408-2AO box**
-
-These are the side views.
-
-.. figure:: USB2408_Box_Sides.jpg
-    :align: center
-
-    **Side views of USB-2408-2AO box**
 
 --------------
 
