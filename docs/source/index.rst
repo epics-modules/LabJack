@@ -296,8 +296,8 @@ This database is loaded once for each LabJack device.
       Note that the device will continue to reset every 10 seconds until the IOC successfully starts again.
       The IOC may occasionally fail to start after a DeviceReset because the device is currently resetting.  Trying again will eventually succeed.
 
-Analog I/O Functions
-~~~~~~~~~~~~~~~~~~~~
+Analog Input Functions
+~~~~~~~~~~~~~~~~~~~~~~
 
 These are the records defined in LabJack_ai.template.
 This database is loaded once for each analog input channel
@@ -376,6 +376,9 @@ On the T8 analog inputs 8-13 do not apply and the inputs are always in Different
 On the T4 analog inputs 12-13 do not apply.  
 Thermocouples only work well with the T7-PRO in 24-bit mode (resolutions 9-12), or with the T8 with low-voltage ranges. 
 They do not work well with the T4 or T7.
+
+Analog Output Functions
+~~~~~~~~~~~~~~~~~~~~~~
 
 These are the records defined in LabJack_Ao.template.
 This database is loaded once for each analog output channel
