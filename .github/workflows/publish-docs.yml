@@ -1,5 +1,20 @@
 name: Publish Sphinx Docs to GitHub Pages
-on: [push]
+on:
+  # Build the docs on pushes to main branch, PRs to main branch, and new tags.
+  # Publish only on demand.
+  push:
+    branches:
+      - main
+    tags:
+      - '*'  # all tags
+  workflow_dispatch:   # allow manual triggering
+    inputs:
+      deploy:
+        description: 'Deploy documentation'
+        type: boolean
+        required: true
+        default: false
+
 
 # see: https://sphinx-notes.github.io/pages/
 # see: https://github.com/marketplace/actions/sphinx-to-github-pages
@@ -10,6 +25,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Deploy Information
+      if: ${{ github.event.inputs.deploy }}
+      run: |
+        echo "The will be published from this workflow run."
+
     - name: Checkout
       uses: actions/checkout@master
       with:
