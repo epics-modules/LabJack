@@ -378,7 +378,7 @@ Thermocouples only work well with the T7-PRO in 24-bit mode (resolutions 9-12), 
 They do not work well with the T4 or T7.
 
 Analog Output Functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the records defined in LabJack_Ao.template.
 This database is loaded once for each analog output channel
