@@ -53,5 +53,5 @@ It supports the following 4 LabJack modules.  All modules have both Ethernet and
 - $1,400
 
 ## Additional information:
-* [Documentation](https://epics-labjack.readthedocs.io/en/latest)
+* [Documentation](https://epics-modules.github.io/LabJack)
 * [Release notes](RELEASE.md)
