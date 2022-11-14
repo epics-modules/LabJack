@@ -52,7 +52,7 @@ jobs:
         # path to conf.py directory
         documentation_path: docs/source
 
-    - name: Push changes if refs/tags
+    - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
