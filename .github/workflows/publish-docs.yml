@@ -4,7 +4,7 @@ on:
   # Publish only on demand.
   push:
     branches:
-      - main
+      - master
     tags:
       - '*'  # all tags
   workflow_dispatch:   # allow manual triggering
