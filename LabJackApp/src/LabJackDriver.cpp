@@ -35,7 +35,8 @@
 #define pollSleepMSString           "POLL_SLEEP_MS"
 #define pollTimeMSString            "POLL_TIME_MS"
 #define deviceResetString           "DEVICE_RESET"
-#define analogInSettlingTimeString  "ANALOG_IN_SETTLING_TIME"
+#define ainSettlingTimeAllString    "AIN_SETTLING_TIME_ALL"
+#define ainResolutionAllString      "AIN_RESOLUTION_ALL"
 #define lastErrorMessageString      "LAST_ERROR_MESSAGE"
 
 // Analog input parameters
@@ -254,7 +255,8 @@ protected:
   int pollSleepMS_;
   int pollTimeMS_;
   int deviceReset_;
-  int analogInSettlingTime_;
+  int ainSettlingTimeAll_;
+  int ainResolutionAll_;
   int lastErrorMessage_;
 
   // Analog input parameters
@@ -429,7 +431,8 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
   createParam(pollSleepMSString,              asynParamFloat64, &pollSleepMS_);
   createParam(pollTimeMSString,               asynParamFloat64, &pollTimeMS_);
   createParam(deviceResetString,                asynParamInt32, &deviceReset_);
-  createParam(analogInSettlingTimeString,     asynParamFloat64, &analogInSettlingTime_);
+  createParam(ainSettlingTimeAllString,       asynParamFloat64, &ainSettlingTimeAll_);
+  createParam(ainResolutionAllString,           asynParamInt32, &ainResolutionAll_);
   createParam(lastErrorMessageString,           asynParamOctet, &lastErrorMessage_);
 
   // Analog input parameters
@@ -708,6 +711,10 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
       setActiveAiChannels();
     }
   }
+  else if (function == ainResolutionAll_) {
+    status = LJM_eWriteName(LJMHandle_, "AIN_ALL_RESOLUTION_INDEX", value);
+    reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX");
+  }
 
   // Waveform digitizer functions
   else if (function == waveDigResolution_) {
@@ -845,11 +852,10 @@ asynStatus LabJackDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
     status = LJM_eReadName(LJMHandle_, "TEMPERATURE_DEVICE_K", value);
     setDoubleParam(deviceTemperature_, *value);
     reportError(status, functionName, "Calling LJM_eReadName for TEMPERATURE_DEVICE_K");
-    // Read the analog inputs once to remove small glitch after reading device temperature
-    if (!waveDigRunning_) {
-      readAnalogInputs();
-    }
-  }
+    // Read the analog inputs twice to remove small glitch after reading device temperature
+    readAnalogInputs();
+    readAnalogInputs();
+   }
   // Other functions we call the base class method
   else {
      status = asynPortDriver::readFloat64(pasynUser, value);
@@ -882,7 +888,7 @@ asynStatus LabJackDriver::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     status = LJM_eWriteAddress(LJMHandle_, LJT_TDAC_FLOAT32 + (2*addr), LJM_FLOAT32, value);
     reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_TDAC_FLOAT32");
   }
-  else if (function == analogInSettlingTime_) {
+  else if (function == ainSettlingTimeAll_) {
     status = LJM_eWriteName(LJMHandle_, "AIN_ALL_SETTLING_US", value);
     reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_SETTLING_US");
   }
@@ -1012,7 +1018,8 @@ asynStatus LabJackDriver::readEnum(asynUser *pasynUser, char *strings[], int val
     if (addr < numAnalogIn_) validAddr = true;
   }
   else if ((function == analogInResolution_) ||
-           (function == waveDigResolution_)) {
+           (function == waveDigResolution_)  ||
+           (function == ainResolutionAll_)) {
     pEnum    = allResolution;
     numEnums = numResolution_;
     if (addr < numAnalogIn_) validAddr = true;
@@ -1076,7 +1083,7 @@ int LabJackDriver::readAnalogInputs() {
   if (numChannels == 0) return asynSuccess;
   if (waveDigRunning_) return asynSuccess;
   // The T7-Pro does not allow reading addresses while a DAC scan is running
-  if (waveGenRunning_ && (model_ == modelT7Pro)) return asynSuccess;
+  //if (waveGenRunning_ && (model_ == modelT7Pro)) return asynSuccess;
   for (int i=0; i<numChannels; i++) {
     aiValueAddresses_[i] = LJT_AI_FLOAT32 + 2*activeAiChannels_[i];
     aiTypeAddresses_[i] = LJM_FLOAT32;
@@ -1409,6 +1416,16 @@ int LabJackDriver::startWaveGen()
     }
 
     aScanList[i] = LJT_STREAM_OUT + i;
+  }
+
+  // On the T7-Pro we need to set the ResolutionAll to a maximum of 8 in order to read inputs while scanning
+  if (model_ == modelT7Pro) {
+    int resolution;
+    getIntegerParam(ainResolutionAll_, &resolution);
+    if ((resolution == 0) || (resolution > 8)) {
+      status = LJM_eWriteName(LJMHandle_, "AIN_ALL_RESOLUTION_INDEX", 8);
+      reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX");
+    }
   }
 
   int scansPerRead = 1;
