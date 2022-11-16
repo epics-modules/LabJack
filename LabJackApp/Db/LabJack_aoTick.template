@@ -2,7 +2,7 @@
 record(ao,"$(P)$(R)") {
     field(DESC, "$(DESC)")
     field(DTYP,"asynFloat64")
-    field(OUT,"@asyn($(PORT) $(ADDR))ANALOG_TDAC_VALUE")
+    field(OUT,"@asyn($(PORT) $(N))ANALOG_TDAC_VALUE")
     field(PREC, "$(PREC)")
     # Tick-DAC is set to +/-10V
     field(HOPR, "$(HOPR)")

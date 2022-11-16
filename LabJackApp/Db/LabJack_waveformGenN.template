@@ -1,22 +1,22 @@
 ###################################################################
 #  User-defined waveform record                                   #
 ###################################################################
-record(waveform, "$(P)WaveGenUserWF$(ADDR)")
+record(waveform, "$(P)WaveGenUserWF$(N)")
 {
     field(FTVL, "DOUBLE")
     field(DTYP, "asynFloat64ArrayOut")
-    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_USER_WF")
+    field(INP,  "@asyn($(PORT),$(N))WAVEGEN_USER_WF")
     field(NELM, "$(WGEN_POINTS)")
 }
 
 ###################################################################
 #  Internally defined waveform record                             #
 ###################################################################
-record(waveform, "$(P)WaveGenInternalWF$(ADDR)")
+record(waveform, "$(P)WaveGenInternalWF$(N)")
 {
     field(FTVL, "DOUBLE")
     field(DTYP, "asynFloat64ArrayIn")
-    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_INT_WF")
+    field(INP,  "@asyn($(PORT),$(N))WAVEGEN_INT_WF")
     field(NELM, "$(WGEN_POINTS)")
     field(SCAN, "I/O Intr")
 }
@@ -24,11 +24,11 @@ record(waveform, "$(P)WaveGenInternalWF$(ADDR)")
 ###################################################################
 #  Enable this channel                                            # 
 ###################################################################
-record(bo, "$(P)WaveGenEnable$(ADDR)")
+record(bo, "$(P)WaveGenEnable$(N)")
 {
     field(PINI, "YES")
     field(DTYP, "asynInt32")
-    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_ENABLE")
+    field(OUT,  "@asyn($(PORT),$(N))WAVEGEN_ENABLE")
     field(ZNAM, "Disable")
     field(ONAM, "Enable")
 }
@@ -36,11 +36,11 @@ record(bo, "$(P)WaveGenEnable$(ADDR)")
 ###################################################################
 #  Waveform type                                                  # 
 ###################################################################
-record(mbbo, "$(P)WaveGenType$(ADDR)")
+record(mbbo, "$(P)WaveGenType$(N)")
 {
     field(PINI, "YES")
     field(DTYP, "asynInt32")
-    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_WAVE_TYPE")
+    field(OUT,  "@asyn($(PORT),$(N))WAVEGEN_WAVE_TYPE")
     field(ZRVL, "0")
     field(ZRST, "User-defined")
     field(ONVL, "1")
@@ -58,11 +58,11 @@ record(mbbo, "$(P)WaveGenType$(ADDR)")
 ###################################################################
 #  Pulse width                                                    # 
 ###################################################################
-record(ao, "$(P)WaveGenPulseWidth$(ADDR)")
+record(ao, "$(P)WaveGenPulseWidth$(N)")
 {
     field(PINI, "YES")
     field(DTYP, "asynFloat64")
-    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_PULSE_WIDTH")
+    field(OUT,  "@asyn($(PORT),$(N))WAVEGEN_PULSE_WIDTH")
     field(VAL,  "0.001")
     field(PREC, "$(PREC)")
 }
@@ -70,11 +70,11 @@ record(ao, "$(P)WaveGenPulseWidth$(ADDR)")
 ###################################################################
 #  Amplitude                                                      # 
 ###################################################################
-record(ao, "$(P)WaveGenAmplitude$(ADDR)")
+record(ao, "$(P)WaveGenAmplitude$(N)")
 {
     field(PINI, "YES")
     field(DTYP, "asynFloat64")
-    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_AMPLITUDE")
+    field(OUT,  "@asyn($(PORT),$(N))WAVEGEN_AMPLITUDE")
     field(VAL,  "1.0")
     field(PREC, "4")
 }
@@ -82,11 +82,11 @@ record(ao, "$(P)WaveGenAmplitude$(ADDR)")
 ###################################################################
 #  Offset                                                         # 
 ###################################################################
-record(ao, "$(P)WaveGenOffset$(ADDR)")
+record(ao, "$(P)WaveGenOffset$(N)")
 {
     field(PINI, "YES")
     field(DTYP, "asynFloat64")
-    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_OFFSET")
+    field(OUT,  "@asyn($(PORT),$(N))WAVEGEN_OFFSET")
     field(VAL,  "0.0")
     field(PREC, "4")
 }

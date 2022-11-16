@@ -2,7 +2,7 @@
 record(ao,"$(P)$(R)") {
     field(DESC, "$(DESC)")
     field(DTYP,"asynFloat64")
-    field(OUT,"@asyn($(PORT) $(ADDR))ANALOG_OUT_VALUE")
+    field(OUT,"@asyn($(PORT) $(N))ANALOG_OUT_VALUE")
     field(PREC, "$(PREC)")
     # The LabJack T7 DAC is set to 0-5V.
     field(HOPR, "$(HOPR)")

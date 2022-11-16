@@ -14,7 +14,7 @@ file "$(LABJACK)/db/LabJack_device.template" { pattern
 
 # Digital I/O as bits
 file "$(LABJACK)/db/LabJack_binary.template" { pattern
-{ADDR,    MASK,  ZNAM,  ONAM, DIR,   DESC}
+{N,       MASK,  ZNAM,  ONAM, DIR,   DESC}
 {0,        0x1,   Low,   High,  0, "Ch 0 binary"}
 {1,        0x2,   Low,   High,  0, "Ch 1 binary"}
 {2,        0x4,   Low,   High,  0, "Ch 2 binary"}
@@ -42,17 +42,17 @@ file "$(LABJACK)/db/LabJack_binary.template" { pattern
 
 # Digital inputs as words
 file "$(LABJACK)/db/LabJack_biWord.template" { pattern
-{R,       ADDR}
-{DIOIn,      0}
-{FIOIn,      1}
-{EIOIn,      2}
-{CIOIn,      3}
-{MIOIn,      4}
+{R,       N}
+{DIOIn,   0}
+{FIOIn,   1}
+{EIOIn,   2}
+{CIOIn,   3}
+{MIOIn,   4}
 }
 
 # Analog Inputs done with word access.
 file "$(LABJACK)/db/LabJack_ai.template" { pattern
-{ADDR,      SCAN,  PREC,     DESC}
+{N,     SCAN,   PREC,         DESC}
 {0,  ".1 second", 4, "Ch 0 Ana In"}
 {1,  ".1 second", 4, "Ch 1 Ana In"}
 {2,  ".1 second", 4, "Ch 2 Ana In"}
@@ -63,22 +63,22 @@ file "$(LABJACK)/db/LabJack_ai.template" { pattern
 {7,  ".1 second", 4, "Ch 7 Ana In"}
 {8,  ".1 second", 4, "Ch 8 Ana In"}
 {9,  ".1 second", 4, "Ch 9 Ana In"}
-{10,  ".1 second", 4, "Ch 10 Ana In"}
-{11,  ".1 second", 4, "Ch 11 Ana In"}
-{12,  ".1 second", 4, "Ch 12 Ana In"}
-{13,  ".1 second", 4, "Ch 13 Ana In"}
+{10, ".1 second", 4, "Ch 10 Ana In"}
+{11, ".1 second", 4, "Ch 11 Ana In"}
+{12, ".1 second", 4, "Ch 12 Ana In"}
+{13, ".1 second", 4, "Ch 13 Ana In"}
 }
 
 # Analog outputs done with word access.
 file "$(LABJACK)/db/LabJack_ao.template" { pattern
-{R,    ADDR, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
+{R,     N, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
 {Ao0,   0,    4,    0,     5,   0,     5, "Ch 0 Ana Out"}
 {Ao1,   1,    4,    0,     5,   0,     5, "Ch 1 Ana Out"}
 }
 
 # Analog output to LJTick module
 file "$(LABJACK)/db/LabJack_aoTick.template" { pattern
-{R,   ADDR, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
+{R,     N, PREC, LOPR, HOPR, DRVL, DRVH,    DESC}
 {Ao2,   0,    4,  -10,    10,  -10,   10, "Ch 2 Ana Out"}
 {Ao3,   1,    4,  -10,    10,  -10,   10, "Ch 3 Ana Out"}
 #{Ao4,  2,    4,  -10,    10,  -10,   10, "Ch 4 Ana Out"}
@@ -102,21 +102,21 @@ pattern
 file "$(LABJACK)/db/LabJack_waveformDigN.template"
 {
 pattern
-{ADDR,  PREC}
-{0,      4}
-{1,      4}
-{2,      4}
-{3,      4}
-{4,      4}
-{5,      4}
-{6,      4}
-{7,      4}
-{8,      4}
-{9,      4}
-{10,     4}
-{11,     4}
-{12,     4}
-{13,     4}
+{N,  PREC}
+{0,     4}
+{1,     4}
+{2,     4}
+{3,     4}
+{4,     4}
+{5,     4}
+{6,     4}
+{7,     4}
+{8,     4}
+{9,     4}
+{10,    4}
+{11,    4}
+{12,    4}
+{13,    4}
 }
 
 # Waveform generator
@@ -130,9 +130,9 @@ pattern
 file "$(LABJACK)/db/LabJack_waveformGenN.template"
 {
 pattern
-{ADDR,  PREC}
-{0,      4}
-{1,      4}
+{N,  PREC}
+{0,     4}
+{1,     4}
 }
 
 

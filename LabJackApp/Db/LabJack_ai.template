@@ -1,17 +1,17 @@
 # ai record template for analog inputs
-record(ai,"$(P)Ai$(ADDR)") {
+record(ai,"$(P)Ai$(N)") {
     field(DESC, "$(DESC)")
     field(DTYP, "asynFloat64")
-    field(INP,  "@asyn($(PORT) $(ADDR))ANALOG_IN_VALUE")
+    field(INP,  "@asyn($(PORT) $(N))ANALOG_IN_VALUE")
     field(SCAN, "$(SCAN)")
     field(PREC, "$(PREC)")
 }
 
 # bo record template for analog inputs enable
-record(bo,"$(P)AiEnable$(ADDR)") {
+record(bo,"$(P)AiEnable$(N)") {
     field(PINI, "YES")
     field(DTYP, "asynInt32")
-    field(OUT,  "@asyn($(PORT) $(ADDR))ANALOG_IN_ENABLE")
+    field(OUT,  "@asyn($(PORT) $(N))ANALOG_IN_ENABLE")
     field(ZNAM, "Disable")
     field(ONAM, "Enable")
 }
@@ -19,7 +19,7 @@ record(bo,"$(P)AiEnable$(ADDR)") {
 # mbbo record template for analog input mode.
 # Other modes (e.g. Pt RTD) can be added in the future
 # The thermocouple type constants are from LabJackM.h
-record(mbbo, "$(P)AiMode$(ADDR)") {
+record(mbbo, "$(P)AiMode$(N)") {
     field(PINI, "YES")
     field(ZRVL, "0")
     field(ZRST, "Volts")
@@ -42,11 +42,11 @@ record(mbbo, "$(P)AiMode$(ADDR)") {
     field(NIVL, "6008")
     field(NIST, "Type T TC")  
     field(DTYP,"asynInt32")
-    field(OUT,"@asyn($(PORT) $(ADDR))ANALOG_IN_MODE")
+    field(OUT,"@asyn($(PORT) $(N))ANALOG_IN_MODE")
 }
 
 # mbbo record template for temperature units
-record(mbbo, "$(P)AiTempUnits$(ADDR)") {
+record(mbbo, "$(P)AiTempUnits$(N)") {
     field(PINI, "YES")
     field(ZRVL, "0")
     field(ZRST, "K")
@@ -55,55 +55,55 @@ record(mbbo, "$(P)AiTempUnits$(ADDR)") {
     field(TWVL, "2")
     field(TWST, "F")  
     field(DTYP,"asynInt32")
-    field(OUT,"@asyn($(PORT) $(ADDR))TEMPERATURE_UNITS")
+    field(OUT,"@asyn($(PORT) $(N))TEMPERATURE_UNITS")
 }
 
 # mbbo record template for Single-Ended/Differential
 # The driver will provide the enum strings and values
-record(mbbo, "$(P)AiDiff$(ADDR)") {
+record(mbbo, "$(P)AiDiff$(N)") {
     field(PINI, "YES")
     field(DTYP,"asynInt32")
-    field(OUT,"@asyn($(PORT) $(ADDR))ANALOG_IN_DIFFERENTIAL")
+    field(OUT,"@asyn($(PORT) $(N))ANALOG_IN_DIFFERENTIAL")
     field(ZRST, "N.A.")
     field(ZRVL, "0")
 }
 
 # mbbo record template for analog input range
 # The driver will provide the enum strings and values in mV maximum voltage
-record(mbbo, "$(P)AiRange$(ADDR)") {
+record(mbbo, "$(P)AiRange$(N)") {
     field(PINI, "YES")
     field(ZRVL, "0")
     field(ZRST, "N.A.")
     field(DTYP,"asynInt32")
-    field(OUT,"@asyn($(PORT) $(ADDR))ANALOG_IN_RANGE")
+    field(OUT,"@asyn($(PORT) $(N))ANALOG_IN_RANGE")
 }
 
 # mbbo record template for analog input resolution.
 # The driver will provide the enum strings and values
-record(mbbo, "$(P)AiResolution$(ADDR)") {
+record(mbbo, "$(P)AiResolution$(N)") {
     field(PINI, "YES")
     field(ZRVL, "0")
     field(ZRST, "N.A.")
     field(DTYP,"asynInt32")
-    field(OUT,"@asyn($(PORT) $(ADDR))ANALOG_IN_RESOLUTION")
+    field(OUT,"@asyn($(PORT) $(N))ANALOG_IN_RESOLUTION")
 }
 
 # ao record template to control LOPR of both ai and waveform digitizer records
-record(ao,"$(P)AiLOPR$(ADDR)") {
+record(ao,"$(P)AiLOPR$(N)") {
     field(PREC, "$(PREC)")
-    field(OUT,  "$(P)AiLOPRFanout$(ADDR) PP")
+    field(OUT,  "$(P)AiLOPRFanout$(N) PP")
 }
-record(dfanout, $(P)AiLOPRFanout$(ADDR)) {
-  field(OUTA, "$(P)Ai$(ADDR).LOPR")
-  field(OUTB, "$(P)WaveDigVoltWF$(ADDR).LOPR")
+record(dfanout, $(P)AiLOPRFanout$(N)) {
+  field(OUTA, "$(P)Ai$(N).LOPR")
+  field(OUTB, "$(P)WaveDigVoltWF$(N).LOPR")
 }
 
 # ao record template to control HOPR of both ai and waveform digitizer records
-record(ao,"$(P)AiHOPR$(ADDR)") {
+record(ao,"$(P)AiHOPR$(N)") {
     field(PREC, "$(PREC)")
-    field(OUT,  "$(P)AiHOPRFanout$(ADDR) PP")
+    field(OUT,  "$(P)AiHOPRFanout$(N) PP")
 }
-record(dfanout, $(P)AiHOPRFanout$(ADDR)) {
-  field(OUTA, "$(P)Ai$(ADDR).HOPR")
-  field(OUTB, "$(P)WaveDigVoltWF$(ADDR).HOPR")
+record(dfanout, $(P)AiHOPRFanout$(N)) {
+  field(OUTA, "$(P)Ai$(N).HOPR")
+  field(OUTB, "$(P)WaveDigVoltWF$(N).HOPR")
 }

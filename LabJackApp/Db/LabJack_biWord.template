@@ -1,6 +1,6 @@
 # longin record for digital input word
 record(longin, "$(P)$(R)") {
     field(DTYP, "asynUInt32Digital")
-    field(INP,  "@asynMask($(PORT) $(ADDR) 0xFFFFFFFF)DIGITAL_IN_WORD")
+    field(INP,  "@asynMask($(PORT) $(N) 0xFFFFFFFF)DIGITAL_IN_WORD")
     field(SCAN, "I/O Intr")
 }
