@@ -43,7 +43,7 @@ extensions = [
     'sphinx.ext.todo',
 #    'sphinx.ext.githubpages',
     # 'm2r',
-    "myst_parser",
+    "m2r2",
 #    'breathe',
 #    'linuxdoc.rstFlatTable'
 ]
