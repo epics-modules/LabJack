@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LabJack: Driver for T-series Devices From LabJack &#8212; EPICS LabJack 2-0-57-ge7d3d68 documentation</title>
+    <title>LabJack: Driver for T-series Devices From LabJack &#8212; EPICS LabJack 2-0-58-g8a52723 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -367,7 +367,7 @@ On the T4 analog inputs 12-13 do not apply, nor do digital I/O bits 20-22.</p>
 <p>These are the records defined in LabJack_device.template.
 These records provide device-wide information and control.
 This database is loaded once for each LabJack device.</p>
-<table class="table-bordered table-striped table-hover docutils align-default">
+<table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 10.0%" />
@@ -388,7 +388,14 @@ This database is loaded once for each LabJack device.</p>
 <td><p>mbbi</p></td>
 <td><p>asynInt32</p></td>
 <td><p>MODEL_NAME</p></td>
-<td><p>Device model name. mbbi values and strings are 0=”T4”, 1=”T7”, 2=”T7-Pro”, 3=”T8”.</p></td>
+<td><p>Device model name. mbbi values and strings are</p>
+<ul class="simple">
+<li><p>0=”T4”</p></li>
+<li><p>1=”T7”</p></li>
+<li><p>2=”T7-Pro”</p></li>
+<li><p>3=”T8”.</p></li>
+</ul>
+</td>
 </tr>
 <tr class="row-odd"><td><p>$(P)FirmwareVersion</p></td>
 <td><p>stringin</p></td>
@@ -442,10 +449,27 @@ It has SCAN=”5 second” which is fast enough for this slowly varying value.</
 <tr class="row-odd"><td><p>$(P)AiAllSettlingUS</p></td>
 <td><p>ao</p></td>
 <td><p>asynFloat64</p></td>
-<td><p>ANALOG_IN_SETTLING_TIME</p></td>
-<td><p>The settling time in microseconds to use for all analog input channels. 0 selects the device default.</p></td>
+<td><p>AIN_RESOLUTION_ALL</p></td>
+<td><p>Selects the input resolution for all analog input channels.
+High values of resolution result in lower noise and longer ADC conversion time.
+Resolution 0 is the default resolution for that model.</p>
+<ul class="simple">
+<li><p>The T4 supports resolutions 1-5.</p></li>
+<li><p>The T7 supports resolutions 1-8.</p></li>
+<li><p>The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC.
+When running the waveform generator on the T7-PRO this must be set to values between 1-8, i.e. 16-bit ADC.
+The driver will set this automatically when starting the waveform generator if it is outside the allowed range.</p></li>
+<li><p>The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-even"><td><p>$(P)DeviceReset</p></td>
+<tr class="row-even"><td><p>$(P)AiAllResolution</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>AIN_RESOLUTION_ALL</p></td>
+<td><p>The resolution to apply to all analog input channels. 0 selects the device default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)DeviceReset</p></td>
 <td><p>bo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>DEVICE_RESET</p></td>
@@ -463,7 +487,7 @@ The IOC may occasionally fail to start after a DeviceReset because the device is
 <h3><a class="toc-backref" href="#id26" role="doc-backlink">Analog Input Functions</a><a class="headerlink" href="#analog-input-functions" title="Permalink to this heading">¶</a></h3>
 <p>These are the records defined in LabJack_ai.template.
 This database is loaded once for each analog input channel</p>
-<table class="table-bordered table-striped table-hover docutils align-default">
+<table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 10.0%" />
@@ -480,14 +504,14 @@ This database is loaded once for each analog input channel</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>$(P)Ai$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)Ai$(N)</p></td>
 <td><p>ai</p></td>
 <td><p>asynFloat64</p></td>
 <td><p>ANALOG_IN_VALUE</p></td>
 <td><p>Analog input value. This is polled in the driver, so either period or
 I/O Intr scanning can be used.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)AiEnable$(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)AiEnable$(N)</p></td>
 <td><p>bo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>ANALOG_IN_ENABLE</p></td>
@@ -495,20 +519,20 @@ I/O Intr scanning can be used.</p></td>
 Unconnected inputs should be disabled to improve accuracy on active channels and to
 reduce the polling time.</p></td>
 </tr>
-<tr class="row-even"><td><p>$(P)AiMode$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)AiMode$(N)</p></td>
 <td><p>mbbo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>ANALOG_IN_MODE</p></td>
 <td><p>Input mode for this analog input channel. Choices are Volts and 9 different thermocouple types.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)AiTempUnits$(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)AiTempUnits$(N)</p></td>
 <td><p>mbbo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>TEMPERATURE_UNITS</p></td>
 <td><p>Temperature units for this analog input channel if a thermocouple mode is selected.
 Choices are “K”, “C”, and “F”.</p></td>
 </tr>
-<tr class="row-even"><td><p>$(P)AiDiff$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)AiDiff$(N)</p></td>
 <td><p>mbbo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>ANALOG_IN_DIFF</p></td>
@@ -516,27 +540,33 @@ Choices are “K”, “C”, and “F”.</p></td>
 The T4 is always single-ended and the T8 is always differential.
 The driver constructs the strings and values based on the model.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)AiRange$(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)AiRange$(N)</p></td>
 <td><p>mbbo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>ANALOG_IN_RANGE</p></td>
-<td><p>Selects the input range for this analog input channel.
-On the T4 the range is fixed at +-10V on channels 0-3 and 0-2.5 on channels 4-11.
-On the T7 the range choices are +-10V, +-1V, +-0.1V, and +-0.01V.
-On the T8 there are 11 ranges from +-11V to +-0.15V.
-The driver constructs the strings and values based on the model.</p></td>
+<td><p>Selects the input range for this analog input channel.</p>
+<ul class="simple">
+<li><p>On the T4 the range is fixed at +-10V on channels 0-3 and 0-2.5 on channels 4-11.</p></li>
+<li><p>On the T7 the range choices are +-10V, +-1V, +-0.1V, and +-0.01V.</p></li>
+<li><p>On the T8 there are 11 ranges from +-11V to +-0.15V.</p></li>
+</ul>
+<p>The driver constructs the strings and values based on the model.</p>
+</td>
 </tr>
-<tr class="row-even"><td><p>$(P)AiResolution$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)AiResolution$(N)</p></td>
 <td><p>mbbo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>ANALOG_IN_RESOLUTION</p></td>
 <td><p>Selects the input resolution for this analog input channel.
-High values of resolution result in lower noise and longer ADC conversion time.
-Resolution 0 is the default resolution for that model.
-The T4 supports resolutions 1-5.
-The T7 supports resolutions 1-8.
-The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC
-The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?</p></td>
+High values of resolution result in lower noise and longer ADC conversion time.</p>
+<ul class="simple">
+<li><p>Resolution 0 is the default resolution for that model.</p></li>
+<li><p>The T4 supports resolutions 1-5.</p></li>
+<li><p>The T7 supports resolutions 1-8.</p></li>
+<li><p>The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC</p></li>
+<li><p>The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -557,7 +587,7 @@ They do not work well with the T4 or T7.</p>
 <h3><a class="toc-backref" href="#id27" role="doc-backlink">Analog Output Functions</a><a class="headerlink" href="#analog-output-functions" title="Permalink to this heading">¶</a></h3>
 <p>These are the records defined in LabJack_Ao.template.
 This database is loaded once for each analog output channel</p>
-<table class="table-bordered table-striped table-hover docutils align-default">
+<table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 10.0%" />
@@ -623,7 +653,7 @@ The range on the LJTick DACs is +-10V.</p>
 <section id="digital-i-o-functions">
 <h3><a class="toc-backref" href="#id28" role="doc-backlink">Digital I/O Functions</a><a class="headerlink" href="#digital-i-o-functions" title="Permalink to this heading">¶</a></h3>
 <p>These are the records defined in LabJack_binary.template and LabJack_biWord.template.</p>
-<table class="table-bordered table-striped table-hover docutils align-default">
+<table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 10.0%" />
@@ -640,7 +670,7 @@ The range on the LJTick DACs is +-10V.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>$(P)Bi$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)Bi$(N)</p></td>
 <td><p>bi</p></td>
 <td><p>asynUInt32Digital</p></td>
 <td><p>DIGITAL_IN_WORD</p></td>
@@ -648,13 +678,13 @@ The range on the LJTick DACs is +-10V.</p>
 The binary inputs are polled by the driver poller thread, so these records should
 have SCAN=”I/O Intr”.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)Bo$(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)Bo$(N)</p></td>
 <td><p>bo</p></td>
 <td><p>asynUInt32Digital</p></td>
 <td><p>DIGITAL_OUT_BIT</p></td>
 <td><p>Digital output value. The ADDR parameter in the INP link defines which bit is used.</p></td>
 </tr>
-<tr class="row-even"><td><p>$(P)Bd$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)Bd$(N)</p></td>
 <td><p>bo</p></td>
 <td><p>asynUInt32Digital</p></td>
 <td><p>DIGITAL_DIRECTION</p></td>
@@ -677,7 +707,7 @@ The binary inputs are polled by the driver poller thread, so these records shoul
 <p>These records are defined in the following files:
 - LabJack_waveformDig.template. This database is loaded once per module.
 - LabJack_waveformDigN.template. This database is loaded for each digitizer input channel.</p>
-<table class="table-bordered table-striped table-hover docutils align-default">
+<table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 10.0%" />
@@ -796,7 +826,7 @@ buffers into the waveform records. Note that the driver always reads device when
 acquisition stops, so for quick acquisitions this record can be Passive. To see
 partial data during long acquisitions this record can be periodically processed.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)VoltWF$(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)VoltWF$(N)</p></td>
 <td><p>waveform</p></td>
 <td><p>asynFloat64Array</p></td>
 <td><p>WAVEDIG_VOLT_WF</p></td>
@@ -826,7 +856,7 @@ the ReadWF record above processes. The data are in volts or temperature units.</
 <p>These records are defined in the following files:
 - LabJack_waveformGen.template. This database is loaded once per module.
 - LabJack_waveformGenN.template. This database is loaded for each waveform generator output channel.</p>
-<table class="table-bordered table-striped table-hover docutils align-default">
+<table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
 <col style="width: 10.0%" />
@@ -975,7 +1005,7 @@ of the waveform.</p></td>
 <td><p>Values are “Stop” (0) and “Run” (1). This starts and stops the waveform generator.
 In one-shot mode the waveform generator stops automatically when all of the samples have been output.</p></td>
 </tr>
-<tr class="row-even"><td><p>$(P)WaveGenUserWF$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)WaveGenUserWF$(N)</p></td>
 <td><p>waveform</p></td>
 <td><p>asynFloat64Array</p></td>
 <td><p>WAVEGEN_USER_WF</p></td>
@@ -983,35 +1013,44 @@ In one-shot mode the waveform generator stops automatically when all of the samp
 N. The data are in volts. These data are typically generated by an EPICS Channel
 Access client.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)WaveGenInternalWF$(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)WaveGenInternalWF$(N)</p></td>
 <td><p>waveform</p></td>
 <td><p>asynFloat64Array</p></td>
 <td><p>WAVEGEN_INT_WF</p></td>
 <td><p>This waveform record contains the internal predefined waveform generator data for
 channel N. The data are in volts.</p></td>
 </tr>
-<tr class="row-even"><td><p>$(P)WaveGenEnable$(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)WaveGenEnable$(N)</p></td>
 <td><p>bo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>WAVEGEN_ENABLE</p></td>
 <td><p>Values are “Disable” and “Enable”. Controls whether channel N output is enabled.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)WaveGenType(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)WaveGenType$(N)</p></td>
 <td><p>mbbo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>WAVEGEN_WAVE_TYPE</p></td>
-<td><p>Controls the waveform type on channel N. Values are “User-defined” and “Sin wave”,
-“Square wave”, “Sawtooth”, “Pulse”, or “Random”. Note that if any channel is “User-defined”
-then all channels must be. Note that all internally predefined waveforms are symmetric
-about 0 volts. To output unipolar signals the Offset should be set to +-Amplitude/2.</p></td>
+<td><p>Controls the waveform type on channel N. Values are</p>
+<ul class="simple">
+<li><p>“User-defined”</p></li>
+<li><p>“Sin wave”,</p></li>
+<li><p>“Square wave”</p></li>
+<li><p>“Sawtooth”</p></li>
+<li><p>“Pulse”</p></li>
+<li><p>“Random”.</p></li>
+</ul>
+<p>Note that if any channel is “User-defined” then all channels must be.
+Note that all internally predefined waveforms are symmetric about 0 volts.
+To output unipolar signals the Offset should be set to +-Amplitude/2.</p>
+</td>
 </tr>
-<tr class="row-even"><td><p>$(P)WaveGenPulseWidth(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)WaveGenPulseWidth$(N)</p></td>
 <td><p>ao</p></td>
 <td><p>asynFloat64</p></td>
 <td><p>WAVEGEN_PULSE_WIDTH</p></td>
 <td><p>Controls the pulse width in seconds if Type is “Pulse”.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)WaveGenAmplitude(ADDR)</p></td>
+<tr class="row-odd"><td><p>$(P)WaveGenAmplitude$(N)</p></td>
 <td><p>ao</p></td>
 <td><p>asynFloat64</p></td>
 <td><p>WAVEGEN_AMPLITUDE</p></td>
@@ -1022,7 +1061,7 @@ the user-defined waveform unchanged, 2.0 increases the amplitide by 2, etc. For
 both internal and used-defined waveforms changing the sign of the Amplitude controls
 the polarity of the signal.</p></td>
 </tr>
-<tr class="row-even"><td><p>$(P)WaveGenOffset(ADDR)</p></td>
+<tr class="row-even"><td><p>$(P)WaveGenOffset$(N)</p></td>
 <td><p>ao</p></td>
 <td><p>asynFloat64</p></td>
 <td><p>WAVEGEN_OFFSET</p></td>

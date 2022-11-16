@@ -228,6 +228,7 @@ This database is loaded once for each LabJack device.
 .. list-table::
   :header-rows: 1
   :widths: 10 10 10 10 60
+  :align: left
 
   * - EPICS record name
     - EPICS record type
@@ -238,7 +239,12 @@ This database is loaded once for each LabJack device.
     - mbbi
     - asynInt32
     - MODEL_NAME
-    - Device model name. mbbi values and strings are 0="T4", 1="T7", 2="T7-Pro", 3="T8".
+    - Device model name. mbbi values and strings are
+
+      - 0="T4"
+      - 1="T7"
+      - 2="T7-Pro"
+      - 3="T8".
   * - $(P)FirmwareVersion
     - stringin
     - asynOctet
@@ -283,8 +289,22 @@ This database is loaded once for each LabJack device.
   * - $(P)AiAllSettlingUS
     - ao
     - asynFloat64
-    - ANALOG_IN_SETTLING_TIME
-    - The settling time in microseconds to use for all analog input channels. 0 selects the device default.
+    - AIN_RESOLUTION_ALL
+    - Selects the input resolution for all analog input channels. 
+      High values of resolution result in lower noise and longer ADC conversion time.
+      Resolution 0 is the default resolution for that model.
+
+      - The T4 supports resolutions 1-5.
+      - The T7 supports resolutions 1-8.
+      - The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC. 
+        When running the waveform generator on the T7-PRO this must be set to values between 1-8, i.e. 16-bit ADC.
+        The driver will set this automatically when starting the waveform generator if it is outside the allowed range.
+      - The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?
+  * - $(P)AiAllResolution
+    - mbbo
+    - asynInt32
+    - AIN_RESOLUTION_ALL
+    - The resolution to apply to all analog input channels. 0 selects the device default.
   * - $(P)DeviceReset
     - bo
     - asynInt32
@@ -306,63 +326,67 @@ This database is loaded once for each analog input channel
 .. list-table::
   :header-rows: 1
   :widths: 10 10 10 10 60
+  :align: left
 
   * - EPICS record name
     - EPICS record type
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)Ai$(ADDR)
+  * - $(P)Ai$(N)
     - ai
     - asynFloat64
     - ANALOG_IN_VALUE
     - Analog input value. This is polled in the driver, so either period or
       I/O Intr scanning can be used.
-  * - $(P)AiEnable$(ADDR)
+  * - $(P)AiEnable$(N)
     - bo
     - asynInt32
     - ANALOG_IN_ENABLE
     - Enable flag for this analog input channel. Disabled inputs are not read by the poller.
       Unconnected inputs should be disabled to improve accuracy on active channels and to
       reduce the polling time.
-  * - $(P)AiMode$(ADDR)
+  * - $(P)AiMode$(N)
     - mbbo
     - asynInt32
     - ANALOG_IN_MODE
     - Input mode for this analog input channel. Choices are Volts and 9 different thermocouple types.
-  * - $(P)AiTempUnits$(ADDR)
+  * - $(P)AiTempUnits$(N)
     - mbbo
     - asynInt32
     - TEMPERATURE_UNITS
     - Temperature units for this analog input channel if a thermocouple mode is selected.
       Choices are "K", "C", and "F".
-  * - $(P)AiDiff$(ADDR)
+  * - $(P)AiDiff$(N)
     - mbbo
     - asynInt32
     - ANALOG_IN_DIFF
     - Selects "Single-Ended" or "Differential" input mode on the T7 and T7-PRO.
       The T4 is always single-ended and the T8 is always differential.
       The driver constructs the strings and values based on the model.
-  * - $(P)AiRange$(ADDR)
+  * - $(P)AiRange$(N)
     - mbbo
     - asynInt32
     - ANALOG_IN_RANGE
     - Selects the input range for this analog input channel.
-      On the T4 the range is fixed at +-10V on channels 0-3 and 0-2.5 on channels 4-11.
-      On the T7 the range choices are +-10V, +-1V, +-0.1V, and +-0.01V.
-      On the T8 there are 11 ranges from +-11V to +-0.15V.
+
+      - On the T4 the range is fixed at +-10V on channels 0-3 and 0-2.5 on channels 4-11.
+      - On the T7 the range choices are +-10V, +-1V, +-0.1V, and +-0.01V.
+      - On the T8 there are 11 ranges from +-11V to +-0.15V.
+
       The driver constructs the strings and values based on the model.
-  * - $(P)AiResolution$(ADDR)
+  * - $(P)AiResolution$(N)
     - mbbo
     - asynInt32
     - ANALOG_IN_RESOLUTION
     - Selects the input resolution for this analog input channel. 
       High values of resolution result in lower noise and longer ADC conversion time.
-      Resolution 0 is the default resolution for that model.
-      The T4 supports resolutions 1-5.
-      The T7 supports resolutions 1-8.
-      The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC
-      The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?
+
+      - Resolution 0 is the default resolution for that model.
+      - The T4 supports resolutions 1-5.
+      - The T7 supports resolutions 1-8.
+      - The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC
+      - The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?
 
 The following is the medm screen for controlling the analog input configuration records.
 
@@ -387,6 +411,7 @@ This database is loaded once for each analog output channel
 .. list-table::
   :header-rows: 1
   :widths: 10 10 10 10 60
+  :align: left
 
   * - EPICS record name
     - EPICS record type
@@ -445,25 +470,26 @@ These are the records defined in LabJack_binary.template and LabJack_biWord.temp
 .. list-table::
   :header-rows: 1
   :widths: 10 10 10 10 60
+  :align: left
 
   * - EPICS record name
     - EPICS record type
     - asyn interface
     - drvInfo string
     - Description
-  * - $(P)Bi$(ADDR)
+  * - $(P)Bi$(N)
     - bi
     - asynUInt32Digital
     - DIGITAL_IN_WORD
     - Digital input value. The MASK parameter in the INP link defines which bit is used.
       The binary inputs are polled by the driver poller thread, so these records should
       have SCAN="I/O Intr".
-  * - $(P)Bo$(ADDR)
+  * - $(P)Bo$(N)
     - bo
     - asynUInt32Digital
     - DIGITAL_OUT_BIT
     - Digital output value. The ADDR parameter in the INP link defines which bit is used.
-  * - $(P)Bd$(ADDR)
+  * - $(P)Bd$(N)
     - bo
     - asynUInt32Digital
     - DIGITAL_DIRECTION
@@ -488,6 +514,7 @@ These records are defined in the following files:
 .. list-table::
   :header-rows: 1
   :widths: 10 10 10 10 60
+  :align: left
 
   * - EPICS record name
     - EPICS record type
@@ -581,7 +608,7 @@ These records are defined in the following files:
       buffers into the waveform records. Note that the driver always reads device when
       acquisition stops, so for quick acquisitions this record can be Passive. To see
       partial data during long acquisitions this record can be periodically processed.
-  * - $(P)VoltWF$(ADDR)
+  * - $(P)VoltWF$(N)
     - waveform
     - asynFloat64Array
     - WAVEDIG_VOLT_WF
@@ -614,6 +641,7 @@ These records are defined in the following files:
 .. list-table::
   :header-rows: 1
   :widths: 10 10 10 10 60
+  :align: left
 
   * - EPICS record name
     - EPICS record type
@@ -734,38 +762,46 @@ These records are defined in the following files:
     - WAVEGEN_RUN
     - Values are "Stop" (0) and "Run" (1). This starts and stops the waveform generator.
       In one-shot mode the waveform generator stops automatically when all of the samples have been output.
-  * - $(P)WaveGenUserWF$(ADDR)
+  * - $(P)WaveGenUserWF$(N)
     - waveform
     - asynFloat64Array
     - WAVEGEN_USER_WF
     - This waveform record contains the user-defined waveform generator data for channel
       N. The data are in volts. These data are typically generated by an EPICS Channel
       Access client.
-  * - $(P)WaveGenInternalWF$(ADDR)
+  * - $(P)WaveGenInternalWF$(N)
     - waveform
     - asynFloat64Array
     - WAVEGEN_INT_WF
     - This waveform record contains the internal predefined waveform generator data for
       channel N. The data are in volts.
-  * - $(P)WaveGenEnable$(ADDR)
+  * - $(P)WaveGenEnable$(N)
     - bo
     - asynInt32
     - WAVEGEN_ENABLE
     - Values are "Disable" and "Enable". Controls whether channel N output is enabled.
-  * - $(P)WaveGenType(ADDR)
+  * - $(P)WaveGenType$(N)
     - mbbo
     - asynInt32
     - WAVEGEN_WAVE_TYPE
-    - Controls the waveform type on channel N. Values are "User-defined" and "Sin wave",
-      "Square wave", "Sawtooth", "Pulse", or "Random". Note that if any channel is "User-defined"
-      then all channels must be. Note that all internally predefined waveforms are symmetric
-      about 0 volts. To output unipolar signals the Offset should be set to +-Amplitude/2.
-  * - $(P)WaveGenPulseWidth(ADDR)
+    - Controls the waveform type on channel N. Values are 
+
+      - "User-defined"
+      - "Sin wave",
+      - "Square wave"
+      - "Sawtooth"
+      - "Pulse"
+      - "Random". 
+      
+      Note that if any channel is "User-defined" then all channels must be. 
+      Note that all internally predefined waveforms are symmetric about 0 volts. 
+      To output unipolar signals the Offset should be set to +-Amplitude/2.
+  * - $(P)WaveGenPulseWidth$(N)
     - ao
     - asynFloat64
     - WAVEGEN_PULSE_WIDTH
     - Controls the pulse width in seconds if Type is "Pulse".
-  * - $(P)WaveGenAmplitude(ADDR)
+  * - $(P)WaveGenAmplitude$(N)
     - ao
     - asynFloat64
     - WAVEGEN_AMPLITUDE
@@ -775,7 +811,7 @@ These records are defined in the following files:
       the user-defined waveform unchanged, 2.0 increases the amplitide by 2, etc. For
       both internal and used-defined waveforms changing the sign of the Amplitude controls
       the polarity of the signal.
-  * - $(P)WaveGenOffset(ADDR)
+  * - $(P)WaveGenOffset$(N)
     - ao
     - asynFloat64
     - WAVEGEN_OFFSET
