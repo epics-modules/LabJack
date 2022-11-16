@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=900
-		y=131
+		x=819
+		y=110
 		width=780
-		height=490
+		height=515
 	}
 	clr=14
 	bclr=4
@@ -103,7 +103,7 @@ text {
 text {
 	object {
 		x=12
-		y=464
+		y=490
 		width=756
 		height=15
 	}
@@ -746,210 +746,199 @@ composite {
 		}
 	}
 }
-composite {
+text {
+	object {
+		x=327
+		y=57
+		width=60
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Resol."
+	align="horiz. centered"
+}
+menu {
 	object {
 		x=317
-		y=57
+		y=82
 		width=80
-		height=370
+		height=20
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=327
-				y=57
-				width=60
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Resol."
-			align="horiz. centered"
-		}
-		menu {
-			object {
-				x=317
-				y=82
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution0"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=107
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution1"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=132
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution2"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=157
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution3"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=182
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution4"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=207
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution5"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=232
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution6"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=257
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution7"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=282
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution8"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=307
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution9"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=332
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution10"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=357
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution11"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=382
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution12"
-				clr=14
-				bclr=51
-			}
-		}
-		menu {
-			object {
-				x=317
-				y=407
-				width=80
-				height=20
-			}
-			control {
-				chan="$(P)AiResolution13"
-				clr=14
-				bclr=51
-			}
-		}
+	control {
+		chan="$(P)AiResolution0"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=107
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution1"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=132
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution2"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=157
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution3"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=182
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution4"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=207
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution5"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=232
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution6"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=257
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution7"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=282
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution8"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=307
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution9"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=332
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution10"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=357
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution11"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=382
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution12"
+		clr=14
+		bclr=51
+	}
+}
+menu {
+	object {
+		x=317
+		y=407
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiResolution13"
+		clr=14
+		bclr=51
 	}
 }
 composite {
@@ -2221,4 +2210,30 @@ text {
 	}
 	textix="(0=auto)"
 	align="horiz. centered"
+}
+text {
+	object {
+		x=278
+		y=462
+		width=160
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Resolution (all)"
+	align="horiz. centered"
+}
+menu {
+	object {
+		x=443
+		y=462
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiAllResolution"
+		clr=14
+		bclr=51
+	}
 }
