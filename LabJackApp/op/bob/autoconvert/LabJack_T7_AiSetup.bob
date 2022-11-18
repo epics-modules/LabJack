@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LabJack_T7_AiSetup</name>
-  <x>900</x>
-  <y>131</y>
+  <x>819</x>
+  <y>110</y>
   <width>780</width>
-  <height>490</height>
+  <height>515</height>
   <background_color>
     <color red="187" green="187" blue="187">
     </color>
@@ -30,7 +30,7 @@
     <name>text #9</name>
     <text>NOTE: on T7 and T7-Pro in differential mode, channels are paired 0+ 1-. 2+ 3-. etc.</text>
     <x>12</x>
-    <y>464</y>
+    <y>490</y>
     <width>756</width>
     <height>15</height>
     <font>
@@ -619,196 +619,202 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
   </widget>
-  <widget type="group" version="2.0.0">
-    <name>composite #160</name>
-    <x>317</x>
+  <widget type="label" version="2.0.0">
+    <name>text #160</name>
+    <text>Resol.</text>
+    <x>327</x>
     <y>57</y>
-    <width>80</width>
-    <height>370</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>text #163</name>
-      <text>Resol.</text>
-      <x>10</x>
-      <width>60</width>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="16.0">
-        </font>
+    <width>60</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #166</name>
-      <pv_name>$(P)AiResolution0</pv_name>
-      <y>25</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #169</name>
-      <pv_name>$(P)AiResolution1</pv_name>
-      <y>50</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #172</name>
-      <pv_name>$(P)AiResolution2</pv_name>
-      <y>75</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #175</name>
-      <pv_name>$(P)AiResolution3</pv_name>
-      <y>100</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #178</name>
-      <pv_name>$(P)AiResolution4</pv_name>
-      <y>125</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #181</name>
-      <pv_name>$(P)AiResolution5</pv_name>
-      <y>150</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #184</name>
-      <pv_name>$(P)AiResolution6</pv_name>
-      <y>175</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #187</name>
-      <pv_name>$(P)AiResolution7</pv_name>
-      <y>200</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #190</name>
-      <pv_name>$(P)AiResolution8</pv_name>
-      <y>225</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #193</name>
-      <pv_name>$(P)AiResolution9</pv_name>
-      <y>250</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #196</name>
-      <pv_name>$(P)AiResolution10</pv_name>
-      <y>275</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #199</name>
-      <pv_name>$(P)AiResolution11</pv_name>
-      <y>300</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #202</name>
-      <pv_name>$(P)AiResolution12</pv_name>
-      <y>325</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="combo" version="2.0.0">
-      <name>menu #205</name>
-      <pv_name>$(P)AiResolution13</pv_name>
-      <y>350</y>
-      <width>80</width>
-      <height>20</height>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #163</name>
+    <pv_name>$(P)AiResolution0</pv_name>
+    <x>317</x>
+    <y>82</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #166</name>
+    <pv_name>$(P)AiResolution1</pv_name>
+    <x>317</x>
+    <y>107</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #169</name>
+    <pv_name>$(P)AiResolution2</pv_name>
+    <x>317</x>
+    <y>132</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #172</name>
+    <pv_name>$(P)AiResolution3</pv_name>
+    <x>317</x>
+    <y>157</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #175</name>
+    <pv_name>$(P)AiResolution4</pv_name>
+    <x>317</x>
+    <y>182</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #178</name>
+    <pv_name>$(P)AiResolution5</pv_name>
+    <x>317</x>
+    <y>207</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #181</name>
+    <pv_name>$(P)AiResolution6</pv_name>
+    <x>317</x>
+    <y>232</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #184</name>
+    <pv_name>$(P)AiResolution7</pv_name>
+    <x>317</x>
+    <y>257</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #187</name>
+    <pv_name>$(P)AiResolution8</pv_name>
+    <x>317</x>
+    <y>282</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #190</name>
+    <pv_name>$(P)AiResolution9</pv_name>
+    <x>317</x>
+    <y>307</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #193</name>
+    <pv_name>$(P)AiResolution10</pv_name>
+    <x>317</x>
+    <y>332</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #196</name>
+    <pv_name>$(P)AiResolution11</pv_name>
+    <x>317</x>
+    <y>357</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #199</name>
+    <pv_name>$(P)AiResolution12</pv_name>
+    <x>317</x>
+    <y>382</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #202</name>
+    <pv_name>$(P)AiResolution13</pv_name>
+    <x>317</x>
+    <y>407</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #208</name>
+    <name>composite #205</name>
     <x>457</x>
     <y>57</y>
     <width>80</width>
@@ -816,7 +822,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #211</name>
+      <name>text #208</name>
       <text>Low</text>
       <x>26</x>
       <width>30</width>
@@ -827,7 +833,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #214</name>
+      <name>text entry #211</name>
       <pv_name>$(P)AiLOPR0</pv_name>
       <y>25</y>
       <width>80</width>
@@ -844,7 +850,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #218</name>
+      <name>text entry #215</name>
       <pv_name>$(P)AiLOPR1</pv_name>
       <y>50</y>
       <width>80</width>
@@ -861,7 +867,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #222</name>
+      <name>text entry #219</name>
       <pv_name>$(P)AiLOPR2</pv_name>
       <y>75</y>
       <width>80</width>
@@ -878,7 +884,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #226</name>
+      <name>text entry #223</name>
       <pv_name>$(P)AiLOPR3</pv_name>
       <y>100</y>
       <width>80</width>
@@ -895,7 +901,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #230</name>
+      <name>text entry #227</name>
       <pv_name>$(P)AiLOPR4</pv_name>
       <y>125</y>
       <width>80</width>
@@ -912,7 +918,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #234</name>
+      <name>text entry #231</name>
       <pv_name>$(P)AiLOPR5</pv_name>
       <y>150</y>
       <width>80</width>
@@ -929,7 +935,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #238</name>
+      <name>text entry #235</name>
       <pv_name>$(P)AiLOPR6</pv_name>
       <y>175</y>
       <width>80</width>
@@ -946,7 +952,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #242</name>
+      <name>text entry #239</name>
       <pv_name>$(P)AiLOPR7</pv_name>
       <y>200</y>
       <width>80</width>
@@ -963,7 +969,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #246</name>
+      <name>text entry #243</name>
       <pv_name>$(P)AiLOPR8</pv_name>
       <y>225</y>
       <width>80</width>
@@ -980,7 +986,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #250</name>
+      <name>text entry #247</name>
       <pv_name>$(P)AiLOPR9</pv_name>
       <y>250</y>
       <width>80</width>
@@ -997,7 +1003,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #254</name>
+      <name>text entry #251</name>
       <pv_name>$(P)AiLOPR10</pv_name>
       <y>275</y>
       <width>80</width>
@@ -1014,7 +1020,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #258</name>
+      <name>text entry #255</name>
       <pv_name>$(P)AiLOPR11</pv_name>
       <y>300</y>
       <width>80</width>
@@ -1031,7 +1037,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #262</name>
+      <name>text entry #259</name>
       <pv_name>$(P)AiLOPR12</pv_name>
       <y>325</y>
       <width>80</width>
@@ -1048,7 +1054,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #266</name>
+      <name>text entry #263</name>
       <pv_name>$(P)AiLOPR13</pv_name>
       <y>350</y>
       <width>80</width>
@@ -1066,7 +1072,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #270</name>
+    <name>composite #267</name>
     <x>542</x>
     <y>57</y>
     <width>80</width>
@@ -1074,7 +1080,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #273</name>
+      <name>text #270</name>
       <text>High</text>
       <x>21</x>
       <width>40</width>
@@ -1085,7 +1091,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #276</name>
+      <name>text entry #273</name>
       <pv_name>$(P)AiHOPR0</pv_name>
       <y>25</y>
       <width>80</width>
@@ -1102,7 +1108,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #280</name>
+      <name>text entry #277</name>
       <pv_name>$(P)AiHOPR1</pv_name>
       <y>50</y>
       <width>80</width>
@@ -1119,7 +1125,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #284</name>
+      <name>text entry #281</name>
       <pv_name>$(P)AiHOPR2</pv_name>
       <y>75</y>
       <width>80</width>
@@ -1136,7 +1142,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #288</name>
+      <name>text entry #285</name>
       <pv_name>$(P)AiHOPR3</pv_name>
       <y>100</y>
       <width>80</width>
@@ -1153,7 +1159,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #292</name>
+      <name>text entry #289</name>
       <pv_name>$(P)AiHOPR4</pv_name>
       <y>125</y>
       <width>80</width>
@@ -1170,7 +1176,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #296</name>
+      <name>text entry #293</name>
       <pv_name>$(P)AiHOPR5</pv_name>
       <y>150</y>
       <width>80</width>
@@ -1187,7 +1193,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #300</name>
+      <name>text entry #297</name>
       <pv_name>$(P)AiHOPR6</pv_name>
       <y>175</y>
       <width>80</width>
@@ -1204,7 +1210,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #304</name>
+      <name>text entry #301</name>
       <pv_name>$(P)AiHOPR7</pv_name>
       <y>200</y>
       <width>80</width>
@@ -1221,7 +1227,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #308</name>
+      <name>text entry #305</name>
       <pv_name>$(P)AiHOPR8</pv_name>
       <y>225</y>
       <width>80</width>
@@ -1238,7 +1244,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #312</name>
+      <name>text entry #309</name>
       <pv_name>$(P)AiHOPR9</pv_name>
       <y>250</y>
       <width>80</width>
@@ -1255,7 +1261,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #316</name>
+      <name>text entry #313</name>
       <pv_name>$(P)AiHOPR10</pv_name>
       <y>275</y>
       <width>80</width>
@@ -1272,7 +1278,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #320</name>
+      <name>text entry #317</name>
       <pv_name>$(P)AiHOPR11</pv_name>
       <y>300</y>
       <width>80</width>
@@ -1289,7 +1295,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #324</name>
+      <name>text entry #321</name>
       <pv_name>$(P)AiHOPR12</pv_name>
       <y>325</y>
       <width>80</width>
@@ -1306,7 +1312,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #328</name>
+      <name>text entry #325</name>
       <pv_name>$(P)AiHOPR13</pv_name>
       <y>350</y>
       <width>80</width>
@@ -1324,7 +1330,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #332</name>
+    <name>composite #329</name>
     <x>627</x>
     <y>57</y>
     <width>40</width>
@@ -1332,7 +1338,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #335</name>
+      <name>text #332</name>
       <text>Prec</text>
       <width>40</width>
       <font>
@@ -1342,7 +1348,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #338</name>
+      <name>text entry #335</name>
       <pv_name>$(P)Ai0.PREC</pv_name>
       <y>25</y>
       <width>40</width>
@@ -1359,7 +1365,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #342</name>
+      <name>text entry #339</name>
       <pv_name>$(P)Ai1.PREC</pv_name>
       <y>50</y>
       <width>40</width>
@@ -1376,7 +1382,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #346</name>
+      <name>text entry #343</name>
       <pv_name>$(P)Ai2.PREC</pv_name>
       <y>75</y>
       <width>40</width>
@@ -1393,7 +1399,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #350</name>
+      <name>text entry #347</name>
       <pv_name>$(P)Ai3.PREC</pv_name>
       <y>100</y>
       <width>40</width>
@@ -1410,7 +1416,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #354</name>
+      <name>text entry #351</name>
       <pv_name>$(P)Ai4.PREC</pv_name>
       <y>125</y>
       <width>40</width>
@@ -1427,7 +1433,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #358</name>
+      <name>text entry #355</name>
       <pv_name>$(P)Ai5.PREC</pv_name>
       <y>150</y>
       <width>40</width>
@@ -1444,7 +1450,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #362</name>
+      <name>text entry #359</name>
       <pv_name>$(P)Ai6.PREC</pv_name>
       <y>175</y>
       <width>40</width>
@@ -1461,7 +1467,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #366</name>
+      <name>text entry #363</name>
       <pv_name>$(P)Ai7.PREC</pv_name>
       <y>200</y>
       <width>40</width>
@@ -1478,7 +1484,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #370</name>
+      <name>text entry #367</name>
       <pv_name>$(P)Ai8.PREC</pv_name>
       <y>225</y>
       <width>40</width>
@@ -1495,7 +1501,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #374</name>
+      <name>text entry #371</name>
       <pv_name>$(P)Ai9.PREC</pv_name>
       <y>250</y>
       <width>40</width>
@@ -1512,7 +1518,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #378</name>
+      <name>text entry #375</name>
       <pv_name>$(P)Ai10.PREC</pv_name>
       <y>275</y>
       <width>40</width>
@@ -1529,7 +1535,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #382</name>
+      <name>text entry #379</name>
       <pv_name>$(P)Ai11.PREC</pv_name>
       <y>300</y>
       <width>40</width>
@@ -1546,7 +1552,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #386</name>
+      <name>text entry #383</name>
       <pv_name>$(P)Ai12.PREC</pv_name>
       <y>325</y>
       <width>40</width>
@@ -1563,7 +1569,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #390</name>
+      <name>text entry #387</name>
       <pv_name>$(P)Ai13.PREC</pv_name>
       <y>350</y>
       <width>40</width>
@@ -1581,7 +1587,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #394</name>
+    <name>composite #391</name>
     <x>672</x>
     <y>57</y>
     <width>100</width>
@@ -1589,7 +1595,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #397</name>
+      <name>text #394</name>
       <text>SE/Diff.</text>
       <x>16</x>
       <width>80</width>
@@ -1600,7 +1606,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #400</name>
+      <name>menu #397</name>
       <pv_name>$(P)AiDiff0</pv_name>
       <y>25</y>
       <height>20</height>
@@ -1611,7 +1617,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #403</name>
+      <name>menu #400</name>
       <pv_name>$(P)AiDiff2</pv_name>
       <y>75</y>
       <height>20</height>
@@ -1622,7 +1628,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #406</name>
+      <name>menu #403</name>
       <pv_name>$(P)AiDiff4</pv_name>
       <y>125</y>
       <height>20</height>
@@ -1633,7 +1639,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #409</name>
+      <name>menu #406</name>
       <pv_name>$(P)AiDiff6</pv_name>
       <y>175</y>
       <height>20</height>
@@ -1644,7 +1650,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #412</name>
+      <name>menu #409</name>
       <pv_name>$(P)AiDiff8</pv_name>
       <y>225</y>
       <height>20</height>
@@ -1655,7 +1661,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #415</name>
+      <name>menu #412</name>
       <pv_name>$(P)AiDiff10</pv_name>
       <y>275</y>
       <height>20</height>
@@ -1666,7 +1672,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #418</name>
+      <name>menu #415</name>
       <pv_name>$(P)AiDiff12</pv_name>
       <y>325</y>
       <height>20</height>
@@ -1678,7 +1684,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #421</name>
+    <name>composite #418</name>
     <x>402</x>
     <y>57</y>
     <width>50</width>
@@ -1686,7 +1692,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #424</name>
+      <name>text #421</name>
       <text>T</text>
       <x>20</x>
       <width>10</width>
@@ -1697,7 +1703,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #427</name>
+      <name>menu #424</name>
       <pv_name>$(P)AiTempUnits0</pv_name>
       <y>25</y>
       <width>50</width>
@@ -1709,7 +1715,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #430</name>
+      <name>menu #427</name>
       <pv_name>$(P)AiTempUnits1</pv_name>
       <y>50</y>
       <width>50</width>
@@ -1721,7 +1727,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #433</name>
+      <name>menu #430</name>
       <pv_name>$(P)AiTempUnits2</pv_name>
       <y>75</y>
       <width>50</width>
@@ -1733,7 +1739,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #436</name>
+      <name>menu #433</name>
       <pv_name>$(P)AiTempUnits3</pv_name>
       <y>100</y>
       <width>50</width>
@@ -1745,7 +1751,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #439</name>
+      <name>menu #436</name>
       <pv_name>$(P)AiTempUnits4</pv_name>
       <y>125</y>
       <width>50</width>
@@ -1757,7 +1763,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #442</name>
+      <name>menu #439</name>
       <pv_name>$(P)AiTempUnits5</pv_name>
       <y>150</y>
       <width>50</width>
@@ -1769,7 +1775,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #445</name>
+      <name>menu #442</name>
       <pv_name>$(P)AiTempUnits6</pv_name>
       <y>175</y>
       <width>50</width>
@@ -1781,7 +1787,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #448</name>
+      <name>menu #445</name>
       <pv_name>$(P)AiTempUnits7</pv_name>
       <y>200</y>
       <width>50</width>
@@ -1793,7 +1799,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #451</name>
+      <name>menu #448</name>
       <pv_name>$(P)AiTempUnits8</pv_name>
       <y>225</y>
       <width>50</width>
@@ -1805,7 +1811,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #454</name>
+      <name>menu #451</name>
       <pv_name>$(P)AiTempUnits9</pv_name>
       <y>250</y>
       <width>50</width>
@@ -1817,7 +1823,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #457</name>
+      <name>menu #454</name>
       <pv_name>$(P)AiTempUnits10</pv_name>
       <y>275</y>
       <width>50</width>
@@ -1829,7 +1835,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #460</name>
+      <name>menu #457</name>
       <pv_name>$(P)AiTempUnits11</pv_name>
       <y>300</y>
       <width>50</width>
@@ -1841,7 +1847,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #463</name>
+      <name>menu #460</name>
       <pv_name>$(P)AiTempUnits12</pv_name>
       <y>325</y>
       <width>50</width>
@@ -1853,7 +1859,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #466</name>
+      <name>menu #463</name>
       <pv_name>$(P)AiTempUnits13</pv_name>
       <y>350</y>
       <width>50</width>
@@ -1866,7 +1872,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #469</name>
+    <name>composite #466</name>
     <x>62</x>
     <y>57</y>
     <width>80</width>
@@ -1874,7 +1880,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #472</name>
+      <name>text #469</name>
       <text>Enable</text>
       <x>10</x>
       <width>60</width>
@@ -1885,7 +1891,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #475</name>
+      <name>menu #472</name>
       <pv_name>$(P)AiEnable0</pv_name>
       <y>25</y>
       <width>80</width>
@@ -1897,7 +1903,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #478</name>
+      <name>menu #475</name>
       <pv_name>$(P)AiEnable1</pv_name>
       <y>50</y>
       <width>80</width>
@@ -1909,7 +1915,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #481</name>
+      <name>menu #478</name>
       <pv_name>$(P)AiEnable2</pv_name>
       <y>75</y>
       <width>80</width>
@@ -1921,7 +1927,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #484</name>
+      <name>menu #481</name>
       <pv_name>$(P)AiEnable3</pv_name>
       <y>100</y>
       <width>80</width>
@@ -1933,7 +1939,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #487</name>
+      <name>menu #484</name>
       <pv_name>$(P)AiEnable4</pv_name>
       <y>125</y>
       <width>80</width>
@@ -1945,7 +1951,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #490</name>
+      <name>menu #487</name>
       <pv_name>$(P)AiEnable5</pv_name>
       <y>150</y>
       <width>80</width>
@@ -1957,7 +1963,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #493</name>
+      <name>menu #490</name>
       <pv_name>$(P)AiEnable6</pv_name>
       <y>175</y>
       <width>80</width>
@@ -1969,7 +1975,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #496</name>
+      <name>menu #493</name>
       <pv_name>$(P)AiEnable7</pv_name>
       <y>200</y>
       <width>80</width>
@@ -1981,7 +1987,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #499</name>
+      <name>menu #496</name>
       <pv_name>$(P)AiEnable8</pv_name>
       <y>225</y>
       <width>80</width>
@@ -1993,7 +1999,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #502</name>
+      <name>menu #499</name>
       <pv_name>$(P)AiEnable9</pv_name>
       <y>250</y>
       <width>80</width>
@@ -2005,7 +2011,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #505</name>
+      <name>menu #502</name>
       <pv_name>$(P)AiEnable10</pv_name>
       <y>275</y>
       <width>80</width>
@@ -2017,7 +2023,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #508</name>
+      <name>menu #505</name>
       <pv_name>$(P)AiEnable11</pv_name>
       <y>300</y>
       <width>80</width>
@@ -2029,7 +2035,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #511</name>
+      <name>menu #508</name>
       <pv_name>$(P)AiEnable12</pv_name>
       <y>325</y>
       <width>80</width>
@@ -2041,7 +2047,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #514</name>
+      <name>menu #511</name>
       <pv_name>$(P)AiEnable13</pv_name>
       <y>350</y>
       <width>80</width>
@@ -2054,7 +2060,7 @@
     </widget>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #517</name>
+    <name>text #514</name>
     <text>Settling time (us)</text>
     <x>258</x>
     <y>437</y>
@@ -2066,7 +2072,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #520</name>
+    <name>text entry #517</name>
     <pv_name>$(P)AiAllSettlingUS</pv_name>
     <x>443</x>
     <y>437</y>
@@ -2084,7 +2090,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #524</name>
+    <name>text #521</name>
     <text>(0=auto)</text>
     <x>528</x>
     <y>437</y>
@@ -2094,5 +2100,30 @@
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #524</name>
+    <text>Resolution (all)</text>
+    <x>278</x>
+    <y>462</y>
+    <width>160</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #527</name>
+    <pv_name>$(P)AiAllResolution</pv_name>
+    <x>443</x>
+    <y>462</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

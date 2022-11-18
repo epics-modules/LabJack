@@ -144,7 +144,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>text #33</name>
-    <text>Temperature (K)</text>
+    <text>Temperature (C)</text>
     <x>275</x>
     <y>90</y>
     <width>150</width>

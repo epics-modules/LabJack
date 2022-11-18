@@ -207,7 +207,7 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "Temperature (K)"
+  "Temperature (C)"
 }
 endObjectProperties
 

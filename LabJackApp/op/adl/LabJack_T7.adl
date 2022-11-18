@@ -210,7 +210,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Temperature (K)"
+	textix="Temperature (C)"
 	align="horiz. centered"
 }
 "text update" {
