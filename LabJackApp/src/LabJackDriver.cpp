@@ -1077,8 +1077,6 @@ int LabJackDriver::readAnalogInputs() {
   int numChannels = (int)activeAiChannels_.size();
   if (numChannels == 0) return asynSuccess;
   if (waveDigRunning_) return asynSuccess;
-  // The T7-Pro does not allow reading addresses while a DAC scan is running
-  //if (waveGenRunning_ && (model_ == modelT7Pro)) return asynSuccess;
   for (int i=0; i<numChannels; i++) {
     aiValueAddresses_[i] = LJT_AI_FLOAT32 + 2*activeAiChannels_[i];
     aiTypeAddresses_[i] = LJM_FLOAT32;
