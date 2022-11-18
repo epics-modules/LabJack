@@ -19,7 +19,6 @@
 int main(int argc, char *argv[])
 {
   const int NUM_DAC_LOOPS = 4;
-  const int READINGS_PER_LOOP = 10;
   const int SETTLING_TIME_US = 2000;
   const int MAX_AIN_CHANNELS = 14;
   int err;
@@ -31,7 +30,9 @@ int main(int argc, char *argv[])
   double tempK;
   double dac0Values[] = {0,0,5,5};
   double dac1Values[] = {0,5,0,5};
-  int numChannelsToRead;
+  int channelsToRead;
+  int ain0Resolution;
+  int readingsPerLoop;
 
   // Modbus addresses
   const int LJT_AIN0            = 0; 
@@ -39,8 +40,8 @@ int main(int argc, char *argv[])
   const int LJT_AI_DIFFERENTIAL = 41000;
   const int LJT_AI_RESOLUTION   = 41500;
 
-  if (argc != 3) {
-    printf("Usage: test_temp_t7pro IPAddress numChannelsToRead\n");
+  if (argc != 5) {
+    printf("Usage: test_temp_t7pro IPAddress ain0Resolution channelsToRead readingsPerLoop\n");
     return 0;
   }
   
@@ -50,9 +51,13 @@ int main(int argc, char *argv[])
 
   PrintDeviceInfoFromHandle(handle);
 
-  numChannelsToRead = atoi(argv[2]);
   printf("\nConfiguration:\n");
-  printf("    numChannelsToRead: %d\n", numChannelsToRead);
+  ain0Resolution = atoi(argv[2]);
+  printf("    ain0Resolution: %d\n", ain0Resolution);
+  channelsToRead = atoi(argv[3]);
+  printf("    channelsToRead: %d\n", channelsToRead);
+  readingsPerLoop = atoi(argv[4]);
+  printf("    readingsPerLoop: %d\n", readingsPerLoop);
 
   DisableStreamIfEnabled(handle);
 
@@ -61,7 +66,7 @@ int main(int argc, char *argv[])
   printf("    AIN0_NEGATIVE_CH : %d\n", 1);
 
   // All other channels are single-ended
-  for (i=2; i<numChannelsToRead; i++) {
+  for (i=2; i<channelsToRead; i++) {
     err = LJM_eWriteAddress(handle, LJT_AI_DIFFERENTIAL+i, LJM_UINT16, 199);
     ErrorCheck(err, "LJM_eWriteAddress for LJT_AI_DIFFERENTIAL");
     printf("    AIN%d_NEGATIVE_CH : %d\n", i, 199);
@@ -71,17 +76,16 @@ int main(int argc, char *argv[])
   WriteNameOrDie(handle, "AIN0_RANGE", 0.01);
   printf("    AIN0_RANGE : %f\n", 0.01);
   // All other channels are 10V
-  for (i=2; i<numChannelsToRead; i++) {
+  for (i=2; i<channelsToRead; i++) {
     err = LJM_eWriteAddress(handle, LJT_AI_RANGE+2*i, LJM_FLOAT32, 10.);
     ErrorCheck(err, "LJM_eWriteAddress for LJT_AI_RANGE");
     printf("    AIN%d_NEGATIVE_CH : %f\n", i, 10.);
   }
 
-  // Resolution index = 11 for AIN0
-  WriteNameOrDie(handle, "AIN0_RESOLUTION_INDEX", 11);
-  printf("    AIN0_RESOLUTION_INDEX : %d\n", 11);
+  WriteNameOrDie(handle, "AIN0_RESOLUTION_INDEX", ain0Resolution);
+  printf("    AIN0_RESOLUTION_INDEX : %d\n", ain0Resolution);
   // All other channels are 0 (default)
-  for (i=2; i<numChannelsToRead; i++) {
+  for (i=2; i<channelsToRead; i++) {
     err = LJM_eWriteAddress(handle, LJT_AI_RESOLUTION+i, LJM_UINT16, 0);
     ErrorCheck(err, "LJM_eWriteAddress for LJT_AI_RESOLUTION");
     printf("    AIN%d_RESOLUTION_INDEX: %d\n", i, 0);
@@ -99,12 +103,14 @@ int main(int argc, char *argv[])
     err = LJM_eReadName(handle, "TEMPERATURE_DEVICE_K", &coldJunctionTemperature);
     ErrorCheck(err, "LJM_eReadName reading TEMPERATURE_DEVICE_K");
     printf("\nCold junction temperature (C): %f, DAC0: %f, DAC1: %f\n", coldJunctionTemperature-273.15, dac0Values[i], dac1Values[i]);
-    for (j=0; j<READINGS_PER_LOOP; j++) {
-      err = LJM_eReadAddressArray(handle, LJT_AIN0, LJM_FLOAT32, numChannelsToRead, voltsIn, errorsIn);
+    long long startTime = GetCurrentTimeMS();
+    for (j=0; j<readingsPerLoop; j++) {
+      err = LJM_eReadAddressArray(handle, LJT_AIN0, LJM_FLOAT32, channelsToRead, voltsIn, errorsIn);
       ErrorCheck(err, "LJM_eReadAddressArray reading analog inputs");
       err = LJM_TCVoltsToTemp(LJM_ttK, voltsIn[0], coldJunctionTemperature, &tempK);
-      printf("Temp (C): %f", tempK - 273.15); 
-      for (k=2; k<numChannelsToRead; k++) printf(", %f", voltsIn[k]);
+      long long elapsedTime = GetCurrentTimeMS() - startTime;
+      printf("Point: %d, Elapsed ms: %lld, Temp (C): %f", j, elapsedTime, tempK - 273.15); 
+      for (k=2; k<channelsToRead; k++) printf(", %f", voltsIn[k]);
       printf("\n");
     }
   }
