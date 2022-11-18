@@ -242,7 +242,6 @@ public:
 //  virtual void report(FILE *fp, int details);
   // These should be private but are called from C
   static void pollerThread(void *);
-  static void streamCallback(void *);
 
 protected:
   // Model parameters
@@ -325,7 +324,6 @@ protected:
 
 private:
   int reportError(int err, const char *functionName, const char *message);
-  void streamCallback();
   void pollerThread();
   int LJMHandle_;
   LJTModel model_;
@@ -352,11 +350,10 @@ private:
   int waveDigScansPerRead_;
   int numWaveDigChans_;
   bool waveDigRunning_;
-  bool restartWaveDig_;
   int setActiveAiChannels();
   int readAnalogInputs();
   int startWaveDig();
-  int stopWaveDig();
+  int stopWaveDig(bool restartOK);
   int readWaveDig();
   int readoutWaveDig();
   int computeWaveDigTimes();
@@ -388,7 +385,6 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
     maxOutputPoints_(maxOutputPoints),
     numWaveDigChans_(1),
     waveDigRunning_(false),
-    restartWaveDig_(false),
     numWaveGenChans_(1),
     waveGenRunning_(false)
 
@@ -726,9 +722,8 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
       status = startWaveDig();
     }
     else if (!value && waveDigRunning_) {
-      status = stopWaveDig();
       // Don't auto-restart when stopping manually
-      restartWaveDig_ = false;
+      status = stopWaveDig(false);
     }
   }
   else if (function == waveDigReadWF_) {
@@ -1122,13 +1117,10 @@ int LabJackDriver::startWaveDig()
   if (waveDigScansPerRead_ < 1) waveDigScansPerRead_ = 1;
   double scanRate = 1./dwell;
 
+  status = LJM_WriteLibraryConfigS(LJM_STREAM_SCANS_RETURN, LJM_STREAM_SCANS_RETURN_ALL_OR_NONE);
   status = LJM_eStreamStart(LJMHandle_, waveDigScansPerRead_, numChans, scanList, &scanRate);
   reportError(status, functionName, "Calling LJM_eStreamStart");
   if (status) return status;
-
-  // Register for callback when stream buffer is full
-  status = LJM_SetStreamCallback(LJMHandle_, streamCallback, this);
-  reportError(status, functionName, "Calling LJM_SetStreamCallback");
 
   // Convert back from scanRate to dwell, since value might have changed
   dwell = (1. / scanRate);
@@ -1143,7 +1135,7 @@ int LabJackDriver::startWaveDig()
   return 0;
 }
 
-int LabJackDriver::stopWaveDig()
+int LabJackDriver::stopWaveDig(bool restartOK)
 {
   int autoRestart;
   int status;
@@ -1152,13 +1144,14 @@ int LabJackDriver::stopWaveDig()
   waveDigRunning_ = 0;
   setIntegerParam(waveDigRun_, 0);
   readWaveDig();
-  getIntegerParam(waveDigAutoRestart_, &autoRestart);
   status = LJM_eStreamStop(LJMHandle_);
   reportError(status, functionName, "Calling LJM_eStreamStop");
-  if (autoRestart) {
-    // We cannot restart the waveDig here because we could be in a callback from the LJM SDK
-    restartWaveDig_ = true;
+  getIntegerParam(waveDigAutoRestart_, &autoRestart);
+  if (autoRestart && restartOK) {
+    epicsThreadSleep(0.1);
+    status = startWaveDig();
   }
+
   return status;
 }
 
@@ -1201,8 +1194,13 @@ int LabJackDriver::readoutWaveDig()
 
   LJMScanBacklog = 1;
   while (LJMScanBacklog != 0) {
-    status = LJM_eStreamRead(LJMHandle_, waveDigTempBuffer_,     &deviceScanBacklog, &LJMScanBacklog);
+    status = LJM_eStreamRead(LJMHandle_, waveDigTempBuffer_, &deviceScanBacklog, &LJMScanBacklog);
+    if (status == LJME_NO_SCANS_RETURNED) return 0;
     reportError(status, functionName, "LJM_eStreamRead");
+    if (status == 2942) {  // There are no symbolic constants in LabJackM.h for the stream error codes
+      stopWaveDig(false);
+      return status;
+    }
     // The buffer we just read contains waveDigScansPerRead time points
     epicsTimeGetCurrent(&now);
     epicsFloat64 *pInput = waveDigTempBuffer_;
@@ -1217,7 +1215,7 @@ int LabJackDriver::readoutWaveDig()
       currentPoint++;
       setIntegerParam(waveDigCurrentPoint_, currentPoint);
       if (currentPoint == numPoints) {
-        stopWaveDig();
+        stopWaveDig(true);
         return 0;
       }
     }
@@ -1238,23 +1236,6 @@ int LabJackDriver::computeWaveDigTimes()
   }
   doCallbacksFloat64Array(waveDigTimeBuffer_, numPoints, waveDigTimeWF_, 0);
   return 0;
-}
-
-void LabJackDriver::streamCallback(void * pPvt)
-{
-    LabJackDriver *pLabJackDriver = (LabJackDriver *)pPvt;
-    pLabJackDriver->streamCallback();
-}
-
-void LabJackDriver::streamCallback()
-{
-  //static const char *functionName = "streamCallback";
-  // This function is called from a LabJack thread
-  lock();
-  if (waveDigRunning_) {
-    readoutWaveDig();
-  }
-  unlock();
 }
 
 int LabJackDriver::defineWaveform(int channel)
@@ -1548,13 +1529,6 @@ void LabJackDriver::pollerThread()
       setUIntDigitalParam(4, digitalInWord_, newValue>>20, 0x7);
     }
 
-    // Restart the waveDig if needed.  Done here because we cannot do in LJM callback
-    if (restartWaveDig_) {
-      epicsThreadSleep(0.1);
-      status = startWaveDig();
-      restartWaveDig_ = false;
-    }
-
     if (waveGenRunning_) {
       int continuous;
       getIntegerParam(waveGenContinuous_, &continuous);
@@ -1577,8 +1551,10 @@ void LabJackDriver::pollerThread()
       }
     }
 
-    // Read the analog inputs
-    if (!waveDigRunning_) {
+    if (waveDigRunning_) {
+      readoutWaveDig();
+    } else {
+      // Read the analog inputs
       // Set all channels to -9999.9999 so disabled channels are obvious
       for (i=0; i<MAX_ANALOG_IN; i++)
         setDoubleParam(i, analogInValue_, -9999.9999);
@@ -1601,6 +1577,7 @@ void LabJackDriver::pollerThread()
     for (i=0; i<MAX_SIGNALS; i++) {
       callParamCallbacks(i);
     }
+
 error:
     if (prevStatus && !status) {
       reportError(-1, functionName, "Device returned to normal status");
