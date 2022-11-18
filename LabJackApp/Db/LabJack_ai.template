@@ -1,7 +1,7 @@
 # ai record template for analog inputs
 record(ai,"$(P)Ai$(N)") {
     field(DESC, "$(DESC)")
-    field(DTYP, "asynFloat64")
+    field(DTYP, "asynFloat64Average")
     field(INP,  "@asyn($(PORT) $(N))ANALOG_IN_VALUE")
     field(SCAN, "$(SCAN)")
     field(PREC, "$(PREC)")
