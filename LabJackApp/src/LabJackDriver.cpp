@@ -135,6 +135,7 @@
 #define WAVE_DIG_READ_TIME 0.1
 
 #define PI 3.14159265
+#define K_TO_C 273.15
 
 enum waveGenType {
   waveGenTypeUser,
@@ -845,6 +846,7 @@ asynStatus LabJackDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
   if (function == deviceTemperature_) {
     if (waveDigRunning_) return asynSuccess;
     status = LJM_eReadName(LJMHandle_, "TEMPERATURE_DEVICE_K", value);
+    *value -= K_TO_C;
     setDoubleParam(deviceTemperature_, *value);
     reportError(status, functionName, "Calling LJM_eReadName for TEMPERATURE_DEVICE_K");
     // On the T7-PRO it seems necessary to read the analog inputs continuously for 150 ms 
@@ -1464,6 +1466,8 @@ int LabJackDriver::computeAiValue(int chan, double *aiValue) {
   double coldJunctionTemp;
   int status = asynSuccess;
   getDoubleParam(deviceTemperature_, &coldJunctionTemp);
+  // Convert from C to K
+  coldJunctionTemp += K_TO_C;
   int aiMode;
   getIntegerParam(chan, analogInMode_, &aiMode);
   if (aiMode != 0) {
@@ -1478,10 +1482,10 @@ int LabJackDriver::computeAiValue(int chan, double *aiValue) {
         *aiValue = tempK;
         break;
       case temperatureUnitsC:
-        *aiValue = tempK - 273.15;
+        *aiValue = tempK - K_TO_C;
         break;
       case temperatureUnitsF:
-        *aiValue = (tempK - 273.15) * 9./5. + 32;
+        *aiValue = (tempK - K_TO_C) * 9./5. + 32;
         break;
     }
   }
