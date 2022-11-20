@@ -1,7 +1,8 @@
 # ai record template for analog inputs
+# $(DTYPE) must be asynFloat64 or asynFloat64Average
 record(ai,"$(P)Ai$(N)") {
     field(DESC, "$(DESC)")
-    field(DTYP, "asynFloat64Average")
+    field(DTYP, "$(DTYPE)")
     field(INP,  "@asyn($(PORT) $(N))ANALOG_IN_VALUE")
     field(SCAN, "$(SCAN)")
     field(PREC, "$(PREC)")
