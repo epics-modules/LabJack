@@ -849,15 +849,6 @@ asynStatus LabJackDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
     *value -= K_TO_C;
     setDoubleParam(deviceTemperature_, *value);
     reportError(status, functionName, "Calling LJM_eReadName for TEMPERATURE_DEVICE_K");
-    // On the T7-PRO it seems necessary to read the analog inputs continuously for 150 ms 
-    // after reading the device temperature to avoid glitches
-    if (model_ == modelT7Pro) {
-      epicsTime tStart = epicsTime::getCurrent();
-      while (1) {
-        readAnalogInputs();
-        if ((epicsTime::getCurrent() - tStart) > 0.15) break;
-      }
-    }
   }
   // Other functions we call the base class method
   else {
