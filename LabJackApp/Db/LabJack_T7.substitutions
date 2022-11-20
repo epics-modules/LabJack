@@ -51,22 +51,23 @@ file "$(LABJACK)/db/LabJack_biWord.template" { pattern
 }
 
 # Analog Inputs done with word access.
+# DTYPE must be asynFloat64 or asynFloat64Average
 file "$(LABJACK)/db/LabJack_ai.template" { pattern
-{N,     SCAN,   PREC,         DESC}
-{0,  ".1 second", 4, "Ch 0 Ana In"}
-{1,  ".1 second", 4, "Ch 1 Ana In"}
-{2,  ".1 second", 4, "Ch 2 Ana In"}
-{3,  ".1 second", 4, "Ch 3 Ana In"}
-{4,  ".1 second", 4, "Ch 4 Ana In"}
-{5,  ".1 second", 4, "Ch 5 Ana In"}
-{6,  ".1 second", 4, "Ch 6 Ana In"}
-{7,  ".1 second", 4, "Ch 7 Ana In"}
-{8,  ".1 second", 4, "Ch 8 Ana In"}
-{9,  ".1 second", 4, "Ch 9 Ana In"}
-{10, ".1 second", 4, "Ch 10 Ana In"}
-{11, ".1 second", 4, "Ch 11 Ana In"}
-{12, ".1 second", 4, "Ch 12 Ana In"}
-{13, ".1 second", 4, "Ch 13 Ana In"}
+{N,  DTYPE                  SCAN,   PREC,         DESC}
+{0,  asynFloat64Average, ".1 second", 4, "Ch 0 Ana In"}
+{1,  asynFloat64Average, ".1 second", 4, "Ch 1 Ana In"}
+{2,  asynFloat64Average, ".1 second", 4, "Ch 2 Ana In"}
+{3,  asynFloat64Average, ".1 second", 4, "Ch 3 Ana In"}
+{4,  asynFloat64Average, ".1 second", 4, "Ch 4 Ana In"}
+{5,  asynFloat64Average, ".1 second", 4, "Ch 5 Ana In"}
+{6,  asynFloat64Average, ".1 second", 4, "Ch 6 Ana In"}
+{7,  asynFloat64Average, ".1 second", 4, "Ch 7 Ana In"}
+{8,  asynFloat64Average, ".1 second", 4, "Ch 8 Ana In"}
+{9,  asynFloat64Average, ".1 second", 4, "Ch 9 Ana In"}
+{10, asynFloat64Average, ".1 second", 4, "Ch 10 Ana In"}
+{11, asynFloat64Average, ".1 second", 4, "Ch 11 Ana In"}
+{12, asynFloat64Average, ".1 second", 4, "Ch 12 Ana In"}
+{13, asynFloat64Average, ".1 second", 4, "Ch 13 Ana In"}
 }
 
 # Analog outputs done with word access.
