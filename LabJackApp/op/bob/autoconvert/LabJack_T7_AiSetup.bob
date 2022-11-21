@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>LabJack_T7_AiSetup</name>
-  <x>819</x>
-  <y>110</y>
   <width>780</width>
-  <height>515</height>
+  <height>540</height>
   <background_color>
     <color red="187" green="187" blue="187">
     </color>
@@ -30,7 +28,7 @@
     <name>text #9</name>
     <text>NOTE: on T7 and T7-Pro in differential mode, channels are paired 0+ 1-. 2+ 3-. etc.</text>
     <x>12</x>
-    <y>490</y>
+    <y>515</y>
     <width>756</width>
     <height>15</height>
     <font>
@@ -2061,6 +2059,42 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>text #514</name>
+    <text>Resolution</text>
+    <x>338</x>
+    <y>462</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #517</name>
+    <pv_name>$(P)AiAllResolution</pv_name>
+    <x>443</x>
+    <y>462</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #520</name>
+    <text>(all channels)</text>
+    <x>528</x>
+    <y>462</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #523</name>
     <text>Settling time (us)</text>
     <x>258</x>
     <y>437</y>
@@ -2072,7 +2106,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #517</name>
+    <name>text entry #526</name>
     <pv_name>$(P)AiAllSettlingUS</pv_name>
     <x>443</x>
     <y>437</y>
@@ -2090,7 +2124,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #521</name>
+    <name>text #530</name>
     <text>(0=auto)</text>
     <x>528</x>
     <y>437</y>
@@ -2102,28 +2136,67 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #524</name>
-    <text>Resolution (all)</text>
-    <x>278</x>
-    <y>462</y>
-    <width>160</width>
+    <name>text #533</name>
+    <text>Sampling rate (Hz)</text>
+    <x>258</x>
+    <y>487</y>
+    <width>180</width>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
-  <widget type="combo" version="2.0.0">
-    <name>menu #527</name>
-    <pv_name>$(P)AiAllResolution</pv_name>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #536</name>
+    <pv_name>$(P)AiSamplingRate</pv_name>
     <x>443</x>
-    <y>462</y>
+    <y>487</y>
     <width>80</width>
-    <height>20</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
     <background_color>
       <color red="115" green="223" blue="255">
       </color>
     </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #540</name>
+    <text>(T8 only)</text>
+    <x>617</x>
+    <y>487</y>
+    <width>90</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #543</name>
+    <pv_name>$(P)AiSamplingRate_RBV</pv_name>
+    <x>528</x>
+    <y>487</y>
+    <width>84</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

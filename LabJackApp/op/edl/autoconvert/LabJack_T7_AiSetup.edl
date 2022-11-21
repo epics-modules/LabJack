@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 819
-y 110
+x 0
+y 0
 w 780
-h 515
+h 540
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -51,7 +51,7 @@ major 4
 minor 1
 release 1
 x 12
-y 490
+y 515
 w 756
 h 15
 font "helvetica-medium-r-12.0"
@@ -1827,6 +1827,46 @@ beginObjectProperties
 major 4
 minor 1
 release 1
+x 338
+y 462
+w 100
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Resolution"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 528
+y 462
+w 140
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "(all channels)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
 x 258
 y 437
 w 180
@@ -1893,9 +1933,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 278
-y 462
-w 160
+x 258
+y 487
+w 180
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "center"
@@ -1903,8 +1943,78 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "Resolution (all)"
+  "Sampling rate (Hz)"
 }
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 443
+y 487
+w 80
+h 20
+controlPv "$(P)AiSamplingRate"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 617
+y 487
+w 90
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "(T8 only)"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 528
+y 487
+w 84
+h 20
+controlPv "$(P)AiSamplingRate_RBV"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "left"
+fgColor rgb 2560 0 47104
+bgColor rgb 47872 47872 47872
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 # (Group)
 object activeGroupClass

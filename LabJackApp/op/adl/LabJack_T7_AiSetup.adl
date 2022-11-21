@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=819
-		y=110
+		x=0
+		y=0
 		width=780
-		height=515
+		height=540
 	}
 	clr=14
 	bclr=4
@@ -103,7 +103,7 @@ text {
 text {
 	object {
 		x=12
-		y=490
+		y=515
 		width=756
 		height=15
 	}
@@ -2172,6 +2172,45 @@ composite {
 }
 text {
 	object {
+		x=338
+		y=462
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Resolution"
+	align="horiz. right"
+}
+menu {
+	object {
+		x=443
+		y=462
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)AiAllResolution"
+		clr=14
+		bclr=51
+	}
+}
+text {
+	object {
+		x=528
+		y=462
+		width=140
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="(all channels)"
+	align="horiz. centered"
+}
+text {
+	object {
 		x=258
 		y=437
 		width=180
@@ -2213,27 +2252,57 @@ text {
 }
 text {
 	object {
-		x=278
-		y=462
-		width=160
+		x=258
+		y=487
+		width=180
 		height=20
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Resolution (all)"
+	textix="Sampling rate (Hz)"
 	align="horiz. centered"
 }
-menu {
+"text entry" {
 	object {
 		x=443
-		y=462
+		y=487
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)AiAllResolution"
+		chan="$(P)AiSamplingRate"
 		clr=14
 		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=617
+		y=487
+		width=90
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="(T8 only)"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=528
+		y=487
+		width=84
+		height=20
+	}
+	monitor {
+		chan="$(P)AiSamplingRate_RBV"
+		clr=54
+		bclr=4
+	}
+	limits {
 	}
 }
