@@ -59,13 +59,6 @@ record(ao,"$(P)PollSleepMS") {
     field(PREC, "1")
 }
 
-record(ao,"$(P)AiAllSettlingUS") {
-    field(PINI, "YES")
-    field(DTYP, "asynFloat64")
-    field(OUT,  "@asyn($(PORT) 0)AIN_SETTLING_TIME_ALL")
-    field(PREC, "1")
-}
-
 # mbbo record template for analog input resolution.
 # The driver will provide the enum strings and values
 record(mbbo,"$(P)AiAllResolution") {
@@ -73,7 +66,29 @@ record(mbbo,"$(P)AiAllResolution") {
     field(ZRVL, "0")
     field(ZRST, "N.A.")
     field(DTYP,"asynInt32")
-    field(OUT,"@asyn($(PORT) 0)AIN_RESOLUTION_ALL")
+    field(OUT,"@asyn($(PORT) 0)ANALOG_IN_RESOLUTION_ALL")
+}
+
+record(ao,"$(P)AiAllSettlingUS") {
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT) 0)ANALOG_IN_SETTLING_TIME_ALL")
+    field(PREC, "1")
+}
+
+record(ao,"$(P)AiSamplingRate") {
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT) 0)ANALOG_IN_SAMPLING_RATE")
+    field(VAL, "100")
+    field(PREC, "1")
+}
+
+record(ai,"$(P)AiSamplingRate_RBV") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT) 0)ANALOG_IN_SAMPLING_RATE")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
 }
 
 record(bo,"$(P)DeviceReset") {

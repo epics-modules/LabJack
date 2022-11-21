@@ -1,3 +1,4 @@
 $(P)PollSleepMS
 $(P)AiAllSettlingUS
 $(P)AiAllResolution
+$(P)AiSamplingRate
