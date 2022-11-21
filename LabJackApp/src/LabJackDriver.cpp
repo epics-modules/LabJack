@@ -35,18 +35,19 @@
 #define pollSleepMSString           "POLL_SLEEP_MS"
 #define pollTimeMSString            "POLL_TIME_MS"
 #define deviceResetString           "DEVICE_RESET"
-#define ainSettlingTimeAllString    "AIN_SETTLING_TIME_ALL"
-#define ainResolutionAllString      "AIN_RESOLUTION_ALL"
 #define lastErrorMessageString      "LAST_ERROR_MESSAGE"
 
 // Analog input parameters
-#define analogInValueString         "ANALOG_IN_VALUE"
-#define analogInModeString          "ANALOG_IN_MODE"
-#define analogInRangeString         "ANALOG_IN_RANGE"
-#define analogInResolutionString    "ANALOG_IN_RESOLUTION"
-#define analogInDifferentialString  "ANALOG_IN_DIFFERENTIAL"
-#define analogInEnableString        "ANALOG_IN_ENABLE"
-#define temperatureUnitsString      "TEMPERATURE_UNITS"
+#define analogInValueString           "ANALOG_IN_VALUE"
+#define analogInModeString            "ANALOG_IN_MODE"
+#define analogInRangeString           "ANALOG_IN_RANGE"
+#define analogInResolutionString      "ANALOG_IN_RESOLUTION"
+#define analogInSettlingTimeAllString "ANALOG_IN_SETTLING_TIME_ALL"
+#define analogInResolutionAllString   "ANALOG_IN_RESOLUTION_ALL"
+#define analogInDifferentialString    "ANALOG_IN_DIFFERENTIAL"
+#define analogInEnableString          "ANALOG_IN_ENABLE"
+#define analogInSamplingRateString    "ANALOG_IN_SAMPLING_RATE"
+#define temperatureUnitsString        "TEMPERATURE_UNITS"
 #
 // Analog output parameters
 #define analogOutValueString        "ANALOG_OUT_VALUE"
@@ -255,8 +256,6 @@ protected:
   int pollSleepMS_;
   int pollTimeMS_;
   int deviceReset_;
-  int ainSettlingTimeAll_;
-  int ainResolutionAll_;
   int lastErrorMessage_;
 
   // Analog input parameters
@@ -264,8 +263,11 @@ protected:
   int analogInMode_;
   int analogInRange_;
   int analogInResolution_;
+  int analogInResolutionAll_;
+  int analogInSettlingTimeAll_;
   int analogInDifferential_;
   int analogInEnable_;
+  int analogInSamplingRate_;
   int temperatureUnits_;
 
   // Analog output parameters
@@ -428,8 +430,6 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
   createParam(pollSleepMSString,              asynParamFloat64, &pollSleepMS_);
   createParam(pollTimeMSString,               asynParamFloat64, &pollTimeMS_);
   createParam(deviceResetString,                asynParamInt32, &deviceReset_);
-  createParam(ainSettlingTimeAllString,       asynParamFloat64, &ainSettlingTimeAll_);
-  createParam(ainResolutionAllString,           asynParamInt32, &ainResolutionAll_);
   createParam(lastErrorMessageString,           asynParamOctet, &lastErrorMessage_);
 
   // Analog input parameters
@@ -437,8 +437,11 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
   createParam(analogInModeString,                asynParamInt32, &analogInMode_);
   createParam(analogInRangeString,               asynParamInt32, &analogInRange_);
   createParam(analogInResolutionString,          asynParamInt32, &analogInResolution_);
+  createParam(analogInSettlingTimeAllString,   asynParamFloat64, &analogInSettlingTimeAll_);
+  createParam(analogInResolutionAllString,       asynParamInt32, &analogInResolutionAll_);
   createParam(analogInDifferentialString,        asynParamInt32, &analogInDifferential_);
   createParam(analogInEnableString,              asynParamInt32, &analogInEnable_);
+  createParam(analogInSamplingRateString,      asynParamFloat64, &analogInSamplingRate_);
   createParam(temperatureUnitsString,            asynParamInt32, &temperatureUnits_);
 
   // Analog input parameters
@@ -708,7 +711,7 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
       setActiveAiChannels();
     }
   }
-  else if (function == ainResolutionAll_) {
+  else if (function == analogInResolutionAll_) {
     status = LJM_eWriteName(LJMHandle_, "AIN_ALL_RESOLUTION_INDEX", value);
     reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX");
   }
@@ -882,10 +885,19 @@ asynStatus LabJackDriver::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     status = LJM_eWriteAddress(LJMHandle_, LJT_TDAC_FLOAT32 + (2*addr), LJM_FLOAT32, value);
     reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_TDAC_FLOAT32");
   }
-  else if (function == ainSettlingTimeAll_) {
+  else if (function == analogInSettlingTimeAll_) {
     status = LJM_eWriteName(LJMHandle_, "AIN_ALL_SETTLING_US", value);
     reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_SETTLING_US");
   }
+  else if ((function == analogInSamplingRate_) && (model_ == modelT8)) {
+    status = LJM_eWriteName(LJMHandle_, "AIN_SAMPLING_RATE_HZ", value);
+    reportError(status, functionName, "Calling LJM_eWriteName for AIN_SAMPLING_RATE_HZ");
+    double samplingRateActual;
+    status = LJM_eReadName(LJMHandle_, "AIN_SAMPLING_RATE_HZ", &samplingRateActual);
+    reportError(status, functionName, "Calling LJM_eReadName for AIN_SAMPLING_RATE_HZ");
+    setDoubleParam(function, samplingRateActual);
+  }
+
   // Waveform digitizer functions
   else if (function == waveDigSettlingTime_) {
     status = LJM_eWriteName(LJMHandle_, "STREAM_SETTLING_US", value);
@@ -1013,7 +1025,7 @@ asynStatus LabJackDriver::readEnum(asynUser *pasynUser, char *strings[], int val
   }
   else if ((function == analogInResolution_) ||
            (function == waveDigResolution_)  ||
-           (function == ainResolutionAll_)) {
+           (function == analogInResolutionAll_)) {
     pEnum    = allResolution;
     numEnums = numResolution_;
     if (addr < numAnalogIn_) validAddr = true;
@@ -1399,7 +1411,7 @@ int LabJackDriver::startWaveGen()
   // On the T7-Pro we need to set the ResolutionAll to a maximum of 8 in order to read inputs while scanning
   if (model_ == modelT7Pro) {
     int resolution;
-    getIntegerParam(ainResolutionAll_, &resolution);
+    getIntegerParam(analogInResolutionAll_, &resolution);
     if ((resolution == 0) || (resolution > 8)) {
       status = LJM_eWriteName(LJMHandle_, "AIN_ALL_RESOLUTION_INDEX", 8);
       reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX");
