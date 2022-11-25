@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LabJack: Driver for T-series Devices From LabJack &#8212; EPICS LabJack 2-0-81-gc45552d documentation</title>
+    <title>LabJack: Driver for T-series Devices From LabJack &#8212; EPICS LabJack 2-0-83-g4d02814 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -285,7 +285,7 @@ to be be used with a new model.</p>
 <ul>
 <li><p>0-10V range</p></li>
 <li><p>16-bit</p></li>
-<li><p>Up to 100 kHz streaming output rate ???</p></li>
+<li><p>Up to 40 kHz streaming output rate</p></li>
 </ul>
 </li>
 <li><p>23 digital I/O bits, each configurable as input or output.</p></li>
@@ -449,9 +449,14 @@ It has SCAN=”5 second” which is fast enough for this slowly varying value.</
 <tr class="row-odd"><td><p>$(P)AiAllSettlingUS</p></td>
 <td><p>ao</p></td>
 <td><p>asynFloat64</p></td>
-<td><p>AIN_RESOLUTION_ALL</p></td>
-<td><p>Selects the input resolution for all analog input channels.
-High values of resolution result in lower noise and longer ADC conversion time.
+<td><p>ANALOG_IN_SETTLING_TIME_ALL</p></td>
+<td><p>Selects the settling time for all analog input channels.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)AiAllResolution</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_RESOLUTION_ALL</p></td>
+<td><p>High values of resolution result in lower noise and longer ADC conversion time.
 Resolution 0 is the default resolution for that model.</p>
 <ul class="simple">
 <li><p>The T4 supports resolutions 1-5.</p></li>
@@ -459,17 +464,32 @@ Resolution 0 is the default resolution for that model.</p>
 <li><p>The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC.
 When running the waveform generator on the T7-PRO this must be set to values between 1-8, i.e. 16-bit ADC.
 The driver will set this automatically when starting the waveform generator if it is outside the allowed range.</p></li>
-<li><p>The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?</p></li>
+<li><p>The T8 supports resolutions 1-16.  However, it is recommended to use the default resolution and change the SamplingRate
+to control the resolution vs speed tradeoff.</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>$(P)AiAllResolution</p></td>
-<td><p>mbbo</p></td>
-<td><p>asynInt32</p></td>
-<td><p>AIN_RESOLUTION_ALL</p></td>
-<td><p>The resolution to apply to all analog input channels. 0 selects the device default.</p></td>
+<tr class="row-odd"><td><p>$(P)AiSamplingRate</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>ANALOG_IN_SAMPLING_RATE</p></td>
+<td><p>This sets the sampling rate of the ADC in Hz.</p>
+<ul class="simple">
+<li><p>It applies to the T8 only.</p></li>
+<li><p>Recommended range is 100 to 10000 Hz.</p></li>
+<li><p>Lower rates do more filtering in the ADC, reducing noise at the expense of speed.</p></li>
+<li><p>Increasing the sampling rate will increase the noise in each reading.</p></li>
+<li><p>However, since the analog input records use the devAsynFloat64Average device support,
+increasing the rate can increase the number of samples averaged in the EPICS device support in a fixed period of time,
+provided it is not limited by PollSleepMS.</p></li>
+<li><p>Because of this averaing in device support, increasing the sampling time from 100 Hz to 1000 Hz can actually result in a
+small decrease in noise.</p></li>
+<li><p>The maximum rate that the values can be read from the device with PollSleepMS=0 is about 2000/s, so increasing the
+SamplingRate beyond 2000 will not result more averaging in EPICS device support.</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td><p>$(P)DeviceReset</p></td>
+<tr class="row-even"><td><p>$(P)DeviceReset</p></td>
 <td><p>bo</p></td>
 <td><p>asynInt32</p></td>
 <td><p>DEVICE_RESET</p></td>
