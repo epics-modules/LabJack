@@ -48,7 +48,7 @@ It supports the following 4 LabJack modules.  All modules have both Ethernet and
 - 2 analog outputs
   - 0-10V range
   - 16-bit
-  - Up to 100 kHz streaming output rate ???
+  - Up to 40 kHz streaming output rate
 - 23 digital I/O bits, each configurable as input or output.
 - $1,400
 
