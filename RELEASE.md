@@ -1,6 +1,6 @@
 # LabJack Release Notes
 
-## R3-0 (November XXX, 2022)
+## R3-0 (November 25, 2022)
 - Rewritten to be based on asynPortDriver using the vendor LJM library, rather than low-level Modbus access.
 - Added waveform digitizer support, which is called streaming input in LabJack terminology.
 - Added waveform generator support, which is called streaming output in LabJack terminology.
