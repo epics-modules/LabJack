@@ -1157,7 +1157,7 @@ int LabJackDriver::stopWaveDig(bool restartOK)
   reportError(status, functionName, "Calling LJM_eStreamStop");
   getIntegerParam(waveDigAutoRestart_, &autoRestart);
   if (autoRestart && restartOK) {
-    epicsThreadSleep(0.1);
+    epicsThreadSleep(0.2);
     status = startWaveDig();
   }
 
