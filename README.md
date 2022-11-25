@@ -1,6 +1,6 @@
 [![Labjack](https://github.com/epics-modules/LabJack/actions/workflows/ci-scripts-build.yml/badge.svg)](https://github.com/epics-modules/LabJack/actions/workflows/ci-scripts-build.yml)
 
-This repository contains EPICS support for the LabJack T-series I/O modules, 
+This repository contains EPICS support for the LabJack T-series I/O modules.
 
 It is based on asynPortDriver and the vendor LJM library.
 
