@@ -131,7 +131,7 @@ This module costs $1,400 and has the following features:
 
    - 0-10V range
    - 16-bit
-   - Up to 100 kHz streaming output rate ???
+   - Up to 40 kHz streaming output rate
 
 -  23 digital I/O bits, each configurable as input or output.
 
@@ -289,9 +289,13 @@ This database is loaded once for each LabJack device.
   * - $(P)AiAllSettlingUS
     - ao
     - asynFloat64
-    - AIN_RESOLUTION_ALL
-    - Selects the input resolution for all analog input channels. 
-      High values of resolution result in lower noise and longer ADC conversion time.
+    - ANALOG_IN_SETTLING_TIME_ALL
+    - Selects the settling time for all analog input channels.
+  * - $(P)AiAllResolution
+    - mbbo
+    - asynInt32
+    - ANALOG_IN_RESOLUTION_ALL
+    - High values of resolution result in lower noise and longer ADC conversion time.
       Resolution 0 is the default resolution for that model.
 
       - The T4 supports resolutions 1-5.
@@ -299,12 +303,25 @@ This database is loaded once for each LabJack device.
       - The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC. 
         When running the waveform generator on the T7-PRO this must be set to values between 1-8, i.e. 16-bit ADC.
         The driver will set this automatically when starting the waveform generator if it is outside the allowed range.
-      - The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?
-  * - $(P)AiAllResolution
-    - mbbo
-    - asynInt32
-    - AIN_RESOLUTION_ALL
-    - The resolution to apply to all analog input channels. 0 selects the device default.
+      - The T8 supports resolutions 1-16.  However, it is recommended to use the default resolution and change the SamplingRate
+        to control the resolution vs speed tradeoff.
+  * - $(P)AiSamplingRate
+    - ao
+    - asynFloat64
+    - ANALOG_IN_SAMPLING_RATE
+    - This sets the sampling rate of the ADC in Hz.  
+
+      - It applies to the T8 only.
+      - Recommended range is 100 to 10000 Hz.  
+      - Lower rates do more filtering in the ADC, reducing noise at the expense of speed.
+      - Increasing the sampling rate will increase the noise in each reading.  
+      - However, since the analog input records use the devAsynFloat64Average device support, 
+        increasing the rate can increase the number of samples averaged in the EPICS device support in a fixed period of time,
+        provided it is not limited by PollSleepMS.
+      - Because of this averaing in device support, increasing the sampling time from 100 Hz to 1000 Hz can actually result in a 
+        small decrease in noise.
+      - The maximum rate that the values can be read from the device with PollSleepMS=0 is about 2000/s, so increasing the 
+        SamplingRate beyond 2000 will not result more averaging in EPICS device support.
   * - $(P)DeviceReset
     - bo
     - asynInt32
