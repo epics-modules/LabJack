@@ -848,7 +848,9 @@ asynStatus LabJackDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
   // Device temperature input function
   if (function == deviceTemperature_) {
     if (waveDigRunning_) return asynSuccess;
+    if ((waveGenRunning_) && (model_ == modelT8)) return asynSuccess;
     status = LJM_eReadName(LJMHandle_, "TEMPERATURE_DEVICE_K", value);
+//    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, "LJM_eReadName for TEMPERATURE_DEVICE_K, status=%d, value=%f\n", status, *value);
     *value -= K_TO_C;
     setDoubleParam(deviceTemperature_, *value);
     reportError(status, functionName, "Calling LJM_eReadName for TEMPERATURE_DEVICE_K");
@@ -1088,6 +1090,7 @@ int LabJackDriver::readAnalogInputs() {
   int numChannels = (int)activeAiChannels_.size();
   if (numChannels == 0) return asynSuccess;
   if (waveDigRunning_) return asynSuccess;
+  if ((waveGenRunning_) && (model_ == modelT8)) return asynSuccess;
   for (int i=0; i<numChannels; i++) {
     aiValueAddresses_[i] = LJT_AI_FLOAT32 + 2*activeAiChannels_[i];
     aiTypeAddresses_[i] = LJM_FLOAT32;
