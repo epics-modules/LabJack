@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Databases &mdash; EPICS support for LabJack devices</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Top-level OPI screen" href="top_level_opi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            LabJack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Driver architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="top_level_opi.html">Top-level OPI screen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#device-functions">Device Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analog-input-functions">Analog Input Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analog-output-functions">Analog Output Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#digital-i-o-functions">Digital I/O Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#waveform-digitizer-functions">Waveform Digitizer Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#waveform-generator-functions">Waveform Generator Functions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LabJack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Databases</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/databases.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="databases">
+<h1>Databases<a class="headerlink" href="#databases" title="Permalink to this heading"></a></h1>
+<p>The following tables list the database template files that are used with the LabJack modules.</p>
+<section id="device-functions">
+<h2>Device Functions<a class="headerlink" href="#device-functions" title="Permalink to this heading"></a></h2>
+<p>These are the records defined in LabJack_device.template.
+These records provide device-wide information and control.
+This database is loaded once for each LabJack device.</p>
+<table class="table-bordered table-striped table-hover docutils align-left">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)ModelName</p></td>
+<td><p>mbbi</p></td>
+<td><p>asynInt32</p></td>
+<td><p>MODEL_NAME</p></td>
+<td><p>Device model name. mbbi values and strings are</p>
+<ul class="simple">
+<li><p>0=”T4”</p></li>
+<li><p>1=”T7”</p></li>
+<li><p>2=”T7-Pro”</p></li>
+<li><p>3=”T8”.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P)FirmwareVersion</p></td>
+<td><p>stringin</p></td>
+<td><p>asynOctet</p></td>
+<td><p>FIRMWARE_VERSION</p></td>
+<td><p>Device firmware version.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)SerialNumber</p></td>
+<td><p>stringin</p></td>
+<td><p>asynOctet</p></td>
+<td><p>SERIAL_NUMBER</p></td>
+<td><p>Device serial number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)DeviceTemperature</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>DEVICE_TEMPERATURE</p></td>
+<td><p>Device temperature. This is used as the cold junction reference temperature for thermocouple measurements.
+It has SCAN=”5 second” which is fast enough for this slowly varying value.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)LJMVersion</p></td>
+<td><p>stringin</p></td>
+<td><p>asynOctet</p></td>
+<td><p>LJM_VERSION</p></td>
+<td><p>Version of the LabJack LJM library.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)DriverVersion</p></td>
+<td><p>stringin</p></td>
+<td><p>asynOctet</p></td>
+<td><p>DRIVER_VERSION</p></td>
+<td><p>Version of the EPICS driver.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)LastErrorMessage</p></td>
+<td><p>waveform</p></td>
+<td><p>asynOctet</p></td>
+<td><p>LAST_ERROR_MESSAGE</p></td>
+<td><p>The last error message from the driver. This includes a timestamp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)PollSleepMS</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>POLL_SLEEP_MS</p></td>
+<td><p>The number of milliseconds to sleep at the end of each poll cycle.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)PollTimeMS</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>POLL_TIME_MS</p></td>
+<td><p>The actual number of milliseconds to execute the poll cycle, including the sleep.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)AiAllSettlingUS</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>ANALOG_IN_SETTLING_TIME_ALL</p></td>
+<td><p>Selects the settling time for all analog input channels.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)AiAllResolution</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_RESOLUTION_ALL</p></td>
+<td><p>High values of resolution result in lower noise and longer ADC conversion time.
+Resolution 0 is the default resolution for that model.</p>
+<ul class="simple">
+<li><p>The T4 supports resolutions 1-5.</p></li>
+<li><p>The T7 supports resolutions 1-8.</p></li>
+<li><p>The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC.
+When running the waveform generator on the T7-PRO this must be set to values between 1-8, i.e. 16-bit ADC.
+The driver will set this automatically when starting the waveform generator if it is outside the allowed range.</p></li>
+<li><p>The T8 supports resolutions 1-16.  However, it is recommended to use the default resolution and change the SamplingRate
+to control the resolution vs speed tradeoff.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(P)AiSamplingRate</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>ANALOG_IN_SAMPLING_RATE</p></td>
+<td><p>This sets the sampling rate of the ADC in Hz.</p>
+<ul class="simple">
+<li><p>It applies to the T8 only.</p></li>
+<li><p>Recommended range is 100 to 10000 Hz.</p></li>
+<li><p>Lower rates do more filtering in the ADC, reducing noise at the expense of speed.</p></li>
+<li><p>Increasing the sampling rate will increase the noise in each reading.</p></li>
+<li><p>However, since the analog input records use the devAsynFloat64Average device support,
+increasing the rate can increase the number of samples averaged in the EPICS device support in a fixed period of time,
+provided it is not limited by PollSleepMS.</p></li>
+<li><p>Because of this averaing in device support, increasing the sampling time from 100 Hz to 1000 Hz can actually result in a
+small decrease in noise.</p></li>
+<li><p>The maximum rate that the values can be read from the device with PollSleepMS=0 is about 2000/s, so increasing the
+SamplingRate beyond 2000 will not result more averaging in EPICS device support.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P)DeviceReset</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>DEVICE_RESET</p></td>
+<td><p>Processing this record sets the device watchdog time to 10 s, and the watchdog timer function to device reset.
+This will reset the device after 10 seconds of communications inactivity.
+Processing this record, exiting the IOC application, and waiting at least 10 seconds will cause the device to reset.
+This can be used to remotely recover from a device malfunction that requires a reset.
+Note that the device will continue to reset every 10 seconds until the IOC successfully starts again.
+The IOC may occasionally fail to start after a DeviceReset because the device is currently resetting.  Trying again will eventually succeed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="analog-input-functions">
+<h2>Analog Input Functions<a class="headerlink" href="#analog-input-functions" title="Permalink to this heading"></a></h2>
+<p>These are the records defined in LabJack_ai.template.
+This database is loaded once for each analog input channel</p>
+<table class="table-bordered table-striped table-hover docutils align-left">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)Ai$(N)</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>ANALOG_IN_VALUE</p></td>
+<td><p>Analog input value. This is polled in the driver, so either period or
+I/O Intr scanning can be used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)AiEnable$(N)</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_ENABLE</p></td>
+<td><p>Enable flag for this analog input channel. Disabled inputs are not read by the poller.
+Unconnected inputs should be disabled to improve accuracy on active channels and to
+reduce the polling time.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)AiMode$(N)</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_MODE</p></td>
+<td><p>Input mode for this analog input channel. Choices are Volts and 9 different thermocouple types.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)AiTempUnits$(N)</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>TEMPERATURE_UNITS</p></td>
+<td><p>Temperature units for this analog input channel if a thermocouple mode is selected.
+Choices are “K”, “C”, and “F”.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)AiDiff$(N)</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_DIFF</p></td>
+<td><p>Selects “Single-Ended” or “Differential” input mode on the T7 and T7-PRO.
+The T4 is always single-ended and the T8 is always differential.
+The driver constructs the strings and values based on the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)AiRange$(N)</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_RANGE</p></td>
+<td><p>Selects the input range for this analog input channel.</p>
+<ul class="simple">
+<li><p>On the T4 the range is fixed at +-10V on channels 0-3 and 0-2.5 on channels 4-11.</p></li>
+<li><p>On the T7 the range choices are +-10V, +-1V, +-0.1V, and +-0.01V.</p></li>
+<li><p>On the T8 there are 11 ranges from +-11V to +-0.15V.</p></li>
+</ul>
+<p>The driver constructs the strings and values based on the model.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P)AiResolution$(N)</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>ANALOG_IN_RESOLUTION</p></td>
+<td><p>Selects the input resolution for this analog input channel.
+High values of resolution result in lower noise and longer ADC conversion time.</p>
+<ul class="simple">
+<li><p>Resolution 0 is the default resolution for that model.</p></li>
+<li><p>The T4 supports resolutions 1-5.</p></li>
+<li><p>The T7 supports resolutions 1-8.</p></li>
+<li><p>The T7-PRO supports resolutions 1-12. 1-8 use the 16-bit ADC and 9-12 use the 24-bit ADC</p></li>
+<li><p>The T8 supports resolutions 1-16.  However, these are automatically selected by the Range, and this record has no effect?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The following is the medm screen for controlling the analog input configuration records.</p>
+<figure class="align-center" id="id1">
+<img alt="_images/LabJack_T7_AiSetup.png" src="_images/LabJack_T7_AiSetup.png" />
+<figcaption>
+<p><span class="caption-text"><strong>LabJack_T7_AiSetup.adl</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>While this screen is nominally specific to the T7 and T7-PRO, it can be used for any model.
+On the T8 analog inputs 8-13 do not apply and the inputs are always in Differential mode.
+On the T4 analog inputs 12-13 do not apply.
+Thermocouples only work well with the T7-PRO in 24-bit mode (resolutions 9-12), or with the T8 with low-voltage ranges.
+They do not work well with the T4 or T7.</p>
+</section>
+<section id="analog-output-functions">
+<h2>Analog Output Functions<a class="headerlink" href="#analog-output-functions" title="Permalink to this heading"></a></h2>
+<p>These are the records defined in LabJack_Ao.template.
+This database is loaded once for each analog output channel</p>
+<table class="table-bordered table-striped table-hover docutils align-left">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)$(R)</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>ANALOG_OUT_VALUE</p></td>
+<td><p>Analog output value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)TweakVal</p></td>
+<td><p>ao</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>The amount by which to tweak the out when the Tweak record is processed.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)$(R)TweakUp</p></td>
+<td><p>calcout</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>Tweaks the output up by TweakVal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)TweakDown</p></td>
+<td><p>calcout</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>Tweaks the output down by TweakVal.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The following is the medm screen for configuring the analog output
+records. The drive limits can be more restrictive than the full output range of the analog outputs.</p>
+<p>Channels 0 and 1 are the on-board DACs on all models.
+The range is 0-5V for the on-board DACs on the T4, T7, and T7-PRO, and 0-10V on the T8.</p>
+<p>Channels 2 and above are the LJTick DACs that can be optionally installed on any model.
+The range on the LJTick DACs is +-10V.</p>
+<figure class="align-center" id="id2">
+<img alt="_images/LabJack_T7_AoSetup.png" src="_images/LabJack_T7_AoSetup.png" />
+<figcaption>
+<p><span class="caption-text"><strong>LabJack_T7_AoSetup.adl</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following is the medm screen for controlling the optional LJTick DACs.</p>
+<figure class="align-center" id="id3">
+<img alt="_images/LabJack_LJTick_DAC2.png" src="_images/LabJack_LJTick_DAC2.png" />
+<figcaption>
+<p><span class="caption-text"><strong>LabJack_LJTick_DAC2.adl</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="digital-i-o-functions">
+<h2>Digital I/O Functions<a class="headerlink" href="#digital-i-o-functions" title="Permalink to this heading"></a></h2>
+<p>These are the records defined in LabJack_binary.template and LabJack_biWord.template.</p>
+<table class="table-bordered table-striped table-hover docutils align-left">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)Bi$(N)</p></td>
+<td><p>bi</p></td>
+<td><p>asynUInt32Digital</p></td>
+<td><p>DIGITAL_IN_WORD</p></td>
+<td><p>Digital input value. The MASK parameter in the INP link defines which bit is used.
+The binary inputs are polled by the driver poller thread, so these records should
+have SCAN=”I/O Intr”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)Bo$(N)</p></td>
+<td><p>bo</p></td>
+<td><p>asynUInt32Digital</p></td>
+<td><p>DIGITAL_OUT_BIT</p></td>
+<td><p>Digital output value. The ADDR parameter in the INP link defines which bit is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)Bd$(N)</p></td>
+<td><p>bo</p></td>
+<td><p>asynUInt32Digital</p></td>
+<td><p>DIGITAL_DIRECTION</p></td>
+<td><p>Direction of this I/O line, “In” (0) or “Out” (1). The MASK parameter in the INP
+link defines which bit is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)$(R)</p></td>
+<td><p>longin</p></td>
+<td><p>asynUInt32Digital</p></td>
+<td><p>DIGITAL_INPUT</p></td>
+<td><p>Digital input value as a word, rather than individual bits. The ADDR parameter in the INP link
+defines which word is read. 0=DIO (bits 0-23), 1=FIO (bits 0-7), 2=EIO (bits 8-15), 3=CIO (bits 16-19), and 4=MIO (bits 20-22).
+The binary inputs are polled by the driver poller thread, so these records should have SCAN=”I/O Intr”.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="waveform-digitizer-functions">
+<h2>Waveform Digitizer Functions<a class="headerlink" href="#waveform-digitizer-functions" title="Permalink to this heading"></a></h2>
+<p>These records are defined in the following files:
+- LabJack_waveformDig.template. This database is loaded once per module.
+- LabJack_waveformDigN.template. This database is loaded for each digitizer input channel.</p>
+<table class="table-bordered table-striped table-hover docutils align-left">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)WaveDigNumPoints</p></td>
+<td><p>longout</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_NUM_POINTS</p></td>
+<td><p>Number of points to digitize. This cannot be more than the value of maxInputPoints
+that was specified in LabJackConfig.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigFirstChan</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_FIRST_CHAN</p></td>
+<td><p>First channel to digitize, 0-13.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigNumChans</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_NUM_CHANS</p></td>
+<td><p>Number of channels to digitize. 1-14. The maximum valid number is
+13-FirstChan+1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigTimeWF</p></td>
+<td><p>waveform</p></td>
+<td><p>asynFloat32Array</p></td>
+<td><p>WAVEDIG_TIME_WF</p></td>
+<td><p>Timebase waveform. These values are calculated when Dwell or NumPoints are changed.
+It is typically used as the X-axis in plots.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigCurrentPoint</p></td>
+<td><p>longin</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_CURRENT_POINT</p></td>
+<td><p>The current point being collected. This does not always increment by 1 because the
+device can transfer data in blocks.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigDwell</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEDIG_DWELL</p></td>
+<td><p>The time per point in seconds. The minimum time depends on the device type and NumChans.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigDwellActual</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEDIG_DWELL_ACTUAL</p></td>
+<td><p>The actual time per point in seconds. This may differ from the requested Dwell because of clock granularity in the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigTotalTime</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEDIG_TOTAL_TIME</p></td>
+<td><p>The total time to digitize NumChans*NumPoints.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigResolution</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_RESOLUTION</p></td>
+<td><p>The ADC resolution to use for all channels during the scan.  The choices are model-dependent and are set by the driver.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigSettlingTime</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEDIG_SETTLING_TIME</p></td>
+<td><p>The ADC settling time in microseconds to use for all channels during the scan.  0 selects the device default.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigExtTrigger</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_EXT_TRIGGER</p></td>
+<td><p>The trigger source, “Internal” (0) or “External” (1). NOTE: NOT YET IMPLEMENTED.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigExtClock</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_EXT_CLOCK</p></td>
+<td><p>The clock source, “Internal” (0) or “External” (1). If External is used then the
+Dwell record does not control the digitization rate, it is controlled by the external
+clock. However Dwell should be set to approximately the correct value if possible,
+because that builds the time axis for plotting. NOTE: NOT YET IMPLEMENTED.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigAutoRestart</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_AUTO_RESTART</p></td>
+<td><p>Values are “Disable” (0) and “Enable” (1). This controls whether the driver automatically
+starts another acquire when the previous one completes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveDigRun</p></td>
+<td><p>busy</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_RUN</p></td>
+<td><p>Values are “Stop” (0) and “Run” (1). This starts and stops the waveform digitizer.
+It will automatically stop when the requested number of samples have been acquired.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveDigReadWF</p></td>
+<td><p>busy</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEDIG_READ_WF</p></td>
+<td><p>Values are “Done” (0) and “Read” (1). This reads the waveform data from the device
+buffers into the waveform records. Note that the driver always reads device when
+acquisition stops, so for quick acquisitions this record can be Passive. To see
+partial data during long acquisitions this record can be periodically processed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)VoltWF$(N)</p></td>
+<td><p>waveform</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>WAVEDIG_VOLT_WF</p></td>
+<td><p>This waveform record contains the digitizer waveform data for channel N. This record
+has scan=I/O Intr, and it will process whenever acquisition completes, or whenever
+the ReadWF record above processes. The data are in volts or temperature units.</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is the medm screen that controls the waveform digitizer.</p>
+<figure class="align-center" id="id4">
+<img alt="_images/LabJackWaveDig.png" src="_images/LabJackWaveDig.png" />
+<figcaption>
+<p><span class="caption-text"><strong>LabJackWaveDig.adl</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This is a plot of the waveform digitizer waveform for analog input 0 capturing 1000 samples/s (Dwell=0.001).</p>
+<figure class="align-center" id="id5">
+<img alt="_images/LabJackWaveDigPlot.png" src="_images/LabJackWaveDigPlot.png" />
+<figcaption>
+<p><span class="caption-text"><strong>LabJackWaveDigPlot.adl</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="waveform-generator-functions">
+<h2>Waveform Generator Functions<a class="headerlink" href="#waveform-generator-functions" title="Permalink to this heading"></a></h2>
+<p>These records are defined in the following files:
+- LabJack_waveformGen.template. This database is loaded once per module.
+- LabJack_waveformGenN.template. This database is loaded for each waveform generator output channel.</p>
+<table class="table-bordered table-striped table-hover docutils align-left">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
+<th class="head"><p>EPICS record type</p></th>
+<th class="head"><p>asyn interface</p></th>
+<th class="head"><p>drvInfo string</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(P)WaveGenNumPoints</p></td>
+<td><p>longin</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_NUM_POINTS</p></td>
+<td><p>Number of points output waveform. The value of this record is equal to UserNumPoints
+if user-defined waveforms are selected, or IntNumPoints if internal predefined waveforms
+are selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenUserNumPoints</p></td>
+<td><p>longout</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_USER_NUM_POINTS</p></td>
+<td><p>Number of points in user-defined output waveforms. This cannot be more than the
+value of maxOutputPoints that was specified in LabJackConfig.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenIntNumPoints</p></td>
+<td><p>longout</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_INT_NUM_POINTS</p></td>
+<td><p>Number of points in internal predefined output waveforms. This cannot be more than
+the value of maxOutputPoints that was specified in LabJackConfig.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenUserTimeWF</p></td>
+<td><p>waveform</p></td>
+<td><p>asynFloat32Array</p></td>
+<td><p>WAVEDIG_USER_TIME_WF</p></td>
+<td><p>Timebase waveform for user-defined waveforms. These values are calculated when UserDwell
+or UserNumPoints are changed. It is typically used as the X-axis in plots.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenIntTimeWF</p></td>
+<td><p>waveform</p></td>
+<td><p>asynFloat32Array</p></td>
+<td><p>WAVEGEN_INT_TIME_WF</p></td>
+<td><p>Timebase waveform for internal predefined waveforms. These values are calculated
+when IntDwell or IntNumPoints are changed. It is typically used as the X-axis in
+plots.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenCurrentPoint</p></td>
+<td><p>longin</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_CURRENT_POINT</p></td>
+<td><p>The current point being output. This does not always increment by 1 because the
+device can transfer data in blocks.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenFrequency</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_FREQUENCY</p></td>
+<td><p>The output frequency (waveforms/second). The value of this record is equal to UserFrequency
+if user-defined waveforms are selected, or IntFrequency if internal predefined waveforms
+are selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenDwell</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_DWELL</p></td>
+<td><p>The output dwell time or period (seconds/sample). The value of this record is equal
+to UserDwell if user-defined waveforms are selected, or IntDwell if internal predefined
+waveforms are selected.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenDwellActual</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_DWELL_ACTUAL</p></td>
+<td><p>The actual dwell time.  This can be different from the requested dwell time (WaveGenDwell) because of the granularity of the device clock.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenUserDwell</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_USER_DWELL</p></td>
+<td><p>The output dwell time or period (seconds/sample) for user-defined waveforms. This
+record is automatically changed if UserFrequency is modified.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenIntDwell</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_INT_DWELL</p></td>
+<td><p>The output dwell time or period (seconds/sample) for internal predefined waveforms.
+This record is automatically changed if IntFrequency is modified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenUserFrequency</p></td>
+<td><p>ao</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>The output frequency (waveforms/second) for user-defined waveforms. This record
+computes UserDwell and writes to that record. This record is automatically changed
+if UserDwell is modified.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenIntFrequency</p></td>
+<td><p>ao</p></td>
+<td><p>N.A.</p></td>
+<td><p>N.A.</p></td>
+<td><p>The output frequency (waveforms/second) for internal predefined waveforms. This
+record computes IntDwell and writes to that record. This record is automatically
+changed if IntDwell is modified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenTotalTime</p></td>
+<td><p>ai</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_TOTAL_TIME</p></td>
+<td><p>The total time to output the waveforms. This is WaveGenDwellActual*NumPoints.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenExtTrigger</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_EXT_TRIGGER</p></td>
+<td><p>The trigger source, “Internal” (0) or “External” (1). NOTE: NOT YET IMPLEMENTED,</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenExtClock</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_EXT_CLOCK</p></td>
+<td><p>The clock source, “Internal” (0) or “External” (1). If External is used then the
+Dwell record does not control the output rate, it is controlled by the external
+clock. However Dwell should be set to approximately the correct value if possible,
+because that controls the time axis on the plots.  NOTE: NOT YET IMPLEMENTED.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenContinuous</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_CONTINUOUS</p></td>
+<td><p>Values are “One-shot” (0) or “Continuous” (1). This controls whether the device
+stops when the output waveform is complete, or immediately begins again at the start
+of the waveform.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenRun</p></td>
+<td><p>busy</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_RUN</p></td>
+<td><p>Values are “Stop” (0) and “Run” (1). This starts and stops the waveform generator.
+In one-shot mode the waveform generator stops automatically when all of the samples have been output.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenUserWF$(N)</p></td>
+<td><p>waveform</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>WAVEGEN_USER_WF</p></td>
+<td><p>This waveform record contains the user-defined waveform generator data for channel
+N. The data are in volts. These data are typically generated by an EPICS Channel
+Access client.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenInternalWF$(N)</p></td>
+<td><p>waveform</p></td>
+<td><p>asynFloat64Array</p></td>
+<td><p>WAVEGEN_INT_WF</p></td>
+<td><p>This waveform record contains the internal predefined waveform generator data for
+channel N. The data are in volts.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenEnable$(N)</p></td>
+<td><p>bo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_ENABLE</p></td>
+<td><p>Values are “Disable” and “Enable”. Controls whether channel N output is enabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenType$(N)</p></td>
+<td><p>mbbo</p></td>
+<td><p>asynInt32</p></td>
+<td><p>WAVEGEN_WAVE_TYPE</p></td>
+<td><p>Controls the waveform type on channel N. Values are</p>
+<ul class="simple">
+<li><p>“User-defined”</p></li>
+<li><p>“Sin wave”,</p></li>
+<li><p>“Square wave”</p></li>
+<li><p>“Sawtooth”</p></li>
+<li><p>“Pulse”</p></li>
+<li><p>“Random”.</p></li>
+</ul>
+<p>Note that if any channel is “User-defined” then all channels must be.
+Note that all internally predefined waveforms are symmetric about 0 volts.
+To output unipolar signals the Offset should be set to +-Amplitude/2.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenPulseWidth$(N)</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_PULSE_WIDTH</p></td>
+<td><p>Controls the pulse width in seconds if Type is “Pulse”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>$(P)WaveGenAmplitude$(N)</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_AMPLITUDE</p></td>
+<td><p>Controls the amplitude of the waveform. For internally predefined waveforms this
+directly controls the peak-to-peak amplitude in volts. For user-defined waveforms
+this is a scale factor that multiplies the values in the waveform, i.e. 1.0 outputs
+the user-defined waveform unchanged, 2.0 increases the amplitide by 2, etc. For
+both internal and used-defined waveforms changing the sign of the Amplitude controls
+the polarity of the signal.</p></td>
+</tr>
+<tr class="row-even"><td><p>$(P)WaveGenOffset$(N)</p></td>
+<td><p>ao</p></td>
+<td><p>asynFloat64</p></td>
+<td><p>WAVEGEN_OFFSET</p></td>
+<td><p>Controls the offset of the waveform in volts. For user-defined waveforms, this value
+is added to the waveform, i.e. 0.0 outputs the user-defined waveform unchanged,
+1.0 adds 1 volt, etc.</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is the medm screen for the waveform generator.</p>
+<figure class="align-center" id="id6">
+<img alt="_images/LabJackWaveGen2.png" src="_images/LabJackWaveGen2.png" />
+<figcaption>
+<p><span class="caption-text"><strong>LabJackWaveGen2.adl</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This is a plot of an internal predefined sin wave waveform.</p>
+<figure class="align-center" id="id7">
+<img alt="_images/LabJackWaveGenPlot.png" src="_images/LabJackWaveGenPlot.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Plot of an internal predefined waveform (sin wave)</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="top_level_opi.html" class="btn btn-neutral float-left" title="Top-level OPI screen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-01.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

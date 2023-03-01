@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LabJack: Driver for T-series Devices From LabJack &mdash; EPICS support for LabJack devices</title>
+  <title>Overview &mdash; EPICS support for LabJack devices</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="overview.html" /> 
+    <link rel="next" title="Supported models" href="supported_models.html" />
+    <link rel="prev" title="LabJack: Driver for T-series Devices From LabJack" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,7 +30,7 @@
 
           
           
-          <a href="#" class="icon icon-home">
+          <a href="index.html" class="icon icon-home">
             LabJack
           </a>
 <div role="search">
@@ -40,8 +41,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Driver architecture</a></li>
@@ -56,17 +57,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">LabJack</a>
+          <a href="index.html">LabJack</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">LabJack: Driver for T-series Devices From LabJack</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Overview</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -74,52 +75,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="labjack-driver-for-t-series-devices-from-labjack">
-<h1>LabJack: Driver for T-series Devices From LabJack<a class="headerlink" href="#labjack-driver-for-t-series-devices-from-labjack" title="Permalink to this heading"></a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">author<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
-</dd>
-</dl>
-<p>An <a class="reference external" href="https://epics-controls.org/">EPICS</a> driver for the
+  <section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
+<p>This is an <a class="reference external" href="https://epics-controls.org/">EPICS</a> driver for the
 T-series devices from <a class="reference external" href="https://www.labjack.com">LabJackCorp</a>.
 These multi-function devices support support analog input,
 thermocouple input, analog output, and binary I/O.</p>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supported_models.html">Supported models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="supported_models.html#t4">T4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supported_models.html#t7">T7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supported_models.html#t7-pro">T7-PRO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supported_models.html#t8">T8</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Driver architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="top_level_opi.html">Top-level OPI screen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#device-functions">Device Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#analog-input-functions">Analog Input Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#analog-output-functions">Analog Output Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#digital-i-o-functions">Digital I/O Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#waveform-digitizer-functions">Waveform Digitizer Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="databases.html#waveform-generator-functions">Waveform Generator Functions</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
+<p>The driver is written in C++, and consists of a class that inherits from
+<a class="reference external" href="https://epics-modules.github.io/master/asyn/R4-42/asynPortDriver.html">asynPortDriver</a>, which is part of the EPICS <a class="reference external" href="https://github.com/epics-modules/asyn">asyn</a> module.</p>
+<p>The driver is written to be general, so that it can be used with any
+LabJack T-series module. The T-series devices all use Modbus for the low-level
+communications, and use a consistent set of Modbus register addresses, so the
+code is largely model-independent.  The driver does require small modifications
+to be be used with a new model.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="LabJack: Driver for T-series Devices From LabJack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="supported_models.html" class="btn btn-neutral float-right" title="Supported models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
