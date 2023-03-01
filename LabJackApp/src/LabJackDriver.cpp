@@ -9,6 +9,7 @@
 #include <iocsh.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <math.h>
 #include <vector>
 
@@ -326,7 +327,7 @@ protected:
   int waveGenUserWF_;
 
 private:
-  int reportError(int err, const char *functionName, const char *message);
+  int reportError(int err, const char *functionName, const char *fmt, ...);
   void pollerThread();
   int LJMHandle_;
   LJTModel model_;
@@ -340,7 +341,6 @@ private:
   double aiValues_[MAX_ANALOG_IN];
   int aiValueAddresses_[MAX_ANALOG_IN];
   int aiTypeAddresses_[MAX_ANALOG_IN];
-  int aiErrorAddresses_[MAX_ANALOG_IN];
   enumStruct *inputRangeEnums_;
   int numInputRange_;
   size_t maxInputPoints_;
@@ -418,7 +418,7 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
   }
 
   status = LJM_Open(LJM_dtANY, LJM_ctANY, identifier.c_str(), &LJMHandle_);
-  reportError(status, functionName, "Calling LJM_Open");
+  reportError(status, functionName, "return from LJM_Open");
 
     // Model parametersLJT_DAC_FLOAT32
   createParam(modelNameString,                  asynParamInt32, &modelName_);
@@ -504,15 +504,15 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
 
   // Disable watchdog timer
   status = LJM_eWriteName(LJMHandle_, "WATCHDOG_ENABLE_DEFAULT", 0);
-  reportError(status, functionName, "Calling LJM_eWriteName for WATCHDOG_ENABLE_DEFAULT");
+  reportError(status, functionName, "return from LJM_eWriteName for WATCHDOG_ENABLE_DEFAULT");
 
   // Get the device information
   double dTemp;
   status = LJM_eReadName(LJMHandle_, "PRODUCT_ID", &dTemp);
-  reportError(status, functionName, "Calling LJM_eReadName for PRODUCT_ID");
+  reportError(status, functionName, "return from LJM_eReadName for PRODUCT_ID");
   int productId = (int)dTemp;
   status = LJM_eReadName(LJMHandle_, "HARDWARE_INSTALLED", &dTemp);
-  reportError(status, functionName, "Calling LJM_eReadName for HARDWARE_INSTALLED");
+  reportError(status, functionName, "return from LJM_eReadName for HARDWARE_INSTALLED");
   int hardwareBits = (int)dTemp;
   switch (productId) {
     case LJM_dtT4:
@@ -556,11 +556,11 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
   char strTemp[20];
   setIntegerParam(modelName_, model_);
   status = LJM_eReadName(LJMHandle_, "FIRMWARE_VERSION", &dTemp);
-  reportError(status, functionName, "Calling LJM_eReadName for FIRMWARE_VERSION");
+  reportError(status, functionName, "return from LJM_eReadName for FIRMWARE_VERSION");
   sprintf(strTemp, "%f", dTemp);
   setStringParam(firmwareVersion_, strTemp);
   status = LJM_eReadName(LJMHandle_, "SERIAL_NUMBER", &dTemp);
-  reportError(status, functionName, "Calling LJM_eReadName for SERIAL_NUMBER");
+  reportError(status, functionName, "return from LJM_eReadName for SERIAL_NUMBER");
   sprintf(strTemp, "%lld", epicsInt64(dTemp));
   setStringParam(serialNumber_, strTemp);
   sprintf(strTemp, "%f", LJM_VERSION);
@@ -607,19 +607,19 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
   double dacValue;
   for (int i=0; i<numAnalogOut_; i++) {
     status = LJM_eReadAddress(LJMHandle_, LJT_DAC_FLOAT32 + 2*i, LJM_FLOAT32, &dacValue);
-    reportError(status, functionName, "Calling LJM_eReadAddress for LJT_DAC_FLOAT32");
+    reportError(status, functionName, "return from LJM_eReadAddress for LJT_DAC_FLOAT32");
     setDoubleParam(i, analogOutValue_, dacValue);
   }
 
   // Read the current binary direction register initialize to current value (bumpless reboot)
   status = LJM_eReadName(LJMHandle_, "DIO_DIRECTION", &dTemp);
-  reportError(status, functionName, "Calling LJM_eReadName for LJT_DIO_DIRECTION");
+  reportError(status, functionName, "return from LJM_eReadName for LJT_DIO_DIRECTION");
   setUIntDigitalParam(digitalDirection_, (epicsUInt32)dTemp, 0xFFFFFFFF);
 
   // Read the status of all output bits and initialize them
   for (int i=0; i<numDigitalIO_; i++) {
     status = LJM_eReadAddress(LJMHandle_, LJT_DIO_BIT + i, LJM_UINT16, &dTemp);
-    reportError(status, functionName, "Calling LJM_eReadAddress for LJT_DIO_BIT");
+    reportError(status, functionName, "return from LJM_eReadAddress for LJT_DIO_BIT");
     setUIntDigitalParam(i, digitalOutBit_, dTemp?1:0, 0x1);
   }
 
@@ -633,17 +633,22 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
 
 }
 
-int  LabJackDriver::reportError(int err, const char *functionName, const char *message)
+int  LabJackDriver::reportError(int err, const char *functionName, const char *message, ...)
 {
+  va_list args;
   char libraryMessage[LJM_MAX_NAME_SIZE];
   char driverMessage[2*LJM_MAX_NAME_SIZE];
   char timeString[40];
   epicsTime now=epicsTime::getCurrent();
   now.strftime(timeString, sizeof(timeString)-1, "%Y/%m/%d %H:%M:%S.%03f");
+  va_start(args, message);
   switch (err) {
     case 0:
-      asynPrint(pasynUserSelf, ASYN_TRACEIO_DRIVER,
-        "%s::%s Info: %s\n", driverName, functionName, message);
+      asynPrint(pasynUserSelf, ASYN_TRACE_WARNING, "%s::%s Info: ", driverName, functionName);
+      if (pasynTrace->getTraceMask(pasynUserSelf) & ASYN_TRACE_WARNING) {
+        vprintf(message, args);
+        printf("\n");
+      }
       break;
     case -1:
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
@@ -654,8 +659,12 @@ int  LabJackDriver::reportError(int err, const char *functionName, const char *m
     default:
       LJM_ErrorToString(err, libraryMessage);
       asynPrint(pasynUserSelf, ASYN_TRACE_ERROR,
-        "%s::%s Error: %s, err=%d %s\n", driverName, functionName, message, err, libraryMessage);
-      snprintf(driverMessage, sizeof(driverMessage)-1, "%s Error: %s, err=%d %s", timeString, message, err, libraryMessage);
+        "%s::%s Error: err=%d %s, ", driverName, functionName, err, libraryMessage);
+      if (pasynTrace->getTraceMask(pasynUserSelf) & ASYN_TRACE_WARNING) {
+        vprintf(message, args);
+      }
+      printf("\n");
+      snprintf(driverMessage, sizeof(driverMessage)-1, "%s Error: err=%d %s", timeString, err, libraryMessage);
       setStringParam(lastErrorMessage_, driverMessage);
   }
   return err;
@@ -677,7 +686,7 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
       int analogEnable;
       double dblTemp;
       status = LJM_eReadName(LJMHandle_, "DIO_ANALOG_ENABLE", &dblTemp);
-      reportError(status, functionName, "Calling LJM_eReadName for DIO_ANALOG_ENABLE");
+      reportError(status, functionName, "return from LJM_eReadName for DIO_ANALOG_ENABLE value=%f", dblTemp);
       analogEnable = (int)dblTemp;
       if (value) {
         analogEnable |= 1<<addr;
@@ -686,20 +695,22 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
         analogEnable &= ~(1<<addr);
       }
       status = LJM_eWriteName(LJMHandle_, "DIO_ANALOG_ENABLE", analogEnable);
-      reportError(status, functionName, "Calling LJM_eWriteName for DIO_ANALOG_ENABLE");
+      reportError(status, functionName, "return from LJM_eWriteName for DIO_ANALOG_ENABLE value=%d", analogEnable);
     }
     setActiveAiChannels();
   }
   else if (function == analogInResolution_) {
     status = LJM_eWriteAddress(LJMHandle_, LJT_AI_RESOLUTION + addr, LJM_UINT16, value);
-    reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_AI_RESOLUTION");
+    reportError(status, functionName, "return from LJM_eWriteAddress for LJT_AI_RESOLUTION address=%d, type=LJM_UINT16, value=%d",
+                LJT_AI_RESOLUTION + addr, value);
   }
   else if (function == analogInRange_) {
     if (value != 0) {
       // Convert from integer mV in enum to volts
       double volts = value/1000.;
       status = LJM_eWriteAddress(LJMHandle_, LJT_AI_RANGE + (2*addr), LJM_FLOAT32, volts);
-      reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_AI_RANGE");
+      reportError(status, functionName, "return from LJM_eWriteAddress for LJT_AI_RANGE, address=%d, type=LJM_FLOAT32, value=%f",
+                  LJT_AI_RANGE + (2*addr), volts);
     }
   }
   else if (function == analogInDifferential_) {
@@ -707,19 +718,20 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
       // This maps value=0/1 to 199:addr+1 which are the required values for the device
       int ival = (value == 0) ? 199 : addr+1;
       status = LJM_eWriteAddress(LJMHandle_, LJT_AI_DIFFERENTIAL + addr, LJM_UINT16, ival);
-      reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_AI_DIFFERENTIAL");
+      reportError(status, functionName, "return from LJM_eWriteAddress for LJT_AI_DIFFERENTIAL, address=%d, type=LJM_UINT16, value=%d",
+                  LJT_AI_DIFFERENTIAL + addr, ival);
       setActiveAiChannels();
     }
   }
   else if (function == analogInResolutionAll_) {
     status = LJM_eWriteName(LJMHandle_, "AIN_ALL_RESOLUTION_INDEX", value);
-    reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX");
+    reportError(status, functionName, "return from LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX, value=%d", value);
   }
 
   // Waveform digitizer functions
   else if (function == waveDigResolution_) {
     status = LJM_eWriteName(LJMHandle_, "STREAM_RESOLUTION_INDEX", value);
-    reportError(status, functionName, "Calling LJM_eWriteName for STREAM_RESOLUTION_INDEX");
+    reportError(status, functionName, "return from LJM_eWriteName for STREAM_RESOLUTION_INDEX, value=%d", value);
   }
   else if (function == waveDigRun_) {
     if (value && !waveDigRunning_) {
@@ -770,13 +782,13 @@ asynStatus LabJackDriver::writeInt32(asynUser *pasynUser, epicsInt32 value)
     // Thus when the IOC is stopped for at least 10 seconds the device will reset.
     // This is then disabled in the constructor when the IOC restarts.
     status = LJM_eWriteName(LJMHandle_, "WATCHDOG_ENABLE_DEFAULT", 0);
-    reportError(status, functionName, "Calling LJM_eWriteName for WATCHDOG_ENABLE_DEFAULT");
+    reportError(status, functionName, "return from LJM_eWriteName for WATCHDOG_ENABLE_DEFAULT, value=0");
     status = LJM_eWriteName(LJMHandle_, "WATCHDOG_TIMEOUT_S_DEFAULT", 10);
-    reportError(status, functionName, "Calling LJM_eWriteName for WATCHDOG_TIMEOUT_S_DEFAULT");
+    reportError(status, functionName, "return from LJM_eWriteName for WATCHDOG_TIMEOUT_S_DEFAULT, value=10");
     status = LJM_eWriteName(LJMHandle_, "WATCHDOG_RESET_ENABLE_DEFAULT", 1);
-    reportError(status, functionName, "Calling LJM_eWriteName for WATCHDOG_RESET_ENABLE_DEFAULT");
+    reportError(status, functionName, "return from LJM_eWriteName for WATCHDOG_RESET_ENABLE_DEFAULT, value=1");
     status = LJM_eWriteName(LJMHandle_, "WATCHDOG_ENABLE_DEFAULT", 1);
-    reportError(status, functionName, "Calling LJM_eWriteName for WATCHDOG_ENABLE_DEFAULT");
+    reportError(status, functionName, "return from LJM_eWriteName for WATCHDOG_ENABLE_DEFAULT, value=1");
   }
 
   // This is a separate if statement because these cases are also treated above
@@ -812,14 +824,15 @@ asynStatus LabJackDriver::writeUInt32Digital(asynUser *pasynUser, epicsUInt32 va
     if (value) direction |= mask;
     else direction &= ~mask;
     status = LJM_eWriteName(LJMHandle_, "DIO_DIRECTION", direction);
-    reportError(status, functionName, "Calling LJM_eWriteName for LJT_DIO_DIRECTION");
+    reportError(status, functionName, "return from LJM_eWriteName for LJT_DIO_DIRECTION, value=0x%x", direction);
     setUIntDigitalParam(addr, function, direction, 0xFFFFFFFF);
   }
   else if (function == digitalOutBit_) {
     // Don't try to access DIO beyond available number
     if (addr < numDigitalIO_) {
       status = LJM_eWriteAddress(LJMHandle_, LJT_DIO_BIT + addr, LJM_UINT16, value?1:0);
-      reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_DIO_BIT");
+      reportError(status, functionName, "return from LJM_eWriteAddress for LJT_DIO_BIT, address=%d, type=LJM_UINT16, value=%d",
+                  LJT_DIO_BIT + addr, value?1:0);
     }
   }
 
@@ -849,11 +862,10 @@ asynStatus LabJackDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
   if (function == deviceTemperature_) {
     if (waveDigRunning_) return asynSuccess;
     if ((waveGenRunning_) && (model_ == modelT8)) return asynSuccess;
-    status = LJM_eReadName(LJMHandle_, "TEMPERATURE_DEVICE_K", value);
-//    asynPrint(pasynUserSelf, ASYN_TRACE_ERROR, "LJM_eReadName for TEMPERATURE_DEVICE_K, status=%d, value=%f\n", status, *value);
+    status = LJM_eReadName(LJMHandle_, "TEMPERATURE0", value);
+    reportError(status, functionName, "return from LJM_eReadName for TEMPERATURE0, value=%f K", *value);
     *value -= K_TO_C;
     setDoubleParam(deviceTemperature_, *value);
-    reportError(status, functionName, "Calling LJM_eReadName for TEMPERATURE_DEVICE_K");
   }
   // Other functions we call the base class method
   else {
@@ -877,33 +889,35 @@ asynStatus LabJackDriver::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
   // Analog output functions
   if (function == analogOutValue_) {
     if (waveGenRunning_) {
-      reportError(-1, functionName, "cannot write analog outputs while waveform generator is running.");
+      reportError(-1, functionName, "Error cannot write analog outputs while waveform generator is running.");
       return asynError;
     }
     status = LJM_eWriteAddress(LJMHandle_, LJT_DAC_FLOAT32 + (2*addr), LJM_FLOAT32, value);
-    reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_DAC_FLOAT32");
+    reportError(status, functionName, "return from LJM_eWriteAddress for LJT_DAC_FLOAT32, address=%d, type=LJM_FLOAT32, value=%f",
+                LJT_DAC_FLOAT32 + (2*addr), value);
   }
   else if (function == analogTDACValue_) {
     status = LJM_eWriteAddress(LJMHandle_, LJT_TDAC_FLOAT32 + (2*addr), LJM_FLOAT32, value);
-    reportError(status, functionName, "Calling LJM_eWriteAddress for LJT_TDAC_FLOAT32");
+    reportError(status, functionName, "return from LJM_eWriteAddress for LJT_TDAC_FLOAT32, address=%d, type=LJM_FLOAT32, value=%f",
+                LJT_TDAC_FLOAT32 + (2*addr), value);
   }
   else if (function == analogInSettlingTimeAll_) {
     status = LJM_eWriteName(LJMHandle_, "AIN_ALL_SETTLING_US", value);
-    reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_SETTLING_US");
+    reportError(status, functionName, "return from LJM_eWriteName for AIN_ALL_SETTLING_US, value=%f", value);
   }
   else if ((function == analogInSamplingRate_) && (model_ == modelT8)) {
     status = LJM_eWriteName(LJMHandle_, "AIN_SAMPLING_RATE_HZ", value);
-    reportError(status, functionName, "Calling LJM_eWriteName for AIN_SAMPLING_RATE_HZ");
+    reportError(status, functionName, "return from LJM_eWriteName for AIN_SAMPLING_RATE_HZ, value=%f", value);
     double samplingRateActual;
     status = LJM_eReadName(LJMHandle_, "AIN_SAMPLING_RATE_HZ", &samplingRateActual);
-    reportError(status, functionName, "Calling LJM_eReadName for AIN_SAMPLING_RATE_HZ");
+    reportError(status, functionName, "return from LJM_eReadName for AIN_SAMPLING_RATE_HZ, value=%f", samplingRateActual);
     setDoubleParam(function, samplingRateActual);
   }
 
   // Waveform digitizer functions
   else if (function == waveDigSettlingTime_) {
     status = LJM_eWriteName(LJMHandle_, "STREAM_SETTLING_US", value);
-    reportError(status, functionName, "Calling LJM_eWriteName for LJT_WAVEDIG_SETTLING");
+    reportError(status, functionName, "return from LJM_eWriteName for STREAM_SETTLING_US, value=%f", value);
   }
   else if (function == waveDigDwell_) {
     computeWaveDigTimes();
@@ -1087,6 +1101,7 @@ int LabJackDriver::setActiveAiChannels() {
 int LabJackDriver::readAnalogInputs() {
   static const char *functionName = "readAnalogInputs";
   int status = asynSuccess;
+  int error;
   int numChannels = (int)activeAiChannels_.size();
   if (numChannels == 0) return asynSuccess;
   if (waveDigRunning_) return asynSuccess;
@@ -1095,8 +1110,15 @@ int LabJackDriver::readAnalogInputs() {
     aiValueAddresses_[i] = LJT_AI_FLOAT32 + 2*activeAiChannels_[i];
     aiTypeAddresses_[i] = LJM_FLOAT32;
   }
-  status = LJM_eReadAddresses(LJMHandle_, numChannels, aiValueAddresses_, aiTypeAddresses_, aiValues_, aiErrorAddresses_);
-  reportError(status, functionName, "Error calling LJM_eReadAddresses");
+  status = LJM_eReadAddresses(LJMHandle_, numChannels, aiValueAddresses_, aiTypeAddresses_, aiValues_, &error);
+  if (status == 0) error = 0;  // error is only meaningful if status!=0
+  reportError(status, functionName, "return from LJM_eReadAddresses for analog inputs, numChannels=%d, error=%d", numChannels, error);
+  if (pasynTrace->getTraceMask(pasynUserSelf) & ASYN_TRACE_WARNING) {
+    for (int i=0; i<numChannels; i++) {
+      printf("    chan:%d, address=%d, type=%d, value=%f\n", 
+             i, aiValueAddresses_[i], aiTypeAddresses_[i], aiValues_[i]);
+    }
+  }  
   return status;
 }
 
@@ -1131,7 +1153,8 @@ int LabJackDriver::startWaveDig()
 
   status = LJM_WriteLibraryConfigS(LJM_STREAM_SCANS_RETURN, LJM_STREAM_SCANS_RETURN_ALL_OR_NONE);
   status = LJM_eStreamStart(LJMHandle_, waveDigScansPerRead_, numChans, scanList, &scanRate);
-  reportError(status, functionName, "Calling LJM_eStreamStart");
+  reportError(status, functionName, "return from LJM_eStreamStart scansPerRead=%d, numChans=%d, scanRate=%f", 
+              waveDigScansPerRead_, numChans, scanRate);
   if (status) return status;
 
   // Convert back from scanRate to dwell, since value might have changed
@@ -1153,11 +1176,11 @@ int LabJackDriver::stopWaveDig(bool restartOK)
   int status;
   static const char *functionName = "stopWaveDig";
 
-  waveDigRunning_ = 0;
   setIntegerParam(waveDigRun_, 0);
   readWaveDig();
   status = LJM_eStreamStop(LJMHandle_);
-  reportError(status, functionName, "Calling LJM_eStreamStop");
+  reportError(status, functionName, "return from LJM_eStreamStop");
+  waveDigRunning_ = 0;
   getIntegerParam(waveDigAutoRestart_, &autoRestart);
   if (autoRestart && restartOK) {
     epicsThreadSleep(0.2);
@@ -1208,7 +1231,8 @@ int LabJackDriver::readoutWaveDig()
   while (LJMScanBacklog != 0) {
     status = LJM_eStreamRead(LJMHandle_, waveDigTempBuffer_, &deviceScanBacklog, &LJMScanBacklog);
     if (status == LJME_NO_SCANS_RETURNED) return 0;
-    reportError(status, functionName, "LJM_eStreamRead");
+    reportError(status, functionName, "LJM_eStreamRead, buffer=%p, deviceScanBacklog=%d, LJMScanBacklog=%d",
+                waveDigTempBuffer_, deviceScanBacklog, LJMScanBacklog);
     if (status == 2942) {  // There are no symbolic constants in LabJackM.h for the stream error codes
       stopWaveDig(false);
       return status;
@@ -1389,23 +1413,25 @@ int LabJackDriver::startWaveGen()
     status = LJM_eWriteAddress(LJMHandle_, LJT_STREAM_OUT_BUFFER_SIZE + 2*i, LJM_UINT32, maxOutputPoints_*2);
     reportError(status, functionName, "LJM_eWriteAddress for STREAM_OUT_BUFFER_SIZE");
     status = LJM_eWriteAddress(LJMHandle_, LJT_STREAM_OUT_ENABLE + 2*i, LJM_UINT32, 1);
-    reportError(status, functionName, "LJM_eWritAddress for STREAM_OUT_ENABLE");
+    reportError(status, functionName, "LJM_eWriteAddress for STREAM_OUT_ENABLE");
 
     // Write values to the stream-out buffer
     status = LJM_eWriteAddress(LJMHandle_, LJT_STREAM_OUT_LOOP_SIZE + 2*i, LJM_UINT32, numPoints-1);
     reportError(status, functionName, "LJM_eWriteAddress for STREAM_OUT_LOOP_SIZE");
     int errorAddress;
     status = LJM_eWriteAddressArray(LJMHandle_, LJT_STREAM_OUT_BUFFER_F32 + 2*i, LJM_FLOAT32, numPoints, inPtr[firstChan+i], &errorAddress);
-    reportError(status, functionName, "LJM_eWriteAddressArray for STREAM_OUT_BUFFER_F32");
+    reportError(status, functionName, "LJM_eWriteAddressArray for STREAM_OUT_BUFFER_F32, address=%d, type=LJM_FLOAT32, numPoints=%d",
+                LJT_STREAM_OUT_BUFFER_F32 + 2*i, numPoints);
     // SET_LOOP is called with 0 for one-shot and 1 for repeating
     status = LJM_eWriteAddress(LJMHandle_, LJT_STREAM_OUT_SET_LOOP +2*i, LJM_UINT32, continuous);
-    reportError(status, functionName, "LJM_eWriteAddress for STREAM_OUT_SET_LOOP");
+    reportError(status, functionName, "LJM_eWriteAddress for STREAM_OUT_SET_LOOP, address=%d, type=LJM_UINT32, continuous=%d",
+                LJT_STREAM_OUT_SET_LOOP +2*i, continuous);
 
     status = LJM_eWriteName(LJMHandle_, "STREAM_TRIGGER_INDEX", 0);
-    reportError(status, functionName, "LJM_eWriteName for STREAM_TRIGGER_INDEX");
+    reportError(status, functionName, "LJM_eWriteName for STREAM_TRIGGER_INDEX, value=0");
     if (model_ != modelT4) {
       status = LJM_eWriteName(LJMHandle_, "STREAM_CLOCK_SOURCE", 0);
-      reportError(status, functionName, "LJM_eWriteName for STREAM_CLOCK_SOURCE");
+      reportError(status, functionName, "LJM_eWriteName for STREAM_CLOCK_SOURCE, value=0");
     }
 
     aScanList[i] = LJT_STREAM_OUT + i;
@@ -1417,7 +1443,7 @@ int LabJackDriver::startWaveGen()
     getIntegerParam(analogInResolutionAll_, &resolution);
     if ((resolution == 0) || (resolution > 8)) {
       status = LJM_eWriteName(LJMHandle_, "AIN_ALL_RESOLUTION_INDEX", 8);
-      reportError(status, functionName, "Calling LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX");
+      reportError(status, functionName, "return from LJM_eWriteName for AIN_ALL_RESOLUTION_INDEX, value=8");
     }
   }
 
@@ -1482,7 +1508,8 @@ int LabJackDriver::computeAiValue(int chan, double *aiValue) {
     getIntegerParam(chan, temperatureUnits_, &tempUnits);
     double tempK;
     status = LJM_TCVoltsToTemp(aiMode, *aiValue, coldJunctionTemp, &tempK);
-    reportError(status, functionName, "Error calling LJM_TCVoltsToTemp");
+    reportError(status, functionName, "return from LJM_TCVoltsToTemp, volts=%f, coldJunctionTemp=%f, tempK=%f",
+                aiValue, coldJunctionTemp, tempK);
     switch (tempUnits) {
       case temperatureUnitsK:
         *aiValue = tempK;
@@ -1523,11 +1550,12 @@ void LabJackDriver::pollerThread()
 
     // Read the digital inputs
     status = LJM_eReadAddress(LJMHandle_, LJT_DIO_STATE, LJM_INT32, &dblTemp);
-    reportError(status, functionName, "Calling LJM_eReadAddress");
     newValue = (epicsUInt32) dblTemp;
+    reportError(status, functionName, "return from LJM_eReadAddress for LJT_DIO_STATE, address=%d, type=LJM_INT32, value=0x%x",
+                LJT_DIO_STATE, newValue);
     if (status) {
       if (!prevStatus) {
-        reportError(status, functionName, "Reading DIO_STATE");
+        reportError(status, functionName, "Error reading DIO_STATE");
       }
       goto error;
     }
@@ -1551,7 +1579,7 @@ void LabJackDriver::pollerThread()
       if (!continuous) {
         double bufferStatus;
         status = LJM_eReadName(LJMHandle_, "STREAM_OUT0_BUFFER_STATUS", &bufferStatus);
-        reportError(status, functionName, "Calling LJM_eReadName for STREAM_OUT0_BUFFER_STATUS");
+        reportError(status, functionName, "return from LJM_eReadName for STREAM_OUT0_BUFFER_STATUS, value=%d", bufferStatus);
         // In single-shot mode bufferStatus is the amount of free buffer space; <= maxOutputPoints_
         int bufferUsed = maxOutputPoints_ - (int)bufferStatus;
         int currentPoint = numPoints - bufferUsed;
@@ -1575,7 +1603,7 @@ void LabJackDriver::pollerThread()
       status = readAnalogInputs();
       if (status) {
         if (!prevStatus) {
-          reportError(status, functionName, "Calling LJM_eReadAddresses for analog inputs");
+          reportError(status, functionName, "Error calling LJM_eReadAddresses for analog inputs");
         }
         goto error;
       }
