@@ -3,7 +3,7 @@
 
 import sys, os
 
-project = 'LabHack'
+project = 'LabJack'
 html_title = html_short_title = 'EPICS support for LabJack devices'
 
 authors = 'Mark Rivers'
@@ -36,4 +36,4 @@ html_static_path = ['_static']
 html_style = 'css/my_theme.css'
 html_last_updated_fmt = '%Y-%B-%d'
 html_show_sourcelink = True
-htmlhelp_basename = 'labJack_doc'
+htmlhelp_basename = 'LabJack_doc'
