@@ -1,70 +1,46 @@
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>LabJack: Driver for T-series Devices From LabJack &#8212; EPICS LabJack 3-0-2-ge67abb5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LabJack: Driver for T-series Devices From LabJack &mdash; EPICS support for LabJack devices</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
 
-  </head><body>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          EPICS LabJack</a>
-        <span class="navbar-text navbar-version pull-left"><b>3-0</b></span>
-      </div>
-
-        <div class="collapse navbar-collapse nav-collapse">
-          <ul class="nav navbar-nav">
-            
-            
-              <li class="dropdown globaltoc-container">
-  <a role="button"
-     id="dLabelGlobalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Site <b class="caret"></b></a>
-  <ul class="dropdown-menu globaltoc"
-      role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
-</li>
-              
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
+          
+          
+          <a href="#" class="icon icon-home">
+            LabHack
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">LabJack: Driver for T-series Devices From LabJack</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#supported-models">Supported models</a><ul>
@@ -90,46 +66,33 @@
 </ul>
 </li>
 </ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-              
-            
-            
-            
-            
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/index.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
-            
-          </ul>
-
-          
-            
-<form class="navbar-form navbar-right" action="search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-          
+</div>
         </div>
-    </div>
-  </div>
+      </div>
+    </nav>
 
-<div class="container">
-  <div class="row">
-    <div class="body col-md-12 content" role="main">
-      
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">LabHack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LabJack: Driver for T-series Devices From LabJack</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="labjack-driver-for-t-series-devices-from-labjack">
-<h1><a class="toc-backref" href="#id13" role="doc-backlink">LabJack: Driver for T-series Devices From LabJack</a><a class="headerlink" href="#labjack-driver-for-t-series-devices-from-labjack" title="Permalink to this heading">¶</a></h1>
+<h1><a class="toc-backref" href="#id13" role="doc-backlink">LabJack: Driver for T-series Devices From LabJack</a><a class="headerlink" href="#labjack-driver-for-t-series-devices-from-labjack" title="Permalink to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Mark Rivers, University of Chicago</p>
@@ -168,7 +131,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>This is an <a class="reference external" href="https://epics-controls.org/">EPICS</a> driver for the
 T-series devices from <a class="reference external" href="https://www.labjack.com">LabJackCorp</a>.
 These multi-function devices support support analog input,
@@ -182,14 +145,14 @@ code is largely model-independent.  The driver does require small modifications
 to be be used with a new model.</p>
 </section>
 <section id="supported-models">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Supported models</a><a class="headerlink" href="#supported-models" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Supported models</a><a class="headerlink" href="#supported-models" title="Permalink to this heading"></a></h2>
 <p>All LabJack T-series modules have both Ethernet and USB communications.  The following models are currently supported.</p>
 <section id="t4">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">T4</a><a class="headerlink" href="#t4" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">T4</a><a class="headerlink" href="#t4" title="Permalink to this heading"></a></h3>
 <figure class="align-center" id="id1">
 <img alt="_images/LabJack-T4.jpg" src="_images/LabJack-T4.jpg" />
 <figcaption>
-<p><span class="caption-text"><strong>Photo of LabJack-T4</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>Photo of LabJack-T4</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This module costs $245 and has the following features:</p>
@@ -219,11 +182,11 @@ to be be used with a new model.</p>
 <p>More information can be found in the <a class="reference external" href="https://labjack.com/products/labjack-t4">T4 product description.</a></p>
 </section>
 <section id="t7">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">T7</a><a class="headerlink" href="#t7" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">T7</a><a class="headerlink" href="#t7" title="Permalink to this heading"></a></h3>
 <figure class="align-center" id="id2">
 <img alt="_images/LabJack-T7.jpg" src="_images/LabJack-T7.jpg" />
 <figcaption>
-<p><span class="caption-text"><strong>Photo of LabJack-T7</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>Photo of LabJack-T7</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This module costs $520 and has the following features:</p>
@@ -248,11 +211,11 @@ to be be used with a new model.</p>
 <p>More information can be found in the <a class="reference external" href="https://labjack.com/products/t7">T7 product description.</a></p>
 </section>
 <section id="t7-pro">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">T7-PRO</a><a class="headerlink" href="#t7-pro" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">T7-PRO</a><a class="headerlink" href="#t7-pro" title="Permalink to this heading"></a></h3>
 <figure class="align-center" id="id3">
 <img alt="_images/LabJack-T7-Pro.jpg" src="_images/LabJack-T7-Pro.jpg" />
 <figcaption>
-<p><span class="caption-text"><strong>Photo of LabJack T7-PRO</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>Photo of LabJack T7-PRO</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This module costs $750 and is the same as the LabJack T7 with the following additional features:</p>
@@ -264,11 +227,11 @@ to be be used with a new model.</p>
 <p>More information can be found in the <a class="reference external" href="https://labjack.com/products/labjack-t7-pro">LabJack T7-PRO product description.</a></p>
 </section>
 <section id="t8">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">T8</a><a class="headerlink" href="#t8" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">T8</a><a class="headerlink" href="#t8" title="Permalink to this heading"></a></h3>
 <figure class="align-center" id="id4">
 <img alt="_images/LabJack-T8.jpg" src="_images/LabJack-T8.jpg" />
 <figcaption>
-<p><span class="caption-text"><strong>Photo of LabJack T8</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>Photo of LabJack T8</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This module costs $1,400 and has the following features:</p>
@@ -294,7 +257,7 @@ to be be used with a new model.</p>
 </section>
 </section>
 <section id="installation">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p>The EPICS LabJack module uses the
 <a class="reference external" href="https://labjack.com/pages/support?doc=/software-driver/ljm-users-guide/">LJM library</a>
 from LabJack.  It runs on Linux and Windows.</p>
@@ -308,7 +271,7 @@ in a directory that does not require root permission to write to.</p>
 <p>On Windows the LJM library package needs to be installed to run the IOC.</p>
 </section>
 <section id="driver-architecture">
-<h2><a class="toc-backref" href="#id21" role="doc-backlink">Driver architecture</a><a class="headerlink" href="#driver-architecture" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Driver architecture</a><a class="headerlink" href="#driver-architecture" title="Permalink to this heading"></a></h2>
 <p>The driver has a polling thread that periodically reads the state of the
 digital I/O bits and the values of the analog inputs.  If the waveform
 digitizer or waveform generator functions are active it polls the status
@@ -326,14 +289,14 @@ This allows temperature inputs to be scanned with the waveform digitizer functio
 not possible if the temperature conversions are performed on the device itself.</p>
 </section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
 <p>The following lines are needed in the EPICS startup script for the LabJack driver.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Configure port driver
-# LabJackConfig(portName,        # The name to give to this asyn port driver
-#               uniqueID,        # The IP name, IP address, or serial number of the LabJack module.
-#               maxInputPoints,  # Maximum number of input points for waveform digitizer
-#               maxOutputPoints) # Maximum number of output points for waveform generator
-LabJackConfig(&quot;LJT7_1&quot;, &quot;gse-labjack1.cars.aps.anl.gov, 2048, 2048)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Configure port driver</span>
+<span class="c1"># LabJackConfig(portName,        # The name to give to this asyn port driver</span>
+<span class="c1">#               uniqueID,        # The IP name, IP address, or serial number of the LabJack module.</span>
+<span class="c1">#               maxInputPoints,  # Maximum number of input points for waveform digitizer</span>
+<span class="c1">#               maxOutputPoints) # Maximum number of output points for waveform generator</span>
+<span class="n">LabJackConfig</span><span class="p">(</span><span class="s2">&quot;LJT7_1&quot;</span><span class="p">,</span> <span class="s2">&quot;gse-labjack1.cars.aps.anl.gov, 2048, 2048)</span>
 </pre></div>
 </div>
 <p>The uniqueID is a string that identifies the device to be controlled.  It can be any of the following:</p>
@@ -347,12 +310,12 @@ The periods are needed to distinguish an IP name from a serial number.</p></li>
 example startup scripts and example substitutions files for each model.</p>
 </section>
 <section id="top-level-opi-screen">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink">Top-level OPI screen</a><a class="headerlink" href="#top-level-opi-screen" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">Top-level OPI screen</a><a class="headerlink" href="#top-level-opi-screen" title="Permalink to this heading"></a></h2>
 <p>The following it the top-level medm screen for the LabJack T7 and T7-PRO modules.</p>
 <figure class="align-center" id="id5">
 <img alt="_images/LabJack_T7.png" src="_images/LabJack_T7.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_T7.adl</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJack_T7.adl</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>While this screen is nominally specific to the T7 and T7-PRO, it can be used for any model.
@@ -360,20 +323,20 @@ On the T8 analog inputs 8-13 do not apply.
 On the T4 analog inputs 12-13 do not apply, nor do digital I/O bits 20-22.</p>
 </section>
 <section id="databases">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink">Databases</a><a class="headerlink" href="#databases" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">Databases</a><a class="headerlink" href="#databases" title="Permalink to this heading"></a></h2>
 <p>The following tables list the database template files that are used with the LabJack modules.</p>
 <section id="device-functions">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink">Device Functions</a><a class="headerlink" href="#device-functions" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Device Functions</a><a class="headerlink" href="#device-functions" title="Permalink to this heading"></a></h3>
 <p>These are the records defined in LabJack_device.template.
 These records provide device-wide information and control.
 This database is loaded once for each LabJack device.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 60.0%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -504,16 +467,16 @@ The IOC may occasionally fail to start after a DeviceReset because the device is
 </table>
 </section>
 <section id="analog-input-functions">
-<h3><a class="toc-backref" href="#id26" role="doc-backlink">Analog Input Functions</a><a class="headerlink" href="#analog-input-functions" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Analog Input Functions</a><a class="headerlink" href="#analog-input-functions" title="Permalink to this heading"></a></h3>
 <p>These are the records defined in LabJack_ai.template.
 This database is loaded once for each analog input channel</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 60.0%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -594,7 +557,7 @@ High values of resolution result in lower noise and longer ADC conversion time.<
 <figure class="align-center" id="id6">
 <img alt="_images/LabJack_T7_AiSetup.png" src="_images/LabJack_T7_AiSetup.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_T7_AiSetup.adl</strong></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJack_T7_AiSetup.adl</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>While this screen is nominally specific to the T7 and T7-PRO, it can be used for any model.
@@ -604,16 +567,16 @@ Thermocouples only work well with the T7-PRO in 24-bit mode (resolutions 9-12), 
 They do not work well with the T4 or T7.</p>
 </section>
 <section id="analog-output-functions">
-<h3><a class="toc-backref" href="#id27" role="doc-backlink">Analog Output Functions</a><a class="headerlink" href="#analog-output-functions" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Analog Output Functions</a><a class="headerlink" href="#analog-output-functions" title="Permalink to this heading"></a></h3>
 <p>These are the records defined in LabJack_Ao.template.
 This database is loaded once for each analog output channel</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 60.0%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -659,27 +622,27 @@ The range on the LJTick DACs is +-10V.</p>
 <figure class="align-center" id="id7">
 <img alt="_images/LabJack_T7_AoSetup.png" src="_images/LabJack_T7_AoSetup.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_T7_AoSetup.adl</strong></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJack_T7_AoSetup.adl</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The following is the medm screen for controlling the optional LJTick DACs.</p>
 <figure class="align-center" id="id8">
 <img alt="_images/LabJack_LJTick_DAC2.png" src="_images/LabJack_LJTick_DAC2.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_LJTick_DAC2.adl</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJack_LJTick_DAC2.adl</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="digital-i-o-functions">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink">Digital I/O Functions</a><a class="headerlink" href="#digital-i-o-functions" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Digital I/O Functions</a><a class="headerlink" href="#digital-i-o-functions" title="Permalink to this heading"></a></h3>
 <p>These are the records defined in LabJack_binary.template and LabJack_biWord.template.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 60.0%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -723,17 +686,17 @@ The binary inputs are polled by the driver poller thread, so these records shoul
 </table>
 </section>
 <section id="waveform-digitizer-functions">
-<h3><a class="toc-backref" href="#id29" role="doc-backlink">Waveform Digitizer Functions</a><a class="headerlink" href="#waveform-digitizer-functions" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">Waveform Digitizer Functions</a><a class="headerlink" href="#waveform-digitizer-functions" title="Permalink to this heading"></a></h3>
 <p>These records are defined in the following files:
 - LabJack_waveformDig.template. This database is loaded once per module.
 - LabJack_waveformDigN.template. This database is loaded for each digitizer input channel.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 60.0%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -860,29 +823,29 @@ the ReadWF record above processes. The data are in volts or temperature units.</
 <figure class="align-center" id="id9">
 <img alt="_images/LabJackWaveDig.png" src="_images/LabJackWaveDig.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJackWaveDig.adl</strong></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJackWaveDig.adl</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This is a plot of the waveform digitizer waveform for analog input 0 capturing 1000 samples/s (Dwell=0.001).</p>
 <figure class="align-center" id="id10">
 <img alt="_images/LabJackWaveDigPlot.png" src="_images/LabJackWaveDigPlot.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJackWaveDigPlot.adl</strong></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJackWaveDigPlot.adl</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="waveform-generator-functions">
-<h3><a class="toc-backref" href="#id30" role="doc-backlink">Waveform Generator Functions</a><a class="headerlink" href="#waveform-generator-functions" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Waveform Generator Functions</a><a class="headerlink" href="#waveform-generator-functions" title="Permalink to this heading"></a></h3>
 <p>These records are defined in the following files:
 - LabJack_waveformGen.template. This database is loaded once per module.
 - LabJack_waveformGenN.template. This database is loaded for each waveform generator output channel.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 60.0%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -1095,14 +1058,14 @@ is added to the waveform, i.e. 0.0 outputs the user-defined waveform unchanged,
 <figure class="align-center" id="id11">
 <img alt="_images/LabJackWaveGen2.png" src="_images/LabJackWaveGen2.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJackWaveGen2.adl</strong></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>LabJackWaveGen2.adl</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This is a plot of an internal predefined sin wave waveform.</p>
 <figure class="align-center" id="id12">
 <img alt="_images/LabJackWaveGenPlot.png" src="_images/LabJackWaveGenPlot.png" />
 <figcaption>
-<p><span class="caption-text"><strong>Plot of an internal predefined waveform (sin wave)</strong></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><strong>Plot of an internal predefined waveform (sin wave)</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
@@ -1116,21 +1079,33 @@ is added to the waveform, i.e. 0.0 outputs the user-defined waveform unchanged,
 </section>
 
 
-    </div>
-      
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mark Rivers.
+      <span class="lastupdated">Last updated on 2023-March-01.
+      </span></p>
   </div>
-</div>
-<footer class="footer">
-  <div class="container">
-    <p class="pull-right">
-      <a href="#">Back to top</a>
-      
-    </p>
-    <p>
-        &copy; Copyright 2022, Mark Rivers.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
-    </p>
-  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
 </footer>
-  </body>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>
