@@ -862,8 +862,8 @@ asynStatus LabJackDriver::readFloat64(asynUser *pasynUser, epicsFloat64 *value)
   if (function == deviceTemperature_) {
     if (waveDigRunning_) return asynSuccess;
     if ((waveGenRunning_) && (model_ == modelT8)) return asynSuccess;
-    status = LJM_eReadName(LJMHandle_, "TEMPERATURE0", value);
-    reportError(status, functionName, "return from LJM_eReadName for TEMPERATURE0, value=%f K", *value);
+    status = LJM_eReadName(LJMHandle_, "TEMPERATURE_DEVICE_K", value);
+    reportError(status, functionName, "return from LJM_eReadName for TEMPERATURE_DEVICE_K, value=%f K", *value);
     *value -= K_TO_C;
     setDoubleParam(deviceTemperature_, *value);
   }
