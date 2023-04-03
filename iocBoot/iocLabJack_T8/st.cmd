@@ -20,6 +20,10 @@ LabJackConfig("$(PORT)", "gse-labjack3.cars.aps.anl.gov", $(WDIG_POINTS), $(WGEN
 #LabJackConfig("$(PORT)", "10.54.160.74",                  $(WDIG_POINTS), $(WGEN_POINTS))
 #LabJackConfig("$(PORT)", "470029169",                     $(WDIG_POINTS), $(WGEN_POINTS))
 
+asynSetTraceIOMask($(PORT) 0 ESCAPE)
+#asynSetTraceMask($(PORT) 0 ERROR|WARNING)
+asynSetTraceMask($(PORT) 0 ERROR)
+
 #------------------------------------------------------------------------------
 ###  LabJack support  ###
 # If running multiple LabJack devices in the same IOC must set P and PORT differently for each one.
