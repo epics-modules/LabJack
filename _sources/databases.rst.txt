@@ -411,7 +411,7 @@ These records are defined in the following files:
       buffers into the waveform records. Note that the driver always reads device when
       acquisition stops, so for quick acquisitions this record can be Passive. To see
       partial data during long acquisitions this record can be periodically processed.
-  * - $(P)VoltWF$(N)
+  * - $(P)WaveDigVoltWF$(N)
     - waveform
     - asynFloat64Array
     - WAVEDIG_VOLT_WF

@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Databases &mdash; EPICS support for LabJack devices</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/my_theme.css?v=254ed751" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -82,20 +86,20 @@
            <div itemprop="articleBody">
              
   <section id="databases">
-<h1>Databases<a class="headerlink" href="#databases" title="Permalink to this heading"></a></h1>
+<h1>Databases<a class="headerlink" href="#databases" title="Link to this heading"></a></h1>
 <p>The following tables list the database template files that are used with the LabJack modules.</p>
 <section id="device-functions">
-<h2>Device Functions<a class="headerlink" href="#device-functions" title="Permalink to this heading"></a></h2>
+<h2>Device Functions<a class="headerlink" href="#device-functions" title="Link to this heading"></a></h2>
 <p>These are the records defined in LabJack_device.template.
 These records provide device-wide information and control.
 This database is loaded once for each LabJack device.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -226,16 +230,16 @@ The IOC may occasionally fail to start after a DeviceReset because the device is
 </table>
 </section>
 <section id="analog-input-functions">
-<h2>Analog Input Functions<a class="headerlink" href="#analog-input-functions" title="Permalink to this heading"></a></h2>
+<h2>Analog Input Functions<a class="headerlink" href="#analog-input-functions" title="Link to this heading"></a></h2>
 <p>These are the records defined in LabJack_ai.template.
 This database is loaded once for each analog input channel</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -316,7 +320,7 @@ High values of resolution result in lower noise and longer ADC conversion time.<
 <figure class="align-center" id="id1">
 <img alt="_images/LabJack_T7_AiSetup.png" src="_images/LabJack_T7_AiSetup.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_T7_AiSetup.adl</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>LabJack_T7_AiSetup.adl</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>While this screen is nominally specific to the T7 and T7-PRO, it can be used for any model.
@@ -326,16 +330,16 @@ Thermocouples only work well with the T7-PRO in 24-bit mode (resolutions 9-12), 
 They do not work well with the T4 or T7.</p>
 </section>
 <section id="analog-output-functions">
-<h2>Analog Output Functions<a class="headerlink" href="#analog-output-functions" title="Permalink to this heading"></a></h2>
+<h2>Analog Output Functions<a class="headerlink" href="#analog-output-functions" title="Link to this heading"></a></h2>
 <p>These are the records defined in LabJack_Ao.template.
 This database is loaded once for each analog output channel</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -381,27 +385,27 @@ The range on the LJTick DACs is +-10V.</p>
 <figure class="align-center" id="id2">
 <img alt="_images/LabJack_T7_AoSetup.png" src="_images/LabJack_T7_AoSetup.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_T7_AoSetup.adl</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>LabJack_T7_AoSetup.adl</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The following is the medm screen for controlling the optional LJTick DACs.</p>
 <figure class="align-center" id="id3">
 <img alt="_images/LabJack_LJTick_DAC2.png" src="_images/LabJack_LJTick_DAC2.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJack_LJTick_DAC2.adl</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>LabJack_LJTick_DAC2.adl</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="digital-i-o-functions">
-<h2>Digital I/O Functions<a class="headerlink" href="#digital-i-o-functions" title="Permalink to this heading"></a></h2>
+<h2>Digital I/O Functions<a class="headerlink" href="#digital-i-o-functions" title="Link to this heading"></a></h2>
 <p>These are the records defined in LabJack_binary.template and LabJack_biWord.template.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -445,17 +449,17 @@ The binary inputs are polled by the driver poller thread, so these records shoul
 </table>
 </section>
 <section id="waveform-digitizer-functions">
-<h2>Waveform Digitizer Functions<a class="headerlink" href="#waveform-digitizer-functions" title="Permalink to this heading"></a></h2>
+<h2>Waveform Digitizer Functions<a class="headerlink" href="#waveform-digitizer-functions" title="Link to this heading"></a></h2>
 <p>These records are defined in the following files:
 - LabJack_waveformDig.template. This database is loaded once per module.
 - LabJack_waveformDigN.template. This database is loaded for each digitizer input channel.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -568,7 +572,7 @@ buffers into the waveform records. Note that the driver always reads device when
 acquisition stops, so for quick acquisitions this record can be Passive. To see
 partial data during long acquisitions this record can be periodically processed.</p></td>
 </tr>
-<tr class="row-odd"><td><p>$(P)VoltWF$(N)</p></td>
+<tr class="row-odd"><td><p>$(P)WaveDigVoltWF$(N)</p></td>
 <td><p>waveform</p></td>
 <td><p>asynFloat64Array</p></td>
 <td><p>WAVEDIG_VOLT_WF</p></td>
@@ -582,29 +586,29 @@ the ReadWF record above processes. The data are in volts or temperature units.</
 <figure class="align-center" id="id4">
 <img alt="_images/LabJackWaveDig.png" src="_images/LabJackWaveDig.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJackWaveDig.adl</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>LabJackWaveDig.adl</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>This is a plot of the waveform digitizer waveform for analog input 0 capturing 1000 samples/s (Dwell=0.001).</p>
 <figure class="align-center" id="id5">
 <img alt="_images/LabJackWaveDigPlot.png" src="_images/LabJackWaveDigPlot.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJackWaveDigPlot.adl</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>LabJackWaveDigPlot.adl</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="waveform-generator-functions">
-<h2>Waveform Generator Functions<a class="headerlink" href="#waveform-generator-functions" title="Permalink to this heading"></a></h2>
+<h2>Waveform Generator Functions<a class="headerlink" href="#waveform-generator-functions" title="Link to this heading"></a></h2>
 <p>These records are defined in the following files:
 - LabJack_waveformGen.template. This database is loaded once per module.
 - LabJack_waveformGenN.template. This database is loaded for each waveform generator output channel.</p>
 <table class="table-bordered table-striped table-hover docutils align-left">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 60%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>EPICS record name</p></th>
@@ -817,14 +821,14 @@ is added to the waveform, i.e. 0.0 outputs the user-defined waveform unchanged,
 <figure class="align-center" id="id6">
 <img alt="_images/LabJackWaveGen2.png" src="_images/LabJackWaveGen2.png" />
 <figcaption>
-<p><span class="caption-text"><strong>LabJackWaveGen2.adl</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>LabJackWaveGen2.adl</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>This is a plot of an internal predefined sin wave waveform.</p>
 <figure class="align-center" id="id7">
 <img alt="_images/LabJackWaveGenPlot.png" src="_images/LabJackWaveGenPlot.png" />
 <figcaption>
-<p><span class="caption-text"><strong>Plot of an internal predefined waveform (sin wave)</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<p><span class="caption-text"><strong>Plot of an internal predefined waveform (sin wave)</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -841,7 +845,7 @@ is added to the waveform, i.e. 0.0 outputs the user-defined waveform unchanged,
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Mark Rivers.
-      <span class="lastupdated">Last updated on 2023-April-03.
+      <span class="lastupdated">Last updated on 2023-November-28.
       </span></p>
   </div>
 
