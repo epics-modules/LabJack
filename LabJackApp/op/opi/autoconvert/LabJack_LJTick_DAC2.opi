@@ -201,7 +201,7 @@ $(pv_value)</tooltip>
     <minimum>0.0</minimum>
     <name>Scrollbar</name>
     <page_increment>1.0</page_increment>
-    <pv_name>$(P)Ao$(C2)</pv_name>
+    <pv_name>$(P)Ao$(C1)</pv_name>
     <pv_value />
     <rules />
     <scale_options>

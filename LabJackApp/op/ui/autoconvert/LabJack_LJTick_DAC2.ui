@@ -249,7 +249,7 @@ border-radius: 2px;
                 </rect>
             </property>
             <property name="channel">
-                <string>$(P)Ao$(C2)</string>
+                <string>$(P)Ao$(C1)</string>
             </property>
             <property name="foreground">
                 <color alpha="255">

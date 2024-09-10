@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-09-10 15:46:43 by epics-->
+<!--Saved on 2024-09-10 16:07:02 by epics-->
 <display version="2.0.0">
   <name>LabJack_LJTick_DAC2</name>
   <x>1252</x>
@@ -60,7 +60,7 @@
   </widget>
   <widget type="scrollbar" version="2.0.0">
     <name>valuator #16</name>
-    <pv_name>$(P)Ao$(C2)</pv_name>
+    <pv_name>$(P)Ao$(C1)</pv_name>
     <x>100</x>
     <y>36</y>
     <width>80</width>
