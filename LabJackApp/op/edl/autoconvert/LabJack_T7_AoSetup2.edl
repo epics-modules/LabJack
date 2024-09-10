@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1252
-y 306
-w 380
-h 90
+x 1245
+y 121
+w 450
+h 115
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-bold-r-10.0"
 btnFont "helvetica-medium-r-18.0"
@@ -32,15 +32,39 @@ minor 1
 release 1
 x 0
 y 5
-w 380
-h 25
-font "helvetica-medium-r-18.0"
+w 450
+h 20
+font "helvetica-medium-r-14.0"
 fontAlign "center"
 fgColor rgb 40960 4608 1792
 bgColor index 3
 useDisplayBg
 value {
-  "LJTick-DAC Module $(P)"
+  "Analog Output Configuration $(P)"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 30
+w 451
+h 2
+lineColor rgb 40960 4608 1792
+fillColor rgb 40960 4608 1792
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 1
+1 450
+}
+yPoints  {
+0 31
+1 31
 }
 endObjectProperties
 
@@ -50,12 +74,12 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x -27
-y 36
+x 4
+y 60
 w 50
 h 20
 font "helvetica-medium-r-14.0"
-fontAlign "right"
+fontAlign "center"
 fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
@@ -64,65 +88,57 @@ value {
 }
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 85
+w 50
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "$(C2)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 5
+y 37
+w 51
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Chan."
+}
+endObjectProperties
+
 # (Text Control)
 object activeXTextDspClass
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 28
-y 36
-w 65
-h 20
-controlPv "$(P)Ao$(C1)"
-format "decimal"
-font "helvetica-medium-r-12.0"
-fontAlign "left"
-fgColor rgb 0 0 0
-bgColor rgb 29440 57088 65280
-editable
-motifWidget
-limitsFromDb
-nullColor rgb 60928 46592 11008
-smartRefresh
-fastUpdate
-newPos
-objType "controls"
-endObjectProperties
-
-# (Motif Slider)
-object activeMotifSliderClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 100
-y 36
+x 230
+y 60
 w 80
 h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)Ao$(C2)"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 203
-y 36
-w 45
-h 20
-controlPv "$(P)Ao$(C1)TweakVal"
+controlPv "$(P)Ao$(C1).LOPR"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -144,16 +160,68 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 272
-y 35
-w 100
+x 230
+y 85
+w 80
 h 20
-controlPv "$(P)Ao$(C1).DESC"
-format "hex"
+controlPv "$(P)Ao$(C2).LOPR"
+format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
 fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 315
+y 60
+w 80
+h 20
+controlPv "$(P)Ao$(C1).HOPR"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 315
+y 85
+w 80
+h 20
+controlPv "$(P)Ao$(C2).HOPR"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
 editable
 motifWidget
 limitsFromDb
@@ -170,9 +238,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x -27
-y 61
-w 50
+x 242
+y 37
+w 140
 h 20
 font "helvetica-medium-r-14.0"
 fontAlign "right"
@@ -180,7 +248,47 @@ fgColor rgb 0 0 0
 bgColor index 3
 useDisplayBg
 value {
-  "$(C2)"
+  "Display limits"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 82
+y 37
+w 120
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Drive limits"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 398
+y 37
+w 44
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Prec"
 }
 endObjectProperties
 
@@ -190,11 +298,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 28
-y 61
-w 65
+x 400
+y 60
+w 40
 h 20
-controlPv "$(P)Ao$(C2)"
+controlPv "$(P)Ao$(C1).PREC"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -210,39 +318,43 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Motif Slider)
-object activeMotifSliderClass
+# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 100
-y 61
+x 400
+y 85
+w 40
+h 20
+controlPv "$(P)Ao$(C2).PREC"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 60
+y 60
 w 80
 h 20
-fgColor rgb 19968 42240 63744
-bgColor rgb 29440 57088 65280
-2ndBgColor rgb 29440 57088 65280
-topShadowColor rgb 55808 55808 55808
-botShadowColor rgb 17920 17920 17920
-controlPv "$(P)Ao$(C2)"
-controlLabelType "pvName"
-font "helvetica-bold-r-12.0"
-limitsFromDb
-increment 1
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 203
-y 61
-w 45
-h 20
-controlPv "$(P)Ao$(C2)TweakVal"
+controlPv "$(P)Ao$(C1).DRVL"
 format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
@@ -264,16 +376,16 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 272
-y 61
-w 100
+x 60
+y 85
+w 80
 h 20
-controlPv "$(P)Ao$(C2).DESC"
-format "hex"
+controlPv "$(P)Ao$(C2).DRVL"
+format "decimal"
 font "helvetica-medium-r-12.0"
 fontAlign "left"
 fgColor rgb 0 0 0
-bgColor rgb 55808 55808 55808
+bgColor rgb 29440 57088 65280
 editable
 motifWidget
 limitsFromDb
@@ -284,103 +396,55 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 252
-y 36
-w 15
+x 145
+y 60
+w 80
 h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)Ao$(C1)TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
+controlPv "$(P)Ao$(C1).DRVH"
+format "decimal"
 font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 
-# (Message Button)
-object activeMessageButtonClass
+# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
 major 4
-minor 0
+minor 7
 release 0
-x 185
-y 36
-w 15
+x 145
+y 85
+w 80
 h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)Ao$(C1)TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
+controlPv "$(P)Ao$(C2).DRVH"
+format "decimal"
 font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 252
-y 61
-w 15
-h 20
+fontAlign "left"
 fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)Ao$(C2)TweakUp.PROC"
-pressValue "1"
-releaseValue 
-onLabel ">"
-offLabel ">"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 185
-y 61
-w 15
-h 20
-fgColor rgb 0 0 0
-onColor rgb 29440 57088 65280
-offColor rgb 29440 57088 65280
-topShadowColor rgb 65280 65280 65280
-botShadowColor rgb 0 0 0
-controlPv "$(P)Ao$(C2)TweakDown.PROC"
-pressValue "1"
-releaseValue 
-onLabel "<"
-offLabel "<"
-3d
-useEnumNumeric
-font "helvetica-medium-r-12.0"
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
 endObjectProperties
 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-09-10 15:46:44 by epics-->
 <display version="2.0.0">
   <name>LabJack_T7</name>
   <x>201</x>
@@ -3635,7 +3636,7 @@
     <x>530</x>
     <y>620</y>
     <width>445</width>
-    <height>155</height>
+    <height>130</height>
     <line_width>1</line_width>
     <line_color>
       <color red="0" green="0" blue="0">
@@ -3647,239 +3648,8 @@
     </background_color>
     <transparent>true</transparent>
   </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>valuator #819</name>
-    <pv_name>$(P)Ao1</pv_name>
-    <x>625</x>
-    <y>717</y>
-    <width>120</width>
-    <bar_length>1.0</bar_length>
-  </widget>
-  <widget type="scrollbar" version="2.0.0">
-    <name>valuator #823</name>
-    <pv_name>$(P)Ao0</pv_name>
-    <x>625</x>
-    <y>678</y>
-    <width>120</width>
-    <bar_length>1.0</bar_length>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #827</name>
-    <pv_name>$(P)Ao0TweakVal</pv_name>
-    <x>770</x>
-    <y>678</y>
-    <width>60</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #831</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)Ao0TweakUp.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)Ao0TweakUp.PROC</pv_name>
-    <text>&gt;</text>
-    <x>835</x>
-    <y>678</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #834</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)Ao0TweakDown.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)Ao0TweakDown.PROC</pv_name>
-    <text>&lt;</text>
-    <x>750</x>
-    <y>678</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #837</name>
-    <pv_name>$(P)Ao0.DESC</pv_name>
-    <x>855</x>
-    <y>677</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #841</name>
-    <pv_name>$(P)Ao1TweakVal</pv_name>
-    <x>770</x>
-    <y>717</y>
-    <width>60</width>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-    <format>1</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #845</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)Ao1TweakUp.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)Ao1TweakUp.PROC</pv_name>
-    <text>&gt;</text>
-    <x>835</x>
-    <y>717</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>message button #848</name>
-    <actions>
-      <action type="write_pv">
-        <pv_name>$(P)Ao1TweakDown.PROC</pv_name>
-        <value>1</value>
-        <description>Write</description>
-      </action>
-    </actions>
-    <pv_name>$(P)Ao1TweakDown.PROC</pv_name>
-    <text>&lt;</text>
-    <x>750</x>
-    <y>717</y>
-    <width>15</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>text entry #851</name>
-    <pv_name>$(P)Ao1.DESC</pv_name>
-    <x>855</x>
-    <y>717</y>
-    <font>
-      <font family="Liberation Sans" style="REGULAR" size="16.0">
-      </font>
-    </font>
-    <background_color>
-      <color red="218" green="218" blue="218">
-      </color>
-    </background_color>
-    <format>4</format>
-    <show_units>false</show_units>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>composite #855</name>
-    <x>540</x>
-    <y>678</y>
-    <width>80</width>
-    <height>59</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="label" version="2.0.0">
-      <name>text #858</name>
-      <text>1</text>
-      <y>39</y>
-      <width>10</width>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="16.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-    </widget>
-    <widget type="textentry" version="3.0.0">
-      <name>text entry #861</name>
-      <pv_name>$(P)Ao1</pv_name>
-      <x>15</x>
-      <y>39</y>
-      <width>65</width>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="16.0">
-        </font>
-      </font>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <format>1</format>
-      <show_units>false</show_units>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>text #865</name>
-      <text>0</text>
-      <width>10</width>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="16.0">
-        </font>
-      </font>
-      <horizontal_alignment>2</horizontal_alignment>
-    </widget>
-    <widget type="textentry" version="3.0.0">
-      <name>text entry #868</name>
-      <pv_name>$(P)Ao0</pv_name>
-      <x>15</x>
-      <width>65</width>
-      <font>
-        <font family="Liberation Sans" style="REGULAR" size="16.0">
-        </font>
-      </font>
-      <background_color>
-        <color red="115" green="223" blue="255">
-        </color>
-      </background_color>
-      <format>1</format>
-      <show_units>false</show_units>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-  </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>rectangle #872</name>
+    <name>rectangle #819</name>
     <x>530</x>
     <y>175</y>
     <width>445</width>
@@ -3896,7 +3666,7 @@
     <transparent>true</transparent>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #875</name>
+    <name>text #822</name>
     <text>Analog Input</text>
     <x>677</x>
     <y>187</y>
@@ -3909,7 +3679,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #878</name>
+    <name>message button #825</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)Ai0.PROC</pv_name>
@@ -3929,7 +3699,7 @@
     </background_color>
   </widget>
   <widget type="combo" version="2.0.0">
-    <name>menu #881</name>
+    <name>menu #828</name>
     <pv_name>$(P)Ai0.SCAN</pv_name>
     <x>684</x>
     <y>228</y>
@@ -3942,7 +3712,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>text update #884</name>
+    <name>text update #831</name>
     <pv_name>$(P)Ai0</pv_name>
     <x>578</x>
     <y>227</y>
@@ -3965,7 +3735,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #888</name>
+    <name>text #835</name>
     <text>0</text>
     <x>557</x>
     <y>227</y>
@@ -3977,7 +3747,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #891</name>
+    <name>text entry #838</name>
     <pv_name>$(P)Ai0.DESC</pv_name>
     <x>859</x>
     <y>227</y>
@@ -3994,7 +3764,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #895</name>
+    <name>text #842</name>
     <text>1</text>
     <x>557</x>
     <y>252</y>
@@ -4006,7 +3776,7 @@
     <horizontal_alignment>2</horizontal_alignment>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>message button #898</name>
+    <name>message button #845</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)Ai1.PROC</pv_name>
@@ -4026,7 +3796,7 @@
     </background_color>
   </widget>
   <widget type="combo" version="2.0.0">
-    <name>menu #901</name>
+    <name>menu #848</name>
     <pv_name>$(P)Ai1.SCAN</pv_name>
     <x>684</x>
     <y>253</y>
@@ -4039,7 +3809,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>text update #904</name>
+    <name>text update #851</name>
     <pv_name>$(P)Ai1</pv_name>
     <x>578</x>
     <y>252</y>
@@ -4062,7 +3832,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>text entry #908</name>
+    <name>text entry #855</name>
     <pv_name>$(P)Ai1.DESC</pv_name>
     <x>859</x>
     <y>252</y>
@@ -4079,7 +3849,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="rectangle" version="2.0.0">
-    <name>rectangle #912</name>
+    <name>rectangle #859</name>
     <x>572</x>
     <y>252</y>
     <width>103</width>
@@ -4101,7 +3871,7 @@
     </rules>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #916</name>
+    <name>composite #863</name>
     <x>541</x>
     <y>302</y>
     <width>418</width>
@@ -4109,7 +3879,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #919</name>
+      <name>text #866</name>
       <text>3</text>
       <x>15</x>
       <width>10</width>
@@ -4120,7 +3890,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #922</name>
+      <name>message button #869</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai3.PROC</pv_name>
@@ -4139,7 +3909,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #925</name>
+      <name>menu #872</name>
       <pv_name>$(P)Ai3.SCAN</pv_name>
       <x>143</x>
       <y>1</y>
@@ -4152,7 +3922,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #928</name>
+      <name>text update #875</name>
       <pv_name>$(P)Ai3</pv_name>
       <x>37</x>
       <width>90</width>
@@ -4174,7 +3944,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #932</name>
+      <name>text entry #879</name>
       <pv_name>$(P)Ai3.DESC</pv_name>
       <x>318</x>
       <font>
@@ -4190,7 +3960,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #936</name>
+      <name>text #883</name>
       <text>-</text>
       <width>10</width>
       <font>
@@ -4208,7 +3978,7 @@
       </rules>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>rectangle #940</name>
+      <name>rectangle #887</name>
       <x>30</x>
       <width>103</width>
       <line_color>
@@ -4230,7 +4000,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #944</name>
+    <name>composite #891</name>
     <x>541</x>
     <y>277</y>
     <width>418</width>
@@ -4238,7 +4008,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="action_button" version="3.0.0">
-      <name>message button #947</name>
+      <name>message button #894</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai2.PROC</pv_name>
@@ -4257,7 +4027,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #950</name>
+      <name>menu #897</name>
       <pv_name>$(P)Ai2.SCAN</pv_name>
       <x>143</x>
       <y>1</y>
@@ -4270,7 +4040,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #953</name>
+      <name>text update #900</name>
       <pv_name>$(P)Ai2</pv_name>
       <x>37</x>
       <width>90</width>
@@ -4292,7 +4062,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #957</name>
+      <name>text #904</name>
       <text>2</text>
       <x>15</x>
       <width>10</width>
@@ -4303,7 +4073,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #960</name>
+      <name>text entry #907</name>
       <pv_name>$(P)Ai2.DESC</pv_name>
       <x>318</x>
       <font>
@@ -4319,7 +4089,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #964</name>
+      <name>text #911</name>
       <text>+</text>
       <width>10</width>
       <font>
@@ -4338,7 +4108,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #968</name>
+    <name>composite #915</name>
     <x>541</x>
     <y>327</y>
     <width>418</width>
@@ -4346,7 +4116,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="action_button" version="3.0.0">
-      <name>message button #971</name>
+      <name>message button #918</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai4.PROC</pv_name>
@@ -4365,7 +4135,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #974</name>
+      <name>menu #921</name>
       <pv_name>$(P)Ai4.SCAN</pv_name>
       <x>143</x>
       <y>1</y>
@@ -4378,7 +4148,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #977</name>
+      <name>text update #924</name>
       <pv_name>$(P)Ai4</pv_name>
       <x>37</x>
       <width>90</width>
@@ -4400,7 +4170,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #981</name>
+      <name>text #928</name>
       <text>4</text>
       <x>15</x>
       <width>10</width>
@@ -4411,7 +4181,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #984</name>
+      <name>text entry #931</name>
       <pv_name>$(P)Ai4.DESC</pv_name>
       <x>318</x>
       <font>
@@ -4427,7 +4197,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #988</name>
+      <name>text #935</name>
       <text>+</text>
       <width>10</width>
       <font>
@@ -4446,7 +4216,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #992</name>
+    <name>composite #939</name>
     <x>541</x>
     <y>352</y>
     <width>418</width>
@@ -4454,7 +4224,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #995</name>
+      <name>text #942</name>
       <text>5</text>
       <x>17</x>
       <width>10</width>
@@ -4465,7 +4235,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #998</name>
+      <name>message button #945</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai5.PROC</pv_name>
@@ -4484,7 +4254,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1001</name>
+      <name>menu #948</name>
       <pv_name>$(P)Ai5.SCAN</pv_name>
       <x>143</x>
       <y>1</y>
@@ -4497,7 +4267,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1004</name>
+      <name>text update #951</name>
       <pv_name>$(P)Ai5</pv_name>
       <x>37</x>
       <width>90</width>
@@ -4519,7 +4289,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1008</name>
+      <name>text entry #955</name>
       <pv_name>$(P)Ai5.DESC</pv_name>
       <x>318</x>
       <font>
@@ -4535,7 +4305,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1012</name>
+      <name>text #959</name>
       <text>-</text>
       <width>10</width>
       <font>
@@ -4553,7 +4323,7 @@
       </rules>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>rectangle #1016</name>
+      <name>rectangle #963</name>
       <x>31</x>
       <width>103</width>
       <line_color>
@@ -4575,7 +4345,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1020</name>
+    <name>composite #967</name>
     <x>542</x>
     <y>377</y>
     <width>417</width>
@@ -4583,7 +4353,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1023</name>
+      <name>message button #970</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai6.PROC</pv_name>
@@ -4602,7 +4372,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1026</name>
+      <name>menu #973</name>
       <pv_name>$(P)Ai6.SCAN</pv_name>
       <x>142</x>
       <y>1</y>
@@ -4615,7 +4385,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1029</name>
+      <name>text update #976</name>
       <pv_name>$(P)Ai6</pv_name>
       <x>36</x>
       <width>90</width>
@@ -4637,7 +4407,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1033</name>
+      <name>text #980</name>
       <text>6</text>
       <x>15</x>
       <width>10</width>
@@ -4648,7 +4418,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1036</name>
+      <name>text entry #983</name>
       <pv_name>$(P)Ai6.DESC</pv_name>
       <x>317</x>
       <font>
@@ -4664,7 +4434,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1040</name>
+      <name>text #987</name>
       <text>+</text>
       <width>10</width>
       <font>
@@ -4683,7 +4453,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1044</name>
+    <name>composite #991</name>
     <x>542</x>
     <y>402</y>
     <width>417</width>
@@ -4691,7 +4461,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1047</name>
+      <name>text #994</name>
       <text>7</text>
       <x>15</x>
       <width>10</width>
@@ -4702,7 +4472,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1050</name>
+      <name>message button #997</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai7.PROC</pv_name>
@@ -4721,7 +4491,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1053</name>
+      <name>menu #1000</name>
       <pv_name>$(P)Ai7.SCAN</pv_name>
       <x>142</x>
       <y>1</y>
@@ -4734,7 +4504,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1056</name>
+      <name>text update #1003</name>
       <pv_name>$(P)Ai7</pv_name>
       <x>36</x>
       <width>90</width>
@@ -4756,7 +4526,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1060</name>
+      <name>text entry #1007</name>
       <pv_name>$(P)Ai7.DESC</pv_name>
       <x>317</x>
       <font>
@@ -4772,7 +4542,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1064</name>
+      <name>text #1011</name>
       <text>-</text>
       <width>10</width>
       <font>
@@ -4790,7 +4560,7 @@
       </rules>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>rectangle #1068</name>
+      <name>rectangle #1015</name>
       <x>31</x>
       <width>103</width>
       <line_color>
@@ -4812,7 +4582,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1072</name>
+    <name>composite #1019</name>
     <x>542</x>
     <y>427</y>
     <width>417</width>
@@ -4820,7 +4590,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1075</name>
+      <name>text #1022</name>
       <text>8</text>
       <x>17</x>
       <width>10</width>
@@ -4831,7 +4601,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1078</name>
+      <name>message button #1025</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai8.PROC</pv_name>
@@ -4850,7 +4620,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1081</name>
+      <name>menu #1028</name>
       <pv_name>$(P)Ai8.SCAN</pv_name>
       <x>142</x>
       <y>1</y>
@@ -4863,7 +4633,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1084</name>
+      <name>text update #1031</name>
       <pv_name>$(P)Ai8</pv_name>
       <x>36</x>
       <width>90</width>
@@ -4885,7 +4655,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1088</name>
+      <name>text entry #1035</name>
       <pv_name>$(P)Ai8.DESC</pv_name>
       <x>317</x>
       <font>
@@ -4901,7 +4671,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1092</name>
+      <name>text #1039</name>
       <text>+</text>
       <width>10</width>
       <font>
@@ -4920,7 +4690,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1096</name>
+    <name>composite #1043</name>
     <x>542</x>
     <y>452</y>
     <width>417</width>
@@ -4928,7 +4698,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1099</name>
+      <name>message button #1046</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai9.PROC</pv_name>
@@ -4947,7 +4717,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1102</name>
+      <name>menu #1049</name>
       <pv_name>$(P)Ai9.SCAN</pv_name>
       <x>142</x>
       <y>1</y>
@@ -4960,7 +4730,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1105</name>
+      <name>text update #1052</name>
       <pv_name>$(P)Ai9</pv_name>
       <x>36</x>
       <width>90</width>
@@ -4982,7 +4752,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1109</name>
+      <name>text #1056</name>
       <text>9</text>
       <x>19</x>
       <width>10</width>
@@ -4993,7 +4763,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1112</name>
+      <name>text entry #1059</name>
       <pv_name>$(P)Ai9.DESC</pv_name>
       <x>317</x>
       <font>
@@ -5009,7 +4779,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1116</name>
+      <name>text #1063</name>
       <text>-</text>
       <width>10</width>
       <font>
@@ -5027,7 +4797,7 @@
       </rules>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>rectangle #1120</name>
+      <name>rectangle #1067</name>
       <x>32</x>
       <width>103</width>
       <line_color>
@@ -5049,7 +4819,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1124</name>
+    <name>composite #1071</name>
     <x>540</x>
     <y>477</y>
     <width>419</width>
@@ -5057,7 +4827,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1127</name>
+      <name>text #1074</name>
       <text>10</text>
       <x>13</x>
       <width>20</width>
@@ -5068,7 +4838,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1130</name>
+      <name>message button #1077</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai10.PROC</pv_name>
@@ -5087,7 +4857,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1133</name>
+      <name>menu #1080</name>
       <pv_name>$(P)Ai10.SCAN</pv_name>
       <x>144</x>
       <y>1</y>
@@ -5100,7 +4870,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1136</name>
+      <name>text update #1083</name>
       <pv_name>$(P)Ai10</pv_name>
       <x>38</x>
       <width>90</width>
@@ -5122,7 +4892,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1140</name>
+      <name>text entry #1087</name>
       <pv_name>$(P)Ai10.DESC</pv_name>
       <x>319</x>
       <font>
@@ -5138,7 +4908,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1144</name>
+      <name>text #1091</name>
       <text>+</text>
       <width>10</width>
       <font>
@@ -5157,7 +4927,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1148</name>
+    <name>composite #1095</name>
     <x>540</x>
     <y>502</y>
     <width>419</width>
@@ -5165,7 +4935,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1151</name>
+      <name>message button #1098</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai11.PROC</pv_name>
@@ -5184,7 +4954,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1154</name>
+      <name>menu #1101</name>
       <pv_name>$(P)Ai11.SCAN</pv_name>
       <x>144</x>
       <y>1</y>
@@ -5197,7 +4967,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1157</name>
+      <name>text update #1104</name>
       <pv_name>$(P)Ai11</pv_name>
       <x>38</x>
       <width>90</width>
@@ -5219,7 +4989,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1161</name>
+      <name>text #1108</name>
       <text>11</text>
       <x>13</x>
       <width>20</width>
@@ -5230,7 +5000,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1164</name>
+      <name>text entry #1111</name>
       <pv_name>$(P)Ai11.DESC</pv_name>
       <x>319</x>
       <font>
@@ -5246,7 +5016,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1168</name>
+      <name>text #1115</name>
       <text>-</text>
       <width>10</width>
       <font>
@@ -5264,7 +5034,7 @@
       </rules>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>rectangle #1172</name>
+      <name>rectangle #1119</name>
       <x>34</x>
       <width>103</width>
       <line_color>
@@ -5286,7 +5056,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1176</name>
+    <name>composite #1123</name>
     <x>540</x>
     <y>527</y>
     <width>419</width>
@@ -5294,7 +5064,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1179</name>
+      <name>text #1126</name>
       <text>12</text>
       <x>13</x>
       <width>20</width>
@@ -5305,7 +5075,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1182</name>
+      <name>message button #1129</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai12.PROC</pv_name>
@@ -5324,7 +5094,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1185</name>
+      <name>menu #1132</name>
       <pv_name>$(P)Ai12.SCAN</pv_name>
       <x>144</x>
       <y>1</y>
@@ -5337,7 +5107,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1188</name>
+      <name>text update #1135</name>
       <pv_name>$(P)Ai12</pv_name>
       <x>38</x>
       <width>90</width>
@@ -5359,7 +5129,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1192</name>
+      <name>text entry #1139</name>
       <pv_name>$(P)Ai12.DESC</pv_name>
       <x>319</x>
       <font>
@@ -5375,7 +5145,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1196</name>
+      <name>text #1143</name>
       <text>+</text>
       <width>10</width>
       <font>
@@ -5394,7 +5164,7 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1200</name>
+    <name>composite #1147</name>
     <x>540</x>
     <y>552</y>
     <width>419</width>
@@ -5402,7 +5172,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1203</name>
+      <name>text #1150</name>
       <text>13</text>
       <x>13</x>
       <width>20</width>
@@ -5413,7 +5183,7 @@
       <horizontal_alignment>2</horizontal_alignment>
     </widget>
     <widget type="action_button" version="3.0.0">
-      <name>message button #1206</name>
+      <name>message button #1153</name>
       <actions>
         <action type="write_pv">
           <pv_name>$(P)Ai13.PROC</pv_name>
@@ -5432,7 +5202,7 @@
       </background_color>
     </widget>
     <widget type="combo" version="2.0.0">
-      <name>menu #1209</name>
+      <name>menu #1156</name>
       <pv_name>$(P)Ai13.SCAN</pv_name>
       <x>144</x>
       <y>1</y>
@@ -5445,7 +5215,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1212</name>
+      <name>text update #1159</name>
       <pv_name>$(P)Ai13</pv_name>
       <x>38</x>
       <width>90</width>
@@ -5467,7 +5237,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>text entry #1216</name>
+      <name>text entry #1163</name>
       <pv_name>$(P)Ai13.DESC</pv_name>
       <x>319</x>
       <font>
@@ -5483,7 +5253,7 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="label" version="2.0.0">
-      <name>text #1220</name>
+      <name>text #1167</name>
       <text>-</text>
       <width>10</width>
       <font>
@@ -5501,7 +5271,7 @@
       </rules>
     </widget>
     <widget type="rectangle" version="2.0.0">
-      <name>rectangle #1224</name>
+      <name>rectangle #1171</name>
       <x>35</x>
       <width>103</width>
       <line_color>
@@ -5523,7 +5293,7 @@
     </widget>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #1228</name>
+    <name>text #1175</name>
     <text>+</text>
     <x>542</x>
     <y>227</y>
@@ -5543,7 +5313,7 @@
     </rules>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #1232</name>
+    <name>text #1179</name>
     <text>-</text>
     <x>542</x>
     <y>252</y>
@@ -5563,7 +5333,7 @@
     </rules>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>related display #1236</name>
+    <name>related display #1183</name>
     <actions>
       <action type="open_display">
         <file>LabJack_T7_AIStripChart.opi</file>
@@ -5689,7 +5459,7 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>related display #1252</name>
+    <name>related display #1199</name>
     <actions>
       <action type="open_display">
         <file>LabJack_T7_AiSetup.opi</file>
@@ -5708,7 +5478,7 @@
     </background_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>related display #1255</name>
+    <name>related display #1202</name>
     <actions>
       <action type="open_display">
         <file>LabJackWaveDig.opi</file>
@@ -5727,7 +5497,7 @@
     </background_color>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>composite #1258</name>
+    <name>composite #1205</name>
     <x>40</x>
     <y>115</y>
     <width>215</width>
@@ -5735,7 +5505,7 @@
     <style>3</style>
     <transparent>true</transparent>
     <widget type="label" version="2.0.0">
-      <name>text #1261</name>
+      <name>text #1208</name>
       <text>LJM version</text>
       <width>110</width>
       <font>
@@ -5745,7 +5515,7 @@
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
-      <name>text update #1264</name>
+      <name>text update #1211</name>
       <pv_name>$(P)LJMVersion</pv_name>
       <x>115</x>
       <font>
@@ -5766,7 +5536,7 @@
     </widget>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>text #1268</name>
+    <name>text #1215</name>
     <text>Last error</text>
     <x>15</x>
     <y>140</y>
@@ -5777,7 +5547,7 @@
     <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>text update #1271</name>
+    <name>text update #1218</name>
     <pv_name>$(P)LastErrorMessage</pv_name>
     <x>120</x>
     <y>147</y>
@@ -5799,8 +5569,242 @@
     <show_units>false</show_units>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #1222</name>
+    <x>540</x>
+    <y>667</y>
+    <width>415</width>
+    <height>21</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="scrollbar" version="2.0.0">
+      <name>valuator #1225</name>
+      <pv_name>$(P)Ao0</pv_name>
+      <x>85</x>
+      <y>1</y>
+      <width>120</width>
+      <bar_length>1.0</bar_length>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #1229</name>
+      <pv_name>$(P)Ao0TweakVal</pv_name>
+      <x>230</x>
+      <y>1</y>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #1233</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)Ao0TweakUp.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)Ao0TweakUp.PROC</pv_name>
+      <text>&gt;</text>
+      <x>295</x>
+      <y>1</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #1236</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)Ao0TweakDown.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)Ao0TweakDown.PROC</pv_name>
+      <text>&lt;</text>
+      <x>210</x>
+      <y>1</y>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #1239</name>
+      <pv_name>$(P)Ao0.DESC</pv_name>
+      <x>315</x>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #1243</name>
+      <text>0</text>
+      <y>1</y>
+      <width>10</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #1246</name>
+      <pv_name>$(P)Ao0</pv_name>
+      <x>15</x>
+      <y>1</y>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #1250</name>
+    <x>540</x>
+    <y>693</y>
+    <width>415</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="scrollbar" version="2.0.0">
+      <name>valuator #1253</name>
+      <pv_name>$(P)Ao1</pv_name>
+      <x>85</x>
+      <width>120</width>
+      <bar_length>1.0</bar_length>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #1257</name>
+      <pv_name>$(P)Ao1TweakVal</pv_name>
+      <x>230</x>
+      <width>60</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #1261</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)Ao1TweakUp.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)Ao1TweakUp.PROC</pv_name>
+      <text>&gt;</text>
+      <x>295</x>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #1264</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)Ao1TweakDown.PROC</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)Ao1TweakDown.PROC</pv_name>
+      <text>&lt;</text>
+      <x>210</x>
+      <width>15</width>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #1267</name>
+      <pv_name>$(P)Ao1.DESC</pv_name>
+      <x>315</x>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>4</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #1271</name>
+      <text>1</text>
+      <width>10</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #1274</name>
+      <pv_name>$(P)Ao1</pv_name>
+      <x>15</x>
+      <width>65</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
   <widget type="action_button" version="3.0.0">
-    <name>related display #1275</name>
+    <name>related display #1278</name>
     <actions>
       <action type="open_display">
         <file>LabJackWaveGen2.opi</file>
@@ -5810,27 +5814,8 @@
     </actions>
     <text>Waveform generator</text>
     <x>576</x>
-    <y>747</y>
+    <y>718</y>
     <width>150</width>
-    <height>20</height>
-    <background_color>
-      <color red="115" green="223" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>related display #1278</name>
-    <actions>
-      <action type="open_display">
-        <file>LabJack_T7_AoSetup.opi</file>
-        <target>tab</target>
-        <description>AI setup</description>
-      </action>
-    </actions>
-    <text>Configure</text>
-    <x>731</x>
-    <y>747</y>
-    <width>93</width>
     <height>20</height>
     <background_color>
       <color red="115" green="223" blue="255">
@@ -5841,14 +5826,104 @@
     <name>related display #1281</name>
     <actions>
       <action type="open_display">
-        <file>LabJack_LJTick_DAC2.opi</file>
+        <file>LabJack_T7_AoSetup2.opi</file>
+        <macros>
+          <C1>0</C1>
+          <C2>1</C2>
+        </macros>
         <target>tab</target>
-        <description>LJTick-DACs</description>
+        <description>Ao 0 &amp; 1</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AoSetup2.opi</file>
+        <macros>
+          <C1>2</C1>
+          <C2>3</C2>
+        </macros>
+        <target>tab</target>
+        <description>Ao 2 &amp; 3</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AoSetup2.opi</file>
+        <macros>
+          <C1>4</C1>
+          <C2>5</C2>
+        </macros>
+        <target>tab</target>
+        <description>Ao 4 &amp; 5</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AoSetup2.opi</file>
+        <macros>
+          <C1>6</C1>
+          <C2>7</C2>
+        </macros>
+        <target>tab</target>
+        <description>Ao 6 &amp; 7</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_T7_AoSetup2.opi</file>
+        <macros>
+          <C1>8</C1>
+          <C2>9</C2>
+        </macros>
+        <target>tab</target>
+        <description>Ao 8 &amp; 9</description>
+      </action>
+    </actions>
+    <text>Configure</text>
+    <x>731</x>
+    <y>718</y>
+    <width>93</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #1288</name>
+    <actions>
+      <action type="open_display">
+        <file>LabJack_LJTick_DAC2.opi</file>
+        <macros>
+          <C1>2</C1>
+          <C2>3</C2>
+        </macros>
+        <target>tab</target>
+        <description>LJTick-DAC 2 &amp; 3</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_LJTick_DAC2.opi</file>
+        <macros>
+          <C1>4</C1>
+          <C2>5</C2>
+        </macros>
+        <target>tab</target>
+        <description>LJTick-DAC 4 &amp; 5</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_LJTick_DAC2.opi</file>
+        <macros>
+          <C1>6</C1>
+          <C2>7</C2>
+        </macros>
+        <target>tab</target>
+        <description>LJTick-DAC 6 &amp; 7</description>
+      </action>
+      <action type="open_display">
+        <file>LabJack_LJTick_DAC2.opi</file>
+        <macros>
+          <C1>8</C1>
+          <C2>9</C2>
+        </macros>
+        <target>tab</target>
+        <description>LJTick-DAC 8 &amp; 9</description>
       </action>
     </actions>
     <text>LJTick-DACs</text>
     <x>829</x>
-    <y>747</y>
+    <y>718</y>
     <height>20</height>
     <background_color>
       <color red="115" green="223" blue="255">

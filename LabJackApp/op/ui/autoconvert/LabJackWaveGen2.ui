@@ -85,6 +85,16 @@ caChoice &gt; QPushButton {
       padding: 1px;
 }
 
+/* when font specified, no font sizing is done any more,  font: 10pt; is not bad. You could Enable this when you converted from .adl files
+caRelatedDisplay  &gt; QPushButton {
+font: 10pt;
+}
+
+caShellCommand  &gt; QPushButton {
+font: 10pt;
+}
+*/
+
 caSlider::groove:horizontal {
 border: 1px solid #bbb;
 background: lightgrey;
@@ -968,7 +978,7 @@ border-radius: 2px;
                     <string>Output 0 Internal;Output 0 User;Output 1 Internal;Outout 1 User</string>
                 </property>
                 <property name="files">
-                    <string>LabJackWaveGenPlot.adl;LabJackWaveGenPlot.adl;LabJackWaveGenPlot.adl;LabJackWaveGenPlot.adl</string>
+                    <string>LabJackWaveGenPlot.ui ;LabJackWaveGenPlot.ui ;LabJackWaveGenPlot.ui ;LabJackWaveGenPlot.ui </string>
                 </property>
                 <property name="args">
                     <string>P=$(P),TIME=$(P)WaveGenIntTimeWF,WAVE=$(P)WaveGenInternalWF0;P=$(P),TIME=$(P)WaveGenUserTimeWF,WAVE=$(P)WaveGenUserWF0;P=$(P),TIME=$(P)WaveGenIntTimeWF,WAVE=$(P)WaveGenInternalWF1;P=$(P),TIME=$(P)WaveGenUserTimeWF,WAVE=$(P)WaveGenUserWF1</string>
