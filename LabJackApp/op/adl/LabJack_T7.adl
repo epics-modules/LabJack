@@ -1,6 +1,6 @@
 
 file {
-	name="/home/epics/devel/labjack/LabJackApp/op/adl/LabJack_T7.adl"
+	name="/home/epics/support/labjack/LabJackApp/op/adl/LabJack_T7.adl"
 	version=030117
 }
 display {
@@ -3333,233 +3333,12 @@ rectangle {
 		x=530
 		y=620
 		width=445
-		height=155
+		height=130
 	}
 	"basic attribute" {
 		clr=14
 		fill="outline"
 		width=1
-	}
-}
-valuator {
-	object {
-		x=625
-		y=717
-		width=120
-		height=20
-	}
-	control {
-		chan="$(P)Ao1"
-		clr=14
-		bclr=51
-	}
-	dPrecision=1.000000
-	limits {
-	}
-}
-valuator {
-	object {
-		x=625
-		y=678
-		width=120
-		height=20
-	}
-	control {
-		chan="$(P)Ao0"
-		clr=14
-		bclr=51
-	}
-	dPrecision=1.000000
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=770
-		y=678
-		width=60
-		height=20
-	}
-	control {
-		chan="$(P)Ao0TweakVal"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"message button" {
-	object {
-		x=835
-		y=678
-		width=15
-		height=20
-	}
-	control {
-		chan="$(P)Ao0TweakUp.PROC"
-		clr=14
-		bclr=51
-	}
-	label=">"
-	press_msg="1"
-}
-"message button" {
-	object {
-		x=750
-		y=678
-		width=15
-		height=20
-	}
-	control {
-		chan="$(P)Ao0TweakDown.PROC"
-		clr=14
-		bclr=51
-	}
-	label="<"
-	press_msg="1"
-}
-"text entry" {
-	object {
-		x=855
-		y=677
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P)Ao0.DESC"
-		clr=14
-		bclr=2
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=770
-		y=717
-		width=60
-		height=20
-	}
-	control {
-		chan="$(P)Ao1TweakVal"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"message button" {
-	object {
-		x=835
-		y=717
-		width=15
-		height=20
-	}
-	control {
-		chan="$(P)Ao1TweakUp.PROC"
-		clr=14
-		bclr=51
-	}
-	label=">"
-	press_msg="1"
-}
-"message button" {
-	object {
-		x=750
-		y=717
-		width=15
-		height=20
-	}
-	control {
-		chan="$(P)Ao1TweakDown.PROC"
-		clr=14
-		bclr=51
-	}
-	label="<"
-	press_msg="1"
-}
-"text entry" {
-	object {
-		x=855
-		y=717
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P)Ao1.DESC"
-		clr=14
-		bclr=2
-	}
-	format="hexadecimal"
-	limits {
-	}
-}
-composite {
-	object {
-		x=540
-		y=678
-		width=80
-		height=59
-	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=540
-				y=717
-				width=10
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="1"
-			align="horiz. right"
-		}
-		"text entry" {
-			object {
-				x=555
-				y=717
-				width=65
-				height=20
-			}
-			control {
-				chan="$(P)Ao1"
-				clr=14
-				bclr=51
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=540
-				y=678
-				width=10
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="0"
-			align="horiz. right"
-		}
-		"text entry" {
-			object {
-				x=555
-				y=678
-				width=65
-				height=20
-			}
-			control {
-				chan="$(P)Ao0"
-				clr=14
-				bclr=51
-			}
-			limits {
-			}
-		}
 	}
 }
 rectangle {
@@ -5274,10 +5053,242 @@ text {
 	limits {
 	}
 }
+composite {
+	object {
+		x=540
+		y=667
+		width=415
+		height=21
+	}
+	"composite name"=""
+	children {
+		valuator {
+			object {
+				x=625
+				y=668
+				width=120
+				height=20
+			}
+			control {
+				chan="$(P)Ao0"
+				clr=14
+				bclr=51
+			}
+			dPrecision=1.000000
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=770
+				y=668
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)Ao0TweakVal"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"message button" {
+			object {
+				x=835
+				y=668
+				width=15
+				height=20
+			}
+			control {
+				chan="$(P)Ao0TweakUp.PROC"
+				clr=14
+				bclr=51
+			}
+			label=">"
+			press_msg="1"
+		}
+		"message button" {
+			object {
+				x=750
+				y=668
+				width=15
+				height=20
+			}
+			control {
+				chan="$(P)Ao0TweakDown.PROC"
+				clr=14
+				bclr=51
+			}
+			label="<"
+			press_msg="1"
+		}
+		"text entry" {
+			object {
+				x=855
+				y=667
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)Ao0.DESC"
+				clr=14
+				bclr=2
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=540
+				y=668
+				width=10
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="0"
+			align="horiz. right"
+		}
+		"text entry" {
+			object {
+				x=555
+				y=668
+				width=65
+				height=20
+			}
+			control {
+				chan="$(P)Ao0"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=540
+		y=693
+		width=415
+		height=20
+	}
+	"composite name"=""
+	children {
+		valuator {
+			object {
+				x=625
+				y=693
+				width=120
+				height=20
+			}
+			control {
+				chan="$(P)Ao1"
+				clr=14
+				bclr=51
+			}
+			dPrecision=1.000000
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=770
+				y=693
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)Ao1TweakVal"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"message button" {
+			object {
+				x=835
+				y=693
+				width=15
+				height=20
+			}
+			control {
+				chan="$(P)Ao1TweakUp.PROC"
+				clr=14
+				bclr=51
+			}
+			label=">"
+			press_msg="1"
+		}
+		"message button" {
+			object {
+				x=750
+				y=693
+				width=15
+				height=20
+			}
+			control {
+				chan="$(P)Ao1TweakDown.PROC"
+				clr=14
+				bclr=51
+			}
+			label="<"
+			press_msg="1"
+		}
+		"text entry" {
+			object {
+				x=855
+				y=693
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)Ao1.DESC"
+				clr=14
+				bclr=2
+			}
+			format="hexadecimal"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=540
+				y=693
+				width=10
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="1"
+			align="horiz. right"
+		}
+		"text entry" {
+			object {
+				x=555
+				y=693
+				width=65
+				height=20
+			}
+			control {
+				chan="$(P)Ao1"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+	}
+}
 "related display" {
 	object {
 		x=576
-		y=747
+		y=718
 		width=150
 		height=20
 	}
@@ -5293,14 +5304,34 @@ text {
 "related display" {
 	object {
 		x=731
-		y=747
+		y=718
 		width=93
 		height=20
 	}
 	display[0] {
-		label="AI setup"
-		name="LabJack_T7_AoSetup.adl"
-		args="P=$(P)"
+		label="Ao 0 & 1"
+		name="LabJack_T7_AoSetup2.adl"
+		args="P=$(P),C1=0,C2=1"
+	}
+	display[1] {
+		label="Ao 2 & 3"
+		name="LabJack_T7_AoSetup2.adl"
+		args="P=$(P),C1=2,C2=3"
+	}
+	display[2] {
+		label="Ao 4 & 5"
+		name="LabJack_T7_AoSetup2.adl"
+		args="P=$(P),C1=4,C2=5"
+	}
+	display[3] {
+		label="Ao 6 & 7"
+		name="LabJack_T7_AoSetup2.adl"
+		args="P=$(P),C1=6,C2=7"
+	}
+	display[4] {
+		label="Ao 8 & 9"
+		name="LabJack_T7_AoSetup2.adl"
+		args="P=$(P),C1=8,C2=9"
 	}
 	clr=14
 	bclr=51
@@ -5309,14 +5340,29 @@ text {
 "related display" {
 	object {
 		x=829
-		y=747
+		y=718
 		width=100
 		height=20
 	}
 	display[0] {
-		label="LJTick-DACs"
+		label="LJTick-DAC 2 & 3"
 		name="LabJack_LJTick_DAC2.adl"
-		args="P=$(P)"
+		args="P=$(P),C1=2,C2=3"
+	}
+	display[1] {
+		label="LJTick-DAC 4 & 5"
+		name="LabJack_LJTick_DAC2.adl"
+		args="P=$(P),C1=4,C2=5"
+	}
+	display[2] {
+		label="LJTick-DAC 6 & 7"
+		name="LabJack_LJTick_DAC2.adl"
+		args="P=$(P),C1=6,C2=7"
+	}
+	display[3] {
+		label="LJTick-DAC 8 & 9"
+		name="LabJack_LJTick_DAC2.adl"
+		args="P=$(P),C1=8,C2=9"
 	}
 	clr=14
 	bclr=51

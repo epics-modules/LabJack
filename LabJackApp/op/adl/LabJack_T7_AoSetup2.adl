@@ -1,14 +1,14 @@
 
 file {
-	name="/home/epics/devel/labjack/LabJackApp/op/adl/LabJack_T7_AoSetup.adl"
+	name="/home/epics/support/labjack/LabJackApp/op/adl/LabJack_T7_AoSetup2.adl"
 	version=030117
 }
 display {
 	object {
-		x=1520
-		y=129
+		x=1245
+		y=121
 		width=450
-		height=180
+		height=115
 	}
 	clr=14
 	bclr=4
@@ -116,91 +116,54 @@ polyline {
 		(450,31)
 	}
 }
-composite {
+text {
+	object {
+		x=24
+		y=60
+		width=10
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(C1)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=24
+		y=85
+		width=10
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(C2)"
+	align="horiz. centered"
+}
+text {
 	object {
 		x=5
-		y=56
+		y=37
 		width=50
-		height=118
+		height=20
 	}
-	"composite name"=""
-	children {
-		text {
-			object {
-				x=24
-				y=79
-				width=10
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="0"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=24
-				y=104
-				width=10
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=24
-				y=129
-				width=10
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="2"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=24
-				y=154
-				width=10
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="3"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=5
-				y=56
-				width=50
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="Chan."
-			align="horiz. centered"
-		}
+	"basic attribute" {
+		clr=14
 	}
+	textix="Chan."
+	align="horiz. centered"
 }
 "text entry" {
 	object {
 		x=230
-		y=79
+		y=60
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao0.LOPR"
+		chan="$(P)Ao$(C1).LOPR"
 		clr=14
 		bclr=51
 	}
@@ -210,42 +173,12 @@ composite {
 "text entry" {
 	object {
 		x=230
-		y=104
+		y=85
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao1.LOPR"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=230
-		y=129
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao2.LOPR"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=230
-		y=154
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao3.LOPR"
+		chan="$(P)Ao$(C2).LOPR"
 		clr=14
 		bclr=51
 	}
@@ -255,12 +188,12 @@ composite {
 "text entry" {
 	object {
 		x=315
-		y=79
+		y=60
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao1.HOPR"
+		chan="$(P)Ao$(C1).HOPR"
 		clr=14
 		bclr=51
 	}
@@ -270,42 +203,12 @@ composite {
 "text entry" {
 	object {
 		x=315
-		y=104
+		y=85
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao1.HOPR"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=315
-		y=129
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao2.HOPR"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=315
-		y=154
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao3.HOPR"
+		chan="$(P)Ao$(C2).HOPR"
 		clr=14
 		bclr=51
 	}
@@ -315,7 +218,7 @@ composite {
 text {
 	object {
 		x=242
-		y=56
+		y=37
 		width=140
 		height=20
 	}
@@ -328,7 +231,7 @@ text {
 text {
 	object {
 		x=82
-		y=56
+		y=37
 		width=120
 		height=20
 	}
@@ -341,7 +244,7 @@ text {
 text {
 	object {
 		x=400
-		y=56
+		y=37
 		width=40
 		height=20
 	}
@@ -354,12 +257,12 @@ text {
 "text entry" {
 	object {
 		x=400
-		y=79
+		y=60
 		width=40
 		height=20
 	}
 	control {
-		chan="$(P)Ao0.PREC"
+		chan="$(P)Ao$(C1).PREC"
 		clr=14
 		bclr=51
 	}
@@ -369,42 +272,12 @@ text {
 "text entry" {
 	object {
 		x=400
-		y=104
+		y=85
 		width=40
 		height=20
 	}
 	control {
-		chan="$(P)Ao1.PREC"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=400
-		y=129
-		width=40
-		height=20
-	}
-	control {
-		chan="$(P)Ao2.PREC"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=400
-		y=154
-		width=40
-		height=20
-	}
-	control {
-		chan="$(P)Ao3.PREC"
+		chan="$(P)Ao$(C2).PREC"
 		clr=14
 		bclr=51
 	}
@@ -414,12 +287,12 @@ text {
 "text entry" {
 	object {
 		x=60
-		y=79
+		y=60
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao0.DRVL"
+		chan="$(P)Ao$(C1).DRVL"
 		clr=14
 		bclr=51
 	}
@@ -429,42 +302,12 @@ text {
 "text entry" {
 	object {
 		x=60
-		y=104
+		y=85
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao1.DRVL"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=60
-		y=129
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao2.DRVL"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=60
-		y=154
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao3.DRVL"
+		chan="$(P)Ao$(C2).DRVL"
 		clr=14
 		bclr=51
 	}
@@ -474,12 +317,12 @@ text {
 "text entry" {
 	object {
 		x=145
-		y=79
+		y=60
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao0.DRVH"
+		chan="$(P)Ao$(C1).DRVH"
 		clr=14
 		bclr=51
 	}
@@ -489,42 +332,12 @@ text {
 "text entry" {
 	object {
 		x=145
-		y=104
+		y=85
 		width=80
 		height=20
 	}
 	control {
-		chan="$(P)Ao1.DRVH"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=145
-		y=129
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao2.DRVH"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=145
-		y=154
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)Ao3.DRVH"
+		chan="$(P)Ao$(C2).DRVH"
 		clr=14
 		bclr=51
 	}
