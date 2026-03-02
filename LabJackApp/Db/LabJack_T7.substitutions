@@ -35,9 +35,9 @@ file "$(LABJACK)/db/LabJack_binary.template" { pattern
 {17,   0x20000,   Low,   High,  0, "Ch 17 binary"}
 {18,   0x40000,   Low,   High,  0, "Ch 18 binary"}
 {19,   0x80000,   Low,   High,  0, "Ch 19 binary"}
-{20, 0x1000000,   Low,   High,  1, "Ch 20 binary"}
-{21, 0x2000000,   Low,   High,  1, "Ch 21 binary"}
-{22, 0x4000000,   Low,   High,  1, "Ch 22 binary"}
+{20,  0x100000,   Low,   High,  1, "Ch 20 binary"}
+{21,  0x200000,   Low,   High,  1, "Ch 21 binary"}
+{22,  0x400000,   Low,   High,  1, "Ch 22 binary"}
 }
 
 # Digital inputs as words
