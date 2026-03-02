@@ -230,7 +230,7 @@ static const char *driverName = "LabJackDriver";
 
 class LabJackDriver : public asynPortDriver {
 public:
-  LabJackDriver(const char *portName, const char *uniqueID, int maxInputPoints, int maxOutputPoints);
+  LabJackDriver(const char *portName, const char *uniqueID, int maxInputPoints, int maxOutputPoints, const char *ljmConstantsFile);
 
   /* These are the methods that we override from asynPortDriver */
   asynStatus writeInt32(asynUser *pasynUser, epicsInt32 value);
@@ -375,7 +375,7 @@ private:
 
 };
 
-LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int maxInputPoints, int maxOutputPoints)
+LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int maxInputPoints, int maxOutputPoints, const char *ljmConstantsFile)
   : asynPortDriver(portName, MAX_SIGNALS,
       asynInt32Mask      | asynFloat64Mask      | asynOctetMask | asynUInt32DigitalMask |
       asynInt32ArrayMask | asynFloat64ArrayMask | asynEnumMask  | asynDrvUserMask,
@@ -417,6 +417,10 @@ LabJackDriver::LabJackDriver(const char *portName, const char *uniqueID, int max
     }
   }
 
+  if (ljmConstantsFile && strlen(ljmConstantsFile) > 0) {
+    status = LJM_WriteLibraryConfigStringS(LJM_CONSTANTS_FILE, ljmConstantsFile);
+    reportError(status, functionName, "return from LJM_WriteLibraryConfigStringS");
+  }
   status = LJM_Open(LJM_dtANY, LJM_ctANY, identifier.c_str(), &LJMHandle_);
   reportError(status, functionName, "return from LJM_Open");
 
@@ -1634,9 +1638,9 @@ error:
 
 /** Configuration command, called directly or from iocsh */
 extern "C" int LabJackConfig(const char *portName, const char *uniqueID,
-                             int maxInputPoints, int maxOutputPoints)
+                             int maxInputPoints, int maxOutputPoints, const char *ljmConstantsFile)
 {
-  new LabJackDriver(portName, uniqueID, maxInputPoints, maxOutputPoints);
+  new LabJackDriver(portName, uniqueID, maxInputPoints, maxOutputPoints, ljmConstantsFile);
   return asynSuccess;
 }
 
@@ -1645,14 +1649,16 @@ static const iocshArg configArg0 = { "Port name",      iocshArgString};
 static const iocshArg configArg1 = { "UniqueID",       iocshArgString};
 static const iocshArg configArg2 = { "Max. input points", iocshArgInt};
 static const iocshArg configArg3 = { "Max. output points",iocshArgInt};
+static const iocshArg configArg4 = { "LJM constants file",iocshArgString};
 static const iocshArg * const configArgs[] = {&configArg0,
                                               &configArg1,
                                               &configArg2,
-                                              &configArg3};
-static const iocshFuncDef configFuncDef = {"LabJackConfig",4,configArgs};
+                                              &configArg3,
+                                              &configArg4};
+static const iocshFuncDef configFuncDef = {"LabJackConfig",5,configArgs};
 static void configCallFunc(const iocshArgBuf *args)
 {
-  LabJackConfig(args[0].sval, args[1].sval, args[2].ival, args[3].ival);
+  LabJackConfig(args[0].sval, args[1].sval, args[2].ival, args[3].ival, args[4].sval);
 }
 
 
