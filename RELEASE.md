@@ -1,5 +1,15 @@
 # LabJack Release Notes
 
+## R3-1 (March XXX, 2026)
+- Added an optional 5'th argument to LabJackConfig command to specify the path to the ljm_constants.json file.
+  This can be useful on Linux systems where the default location for this file is /usr/local/share/LabJack/LJM and
+  another location may be preferred.
+- Improved error messages in the driver.
+- Improved the look of the documentation, use sphinx-rtd-theme and split into multiple files.
+- Improved github workflows.  Thanks to Keenan Lang for this.
+- Fixed mask in T7 substitutions file for binary bits 20, 21, 22.
+- Added new standalone test program LabJackShowDevices to show all devices found.
+
 ## R3-0 (November 25, 2022)
 - Rewritten to be based on asynPortDriver using the vendor LJM library, rather than low-level Modbus access.
 - Added waveform digitizer support, which is called streaming input in LabJack terminology.
