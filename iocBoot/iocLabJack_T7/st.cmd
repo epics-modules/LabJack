@@ -17,6 +17,8 @@ LabJackApp_registerRecordDeviceDriver(pdbbase)
 LabJackShowDevices
 # If identifying the device by IP name it must be fully qualified, i.e. include periods.
 LabJackConfig("$(PORT)", "gse-labjack1.cars.aps.anl.gov", $(WDIG_POINTS), $(WGEN_POINTS))
+# This line shows how to put ljm_constants.json in a non-standard location
+#LabJackConfig("$(PORT)", "gse-labjack1.cars.aps.anl.gov", $(WDIG_POINTS), $(WGEN_POINTS), "/home/epics/scratch/ljm_constants.json")
 #LabJackConfig("$(PORT)", "10.54.160.72",                  $(WDIG_POINTS), $(WGEN_POINTS))
 #LabJackConfig("$(PORT)", "470029169",                     $(WDIG_POINTS), $(WGEN_POINTS))
 
