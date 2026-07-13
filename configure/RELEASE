@@ -28,15 +28,15 @@ SUPPORT=/corvette/home/epics/devel
 -include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
 
 # External modules required for building this module
-ASYN=$(SUPPORT)/asyn-4-43
+ASYN=$(SUPPORT)/asyn-4-46
 BUSY=$(SUPPORT)/busy-1-7-3
 LABJACK=$(SUPPORT)/labjack
 
 # Modules required for building module ioc application
-AUTOSAVE=$(SUPPORT)/autosave-5-10-2
+AUTOSAVE=$(SUPPORT)/autosave-5-11
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.7
+EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.10
 
 
 # These lines allow developers to override these RELEASE settings
