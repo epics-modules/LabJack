@@ -1,7 +1,7 @@
-$(P)Ai$(N).LOPR
-$(P)Ai$(N).HOPR
-$(P)Ai$(N).EGUF
-$(P)Ai$(N).EGUL
-$(P)Ai$(N).PREC
-$(P)Ai$(N).DESC
+$(P)Ao$(N).LOPR
+$(P)Ao$(N).HOPR
+$(P)Ao$(N).EGUF
+$(P)Ao$(N).EGUL
+$(P)Ao$(N).PREC
+$(P)Ao$(N).DESC
 $(P)Ao$(N)TweakVal
